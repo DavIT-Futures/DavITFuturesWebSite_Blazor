@@ -18,7 +18,7 @@
     "eyebrow": "Software house · Wrocław, Poland",
     "title": "Software that",
     "highlight": "works for your business",
-    "lead": "I design and build web, desktop, mobile and backend applications in C# .NET, Angular, Blazor, Xamarin and Vue.js with Quasar. Since 2007 for banks, trading platforms, medtech and SaaS in Poland, Ireland, the Czech Republic and the UK.",
+    "lead": "Web, desktop, mobile and backend applications in C# .NET, Angular, Blazor, Xamarin and Vue.js with Quasar, designed and built since 2007 for banks, trading platforms, medtech and SaaS in Poland, Ireland, the Czech Republic and the UK.",
     "primaryCta": {
       "label": "Let's talk about your project",
       "url": "#contact"
@@ -34,7 +34,7 @@
       },
       {
         "value": "4",
-        "label": "countries worked in, on site and remote"
+        "label": "countries of delivery, on site and remote"
       },
       {
         "value": "4×",
@@ -42,11 +42,11 @@
       },
       {
         "value": "£15M",
-        "label": "company-wide gain in the first month of a trading feature I delivered"
+        "label": "company-wide gain in the first month of a delivered trading feature"
       },
       {
         "value": "70%",
-        "label": "of Polish mutual fund transactions ran through a system I built"
+        "label": "of Polish mutual fund transactions handled by the built system"
       }
     ]
   },
@@ -57,7 +57,7 @@
       {
         "icon": "finance",
         "title": "Finance and trading",
-        "text": "IG Group trading platforms: the L2 Dealer Level 2 desktop platform and the WTP web trading platform. Risk engines (LTV, PRIIPs) at Credit Suisse and mutual fund distribution. I understand the market, not just the code.",
+        "text": "IG Group trading platforms: the L2 Dealer Level 2 desktop platform and the WTP web trading platform. Risk engines (LTV, PRIIPs) at Credit Suisse and mutual fund distribution. Market know-how, not just code.",
         "linkLabel": "IG Group",
         "linkUrl": "https://www.ig.com"
       },
@@ -121,7 +121,7 @@
   },
   "tech": {
     "title": "Technology",
-    "subtitle": "The tools I use every day.",
+    "subtitle": "Everyday tools and technologies.",
     "groups": [
       {
         "name": "Backend",
@@ -220,7 +220,7 @@
         "name": "L2 Dealer",
         "client": "IG Group",
         "years": "2023 – 2026",
-        "description": "Level 2 desktop trading platform. I rebuilt the delivery process end to end: a GitLab CI/CD pipeline (17k+ lines), GitFlow with release branches and merge requests, quality gates and large refactors of core modules. Result: HIGH app maturity and 24/7 zero-downtime releases. I also delivered “Price In Size”, part of a company-wide initiative that earned £15M in its first month.",
+        "description": "Level 2 desktop trading platform. Delivery process rebuilt end to end: a GitLab CI/CD pipeline (17k+ lines), GitFlow with release branches and merge requests, quality gates and large refactors of core modules. Result: HIGH app maturity and 24/7 zero-downtime releases. “Price In Size” delivered as part of a company-wide initiative that earned £15M in its first month.",
         "url": "",
         "tags": [
           "C# .NET",
@@ -259,7 +259,7 @@
         "name": "Focis",
         "client": "Focis.co.uk",
         "years": "2018 – 2019",
-        "description": "A complete multi-tenant SaaS product for law firms, which I built alone from start to finish and later led an extra developer: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
+        "description": "A complete multi-tenant SaaS product for law firms, built single-handedly from start to finish, later with one more developer on the team: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
         "url": "",
         "tags": [
           "ASP.NET MVC",
@@ -272,7 +272,7 @@
         "name": "InCenter and InTire",
         "client": "Tyrecheck",
         "years": "2015 – 2017",
-        "description": "Fleet management with tyre-pressure monitoring. A Wi-Fi router on each truck collected data from TPMS sensors (I wrote the low-level sensor communication) and uploaded it to a central server, and a web app managed the whole fleet. A proof of concept built in 2 weeks won a major contract.",
+        "description": "Fleet management with tyre-pressure monitoring. A Wi-Fi router on each truck collected data from TPMS sensors (including the low-level sensor communication) and uploaded it to a central server, and a web app managed the whole fleet. A proof of concept built in 2 weeks won a major contract.",
         "url": "",
         "tags": [
           "Vue.js",
@@ -348,7 +348,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a project or a question? Write to me, I reply quickly.",
+    "subtitle": "Have a project or a question? Get in touch, replies come quickly.",
     "email": "davit.futures@gmail.com",
     "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
     "gitHub": "https://github.com/DavIT-Futures",

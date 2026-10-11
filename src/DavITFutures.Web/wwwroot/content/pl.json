@@ -18,7 +18,7 @@
     "eyebrow": "Software house · Wrocław",
     "title": "Oprogramowanie, które",
     "highlight": "pracuje na Twój biznes",
-    "lead": "Projektuję i buduję aplikacje webowe, desktopowe, mobilne i backend w C# .NET, Angular, Blazor, Xamarin oraz Vue.js z Quasarem. Od 2007 roku dla banków, platform tradingowych, medtechu i SaaS w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
+    "lead": "Aplikacje webowe, desktopowe, mobilne i backend w C# .NET, Angular, Blazor, Xamarin oraz Vue.js z Quasarem, projektowane i budowane od 2007 roku dla banków, platform tradingowych, medtechu i SaaS w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
     "primaryCta": {
       "label": "Porozmawiajmy o projekcie",
       "url": "#contact"
@@ -34,7 +34,7 @@
       },
       {
         "value": "4",
-        "label": "kraje, w których pracowałem na miejscu i zdalnie"
+        "label": "kraje realizacji projektów, na miejscu i zdalnie"
       },
       {
         "value": "4×",
@@ -42,11 +42,11 @@
       },
       {
         "value": "15 mln £",
-        "label": "zysku firmy w pierwszym miesiącu funkcji tradingowej, którą dostarczyłem"
+        "label": "zysku firmy w pierwszym miesiącu po wdrożeniu funkcji tradingowej"
       },
       {
         "value": "70%",
-        "label": "transakcji funduszy inwestycyjnych w Polsce szło przez system, który budowałem"
+        "label": "transakcji funduszy inwestycyjnych w Polsce obsługiwanych przez zbudowany system"
       }
     ]
   },
@@ -57,7 +57,7 @@
       {
         "icon": "finance",
         "title": "Finanse i trading",
-        "text": "Platformy tradingowe IG Group: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP. Silniki ryzyka (LTV, PRIIPs) w Credit Suisse i dystrybucja funduszy inwestycyjnych. Rozumiem rynek, nie tylko kod.",
+        "text": "Platformy tradingowe IG Group: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP. Silniki ryzyka (LTV, PRIIPs) w Credit Suisse i dystrybucja funduszy inwestycyjnych. Znajomość rynku, nie tylko kodu.",
         "linkLabel": "IG Group",
         "linkUrl": "https://www.ig.com"
       },
@@ -121,7 +121,7 @@
   },
   "tech": {
     "title": "Technologie",
-    "subtitle": "Narzędzia, z którymi pracuję na co dzień.",
+    "subtitle": "Narzędzia i technologie używane na co dzień.",
     "groups": [
       {
         "name": "Backend",
@@ -220,7 +220,7 @@
         "name": "L2 Dealer",
         "client": "IG Group",
         "years": "2023 – 2026",
-        "description": "Desktopowa platforma tradingowa Level 2. Przebudowałem cały proces dostarczania: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów. Efekt: ocena dojrzałości HIGH i wydania 24/7 bez przestojów. Dostarczyłem też „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
+        "description": "Desktopowa platforma tradingowa Level 2. Cały proces dostarczania przebudowany od zera: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów. Efekt: ocena dojrzałości HIGH i wydania 24/7 bez przestojów. Dostarczona funkcja „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
         "url": "",
         "tags": [
           "C# .NET",
@@ -259,7 +259,7 @@
         "name": "Focis",
         "client": "Focis.co.uk",
         "years": "2018 – 2019",
-        "description": "Kompletny produkt SaaS multi-tenant dla kancelarii prawnych, który zbudowałem sam od początku do końca, a później prowadziłem dodatkowego programistę: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
+        "description": "Kompletny produkt SaaS multi-tenant dla kancelarii prawnych, zbudowany w pojedynkę od początku do końca, później z dodatkowym programistą w zespole: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
         "url": "",
         "tags": [
           "ASP.NET MVC",
@@ -272,7 +272,7 @@
         "name": "InCenter i InTire",
         "client": "Tyrecheck",
         "years": "2015 – 2017",
-        "description": "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS (napisałem niskopoziomową komunikację z czujnikami) i wysyłał je na centralny serwer, a aplikacja webowa zarządzała całą flotą. Prototyp zbudowany w 2 tygodnie wygrał duży kontrakt.",
+        "description": "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS (łącznie z niskopoziomową komunikacją z czujnikami) i wysyłał je na centralny serwer, a aplikacja webowa zarządzała całą flotą. Prototyp zbudowany w 2 tygodnie wygrał duży kontrakt.",
         "url": "",
         "tags": [
           "Vue.js",
@@ -348,7 +348,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Masz projekt albo pytanie? Napisz, odpowiadam szybko.",
+    "subtitle": "Masz projekt albo pytanie? Napisz, odpowiedź przyjdzie szybko.",
     "email": "davit.futures@gmail.com",
     "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
     "gitHub": "https://github.com/DavIT-Futures",
