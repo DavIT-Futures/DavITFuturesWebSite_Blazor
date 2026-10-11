@@ -1,0 +1,22 @@
+@* Sekcja z nagłówkiem i siatką kart z ikonami (O firmie, Usługi). *@
+<section class="section @Class" id="@Id">
+    <div class="container">
+        <SectionHeading Title="@Section.Title" Subtitle="@Section.Subtitle" />
+        <div class="cards">
+            @foreach (var item in Section.Items)
+            {
+                <article class="card">
+                    <div class="card-icon"><Icon Name="@item.Icon" /></div>
+                    <h3>@item.Title</h3>
+                    <p>@item.Text</p>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public string Id { get; set; } = "";
+    [Parameter, EditorRequired] public SectionWithItems Section { get; set; } = default!;
+    [Parameter] public string? Class { get; set; }
+}

@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "title": "DavIT Futures – custom software, .NET, Angular, FinTech",
+    "description": "DavIT Futures – Dawid Domagała. Web, desktop and backend applications in C# .NET, Angular and Blazor. 18+ years in banking, trading and SaaS. Wrocław, Poland."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "tech": "Technology",
+    "projects": "Projects",
+    "cv": "CV",
+    "contact": "Contact",
+    "themeLight": "Light theme",
+    "themeDark": "Dark theme",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Software house · Wrocław, Poland",
+    "title": "Software that",
+    "highlight": "works for your business",
+    "lead": "I design and build web, desktop and backend applications in C# .NET, Angular and Blazor. Since 2007 for banks, trading platforms, medtech and SaaS in Poland, Ireland, the Czech Republic and the UK.",
+    "primaryCta": {
+      "label": "Let's talk about your project",
+      "url": "#contact"
+    },
+    "secondaryCta": {
+      "label": "See projects",
+      "url": "#projects"
+    },
+    "stats": [
+      {
+        "value": "18+",
+        "label": "years of experience"
+      },
+      {
+        "value": "4",
+        "label": "countries worked in, on site and remote"
+      },
+      {
+        "value": "4×",
+        "label": "team-average throughput with AI agents"
+      }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "DavIT Futures is the one-person software house of Dawid Domagała: a senior developer and team lead with more than 18 years of commercial experience.",
+    "items": [
+      {
+        "icon": "finance",
+        "title": "Finance and trading",
+        "text": "Level 2 trading platforms, risk engines (LTV, PRIIPs), mutual fund distribution. I understand the market, not just the code."
+      },
+      {
+        "icon": "shield",
+        "title": "Quality and security",
+        "text": "Unit and BDD tests, CI/CD quality gates, zero-downtime releases. Experience with banking security audits."
+      },
+      {
+        "icon": "spark",
+        "title": "Speed through AI",
+        "text": "AI agents (Claude Code) speed up delivery, and every change is reviewed and tested. Fast, without cutting corners."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "From idea and prototype to production release and maintenance.",
+    "items": [
+      {
+        "icon": "web",
+        "title": "Web applications",
+        "text": "Modern apps in Angular, Blazor, React and Vue.js. Responsive, fast and easy to evolve."
+      },
+      {
+        "icon": "server",
+        "title": "Backend and APIs",
+        "text": "C# .NET, REST and GraphQL, microservices, MS SQL Server. Performance, multithreading and stability under load."
+      },
+      {
+        "icon": "desktop",
+        "title": "Desktop applications",
+        "text": "WPF, WinForms, DevExpress. Modernising legacy systems and migrating to new technology."
+      },
+      {
+        "icon": "pipeline",
+        "title": "DevOps and CI/CD",
+        "text": "GitLab CI/CD, Jenkins and GitHub Actions pipelines, automated releases, code signing, Docker and Azure."
+      },
+      {
+        "icon": "layers",
+        "title": "Multi-tenant SaaS",
+        "text": "White-label products with tenant data isolation and per-customer configuration and branding."
+      },
+      {
+        "icon": "spark",
+        "title": "AI adoption in teams",
+        "text": "AI agents in the delivery process, plus trainings and workshops for development teams."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Technology",
+    "subtitle": "The tools I use every day.",
+    "groups": [
+      {
+        "name": "Backend",
+        "items": [
+          "C#",
+          ".NET 10",
+          "ASP.NET Core",
+          "REST",
+          "GraphQL",
+          "Microservices",
+          "EF Core",
+          "MS SQL Server"
+        ]
+      },
+      {
+        "name": "Frontend",
+        "items": [
+          "Blazor",
+          "Angular",
+          "TypeScript",
+          "RxJS",
+          "React",
+          "Vue.js",
+          "HTML / CSS"
+        ]
+      },
+      {
+        "name": "DevOps and cloud",
+        "items": [
+          "GitLab CI/CD",
+          "GitHub Actions",
+          "Jenkins",
+          "Docker",
+          "Azure",
+          "PowerShell",
+          "Bash"
+        ]
+      },
+      {
+        "name": "Quality and AI",
+        "items": [
+          "NUnit",
+          "Moq",
+          "SpecFlow",
+          "TDD / BDD",
+          "SonarQube",
+          "Claude Code",
+          "GitHub Copilot"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected commercial projects from the last 18 years, plus the code of this site.",
+    "gitHubUser": "DavIT-Futures",
+    "allReposLabel": "All repositories on GitHub",
+    "codeLabel": "Code on GitHub",
+    "items": [
+      {
+        "name": "DavIT Futures website",
+        "client": "DavIT Futures",
+        "years": "2026",
+        "description": "This site: Blazor WebAssembly on .NET 10, two languages, light and dark themes, automatic deployment to GitHub Pages with GitHub Actions.",
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "tags": [
+          "Blazor",
+          "C# .NET 10",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "name": "L2 Dealer",
+        "client": "IG Group",
+        "years": "2023 – 2026",
+        "description": "Level 2 desktop trading platform. The “Price In Size” feature, a new leak-free TradeBook V2, and a full GitLab CI/CD pipeline (17k+ lines) rated HIGH maturity with zero-downtime releases.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "DevExpress",
+          "GitLab CI/CD"
+        ]
+      },
+      {
+        "name": "LTV, PRC and PRIIPs risk platforms",
+        "client": "Credit Suisse",
+        "years": "2017 – 2022",
+        "description": "Silverlight to Angular 10 migration with a GraphQL backend, monolith split into .NET Core microservices, regulatory KID documents (PRIIPs) with BDD tests across the whole API.",
+        "url": "",
+        "tags": [
+          "Angular",
+          "GraphQL",
+          "C# .NET Core",
+          "MS SQL"
+        ]
+      },
+      {
+        "name": "QiaCuity and QiaGuest",
+        "client": "Qiagen",
+        "years": "2019 – 2020",
+        "description": "React/Redux UI for a Linux-based dPCR laboratory instrument, and QiaGuest, a reception app built from scratch in Angular and .NET Core on Azure.",
+        "url": "",
+        "tags": [
+          "React",
+          "Angular",
+          "C# .NET Core",
+          "Azure"
+        ]
+      },
+      {
+        "name": "Focis",
+        "client": "Focis.co.uk",
+        "years": "2018 – 2019",
+        "description": "A complete multi-tenant SaaS product for law firms: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
+        "url": "",
+        "tags": [
+          "ASP.NET MVC",
+          "Azure",
+          "EF Core",
+          "Firebase"
+        ]
+      },
+      {
+        "name": "InCenter and InTire",
+        "client": "Tyrecheck",
+        "years": "2015 – 2017",
+        "description": "Fleet tyre management across web, mobile and desktop with TPMS sensors. A proof of concept built in 2 weeks won a major contract.",
+        "url": "",
+        "tags": [
+          "Vue.js",
+          "Xamarin",
+          "ASP.NET MVC",
+          "IoT"
+        ]
+      },
+      {
+        "name": "White-label spirometry",
+        "client": "Vitalograph",
+        "years": "2014 – 2015",
+        "description": "Lung-function diagnostics for clinics and clinical trials, shipped in about 10 versions branded for pharma partners, including Roche.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "Multi-tenant"
+        ]
+      },
+      {
+        "name": "Elemos",
+        "client": "AMCS Group",
+        "years": "2012 – 2014",
+        "description": "Software for the waste and recycling industry: a WPF office app and an in-truck handheld app with RFID, route planning and live vehicle tracking.",
+        "url": "",
+        "tags": [
+          "WPF",
+          "WCF",
+          "RFID",
+          "Windows Mobile"
+        ]
+      },
+      {
+        "name": "Goniec Online",
+        "client": "Exorigo / ProService AT",
+        "years": "2007 – 2012",
+        "description": "Mutual fund sales system deployed in many Polish banks, handling about 70% of Polish trust fund transactions.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "Web Services",
+          "MS SQL"
+        ]
+      }
+    ]
+  },
+  "cv": {
+    "title": "CV",
+    "subtitle": "Dawid Domagała's full career history in two versions.",
+    "versions": [
+      {
+        "title": "Short CV",
+        "text": "Key achievements, skills and career path at a glance.",
+        "pages": "2 pages",
+        "url": "cv/Dawid-Domagala-CV-short.html",
+        "buttonLabel": "Open CV",
+        "pdfUrl": "cv/Dawid-Domagala-CV-short.pdf",
+        "pdfLabel": "Download PDF"
+      },
+      {
+        "title": "Full CV",
+        "text": "Detailed projects, technologies, achievements and references.",
+        "pages": "4 pages",
+        "url": "cv/Dawid-Domagala-CV-full.html",
+        "buttonLabel": "Open CV",
+        "pdfUrl": "cv/Dawid-Domagala-CV-full.pdf",
+        "pdfLabel": "Download PDF"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project or a question? Write to me, I reply quickly.",
+    "email": "davit.futures@gmail.com",
+    "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
+    "gitHub": "https://github.com/DavIT-Futures",
+    "company": {
+      "heading": "Company details",
+      "name": "DavIT Futures",
+      "owner": "Dawid Domagała",
+      "address": [
+        "ul. Ścinawska 30/8",
+        "53-629 Wrocław, Poland"
+      ],
+      "nip": "6932087505",
+      "regon": "021923547"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Blazor WebAssembly and .NET 10."
+  }
+}

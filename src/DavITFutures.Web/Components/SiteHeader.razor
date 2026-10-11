@@ -1,0 +1,45 @@
+@inherits SiteComponent
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="#top" @onclick="CloseMenu">
+            <span class="logo-mark">D</span>
+            <span class="logo-text">DavIT<b>Futures</b></span>
+        </a>
+
+        <nav class="nav @(_menuOpen ? "is-open" : "")" aria-label="Menu">
+            <a href="#about" @onclick="CloseMenu">@Content!.Nav.About</a>
+            <a href="#services" @onclick="CloseMenu">@Content.Nav.Services</a>
+            <a href="#tech" @onclick="CloseMenu">@Content.Nav.Tech</a>
+            <a href="#projects" @onclick="CloseMenu">@Content.Nav.Projects</a>
+            <a href="#cv" @onclick="CloseMenu">@Content.Nav.Cv</a>
+            <a href="#contact" @onclick="CloseMenu">@Content.Nav.Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="lang-switch" role="group" aria-label="@Content.Nav.Language">
+                @foreach (var lang in SiteState.Languages)
+                {
+                    <button type="button" class="@(Site.Language == lang ? "active" : "")"
+                            aria-pressed="@(Site.Language == lang)"
+                            @onclick="() => Site.SetLanguageAsync(lang)">@lang.ToUpperInvariant()</button>
+                }
+            </div>
+            <button type="button" class="icon-btn" @onclick="Site.ToggleThemeAsync"
+                    title="@(Site.Theme == "dark" ? Content.Nav.ThemeLight : Content.Nav.ThemeDark)"
+                    aria-label="@(Site.Theme == "dark" ? Content.Nav.ThemeLight : Content.Nav.ThemeDark)">
+                <Icon Name="@(Site.Theme == "dark" ? "sun" : "moon")" Size="20" />
+            </button>
+            <button type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="@_menuOpen"
+                    @onclick="() => _menuOpen = !_menuOpen">
+                <Icon Name="@(_menuOpen ? "close" : "menu")" Size="22" />
+            </button>
+        </div>
+    </div>
+</header>
+
+@code {
+    private bool _menuOpen;
+
+    private void CloseMenu() => _menuOpen = false;
+}

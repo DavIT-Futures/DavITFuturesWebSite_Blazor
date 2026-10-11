@@ -1,0 +1,20 @@
+@inherits SiteComponent
+
+<section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+        <p class="eyebrow">@Content!.Hero.Eyebrow</p>
+        <h1>@Content.Hero.Title <span class="gradient-text">@Content.Hero.Highlight</span></h1>
+        <p class="lead">@Content.Hero.Lead</p>
+        <div class="hero-cta">
+            <a class="btn btn-primary" href="@Content.Hero.PrimaryCta.Url">@Content.Hero.PrimaryCta.Label <Icon Name="arrow" Size="18" /></a>
+            <a class="btn btn-ghost" href="@Content.Hero.SecondaryCta.Url">@Content.Hero.SecondaryCta.Label</a>
+        </div>
+        <dl class="stats">
+            @foreach (var stat in Content.Hero.Stats)
+            {
+                <div class="stat"><dt>@stat.Value</dt><dd>@stat.Label</dd></div>
+            }
+        </dl>
+    </div>
+</section>

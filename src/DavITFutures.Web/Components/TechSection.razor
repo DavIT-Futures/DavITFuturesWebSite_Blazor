@@ -1,0 +1,21 @@
+@inherits SiteComponent
+
+<section class="section" id="tech">
+    <div class="container">
+        <SectionHeading Title="@Content!.Tech.Title" Subtitle="@Content.Tech.Subtitle" />
+        <div class="tech-grid">
+            @foreach (var group in Content.Tech.Groups)
+            {
+                <div class="tech-group">
+                    <h3>@group.Name</h3>
+                    <ul class="chips">
+                        @foreach (var item in group.Items)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</section>

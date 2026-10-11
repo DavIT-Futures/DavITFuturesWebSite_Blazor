@@ -1,0 +1,10 @@
+@page "/not-found"
+@inherits SiteComponent
+
+<section class="section">
+    <div class="container center">
+        <h1 class="gradient-text">404</h1>
+        <p>@(Site.Language == "pl" ? "Nie ma takiej strony." : "This page does not exist.")</p>
+        <a class="btn btn-primary" href="./">@(Site.Language == "pl" ? "Strona główna" : "Home")</a>
+    </div>
+</section>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawid Domagała – CV</title>
+<style>
+:root{--bg:#cbd5e1;--ink:#0f172a;--tx:#334155;--mute:#64748b;--line:#e2e8f0;--soft:#f1f5f9;--ac:#2563eb;--acd:#1d4ed8;--acl:#eff6ff;--acb:#bfdbfe;--hero:#0f172a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220}}
+:root[data-theme="dark"]{--bg:#0b1220}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:var(--bg);font:8.6pt/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--tx);display:flex;flex-direction:column;align-items:center;padding:16px 8px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;margin-bottom:14px;display:flex;gap:12px;align-items:center;background:rgba(15,23,42,.94);padding:7px 16px;border-radius:99px;color:#94a3b8;font-size:12px}
+.bar button{background:var(--ac);color:#fff;border:0;border-radius:99px;padding:6px 15px;font-weight:600;font-size:13px;cursor:pointer}
+.bar button:hover{background:var(--acd)}
+.wrap{max-width:100%;overflow-x:auto}
+.page{width:210mm;min-height:297mm;background:#fff;margin:0 auto 18px;padding:0 13mm 10mm;box-shadow:0 4px 20px rgba(15,23,42,.15);display:flex;flex-direction:column;gap:7px}
+h2{font-size:8.6pt;font-weight:800;text-transform:uppercase;letter-spacing:.9px;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:2px;margin-bottom:5px}
+h2.nl{border-bottom:0;padding-bottom:0;margin-top:11px}
+strong{color:var(--ink)}
+/* HERO */
+.hero{margin:0 -13mm;padding:6.5mm 13mm 3.5mm;background:var(--acl);border-top:4mm solid var(--ink);border-bottom:1.5px solid var(--ac)}
+.hero .id{display:flex;gap:5mm;align-items:center}
+.photo{flex:none;width:20mm;height:25mm;object-fit:cover;border-radius:3px;border:1px solid #cbd5e1}
+.mono{flex:none;width:19mm;height:19mm;background:var(--ink);color:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:20pt;font-weight:900;letter-spacing:-1px}
+.hero h1{font-size:27pt;font-weight:900;letter-spacing:-.7px;line-height:1;color:var(--ink)}
+.hero h1 span{color:var(--acd)}
+.hero .role{color:var(--acd);font-weight:800;font-size:8.8pt;margin-top:4px;white-space:nowrap}
+.hero .pitch{font-size:9.4pt;line-height:1.4;margin-top:6px;color:var(--tx);text-align:justify}
+.hero .pitch b{color:var(--ink)}
+.contact{display:flex;flex-wrap:wrap;gap:3px 0;margin-top:6px;padding-top:4px;border-top:1px solid #94a3b8;font-size:8pt;color:var(--ink);font-weight:600}
+.contact span:not(:last-child)::after{content:"|";color:#94a3b8;margin:0 8px;font-weight:400}
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:0}
+.kpi{background:#fff;border:1px solid var(--acb);border-top:3px solid var(--ac);border-radius:3px;padding:6px 5px;text-align:center;box-shadow:0 2px 8px rgba(15,23,42,.1)}
+.kpi b{display:block;font-size:17pt;font-weight:900;color:var(--ac);line-height:1}
+.kpi span{display:block;font-size:6.8pt;font-weight:800;text-transform:uppercase;color:var(--ink);margin-top:3px;letter-spacing:.2px}
+.kpi i{display:block;font-size:6.4pt;color:var(--ink);font-style:normal;margin-top:1px;line-height:1.2}
+.src{font-size:6.2pt;color:var(--ink);font-style:italic;text-align:right;margin-top:-5px}
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.pil{background:var(--soft);border:1px solid #cbd5e1;border-left:3.5px solid var(--ac);border-radius:3px;padding:5px 8px}
+.pil h3{font-size:9pt;color:var(--ink);margin-bottom:2px}
+.pil p{font-size:7.75pt;line-height:1.3;text-align:justify}
+.pil.wide{grid-column:1/-1;background:var(--acl);border-color:var(--acb);border-left:3.5px solid var(--ink)}
+/* TECH */
+.tech{display:grid;grid-template-columns:auto 1fr;gap:3px 8px;align-items:center;border:1px solid #cbd5e1;border-radius:3px;background:#f8fafc;padding:4px 8px}
+.tech dt{font-size:7pt;font-weight:800;text-transform:uppercase;color:var(--ink);padding-top:2px;letter-spacing:.3px}
+.pills{display:flex;flex-wrap:wrap;gap:3px}
+.pills span{background:#fff;border:1px solid #94a3b8;border-radius:2px;padding:1px 5px;font-size:7.3pt;color:#020617}
+.pills span.h{background:var(--acl);border-color:var(--acb);color:var(--acd);font-weight:800}
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.tl div{background:var(--soft);border:1px solid #cbd5e1;border-radius:3px;padding:5px 6px;line-height:1.22;display:flex;flex-direction:column}
+.tl .y{color:var(--ac);font-weight:900;font-size:8.4pt}
+.tl b{display:block;font-size:8.6pt;color:var(--ink)}
+.tl em{display:block;font-style:normal;font-weight:800;font-size:6.5pt;text-transform:uppercase;letter-spacing:.2px;color:var(--ink)}
+.tl u{display:block;text-decoration:none;font-weight:700;color:var(--ac);font-size:7pt;margin:1px 0 2px}
+.tl small{display:block;font-size:6.7pt;color:var(--tx);background:#fff;border:1px solid #cbd5e1;border-radius:2px;padding:2px 4px}
+.tl small b{display:inline;font-size:inherit}
+.tl div.side{border-style:dashed;background:#fff;border-right:3.5px solid var(--ac)}
+.tl s{text-decoration:none;font-size:6pt;color:var(--ac);font-weight:800}
+.tl div.now{border-left:3.5px solid var(--ac)}
+/* GANTT */
+.gantt{display:flex;flex-direction:column;border:1px solid #cbd5e1;border-radius:3px;background:linear-gradient(to right,#e9eef4 0,#e9eef4 calc(6px + 57mm + 3px),#f8fafc calc(6px + 57mm + 3px));padding:1px 6px 2px}
+.gr,.gaxis{display:grid;grid-template-columns:49mm 9mm 1fr;gap:5px;align-items:center}
+.gcc{font-family:Georgia,"Times New Roman",serif;font-size:9.5pt;font-weight:700;letter-spacing:.4px;text-indent:-.4px;text-align:center;color:var(--ink);line-height:1;transform:translateX(-2px)}
+.gcc.f{color:var(--acd)}
+.gr{border-top:1px solid #e2e8f0;padding:1.5px 0}
+.gaxis .gt{height:10px}
+.gaxis .gt span{position:absolute;transform:translateX(-50%);font-size:6.3pt;font-weight:800;color:var(--mute);top:0}
+.gl{min-width:0}
+.gh{display:flex;justify-content:space-between;gap:6px;align-items:baseline;line-height:1.1}
+.gh b{font-size:8.2pt;color:var(--ink)}
+.gh span{font-size:7pt;font-weight:800;color:var(--ac);white-space:nowrap}
+.gs{font-size:6.8pt;font-weight:700;color:var(--acd);line-height:1.15;white-space:nowrap;display:flex;justify-content:space-between;gap:6px}
+.gs u{text-decoration:none;overflow:hidden;text-overflow:ellipsis}
+.gs i{font-style:normal;font-weight:600;color:var(--ink);font-size:6.2pt;letter-spacing:.3px}
+.gt{position:relative;height:21px}
+.gt i{position:absolute;top:0;bottom:0;border-left:1px dotted #cbd5e1}
+.gb{position:absolute;top:5px;height:11px;border-radius:2px;background:var(--ink)}
+.gx{position:absolute;top:50%;transform:translateY(-50%);font-style:normal;font-size:6.9pt;color:var(--ink);white-space:nowrap;background:#f8fafc;padding:0 3px;line-height:1.2}
+.gx b{color:var(--ink);font-weight:800}
+.gx{padding:0 3px 0 0}
+.gxr{padding:0 0 0 3px;text-align:right}
+
+/* EXPERIENCE CARDS */
+.xjob{border:1px solid #cbd5e1;border-radius:4px;overflow:hidden;break-inside:avoid;background:#fff}
+.xhead{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#eef2f7;border-bottom:1px solid #cbd5e1;padding:5px 9px}
+.xhead .xr{font-size:10.5pt;font-weight:800;color:var(--ink);line-height:1.15}
+.xhead .xc{font-size:8pt;color:var(--mute);margin-top:1px}
+.xhead .xc b{color:var(--ac);font-size:9pt;font-weight:800}
+.xhead .dt{font-weight:800;color:#fff;background:var(--ink);padding:2px 8px;border-radius:2px;font-size:8pt;white-space:nowrap}
+.xbody{display:grid;grid-template-columns:1fr 46mm;gap:0}
+.xmain{padding:5px 9px 6px}
+.xside{background:#f8fafc;border-left:1px solid #e2e8f0;padding:6px 7px;display:flex;flex-direction:column;gap:6px}
+.xctx{font-size:8.4pt;color:var(--tx);font-style:italic;margin-bottom:3px}
+.xg{font-size:6.9pt;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ac);margin:4px 0 1px}
+.xl{list-style:none}
+.xl li{position:relative;padding-left:10px;margin-bottom:3px;font-size:8.7pt;line-height:1.36;text-align:justify}
+.xl li::before{content:"";position:absolute;left:0;top:5px;width:4px;height:4px;background:var(--ac);border-radius:1px}
+.xl li b{color:var(--ink);font-weight:800}
+.xk{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.xk div{background:#fff;border:1px solid var(--acb);border-top:2px solid var(--ac);border-radius:2px;padding:3px 2px;text-align:center}
+.xk b{display:block;font-size:10.5pt;font-weight:900;color:var(--ac);line-height:1.05}
+.xk span{display:block;font-size:6pt;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.2px;line-height:1.15;margin-top:1px}
+.xk div.w{grid-column:1/-1}
+.xst{font-size:6.6pt;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink);margin-bottom:2px}
+.xp{display:flex;flex-wrap:wrap;gap:2px}
+.xp span{background:#fff;border:1px solid #94a3b8;border-radius:2px;padding:0 4px;font-size:6.9pt;color:#020617;line-height:1.5}
+.xp span.h{background:var(--acl);border-color:var(--acb);color:var(--acd);font-weight:800}
+
+.xlist{display:flex;flex-direction:column;gap:7px}
+
+
+/* EXPERIENCE CARDS */
+.xjob{border:1px solid #cbd5e1;border-radius:4px;overflow:hidden;break-inside:avoid;background:#fff}
+.xhead{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#eef2f7;border-bottom:1px solid #cbd5e1;padding:5px 9px}
+.xhead .xr{font-size:10.5pt;font-weight:800;color:var(--ink);line-height:1.15}
+.xhead .xc{font-size:8pt;color:var(--mute);margin-top:1px}
+.xh1{flex:none}
+.xctry{flex:1;text-align:center;font-size:9pt;font-weight:800;color:var(--acd);letter-spacing:.3px}
+.xhead .xc b{color:var(--ac);font-size:9pt;font-weight:800}
+.xhead .dt{font-weight:800;color:#fff;background:var(--ink);padding:2px 8px;border-radius:2px;font-size:8pt;white-space:nowrap}
+.xbody{display:grid;grid-template-columns:1fr 46mm;gap:0}
+.xmain{padding:5px 9px 6px}
+.xside{background:#f8fafc;border-left:1px solid #e2e8f0;padding:6px 7px;display:flex;flex-direction:column;gap:6px}
+.xctx{font-size:8.4pt;color:var(--tx);font-style:italic;margin-bottom:3px}
+.xg{font-size:6.9pt;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ac);margin:4px 0 1px}
+.xl{list-style:none}
+.xl li{position:relative;padding-left:10px;margin-bottom:3px;font-size:8.7pt;line-height:1.36;text-align:justify}
+.xl li::before{content:"";position:absolute;left:0;top:5px;width:4px;height:4px;background:var(--ac);border-radius:1px}
+.xl li b{color:var(--ink);font-weight:800}
+.xk{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.xk div{background:#fff;border:1px solid var(--acb);border-top:2px solid var(--ac);border-radius:2px;padding:3px 2px;text-align:center}
+.xk b{display:block;font-size:10.5pt;font-weight:900;color:var(--ac);line-height:1.05}
+.xk span{display:block;font-size:6pt;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.2px;line-height:1.15;margin-top:1px}
+.xk div.w{grid-column:1/-1}
+.xst{font-size:6.6pt;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--ink);margin-bottom:2px}
+.xp{display:flex;flex-wrap:wrap;gap:2px}
+.xp span{background:#fff;border:1px solid #94a3b8;border-radius:2px;padding:0 4px;font-size:6.9pt;color:#020617;line-height:1.5}
+.xp span.h{background:var(--acl);border-color:var(--acb);color:var(--acd);font-weight:800}
+
+.xlist{display:flex;flex-direction:column;gap:7px}
+
+/* SOFT BAR */
+.soft{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:var(--acl);border:1px solid var(--acb);border-radius:3px;padding:7px 10px;margin-top:auto}
+.soft h3{font-size:7.6pt;text-transform:uppercase;letter-spacing:.4px;color:var(--ink);margin-bottom:2px}
+.soft p{font-size:7.9pt;line-height:1.35}
+/* JOBS */
+.job{padding-bottom:8px;break-inside:avoid}
+.job+.job{border-top:1.5px solid var(--ac);padding-top:8px}
+.jh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.jh .ro{font-size:10.5pt;font-weight:800;color:var(--ink)}
+.loc .co{font-style:normal;font-weight:800;color:var(--ac);font-size:9pt}
+.jh .dt{font-weight:800;color:#fff;background:var(--ink);padding:1px 7px;border-radius:2px;font-size:7.8pt;white-space:nowrap}
+.loc{font-size:7.8pt;color:var(--mute);margin-bottom:2px}
+.st{font-size:7.4pt;font-weight:800;text-transform:uppercase;color:var(--ink);letter-spacing:.3px;margin:3px 0 1px}
+ul.l{list-style:none}
+ul.l li{position:relative;padding-left:11px;margin-bottom:2px;text-align:justify}
+ul.l li strong{white-space:nowrap}
+ul.l li::before{content:"•";position:absolute;left:0;color:var(--ac);font-weight:700}
+.stack{font-size:9pt;color:var(--tx);background:var(--soft);border-left:2px solid #cbd5e1;padding:2px 6px;margin-top:3px}
+/* PAGE 3 */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.box{background:var(--soft);border:1px solid #cbd5e1;border-radius:3px;padding:7px 10px;break-inside:avoid}
+.box ul{list-style:none;font-size:8pt}.box li{margin-bottom:2px}
+.audit{width:100%;border-collapse:collapse;font-size:8pt}
+.audit th{background:var(--ink);color:#fff;text-align:left;padding:4px 8px;font-size:7.2pt;text-transform:uppercase;letter-spacing:.4px}
+.audit td{padding:4px 8px;border-bottom:1px solid var(--line)}
+.audit tr:nth-child(even) td{background:var(--soft)}
+.audit .hm{font-weight:800;color:var(--acd)}
+.tsrc{font-size:6.6pt;color:var(--mute);font-style:italic;text-align:right;margin-top:3px}
+.box.soft2{background:var(--acl);border-color:var(--acb);border-left:3.5px solid var(--ac)}
+.soft2 p{font-size:8.6pt;line-height:1.45;text-align:justify;color:var(--tx)}
+.soft2 p+p{margin-top:4px}
+.ibox{display:flex;flex-wrap:wrap;gap:6px}
+.ib{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #94a3b8;border-radius:3px;padding:3px 8px;font-size:8pt;font-weight:600;color:var(--ink)}
+.ib svg{flex:none}
+.reflabel{font-size:8pt;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--mute);margin:0 0 3px}
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.refs.two{grid-template-columns:repeat(2,1fr);margin-bottom:7px}
+.ref.key{border-left:3px solid var(--ac);background:var(--acl)}
+.ref{background:#fff;border:1px solid #cbd5e1;border-radius:3px;padding:5px 8px;font-size:8.4pt;line-height:1.35}
+.ref b{display:block;font-size:9.6pt}
+.gdpr{margin-top:auto;border-top:1px solid var(--line);padding-top:6px;font-size:6.4pt;color:var(--mute);text-align:center}
+.pagetop{padding-top:12.4mm}
+.page.p1{padding-bottom:2mm}
+@media print{
+@page{size:A4;margin:0}
+body{background:none!important;padding:0!important;display:block!important}
+.bar{display:none!important}
+.wrap{overflow:visible}
+.page{box-shadow:none!important;margin:0!important;width:210mm!important;height:297mm!important;overflow:hidden!important;break-after:page}
+.page:last-child{break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="bar"><button onclick="window.print()">Print / Save as PDF</button><span>A4 · 4 pages · in the print dialog set Margins: None</span></div>
+<div class="wrap">
+
+<!-- ===== PAGE 1: SHOWCASE ===== -->
+<div class="page p1">
+ <div class="hero">
+  <div class="id">
+   <img class="photo" src="data:image/jpeg;base64,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" alt="Dawid Domagała">
+   <div>
+    <h1>Dawid <span>Domagała</span></h1>
+    <div class="role">AI-Augmented Senior Full-Stack Developer | 18+ years | C# .NET · Angular | CI/CD &amp; DevOps | FinTech</div>
+   </div>
+  </div>
+  <p class="pitch">Senior engineer who multiplied his own output with AI agents. At IG Group I deliver <b>4× the team-average throughput</b> (<b>52 merged PRs vs 13</b>) and carried <b>84% of a release</b> in a team of six, while unit-test lines grew from <b>19.5k to 91.7k</b>. <b>Claude Code sub-agents</b> clear up to <b>16 tickets overnight</b>; I review, test and merge each one in the morning.</p>
+  <div class="contact"><span>domagala.dawit@gmail.com</span><span>Wrocław, Poland</span><span>English: Fluent</span><span>Master of Science in Electronics</span></div>
+ </div>
+
+ <div class="kpis">
+  <div class="kpi"><b>400%</b><span>Throughput</span><i>4× team avg: 52 PRs vs 13</i></div>
+  <div class="kpi"><b>84%</b><span>Release scope</span><i>27 of 32 tickets, team of six</i></div>
+  <div class="kpi"><b>16</b><span>Tickets overnight</span><i>Claude sub-agents, each with tests and a PR</i></div>
+  <div class="kpi"><b>91.7k</b><span>Unit-test lines</span><i>up from 19.5k: speed without cutting corners</i></div>
+  <div class="kpi"><b>£15M</b><span>Company-wide gain</span><i>"Price In Size", first month; my part: L2 Dealer app</i></div>
+ </div>
+ <div class="src">Delivery metrics, IG Group 2026 · Sources: Jira, GitLab CI/CD, Git analytics</div>
+
+ <section>
+  <h2 class="nl" style="margin-top:1px">Key strengths · What I bring</h2>
+  <div class="pillars">
+   <div class="pil wide"><h3>AI-augmented delivery: an app in a day, then stabilise it properly</h3><p><strong>Claude Code sub-agents</strong> run <strong>unattended overnight</strong> on up to <strong>16 tickets</strong>, each returning code, unit tests and a PR. Each morning I <strong>review, test and merge</strong> every one, so accountability stays human. Agent skills and scheduled runs make repeatable work one command; <strong>AI trainings and demos</strong> spread the method across the team.</p></div>
+   <div class="pil"><h3>Soft skills: the person teams want around</h3><p><strong>Good energy</strong> and humour that keep teams motivated. I <strong>listen first</strong>, explain in <strong>simple words</strong> and <strong>mentor</strong>; with trading know-how I act almost as a <strong>business analyst</strong>.</p></div>
+   <div class="pil"><h3>CI/CD &amp; quality gates: speed that stays safe</h3><p><strong>GitLab CI/CD</strong> rebuilt end to end (17k+ lines, Windows + Linux agents). <strong>Diff-coverage</strong> and <strong>smoke-test</strong> gates on every build; <strong>HIGH app maturity</strong>, <strong>24/7</strong> releases, <strong>zero downtime</strong>.</p></div>
+   <div class="pil"><h3>C# .NET backend &amp; Angular frontend</h3><p><strong>C# .NET</strong> since 2007: REST / GraphQL APIs, <strong>microservices</strong>, MSSQL tuning, OOP. <strong>Silverlight → Angular 10</strong> at Credit Suisse; <strong>Angular</strong>, <strong>React</strong>, <strong>Vue.js</strong> apps.</p></div>
+   <div class="pil"><h3>Finance &amp; trading</h3><p><strong>Level 2</strong> trading platform; risk engines: <strong>LTV, PRC, PRIIPs</strong>. Markets: <strong>equities, CFDs, DMA, FX, futures, options, hedges, crypto</strong>.</p></div>
+   <div class="pil"><h3>18+ years, leadership &amp; fluent English</h3><p><strong>Banking, trading, medtech</strong> and SaaS; on site in <strong>Ireland</strong> and the <strong>Czech Republic</strong>. Team lead who <strong>recruits</strong> and mentors; <strong>fluent English</strong> in UK, Irish and Swiss teams.</p></div>
+   <div class="pil"><h3>Fast from zero to working product</h3><p><strong>2-week POC</strong> that won a contract (Tyrecheck), <strong>QiaGuest</strong> built from scratch on Azure, a complete <strong>multi-tenant SaaS</strong> (Focis) delivered end to end.</p></div>
+  </div>
+ </section>
+
+ <section>
+  <h2 class="nl" style="margin-top:9px">Career Gantt Chart, 2007 – 2026</h2>
+  <div class="gantt">
+   <div class="gaxis"><div class="gl"></div><div class="gcc"></div><div class="gt"><span style="left:5.000%">2008</span><span style="left:15.000%">2010</span><span style="left:25.000%">2012</span><span style="left:35.000%">2014</span><span style="left:45.000%">2016</span><span style="left:55.000%">2018</span><span style="left:65.000%">2020</span><span style="left:75.000%">2022</span><span style="left:85.000%">2024</span><span style="left:95.000%">2026</span></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>IG Group</b><span>2023 – 2026</span></div><div class="gs"><u>Senior Dev (AI-augmented)</u><i>TRADING</i></div></div><div class="gcc">PL</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:80.000%;width:18.750%"></span><em class="gx gxr" style="right:21.000%"><b>Claude Code agents</b> · <b>GitLab CI/CD</b> · Code cleanup &amp; refactor · C# .NET</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Credit Suisse</b><span>2017 – 2022</span></div><div class="gs"><u>Dev Lead (LTV) / Senior Dev</u><i>BANKING</i></div></div><div class="gcc">PL</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:50.000%;width:14.150%"></span><span class="gb " style="left:67.500%;width:12.500%"></span><em class="gx gxr" style="right:51.000%"><b>.NET Core</b> · <b>Angular 10</b> · GraphQL · risk engines</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Qiagen</b><span>2019 – 2020</span></div><div class="gs"><u>Senior Software Developer</u><i>MED</i></div></div><div class="gcc">PL</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:64.150%;width:3.350%"></span><em class="gx gxr" style="right:36.850%"><b>Angular</b> · <b>React / Redux</b> · .NET Core · Azure</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Focis.co.uk</b><span>2018 – 2019</span></div><div class="gs"><u>Software Principal / Team Lead</u><i>LEGAL</i></div></div><div class="gcc f">UK</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:55.000%;width:5.000%"></span><em class="gx gxr" style="right:46.000%"><b>Multi-tenant SaaS</b> · <b>end to end</b> · Azure</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Tyrecheck</b><span>2015 – 2017</span></div><div class="gs"><u>Team Leader / Senior C# Dev</u><i>IoT</i></div></div><div class="gcc f">CZ</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:40.000%;width:10.000%"></span><em class="gx" style="left:51.000%"><b>2-week POC</b> · <b>Vue.js</b> · Xamarin · IoT</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Vitalograph</b><span>2014 – 2015</span></div><div class="gs"><u>Senior Software Engineer</u><i>MED</i></div></div><div class="gcc f">IE</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:35.000%;width:5.000%"></span><em class="gx" style="left:41.000%"><b>Multi-tenant white-label</b> · C# .NET</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>AMCS Group</b><span>2012 – 2014</span></div><div class="gs"><u>Senior C# Developer</u><i>IoT</i></div></div><div class="gcc f">IE</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:25.000%;width:10.000%"></span><em class="gx" style="left:36.000%"><b>IoT on vehicles</b> · WPF · WCF · RFID</em></div></div>
+   <div class="gr"><div class="gl"><div class="gh"><b>Exorigo / ProService AT</b><span>2007 – 2012</span></div><div class="gs"><u>Software Dev → Senior Dev</u><i>TRADING</i></div></div><div class="gcc">PL</div><div class="gt"><i style="left:5.000%"></i><i style="left:15.000%"></i><i style="left:25.000%"></i><i style="left:35.000%"></i><i style="left:45.000%"></i><i style="left:55.000%"></i><i style="left:65.000%"></i><i style="left:75.000%"></i><i style="left:85.000%"></i><i style="left:95.000%"></i><span class="gb " style="left:0.000%;width:25.000%"></span><em class="gx" style="left:26.000%"><b>Web Services API</b> · C# .NET · MSSQL · <b>70% of Polish fund trades</b></em></div></div>
+  </div>
+ </section>
+
+ <section>
+  <h2 class="nl" style="margin-top:8px">Skills</h2>
+  <dl class="tech">
+   <dt>AI</dt><div class="pills"><span class="h">Claude Code sub-agents</span><span>Agent skills</span><span>Scheduled agent runs</span><span>Multi-agent pipelines</span><span>GitHub Copilot</span></div>
+   <dt>Backend</dt><div class="pills"><span class="h">C# .NET 4.8 → 10</span><span>Microservices</span><span>REST · SOAP · WCF · Swagger</span><span>MS SQL Server · T-SQL</span><span>Multithreading</span><span>EF Core</span></div>
+   <dt>Cloud &amp; DevOps</dt><div class="pills"><span class="h">GitLab CI/CD (17k+ lines)</span><span>Jenkins</span><span>Docker</span><span>OpenShift</span><span>Azure</span><span>Zero downtime</span><span>EV certificates</span></div>
+   <dt>Web</dt><div class="pills"><span class="h">Angular 10–15</span><span class="h">TypeScript · RxJS</span><span class="h">React</span><span class="h">Vue.js / Quasar</span><span>GraphQL</span><span>ASP.NET MVC</span><span>HTML / CSS / JS</span></div>
+   <dt>Quality</dt><div class="pills"><span class="h">Diff-coverage gates (19.5k → 91.7k)</span><span class="h">TDD · BDD</span><span>Integration tests</span><span>NUnit · Moq · SpecFlow</span><span>SonarQube</span></div>
+   <dt>Also</dt><div class="pills"><span class="h">Xamarin / Mobile</span><span>WPF / MVVM</span><span>WinForms · DevExpress</span><span>IoT · RFID</span><span>Agile / Scrum</span></div>
+  </dl>
+ </section>
+
+
+</div>
+
+<div class="page pagetop">
+ <section>
+  <h2>Professional experience</h2>
+  <div class="xlist">
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Senior Developer</div><div class="xc"><b>IG Group</b> · Kraków (remote) · FinTech</div></div><div class="xctry">Poland</div><div class="dt">2023 – Present</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">L2 Dealer: Level 2 desktop trading platform (WinForms) for equities, CFDs, futures and FX.</div><div class="xg">AI-augmented delivery</div><ul class="xl"><li><b>Overnight agent batches</b> – Claude sub-agents close up to 16 tickets with tests and PRs.</li><li><b>Measured output</b> – 52 merged PRs vs 13; 84% and 74% of the last two releases.</li><li><b>Human in the loop</b> – I review and merge every PR; diff-coverage and smoke-test gates check each build before release.</li><li><b>Trainings &amp; demos</b> – spreading AI-driven delivery across the team.</li></ul><div class="xg">Release engineering &amp; CI/CD</div><ul class="xl"><li><b>GitLab CI/CD suite</b> – 17k+ lines of PowerShell, Bash and YAML for Windows and Linux agents (Bash scripts generated with AI).</li><li><b>Automation</b> – CRF generation, Confluence release notes, EV code signing.</li><li><b>HIGH app maturity</b> – pipeline rebuilt end to end; 24/7 releases, zero downtime.</li><li><b>One-click monthly releases</b> – from rare, partly manual releases; GitFlow with proper release branches.</li><li><b>Build hygiene</b> – NuGet and JFrog instead of loose DLLs; simpler ClickOnce build.</li><li><b>Servers &amp; infrastructure</b> – admin of Windows and Linux build agents and the IIS server for ClickOnce (config, maintenance, caching fixes).</li><li><b>Quality gate</b> – diff coverage lifted unit-test lines from 19.5k to 91.7k.</li><li><b>Smoke-test gate</b> – each build auto-deployed and launched on a test server: process running, no crash, correct version.</li></ul><div class="xg">L2 Dealer features &amp; refactoring</div><ul class="xl"><li><b>Price In Size</b> – sole developer in my team; part of a company-wide initiative worth £15M in its first month.</li><li><b>TradeBook V2</b> – core module rebuilt (Syncfusion → DevExpress), testable, leak-free.</li><li><b>Order-entry window</b> – thousands of lines removed, a long tail of layered defects fixed.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>400%</b><span>Throughput</span></div><div class=""><b>84%</b><span>Release scope</span></div><div class=""><b>+370%</b><span>Unit tests</span></div><div class=""><b>HIGH</b><span>App maturity</span></div><div class=""><b>24/7</b><span>Release window</span></div><div class="w"><b>£15M</b><span>Company-wide gain</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">Claude Code</span><span class="h">GitLab CI/CD</span><span class="h">C# .NET 4.8</span><span>PowerShell</span><span>Bash</span><span>YAML</span><span>GitFlow</span><span>WinForms</span><span>DevExpress</span><span>JFrog</span><span>NuGet</span><span>IIS</span><span>ClickOnce</span><span>SignPath (EV)</span><span>Linux agents</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Development Lead (LTV) / Senior C# Developer</div><div class="xc"><b>Credit Suisse</b> · Wrocław · Banking</div></div><div class="xctry">Poland</div><div class="dt">2017 – 2022</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Risk and regulatory platforms: LTV, PRC and PRIIPs.</div><ul class="xl"><li><b>Backend &amp; microservices</b> – .NET 4.6 monolith → .NET Core 3.1 microservices; Castle Windsor IoC, multi-threaded risk calculations; SQL performance and memory-leak fixes.</li><li><b>Angular 10 migration</b> – Silverlight → Angular with a GraphQL (Hot Chocolate) backend; far lower UI latency.</li><li><b>PRIIPs</b> – EU Regulation No 1286/2014 KID documents; backend rewritten .NET 4.8 → .NET 5, BDD tests over 100% of the API.</li><li><b>LTV &amp; PRC</b> – Loan-To-Value for thousands of instruments; risk indicators with overrides, simulations and publishing.</li><li><b>Full CI/CD &amp; infrastructure</b> – every component (frontend, backend, DB, scheduler, MQ, MSI), reused by another project; servers moved to bank-compliant infrastructure.</li><li><b>Security</b> – mutual TLS, role management, smart-card SSO, Splunk logging.</li><li><b>Team lead</b> – 3 engineers: sprints, code reviews, technical recruitment, business communication.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>3</b><span>Engineers led</span></div><div class=""><b>100%</b><span>API BDD tests</span></div><div class="w"><b>4.8→5</b><span>.NET rewrite</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">REST · SOAP · WCF</span><span class="h">GraphQL</span><span class="h">Angular 10</span><span class="h">C# .NET Core / 5</span><span>Hot Chocolate</span><span>TypeScript</span><span>RxJS</span><span>MSSQL</span><span>Jenkins</span><span>Liquibase</span><span>OpenShift</span><span>Kubernetes</span><span>SpecFlow</span><span>Splunk</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Senior Software Developer</div><div class="xc"><b>Qiagen</b> · Wrocław · Life sciences</div></div><div class="xctry">Poland</div><div class="dt">2019 – 2020</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Software for laboratory instruments and internal tools.</div><ul class="xl"><li><b>QiaCuity</b> – digital PCR instrument software taken over from another company: React / Redux UI, Linux (Mono) deployment, CI/CD; inherited technical debt fixed and refactored.</li><li><b>QiaGuest</b> – Angular app and its .NET Core backend built from scratch on Azure for reception staff.</li></ul></div><div class="xside"><div class="xk"><div class="w"><b>0 → 1</b><span>QiaGuest from scratch</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">.NET Core API</span><span class="h">Angular</span><span class="h">React / Redux</span><span>TypeScript</span><span>C#</span><span>Azure</span><span>Jenkins</span><span>Linux</span><span>Mono</span></div></div></div></div>
+  </div>
+  </div>
+ </section>
+</div>
+
+<div class="page pagetop">
+ <section>
+  <h2>Professional experience (continued)</h2>
+  <div class="xlist">
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Team Leader / Senior C# Developer</div><div class="xc"><b>Tyrecheck</b> · Prague · Automotive IoT</div></div><div class="xctry">Czech Republic</div><div class="dt">2015 – 2017</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Tyre-care and fleet-management products for fleet operators.</div><ul class="xl"><li><b>Product suite</b> – InCenter (ASP.NET MVC), InTire (Xamarin Android) and a TPMS firmware tool; per-customer config via roles, licences and rights.</li><li><b>One codebase</b> – Vue.js, Quasar and Cordova across mobile, web and desktop: 50% less maintenance.</li><li><b>Backend</b> – WCF / REST APIs and MSSQL for live tyre-sensor and SIM-router data.</li><li><b>2-week POC</b> – for German client Alligator Valves GmbH; won a major contract.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>2 wks</b><span>POC to contract</span></div><div class=""><b>−50%</b><span>Maintenance</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">WCF · REST</span><span class="h">Vue.js</span><span class="h">ASP.NET MVC</span><span>Quasar</span><span>Cordova</span><span>Xamarin</span><span>WPF</span><span>C#</span><span>MSSQL</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Senior Software Engineer (contract)</div><div class="xc"><b>Vitalograph</b> · Ennis · MedTech</div></div><div class="xctry">Ireland</div><div class="dt">2014 – 2015</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Respiratory diagnostics used in clinics and clinical trials.</div><ul class="xl"><li><b>White-label for Roche</b> – multi-tenant client delivered in about 10 branded versions for pharma partners, Roche the best known; per-tenant config and branding under medical-device regulation.</li><li><b>Diagnostics app</b> – WinForms: patients, real-time graphs, lung-parameter calculations, PDF reports.</li><li><b>Devices &amp; backend</b> – PCs and Windows Embedded devices, MSSQL backend, APIs for third-party devices.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>~10</b><span>White-label versions</span></div><div class=""><b>Roche</b><span>Best-known client</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">Multi-tenant</span><span class="h">Device APIs</span><span>C# .NET 4.0</span><span>WinForms</span><span>MSSQL</span><span>TeamCity</span><span>TFS</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Senior C# Developer</div><div class="xc"><b>AMCS Group</b> · Limerick · Logistics</div></div><div class="xctry">Ireland</div><div class="dt">2012 – 2014</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Recycling and waste-management software with on-vehicle technology.</div><ul class="xl"><li><b>Elemos</b> – multi-language, multi-currency platform: RFID collections, route planning, weighing, invoicing.</li><li><b>IoT on vehicles</b> – live vehicle tracking with route verification and service-delivery parameters sent from the trucks.</li><li><b>Office + truck apps</b> – WPF / MVVM with a WCF backend; Windows Mobile handhelds syncing over GPRS.</li><li><b>Quality &amp; Scrum</b> – 100% server-side unit-test coverage in a highly mature Scrum team.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>100%</b><span>Server unit tests</span></div><div class=""><b>Scrum</b><span>Best-in-class process</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">WCF backend API</span><span class="h">WPF / MVVM</span><span>C# 5</span><span>WinForms</span><span>MSSQL</span><span>SQL Compact</span><span>RFID</span><span>GPRS</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Software Developer → Senior Software Developer</div><div class="xc"><b>Exorigo / ProService AT</b> · Wrocław / Warsaw · Banking</div></div><div class="xctry">Poland</div><div class="dt">2007 – 2012</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">Mutual-fund distribution for a transfer agent connected to many banks.</div><ul class="xl"><li><b>Goniec Online</b> – fund-sales system live in many Polish banks, handling about 70% of Polish trust fund transactions.</li><li><b>Full-stack ownership</b> – database and T-SQL, web services and WinForms client.</li><li><b>Client &amp; audit</b> – requirements in Warsaw; trained developers and BAs; defended the architecture in a security audit.</li></ul></div><div class="xside"><div class="xk"><div class="w"><b>70%</b><span>Polish fund trades</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">Web Services (IIS)</span><span class="h">C# .NET 3.5</span><span>WinForms</span><span>NHibernate</span><span>PostSharp</span><span>MSSQL</span><span>PGP</span></div></div></div></div>
+  </div>
+  <div class="xjob">
+   <div class="xhead"><div class="xh1"><div class="xr">Software Principal / Team Lead (side project, 12 months)</div><div class="xc"><b>Focis.co.uk</b> · LegalTech, SaaS</div></div><div class="xctry">UK (remote)</div><div class="dt">2018 – 2019</div></div>
+   <div class="xbody"><div class="xmain"><div class="xctx">SaaS case management for law firms.</div><ul class="xl"><li><b>Complete multi-tenant SaaS</b> – cases, document workflow with statuses, dynamic forms, integration APIs, tenant isolation.</li><li><b>Team</b> – started as a one-person team, later led an additional developer.</li><li><b>Extras</b> – Firebase push notifications and SMS-based login.</li></ul></div><div class="xside"><div class="xk"><div class=""><b>Lead</b><span>Solo, then team lead</span></div><div class=""><b>E2E</b><span>Full-stack delivery</span></div></div><div><div class="xst">Stack</div><div class="xp"><span class="h">ASP.NET MVC</span><span class="h">Backend API</span><span class="h">Azure</span><span>C# .NET 5</span><span>EF Core</span><span>MSSQL</span><span>JavaScript</span><span>Firebase</span></div></div></div></div>
+  </div>
+  </div>
+ </section>
+</div>
+
+<!-- ===== PAGE 4 ===== -->
+<div class="page pagetop" style="gap:10px">
+ <section>
+  <h2>Soft skills &amp; team impact</h2>
+  <div class="box soft2"><p><strong>A positive force in every team.</strong> People enjoy working with me: I bring good energy and humour that relaxes tense moments and keeps the team motivated and collaborative. I <strong>mentor and coach</strong> colleagues, show them how to break problems down and how to <strong>communicate clearly</strong>, and help polish their English in e-mails and documents.</p>
+  <p>I <strong>listen first</strong>, stay <strong>patient</strong> and explain complex topics in <strong>simple words</strong>. With solid financial and trading knowledge I often act almost like a <strong>business analyst</strong>: I translate business needs for developers, share domain knowledge with the team, question requirements that do not make sense and propose simpler solutions.</p></div>
+ </section>
+
+ <section>
+  <h2>Delivery benchmarks · IG Group, 2026</h2>
+  <table class="audit">
+   <thead><tr><th>Metric</th><th>Dawid Domagała</th><th>Team average (6 devs)</th><th>Result</th></tr></thead>
+   <tbody>
+    <tr><td>Pull requests merged</td><td class="hm">52</td><td>13</td><td class="hm">4× team average</td></tr>
+    <tr><td>Jira issues delivered &amp; closed</td><td class="hm">49 (36% of project total)</td><td>15.3</td><td class="hm">3.2× team average</td></tr>
+    <tr><td>Median cycle time, creation to merge</td><td class="hm">0.9 days</td><td>5.4 days</td><td class="hm">6× faster</td></tr>
+    <tr><td>Share of last release scope</td><td class="hm">84% (27 of 32 tickets)</td><td>16% rest of team</td><td class="hm">Primary release driver</td></tr>
+    <tr><td>Unit-test lines (diff-coverage gate)</td><td class="hm">91.7k</td><td>19.5k baseline</td><td class="hm">+370%, quality kept pace</td></tr>
+    <tr><td>Share of previous release scope</td><td class="hm">74% (29 of 39 tickets)</td><td>26% rest of team</td><td class="hm">Primary release driver</td></tr>
+   </tbody>
+  </table>
+  <div class="tsrc">Sources: Jira, GitLab CI/CD, Git analytics, Confluence</div>
+ </section>
+
+ <section>
+  <h2>Education &amp; certifications</h2>
+  <div class="g2">
+   <div class="box"><strong>Master of Science in Electronics</strong><br>Wrocław University of Technology · Electronics and Computer Science · 5-year full-time programme, 2002–2007. Final mark: excellent; scholarship every year. Thesis: vehicle routing optimisation (Split Delivery VRP).<br><br><strong>Languages:</strong> English fluent, full professional proficiency (18+ years in UK, Irish and Swiss teams) · Polish native.</div>
+   <div class="box"><ul>
+    <li><strong>MCPD:</strong> Enterprise Applications Developer (Microsoft)</li>
+    <li><strong>MCP:</strong> .NET Framework Application Development Foundation</li>
+    <li><strong>Sea:</strong> Inland Skipper &amp; Senior Motorboat Helmsman</li>
+    <li><strong>Diving:</strong> Advanced Open Water Diver (AOWD), PADI</li>
+    <li><strong>Driving:</strong> licence categories A &amp; B</li></ul></div>
+  </div>
+ </section>
+
+ <section>
+  <h2>Interests</h2>
+  <div class="box ibox"><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="9" rx="4"/><path d="M10 16v1a2 2 0 0 0 4 0v-1"/><circle cx="19" cy="3.5" r="1"/><circle cx="16.5" cy="2" r=".6"/></svg>Scuba diving</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M12 4l7 11h-7"/><path d="M11 8l-6 7h6"/><path d="M4 19h16l-2 2H6z"/></svg>Sailing</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M9.5 12h5"/><path d="M9 21h6"/><path d="M10 21c0-4 .5-6 2-9 1.500 3 2 5 2 9"/></svg>Chess</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-7 6-7 10a4 4 0 0 0 7 2.500"/><path d="M12 3c3 4 7 6 7 10a4 4 0 0 1-7 2.500"/><path d="M12 15v6M9 21h6"/></svg>Sport poker</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.500" cy="16" r="3.500"/><circle cx="18.500" cy="16" r="3.500"/><path d="M5.500 16L9 9h5l4.500 7"/><path d="M9 9L7 7H5M14 9l1-3h2"/></svg>Motorbikes</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/></svg>Stock markets &amp; macroeconomics</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-12 4 7 3-4 5 9z"/></svg>Mountain trekking</span><span class="ib"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Travel</span></div>
+ </section>
+
+ <section>
+  <h2>References</h2>
+  <div class="reflabel">Current employer · IG Group</div>
+  <div class="refs two">
+   <div class="ref key"><b>Paweł Zieliński</b>Development Team Leader, IG Group<br><span style="color:var(--mute)">email available on request</span></div>
+   <div class="ref key"><b>Sam Truscott</b>Head of Broker Technology, IG Group<br><span style="color:var(--mute)">email available on request</span></div>
+  </div>
+  <div class="reflabel">Previous employers</div>
+  <div class="refs">
+   <div class="ref"><b>Paul Ryan</b>CEO, Focis.co.uk<br><span style="color:var(--mute)">email available on request</span></div>
+   <div class="ref"><b>Maciej Gut</b>Project Manager, Credit Suisse<br><span style="color:var(--mute)">email available on request</span></div>
+   <div class="ref"><b>Miroslav Vrbanac</b>IT Architect, Credit Suisse<br><span style="color:var(--mute)">email available on request</span></div>
+  </div>
+ </section>
+
+ <div class="gdpr">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (GDPR).</div>
+</div>
+
+</div>
+</body>
+</html>
+
+</body></html>

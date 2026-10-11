@@ -1,0 +1,12 @@
+<div class="section-heading">
+    <h2>@Title</h2>
+    @if (!string.IsNullOrEmpty(Subtitle))
+    {
+        <p>@Subtitle</p>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+    [Parameter] public string? Subtitle { get; set; }
+}

@@ -1,0 +1,31 @@
+@inherits LayoutComponentBase
+@implements IDisposable
+@inject SiteState Site
+
+@if (Site.Content is { } c)
+{
+    <PageTitle>@c.Meta.Title</PageTitle>
+    <HeadContent>
+        <meta name="description" content="@c.Meta.Description" />
+    </HeadContent>
+
+    <SiteHeader />
+    <main id="main">@Body</main>
+    <SiteFooter />
+}
+else
+{
+    <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        Site.Changed += OnChanged;
+        await Site.InitializeAsync();
+    }
+
+    private void OnChanged() => InvokeAsync(StateHasChanged);
+
+    public void Dispose() => Site.Changed -= OnChanged;
+}

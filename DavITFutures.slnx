@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DavITFutures.Web/DavITFutures.Web.csproj" />
+  </Folder>
+</Solution>

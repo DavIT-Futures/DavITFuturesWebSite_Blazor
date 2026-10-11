@@ -1,0 +1,38 @@
+@inherits SiteComponent
+
+<section class="section section-alt" id="contact">
+    <div class="container">
+        <SectionHeading Title="@Content!.Contact.Title" Subtitle="@Content.Contact.Subtitle" />
+        <div class="contact-grid">
+            <div class="contact-links">
+                <a class="contact-item" href="mailto:@Content.Contact.Email">
+                    <span class="card-icon"><Icon Name="mail" /></span>
+                    <span><small>E-mail</small>@Content.Contact.Email</span>
+                </a>
+                @if (!string.IsNullOrEmpty(Content.Contact.LinkedIn))
+                {
+                    <a class="contact-item" href="@Content.Contact.LinkedIn" target="_blank" rel="noopener">
+                        <span class="card-icon"><Icon Name="linkedin" /></span>
+                        <span><small>LinkedIn</small>Dawid Domagała</span>
+                    </a>
+                }
+                <a class="contact-item" href="@Content.Contact.GitHub" target="_blank" rel="noopener">
+                    <span class="card-icon"><Icon Name="github" /></span>
+                    <span><small>GitHub</small>@Content.Contact.GitHub.Replace("https://", "")</span>
+                </a>
+            </div>
+            <div class="card company">
+                <h3>@Content.Contact.Company.Heading</h3>
+                <p>
+                    <strong>@Content.Contact.Company.Name</strong><br />
+                    @Content.Contact.Company.Owner<br />
+                    @foreach (var line in Content.Contact.Company.Address)
+                    {
+                        @line<br />
+                    }
+                </p>
+                <p class="muted">NIP: @Content.Contact.Company.Nip<br />REGON: @Content.Contact.Company.Regon</p>
+            </div>
+        </div>
+    </div>
+</section>

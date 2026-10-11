@@ -1,0 +1,39 @@
+@inherits SiteComponent
+
+<section class="section section-alt" id="projects">
+    <div class="container">
+        <SectionHeading Title="@Content!.Projects.Title" Subtitle="@Content.Projects.Subtitle" />
+
+        <div class="cards projects">
+            @foreach (var p in Content.Projects.Items)
+            {
+                <article class="card project-card">
+                    <div class="project-top">
+                        <span class="project-client">@p.Client</span>
+                        <span class="project-years">@p.Years</span>
+                    </div>
+                    <h3>@p.Name</h3>
+                    <p>@p.Description</p>
+                    <ul class="chips small">
+                        @foreach (var tag in p.Tags)
+                        {
+                            <li>@tag</li>
+                        }
+                    </ul>
+                    @if (!string.IsNullOrEmpty(p.Url))
+                    {
+                        <a class="project-link" href="@p.Url" target="_blank" rel="noopener">
+                            <Icon Name="github" Size="16" /> @Content.Projects.CodeLabel
+                        </a>
+                    }
+                </article>
+            }
+        </div>
+
+        <div class="center">
+            <a class="btn btn-ghost" href="https://github.com/@Content.Projects.GitHubUser" target="_blank" rel="noopener">
+                <Icon Name="github" Size="18" /> @Content.Projects.AllReposLabel
+            </a>
+        </div>
+    </div>
+</section>

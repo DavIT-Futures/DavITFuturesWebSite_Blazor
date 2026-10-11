@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DavIT Futures – oprogramowanie na zamówienie</title>
+    <meta name="description" content="DavIT Futures – Dawid Domagała. Aplikacje webowe, desktopowe i backend w C# .NET, Angular i Blazor." />
+    <meta name="theme-color" content="#0b1020" />
+    <base href="/" />
+    <script>
+        // Motyw i język ustawiane przed startem Blazora, żeby strona nie mrugała.
+        (function () {
+            var d = document.documentElement, t = null, l = null;
+            try { t = localStorage.getItem("davit-theme"); l = localStorage.getItem("davit-lang"); } catch (e) { }
+            d.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+            if (l) d.lang = l;
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script type="importmap"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        Wystąpił błąd. / An error has occurred.
+        <a href="." class="reload">Odśwież / Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="js/site.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "title": "DavIT Futures – oprogramowanie na zamówienie, .NET, Angular, FinTech",
+    "description": "DavIT Futures – Dawid Domagała. Aplikacje webowe, desktopowe i backend w C# .NET, Angular i Blazor. 18+ lat doświadczenia w bankowości, tradingu i SaaS. Wrocław."
+  },
+  "nav": {
+    "about": "O firmie",
+    "services": "Usługi",
+    "tech": "Technologie",
+    "projects": "Projekty",
+    "cv": "CV",
+    "contact": "Kontakt",
+    "themeLight": "Jasny motyw",
+    "themeDark": "Ciemny motyw",
+    "language": "Język"
+  },
+  "hero": {
+    "eyebrow": "Software house · Wrocław",
+    "title": "Oprogramowanie, które",
+    "highlight": "pracuje na Twój biznes",
+    "lead": "Projektuję i buduję aplikacje webowe, desktopowe i backend w C# .NET, Angular i Blazor. Od 2007 roku dla banków, platform tradingowych, medtechu i SaaS w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
+    "primaryCta": {
+      "label": "Porozmawiajmy o projekcie",
+      "url": "#contact"
+    },
+    "secondaryCta": {
+      "label": "Zobacz projekty",
+      "url": "#projects"
+    },
+    "stats": [
+      {
+        "value": "18+",
+        "label": "lat doświadczenia"
+      },
+      {
+        "value": "4",
+        "label": "kraje, w których pracowałem na miejscu i zdalnie"
+      },
+      {
+        "value": "4×",
+        "label": "średnia wydajność zespołu dzięki agentom AI"
+      }
+    ]
+  },
+  "about": {
+    "title": "O firmie",
+    "subtitle": "DavIT Futures to jednoosobowy software house Dawida Domagały: senior developera i lidera zespołów z ponad 18 latami doświadczenia komercyjnego.",
+    "items": [
+      {
+        "icon": "finance",
+        "title": "Finanse i trading",
+        "text": "Platformy tradingowe Level 2, silniki ryzyka (LTV, PRIIPs), dystrybucja funduszy inwestycyjnych. Rozumiem rynek, nie tylko kod."
+      },
+      {
+        "icon": "shield",
+        "title": "Jakość i bezpieczeństwo",
+        "text": "Testy jednostkowe i BDD, bramki jakości w CI/CD, wdrożenia bez przestojów. Doświadczenie z audytami bezpieczeństwa w bankowości."
+      },
+      {
+        "icon": "spark",
+        "title": "Szybkość dzięki AI",
+        "text": "Agenci AI (Claude Code) przyspieszają dostarczanie, a każda zmiana przechodzi przegląd i testy. Szybko, ale bez skrótów."
+      }
+    ]
+  },
+  "services": {
+    "title": "Usługi",
+    "subtitle": "Od pomysłu i prototypu po wdrożenie produkcyjne i utrzymanie.",
+    "items": [
+      {
+        "icon": "web",
+        "title": "Aplikacje webowe",
+        "text": "Nowoczesne aplikacje w Angular, Blazor, React i Vue.js. Responsywne, szybkie i łatwe w rozwoju."
+      },
+      {
+        "icon": "server",
+        "title": "Backend i API",
+        "text": "C# .NET, REST i GraphQL, mikroserwisy, MS SQL Server. Wydajność, wielowątkowość i stabilność pod obciążeniem."
+      },
+      {
+        "icon": "desktop",
+        "title": "Aplikacje desktopowe",
+        "text": "WPF, WinForms, DevExpress. Modernizacja starszych systemów i migracje do nowych technologii."
+      },
+      {
+        "icon": "pipeline",
+        "title": "DevOps i CI/CD",
+        "text": "Pipeline'y GitLab CI/CD, Jenkins i GitHub Actions, automatyczne wydania, podpisywanie kodu, Docker i Azure."
+      },
+      {
+        "icon": "layers",
+        "title": "SaaS multi-tenant",
+        "text": "Produkty white-label z izolacją danych klientów, konfiguracją i brandingiem per klient."
+      },
+      {
+        "icon": "spark",
+        "title": "Wdrożenia AI w zespole",
+        "text": "Agenci AI w procesie wytwarzania, szkolenia i warsztaty dla zespołów programistycznych."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Technologie",
+    "subtitle": "Narzędzia, z którymi pracuję na co dzień.",
+    "groups": [
+      {
+        "name": "Backend",
+        "items": [
+          "C#",
+          ".NET 10",
+          "ASP.NET Core",
+          "REST",
+          "GraphQL",
+          "Mikroserwisy",
+          "EF Core",
+          "MS SQL Server"
+        ]
+      },
+      {
+        "name": "Frontend",
+        "items": [
+          "Blazor",
+          "Angular",
+          "TypeScript",
+          "RxJS",
+          "React",
+          "Vue.js",
+          "HTML / CSS"
+        ]
+      },
+      {
+        "name": "DevOps i chmura",
+        "items": [
+          "GitLab CI/CD",
+          "GitHub Actions",
+          "Jenkins",
+          "Docker",
+          "Azure",
+          "PowerShell",
+          "Bash"
+        ]
+      },
+      {
+        "name": "Jakość i AI",
+        "items": [
+          "NUnit",
+          "Moq",
+          "SpecFlow",
+          "TDD / BDD",
+          "SonarQube",
+          "Claude Code",
+          "GitHub Copilot"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projekty",
+    "subtitle": "Wybrane projekty komercyjne z ostatnich 18 lat oraz kod tej strony.",
+    "gitHubUser": "DavIT-Futures",
+    "allReposLabel": "Wszystkie repozytoria na GitHubie",
+    "codeLabel": "Kod na GitHubie",
+    "items": [
+      {
+        "name": "Strona DavIT Futures",
+        "client": "DavIT Futures",
+        "years": "2026",
+        "description": "Ta strona: Blazor WebAssembly na .NET 10, dwa języki, jasny i ciemny motyw, automatyczne wdrożenia przez GitHub Actions na GitHub Pages.",
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "tags": [
+          "Blazor",
+          "C# .NET 10",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "name": "L2 Dealer",
+        "client": "IG Group",
+        "years": "2023 – 2026",
+        "description": "Desktopowa platforma tradingowa Level 2. Funkcja „Price In Size”, nowy TradeBook V2 bez wycieków pamięci, pełny pipeline GitLab CI/CD (17k+ linii) z oceną dojrzałości HIGH i wydaniami bez przestojów.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "DevExpress",
+          "GitLab CI/CD"
+        ]
+      },
+      {
+        "name": "Platformy ryzyka LTV, PRC i PRIIPs",
+        "client": "Credit Suisse",
+        "years": "2017 – 2022",
+        "description": "Migracja z Silverlight do Angular 10 z backendem GraphQL, podział monolitu na mikroserwisy .NET Core, regulacyjne dokumenty KID (PRIIPs) z testami BDD całego API.",
+        "url": "",
+        "tags": [
+          "Angular",
+          "GraphQL",
+          "C# .NET Core",
+          "MS SQL"
+        ]
+      },
+      {
+        "name": "QiaCuity i QiaGuest",
+        "client": "Qiagen",
+        "years": "2019 – 2020",
+        "description": "Interfejs React/Redux dla laboratoryjnego instrumentu dPCR działającego na Linuksie oraz aplikacja QiaGuest dla recepcji, zbudowana od zera w Angular i .NET Core na Azure.",
+        "url": "",
+        "tags": [
+          "React",
+          "Angular",
+          "C# .NET Core",
+          "Azure"
+        ]
+      },
+      {
+        "name": "Focis",
+        "client": "Focis.co.uk",
+        "years": "2018 – 2019",
+        "description": "Kompletny produkt SaaS multi-tenant dla kancelarii prawnych: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
+        "url": "",
+        "tags": [
+          "ASP.NET MVC",
+          "Azure",
+          "EF Core",
+          "Firebase"
+        ]
+      },
+      {
+        "name": "InCenter i InTire",
+        "client": "Tyrecheck",
+        "years": "2015 – 2017",
+        "description": "System zarządzania oponami we flotach: aplikacja webowa, mobilna i desktopowa z czujnikami TPMS. Prototyp zbudowany w 2 tygodnie wygrał duży kontrakt.",
+        "url": "",
+        "tags": [
+          "Vue.js",
+          "Xamarin",
+          "ASP.NET MVC",
+          "IoT"
+        ]
+      },
+      {
+        "name": "Spirometria white-label",
+        "client": "Vitalograph",
+        "years": "2014 – 2015",
+        "description": "Aplikacja do badań czynności płuc dla klinik i badań klinicznych, w około 10 wersjach z brandingiem partnerów farmaceutycznych, m.in. Roche.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "Multi-tenant"
+        ]
+      },
+      {
+        "name": "Elemos",
+        "client": "AMCS Group",
+        "years": "2012 – 2014",
+        "description": "Oprogramowanie dla branży odpadów i recyklingu: aplikacja biurowa WPF i aplikacja na terminale w śmieciarkach, z RFID, planowaniem tras i śledzeniem pojazdów na żywo.",
+        "url": "",
+        "tags": [
+          "WPF",
+          "WCF",
+          "RFID",
+          "Windows Mobile"
+        ]
+      },
+      {
+        "name": "Goniec Online",
+        "client": "Exorigo / ProService AT",
+        "years": "2007 – 2012",
+        "description": "System sprzedaży jednostek funduszy inwestycyjnych wdrożony w wielu polskich bankach, obsługujący około 70% transakcji funduszy w Polsce.",
+        "url": "",
+        "tags": [
+          "C# .NET",
+          "WinForms",
+          "Web Services",
+          "MS SQL"
+        ]
+      }
+    ]
+  },
+  "cv": {
+    "title": "CV",
+    "subtitle": "Pełna historia zawodowa Dawida Domagały w dwóch wersjach.",
+    "versions": [
+      {
+        "title": "CV skrócone",
+        "text": "Najważniejsze osiągnięcia, umiejętności i przebieg kariery w pigułce.",
+        "pages": "2 strony",
+        "url": "cv/Dawid-Domagala-CV-short.html",
+        "buttonLabel": "Otwórz CV",
+        "pdfUrl": "cv/Dawid-Domagala-CV-short.pdf",
+        "pdfLabel": "Pobierz PDF"
+      },
+      {
+        "title": "CV pełne",
+        "text": "Szczegółowy opis projektów, technologii, osiągnięć i referencji.",
+        "pages": "4 strony",
+        "url": "cv/Dawid-Domagala-CV-full.html",
+        "buttonLabel": "Otwórz CV",
+        "pdfUrl": "cv/Dawid-Domagala-CV-full.pdf",
+        "pdfLabel": "Pobierz PDF"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Masz projekt albo pytanie? Napisz, odpowiadam szybko.",
+    "email": "davit.futures@gmail.com",
+    "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
+    "gitHub": "https://github.com/DavIT-Futures",
+    "company": {
+      "heading": "Dane firmy",
+      "name": "DavIT Futures",
+      "owner": "Dawid Domagała",
+      "address": [
+        "ul. Ścinawska 30/8",
+        "53-629 Wrocław"
+      ],
+      "nip": "6932087505",
+      "regon": "021923547"
+    }
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "builtWith": "Zbudowane w Blazor WebAssembly i .NET 10."
+  }
+}

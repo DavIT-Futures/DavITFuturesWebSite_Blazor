@@ -1,0 +1,32 @@
+@inherits SiteComponent
+
+<section class="section" id="cv">
+    <div class="container">
+        <SectionHeading Title="@Content!.Cv.Title" Subtitle="@Content.Cv.Subtitle" />
+        <div class="cards cv-cards">
+            @foreach (var cv in Content.Cv.Versions)
+            {
+                <article class="card cv-card">
+                    <div class="card-icon"><Icon Name="file" /></div>
+                    <div class="cv-meta">@cv.Pages</div>
+                    <h3>@cv.Title</h3>
+                    <p>@cv.Text</p>
+                    @if (string.IsNullOrEmpty(cv.Url))
+                    {
+                        <span class="btn btn-ghost disabled" aria-disabled="true">@(Site.Language == "pl" ? "Wkrótce" : "Coming soon")</span>
+                    }
+                    else
+                    {
+                        <div class="cv-actions">
+                            <a class="btn btn-primary" href="@cv.Url" target="_blank" rel="noopener">@cv.ButtonLabel <Icon Name="arrow" Size="18" /></a>
+                            @if (!string.IsNullOrEmpty(cv.PdfUrl))
+                            {
+                                <a class="btn btn-ghost" href="@cv.PdfUrl" download>@cv.PdfLabel</a>
+                            }
+                        </div>
+                    }
+                </article>
+            }
+        </div>
+    </div>
+</section>

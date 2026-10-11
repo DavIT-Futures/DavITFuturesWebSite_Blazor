@@ -1,0 +1,8 @@
+@inherits SiteComponent
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© @DateTime.Now.Year @Content!.Contact.Company.Name · @Content.Contact.Company.Owner. @Content.Footer.Rights</span>
+        <span class="muted">@Content.Footer.BuiltWith</span>
+    </div>
+</footer>
