@@ -34,10 +34,14 @@
             }
         </div>
 
-        <div class="center">
-            <a class="btn btn-ghost" href="https://github.com/@Content.Projects.GitHubUser" target="_blank" rel="noopener">
-                <Icon Name="github" Size="18" /> @Content.Projects.AllReposLabel
-            </a>
-        </div>
+        @* Przycisk do wszystkich repozytoriów pokazuje się tylko, gdy allReposLabel w treści nie jest pusty. *@
+        @if (!string.IsNullOrEmpty(Content.Projects.AllReposLabel))
+        {
+            <div class="center">
+                <a class="btn btn-ghost" href="https://github.com/@Content.Projects.GitHubUser" target="_blank" rel="noopener">
+                    <Icon Name="github" Size="18" /> @Content.Projects.AllReposLabel
+                </a>
+            </div>
+        }
     </div>
 </section>

@@ -243,7 +243,7 @@
     "title": "Projects",
     "subtitle": "Selected commercial projects from the last 18 years, and the open-source code of this website.",
     "gitHubUser": "DavIT-Futures",
-    "allReposLabel": "All repositories on GitHub",
+    "allReposLabel": "",
     "codeLabel": "Code on GitHub",
     "items": [
       {
