@@ -1,0 +1,28 @@
+@inherits SiteComponent
+
+<section class="section section-alt" id="testimonials">
+    <div class="container">
+        <SectionHeading Title="@Content!.Testimonials.Title" Subtitle="@Content.Testimonials.Subtitle" />
+        <div class="quotes">
+            @foreach (var q in Content.Testimonials.Items)
+            {
+                <figure class="card quote">
+                    <blockquote>@q.Quote</blockquote>
+                    <figcaption>
+                        <strong>@q.Author</strong>
+                        <span>@q.Role</span>
+                        <small>@q.Context</small>
+                    </figcaption>
+                </figure>
+            }
+        </div>
+        @if (!string.IsNullOrEmpty(Content.Testimonials.MoreUrl))
+        {
+            <div class="center">
+                <a class="btn btn-ghost" href="@Content.Testimonials.MoreUrl" target="_blank" rel="noopener">
+                    <Icon Name="linkedin" Size="18" /> @Content.Testimonials.MoreLabel
+                </a>
+            </div>
+        }
+    </div>
+</section>

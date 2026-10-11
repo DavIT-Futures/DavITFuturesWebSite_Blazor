@@ -181,6 +181,18 @@ p { margin: 0; }
 .clients { margin-top: 28px; color: var(--text-muted); font-size: 15px; font-weight: 600; letter-spacing: .02em; }
 .clients span { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; opacity: .8; }
 
+/* Opinie */
+.quotes { display: grid; gap: 20px; max-width: 900px; }
+.quote { margin: 0; padding: 32px 34px; }
+.quote:hover { transform: none; }
+.quote blockquote { position: relative; margin: 0; padding-left: 34px; font-size: 18px; line-height: 1.65; color: var(--text); white-space: pre-line; }
+.quote blockquote::before { content: "“"; position: absolute; left: -4px; top: -14px; font-size: 64px; line-height: 1; font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.quote figcaption { margin: 22px 0 0 34px; padding-top: 16px; border-top: 1px solid var(--border); display: grid; gap: 2px; }
+.quote figcaption span { color: var(--accent-text); font-weight: 600; font-size: 14px; }
+.quote figcaption small { color: var(--text-muted); font-size: 13px; }
+#testimonials .center { margin-top: 28px; text-align: left; }
+
 /* Technologie */
 .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .tech-group.wide { grid-column: span 2; }
@@ -266,6 +278,9 @@ p { margin: 0; }
     .cards, .cv-cards, .tech-grid, .contact-links { grid-template-columns: 1fr; }
     .tech-group.wide { grid-column: auto; }
     .about-cards, .steps { grid-template-columns: 1fr; }
+    .quote { padding: 24px 20px; }
+    .quote blockquote { font-size: 16px; padding-left: 26px; }
+    .quote figcaption { margin-left: 26px; }
     .profile { display: block; }
     .profile img { height: auto; max-height: 420px; }
     .logo-text { display: none; }

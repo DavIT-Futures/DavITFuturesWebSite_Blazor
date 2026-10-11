@@ -10,6 +10,7 @@ public record SiteContent(
     ProcessSection Process,
     TechSection Tech,
     ProjectsSection Projects,
+    TestimonialsSection Testimonials,
     CvSection Cv,
     ContactSection Contact,
     Footer Footer);
@@ -51,6 +52,12 @@ public record ProjectsSection(string Title, string Subtitle, string GitHubUser, 
 // Outcome to jedna wyróżniona linia z wynikiem projektu, pokazywana nad opisem.
 public record Project(string Name, string Client, string Years, string Description, string Url,
     IReadOnlyList<string> Tags, string? Outcome = null);
+
+// Opinie przepisane dosłownie z rekomendacji na LinkedIn, dlatego cytat zostaje w oryginale w obu językach.
+public record TestimonialsSection(string Title, string Subtitle, IReadOnlyList<Testimonial> Items, string? MoreLabel = null,
+    string? MoreUrl = null);
+
+public record Testimonial(string Quote, string Author, string Role, string Context);
 
 public record CvSection(string Title, string Subtitle, IReadOnlyList<CvVersion> Versions);
 
