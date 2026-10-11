@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "DavIT Futures – custom software, .NET, Angular, FinTech",
-    "description": "DavIT Futures – Dawid Domagała. Web, desktop and backend applications in C# .NET, Angular and Blazor. 18+ years in banking, trading and SaaS. Wrocław, Poland."
+    "description": "DavIT Futures – Dawid Domagała. Web, desktop, mobile and backend applications in C# .NET, Angular, Blazor, Xamarin and Vue.js. 18+ years in banking, trading and SaaS. Wrocław, Poland."
   },
   "nav": {
     "about": "About",
@@ -18,7 +18,7 @@
     "eyebrow": "Software house · Wrocław, Poland",
     "title": "Software that",
     "highlight": "works for your business",
-    "lead": "I design and build web, desktop and backend applications in C# .NET, Angular and Blazor. Since 2007 for banks, trading platforms, medtech and SaaS in Poland, Ireland, the Czech Republic and the UK.",
+    "lead": "I design and build web, desktop, mobile and backend applications in C# .NET, Angular, Blazor, Xamarin and Vue.js with Quasar. Since 2007 for banks, trading platforms, medtech and SaaS in Poland, Ireland, the Czech Republic and the UK.",
     "primaryCta": {
       "label": "Let's talk about your project",
       "url": "#contact"
@@ -39,6 +39,14 @@
       {
         "value": "4×",
         "label": "team-average throughput with AI agents"
+      },
+      {
+        "value": "£15M",
+        "label": "company-wide gain in the first month of a trading feature I delivered"
+      },
+      {
+        "value": "70%",
+        "label": "of Polish mutual fund transactions ran through a system I built"
       }
     ]
   },
@@ -49,12 +57,19 @@
       {
         "icon": "finance",
         "title": "Finance and trading",
-        "text": "Level 2 trading platforms, risk engines (LTV, PRIIPs), mutual fund distribution. I understand the market, not just the code."
+        "text": "IG Group trading platforms: the L2 Dealer Level 2 desktop platform and the WTP web trading platform. Risk engines (LTV, PRIIPs) at Credit Suisse and mutual fund distribution. I understand the market, not just the code.",
+        "linkLabel": "IG Group",
+        "linkUrl": "https://www.ig.com"
       },
       {
         "icon": "shield",
         "title": "Quality and security",
-        "text": "Unit and BDD tests, CI/CD quality gates, zero-downtime releases. Experience with banking security audits."
+        "text": "Unit tests, BDD and integration tests, diff-coverage gates, HIGH app maturity ratings and banking security audits. Corporate standards, applied without slowing delivery."
+      },
+      {
+        "icon": "pipeline",
+        "title": "DevOps and pipelines",
+        "text": "CI/CD pipelines built end to end: one-click releases, 24/7 zero-downtime deployments, automated code signing and release notes."
       },
       {
         "icon": "spark",
@@ -83,6 +98,11 @@
         "text": "WPF, WinForms, DevExpress. Modernising legacy systems and migrating to new technology."
       },
       {
+        "icon": "mobile",
+        "title": "Mobile applications",
+        "text": "Xamarin and Vue.js with Quasar and Cordova. One codebase for mobile, web and desktop, with less to maintain."
+      },
+      {
         "icon": "pipeline",
         "title": "DevOps and CI/CD",
         "text": "GitLab CI/CD, Jenkins and GitHub Actions pipelines, automated releases, code signing, Docker and Azure."
@@ -109,23 +129,30 @@
           "C#",
           ".NET 10",
           "ASP.NET Core",
+          "Java",
+          "Spring Boot",
           "REST",
           "GraphQL",
           "Microservices",
           "EF Core",
-          "MS SQL Server"
+          "MS SQL Server",
+          "PostgreSQL"
         ]
       },
       {
-        "name": "Frontend",
+        "name": "Frontend, desktop and mobile",
         "items": [
+          "Angular 22",
           "Blazor",
-          "Angular",
           "TypeScript",
           "RxJS",
           "React",
           "Vue.js",
-          "HTML / CSS"
+          "Quasar",
+          "HTML / CSS",
+          "WPF",
+          "WinForms",
+          "Xamarin"
         ]
       },
       {
@@ -136,21 +163,37 @@
           "Jenkins",
           "Docker",
           "Azure",
+          "OpenShift",
           "PowerShell",
           "Bash"
         ]
       },
       {
-        "name": "Quality and AI",
+        "name": "Quality",
         "items": [
           "NUnit",
           "Moq",
           "SpecFlow",
           "TDD / BDD",
-          "SonarQube",
-          "Claude Code",
-          "GitHub Copilot"
+          "Integration tests",
+          "Diff-coverage gates",
+          "SonarQube"
         ]
+      },
+      {
+        "name": "AI",
+        "items": [
+          "Claude Code",
+          "Gemini",
+          "Cursor",
+          "GitHub Copilot",
+          "Agentic coding",
+          "Sub-agents",
+          "Agent skills",
+          "Software factory",
+          "AI-driven SDLC"
+        ],
+        "note": "At IG Group: 4× team-average throughput, a 6× shorter cycle time (0.9 vs 5.4 days) and up to 16 tickets closed overnight by agents, each one reviewed and tested."
       }
     ]
   },
@@ -177,20 +220,20 @@
         "name": "L2 Dealer",
         "client": "IG Group",
         "years": "2023 – 2026",
-        "description": "Level 2 desktop trading platform. The “Price In Size” feature, a new leak-free TradeBook V2, and a full GitLab CI/CD pipeline (17k+ lines) rated HIGH maturity with zero-downtime releases.",
+        "description": "Level 2 desktop trading platform. I rebuilt the delivery process end to end: a GitLab CI/CD pipeline (17k+ lines), GitFlow with release branches and merge requests, quality gates and large refactors of core modules. Result: HIGH app maturity and 24/7 zero-downtime releases. I also delivered “Price In Size”, part of a company-wide initiative that earned £15M in its first month.",
         "url": "",
         "tags": [
           "C# .NET",
-          "WinForms",
-          "DevExpress",
-          "GitLab CI/CD"
+          "GitLab CI/CD",
+          "GitFlow",
+          "DevExpress"
         ]
       },
       {
-        "name": "LTV, PRC and PRIIPs risk platforms",
+        "name": "Risk engine platforms: LTV, PRC and PRIIPs",
         "client": "Credit Suisse",
         "years": "2017 – 2022",
-        "description": "Silverlight to Angular 10 migration with a GraphQL backend, monolith split into .NET Core microservices, regulatory KID documents (PRIIPs) with BDD tests across the whole API.",
+        "description": "Silverlight to Angular 10 migration with a GraphQL backend, monolith split into .NET Core microservices, multithreaded risk calculations, MS SQL tuning and query speed-ups, regulatory KID documents (PRIIPs) with BDD tests across the whole API.",
         "url": "",
         "tags": [
           "Angular",
@@ -216,7 +259,7 @@
         "name": "Focis",
         "client": "Focis.co.uk",
         "years": "2018 – 2019",
-        "description": "A complete multi-tenant SaaS product for law firms: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
+        "description": "A complete multi-tenant SaaS product for law firms, which I built alone from start to finish and later led an extra developer: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
         "url": "",
         "tags": [
           "ASP.NET MVC",
@@ -229,13 +272,13 @@
         "name": "InCenter and InTire",
         "client": "Tyrecheck",
         "years": "2015 – 2017",
-        "description": "Fleet tyre management across web, mobile and desktop with TPMS sensors. A proof of concept built in 2 weeks won a major contract.",
+        "description": "Fleet management with tyre-pressure monitoring. A Wi-Fi router on each truck collected data from TPMS sensors (I wrote the low-level sensor communication) and uploaded it to a central server, and a web app managed the whole fleet. A proof of concept built in 2 weeks won a major contract.",
         "url": "",
         "tags": [
           "Vue.js",
           "Xamarin",
           "ASP.NET MVC",
-          "IoT"
+          "IoT / TPMS"
         ]
       },
       {
@@ -254,20 +297,21 @@
         "name": "Elemos",
         "client": "AMCS Group",
         "years": "2012 – 2014",
-        "description": "Software for the waste and recycling industry: a WPF office app and an in-truck handheld app with RFID, route planning and live vehicle tracking.",
+        "description": "Software for the waste and recycling industry: a WPF office app and an in-truck app on Windows Mobile handhelds, later migrated to Xamarin, with RFID, route planning and live vehicle tracking.",
         "url": "",
         "tags": [
           "WPF",
           "WCF",
           "RFID",
-          "Windows Mobile"
+          "Windows Mobile",
+          "Xamarin"
         ]
       },
       {
         "name": "Goniec Online",
         "client": "Exorigo / ProService AT",
         "years": "2007 – 2012",
-        "description": "Mutual fund sales system deployed in many Polish banks, handling about 70% of Polish trust fund transactions.",
+        "description": "A large, complex mutual fund distribution system deployed in many Polish banks: fund buying and selling, distribution network setup, handling about 70% of Polish trust fund transactions.",
         "url": "",
         "tags": [
           "C# .NET",

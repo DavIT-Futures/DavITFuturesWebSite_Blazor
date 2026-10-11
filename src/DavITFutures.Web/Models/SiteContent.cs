@@ -27,11 +27,13 @@ public record Link(string Label, string Url);
 
 public record SectionWithItems(string Title, string Subtitle, IReadOnlyList<Item> Items);
 
-public record Item(string Icon, string Title, string Text);
+// Link jest opcjonalny: karta może prowadzić do strony zewnętrznej.
+public record Item(string Icon, string Title, string Text, string? LinkLabel = null, string? LinkUrl = null);
 
 public record TechSection(string Title, string Subtitle, IReadOnlyList<TechGroup> Groups);
 
-public record TechGroup(string Name, IReadOnlyList<string> Items);
+// Note to opcjonalny krótki tekst pod chipami, np. liczby z CV.
+public record TechGroup(string Name, IReadOnlyList<string> Items, string? Note = null);
 
 public record ProjectsSection(string Title, string Subtitle, string GitHubUser, string AllReposLabel,
     string CodeLabel, IReadOnlyList<Project> Items);

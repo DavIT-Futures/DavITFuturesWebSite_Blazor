@@ -6,7 +6,7 @@
         <div class="tech-grid">
             @foreach (var group in Content.Tech.Groups)
             {
-                <div class="tech-group">
+                <div class="tech-group @(string.IsNullOrEmpty(group.Note) ? "" : "wide")">
                     <h3>@group.Name</h3>
                     <ul class="chips">
                         @foreach (var item in group.Items)
@@ -14,6 +14,10 @@
                             <li>@item</li>
                         }
                     </ul>
+                    @if (!string.IsNullOrEmpty(group.Note))
+                    {
+                        <p class="tech-note">@group.Note</p>
+                    }
                 </div>
             }
         </div>
