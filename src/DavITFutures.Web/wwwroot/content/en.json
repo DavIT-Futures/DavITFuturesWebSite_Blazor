@@ -241,7 +241,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Selected commercial projects from the last 18 years, and the open-source code of this website.",
+    "subtitle": "Selected commercial projects from the last 18 years, and this website.",
     "gitHubUser": "DavIT-Futures",
     "allReposLabel": "",
     "codeLabel": "Code on GitHub",
@@ -363,13 +363,13 @@
         "client": "DavIT Futures",
         "years": "2026",
         "description": "This website: Blazor WebAssembly on .NET 10, two languages, light and dark themes, automatic deployment to GitHub Pages with GitHub Actions.",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "url": "",
         "tags": [
           "Blazor",
           "C# .NET 10",
           "GitHub Actions"
         ],
-        "outcome": "Open source: see how we build"
+        "outcome": "Built with Blazor and .NET 10"
       }
     ]
   },
@@ -416,7 +416,7 @@
     "subtitle": "Have a project in mind? Send a short description and we will reply within one business day.",
     "email": "davit.futures@gmail.com",
     "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
-    "gitHub": "https://github.com/DavIT-Futures",
+    "gitHub": "",
     "company": {
       "heading": "Company details",
       "name": "DavIT Futures",

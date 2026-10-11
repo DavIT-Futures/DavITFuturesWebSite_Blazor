@@ -16,10 +16,13 @@
                         <span><small>LinkedIn</small>Dawid Domagała</span>
                     </a>
                 }
-                <a class="contact-item" href="@Content.Contact.GitHub" target="_blank" rel="noopener">
-                    <span class="card-icon"><Icon Name="github" /></span>
-                    <span><small>GitHub</small>@Content.Contact.GitHub.Replace("https://", "")</span>
-                </a>
+                @if (!string.IsNullOrEmpty(Content.Contact.GitHub))
+                {
+                    <a class="contact-item" href="@Content.Contact.GitHub" target="_blank" rel="noopener">
+                        <span class="card-icon"><Icon Name="github" /></span>
+                        <span><small>GitHub</small>@Content.Contact.GitHub.Replace("https://", "")</span>
+                    </a>
+                }
             </div>
             <div class="card company">
                 <h3>@Content.Contact.Company.Heading</h3>
