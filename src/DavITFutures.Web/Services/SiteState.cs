@@ -14,7 +14,7 @@ public class SiteState(HttpClient http, IJSRuntime js)
     private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
     private readonly Dictionary<string, SiteContent> _cache = new();
 
-    public string Language { get; private set; } = "pl";
+    public string Language { get; private set; } = "en";
     public string Theme { get; private set; } = "dark";
     public SiteContent? Content { get; private set; }
 
@@ -24,7 +24,7 @@ public class SiteState(HttpClient http, IJSRuntime js)
     {
         Theme = await js.InvokeAsync<string>("davit.getTheme");
         var saved = await js.InvokeAsync<string?>("davit.getLanguage");
-        await SetLanguageAsync(saved is not null && Languages.Contains(saved) ? saved : "pl");
+        await SetLanguageAsync(saved is not null && Languages.Contains(saved) ? saved : "en");
     }
 
     public async Task SetLanguageAsync(string language)
