@@ -203,7 +203,7 @@
         "name": "QiaCuity i QiaGuest",
         "client": "Qiagen",
         "years": "2019 – 2020",
-        "description": "Interfejs React/Redux dla laboratoryjnego instrumentu dPCR działającego na Linuksie oraz aplikacja QiaGuest dla recepcji, zbudowana od zera w Angular i .NET Core na Azure.",
+        "description": "Interfejs React/Redux dla laboratoryjnego instrumentu dPCR (cyfrowa reakcja łańcuchowa polimerazy, precyzyjne liczenie kopii DNA w diagnostyce medycznej) działającego na Linuksie oraz aplikacja QiaGuest dla recepcji, zbudowana od zera w Angular i .NET Core na Azure.",
         "url": "",
         "tags": [
           "React",
