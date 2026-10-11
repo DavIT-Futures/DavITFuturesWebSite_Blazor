@@ -1,11 +1,11 @@
 @inherits SiteComponent
 
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
     <div class="container">
         <SectionHeading Title="@Content!.Contact.Title" Subtitle="@Content.Contact.Subtitle" />
         <div class="contact-grid">
             <div class="contact-links">
-                <a class="contact-item" href="mailto:@Content.Contact.Email">
+                <a class="contact-item" href="@MailTo">
                     <span class="card-icon"><Icon Name="mail" /></span>
                     <span><small>E-mail</small>@Content.Contact.Email</span>
                 </a>
@@ -36,3 +36,9 @@
         </div>
     </div>
 </section>
+
+@code {
+    private string MailTo => string.IsNullOrEmpty(Content!.Contact.EmailSubject)
+        ? $"mailto:{Content.Contact.Email}"
+        : $"mailto:{Content.Contact.Email}?subject={Uri.EscapeDataString(Content.Contact.EmailSubject)}";
+}

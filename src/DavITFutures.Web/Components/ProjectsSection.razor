@@ -1,6 +1,6 @@
 @inherits SiteComponent
 
-<section class="section section-alt" id="projects">
+<section class="section" id="projects">
     <div class="container">
         <SectionHeading Title="@Content!.Projects.Title" Subtitle="@Content.Projects.Subtitle" />
 
@@ -13,6 +13,10 @@
                         <span class="project-years">@p.Years</span>
                     </div>
                     <h3>@p.Name</h3>
+                    @if (!string.IsNullOrEmpty(p.Outcome))
+                    {
+                        <p class="project-outcome">@p.Outcome</p>
+                    }
                     <p>@p.Description</p>
                     <ul class="chips small">
                         @foreach (var tag in p.Tags)

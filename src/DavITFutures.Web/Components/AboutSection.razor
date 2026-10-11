@@ -1,0 +1,35 @@
+@inherits SiteComponent
+
+@* O firmie: zdjęcie z krótką wizytówką obok kart z mocnymi stronami. *@
+<section class="section" id="about">
+    <div class="container">
+        <SectionHeading Title="@Content!.About.Title" Subtitle="@Content.About.Subtitle" />
+        <div class="about-grid">
+            <aside class="card profile">
+                <img src="@Content.About.Photo" alt="@Content.About.PhotoAlt" width="480" height="600" loading="lazy" />
+                <h3>@Content.About.Name</h3>
+                <p class="profile-role">@Content.About.Role</p>
+                <ul class="profile-facts">
+                    @foreach (var fact in Content.About.Facts)
+                    {
+                        <li>@fact</li>
+                    }
+                </ul>
+            </aside>
+            <div class="cards about-cards">
+                @foreach (var item in Content.About.Items)
+                {
+                    <article class="card">
+                        <div class="card-icon"><Icon Name="@item.Icon" /></div>
+                        <h3>@item.Title</h3>
+                        <p>@item.Text</p>
+                        @if (!string.IsNullOrEmpty(item.LinkUrl))
+                        {
+                            <a class="card-link" href="@item.LinkUrl" target="_blank" rel="noopener">@item.LinkLabel <Icon Name="arrow" Size="16" /></a>
+                        }
+                    </article>
+                }
+            </div>
+        </div>
+    </div>
+</section>

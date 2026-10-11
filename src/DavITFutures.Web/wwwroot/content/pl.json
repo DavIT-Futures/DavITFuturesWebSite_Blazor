@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "DavIT Futures – oprogramowanie na zamówienie, .NET, Angular, FinTech",
-    "description": "DavIT Futures – Dawid Domagała. Aplikacje webowe, desktopowe, mobilne i backend w C# .NET, Angular, Blazor, Xamarin i Vue.js. 18+ lat doświadczenia w bankowości, tradingu i SaaS. Wrocław."
+    "title": "DavIT Futures – oprogramowanie .NET i Angular dla finansów i SaaS",
+    "description": "DavIT Futures – doświadczony zespół .NET i Angular dla finansów, tradingu i SaaS. Aplikacje webowe, desktopowe, mobilne i backend, od prototypu po produkcję bez przestojów. Wrocław."
   },
   "nav": {
     "about": "O firmie",
@@ -16,9 +16,9 @@
   },
   "hero": {
     "eyebrow": "Software house · Wrocław",
-    "title": "Oprogramowanie, które",
-    "highlight": "pracuje na Twój biznes",
-    "lead": "Aplikacje webowe, desktopowe, mobilne i backend w C# .NET, Angular, Blazor, Xamarin oraz Vue.js z Quasarem, projektowane i budowane od 2007 roku dla banków, platform tradingowych, medtechu i SaaS w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
+    "title": "Oprogramowanie klasy tradingowej",
+    "highlight": "dla Twojego biznesu",
+    "lead": "Projektujemy i budujemy aplikacje webowe, desktopowe, mobilne i backend dla finansów, tradingu i SaaS: od prototypu po produkcję bez przestojów, szybciej dzięki AI i zawsze z testami. Od 2007 roku dla klientów w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
     "primaryCta": {
       "label": "Porozmawiajmy o projekcie",
       "url": "#contact"
@@ -30,51 +30,70 @@
     "stats": [
       {
         "value": "18+",
-        "label": "lat doświadczenia"
+        "label": "lat budowania oprogramowania produkcyjnego"
       },
       {
         "value": "4",
-        "label": "kraje realizacji projektów, na miejscu i zdalnie"
+        "label": "kraje: PL, IE, CZ, UK"
       },
       {
         "value": "4×",
-        "label": "średnia wydajność zespołu dzięki agentom AI"
+        "label": "średnia wydajność zespołu, dzięki agentom AI"
       },
       {
         "value": "15 mln £",
-        "label": "zysku firmy w pierwszym miesiącu po wdrożeniu funkcji tradingowej"
+        "label": "zysku w pierwszym miesiącu wdrożenia tradingowego w IG Group"
       },
       {
         "value": "70%",
-        "label": "transakcji funduszy inwestycyjnych w Polsce obsługiwanych przez zbudowany system"
+        "label": "transakcji funduszy w Polsce szło przez Goniec Online"
       }
+    ],
+    "clientsLabel": "Realizacje dla",
+    "clients": [
+      "IG Group",
+      "Credit Suisse",
+      "Qiagen",
+      "Vitalograph",
+      "AMCS Group",
+      "Tyrecheck"
     ]
   },
   "about": {
     "title": "O firmie",
-    "subtitle": "DavIT Futures to jednoosobowy software house Dawida Domagały: senior developera i lidera zespołów z ponad 18 latami doświadczenia komercyjnego.",
+    "subtitle": "DavIT Futures to firma programistyczna Dawida Domagały. Pracujesz bezpośrednio z doświadczonym inżynierem, który projektuje i buduje Twój produkt: bez opiekunów klienta, bez przekazywania pracy dalej i bez juniorów uczących się na Twoim budżecie.",
+    "photo": "img/dawid-domagala.jpg",
+    "photoAlt": "Dawid Domagała",
+    "name": "Dawid Domagała",
+    "role": "Założyciel · senior .NET i Angular, lider zespołów",
+    "facts": [
+      "18+ lat w bankowości, tradingu, medtechu i SaaS",
+      "Magister elektroniki, Politechnika Wrocławska",
+      "Wrocław · strefa czasowa CET",
+      "Polski i angielski (biegle)"
+    ],
     "items": [
       {
         "icon": "finance",
         "title": "Finanse i trading",
-        "text": "Platformy tradingowe IG Group: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP. Silniki ryzyka (LTV, PRIIPs) w Credit Suisse i dystrybucja funduszy inwestycyjnych. Znajomość rynku, nie tylko kodu.",
+        "text": "Znamy trading od środka: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP w IG Group, silniki ryzyka w Credit Suisse i dystrybucja funduszy inwestycyjnych. Mówimy językiem Twojego rynku, nie tylko kodu.",
         "linkLabel": "IG Group",
         "linkUrl": "https://www.ig.com"
       },
       {
         "icon": "shield",
         "title": "Jakość i bezpieczeństwo",
-        "text": "Testy jednostkowe, BDD i integracyjne, bramki pokrycia kodu, ocena dojrzałości aplikacji HIGH i audyty bezpieczeństwa w bankowości. Korporacyjne standardy, które nie spowalniają dostarczania."
+        "text": "Testy automatyczne przy każdej zmianie, bramki jakości, które zatrzymują regresje, i bezpieczeństwo na poziomie bankowym. Korporacyjny rygor bez korporacyjnej powolności."
       },
       {
         "icon": "pipeline",
         "title": "DevOps i pipeline'y",
-        "text": "Pipeline'y CI/CD zbudowane od początku do końca: wydania jednym kliknięciem, wdrożenia 24/7 bez przestojów, automatyczne podpisywanie kodu i release notes."
+        "text": "Budujemy pipeline'y CI/CD od początku do końca: wydania jednym kliknięciem, wdrożenia 24/7 bez przestojów, automatyczne podpisywanie kodu i release notes."
       },
       {
         "icon": "spark",
         "title": "Szybkość dzięki AI",
-        "text": "Agenci AI (Claude Code) przyspieszają dostarczanie, a każda zmiana przechodzi przegląd i testy. Szybko, ale bez skrótów."
+        "text": "Agenci AI przyspieszają pracę, a każdą zmianę przegląda i testuje człowiek. Twój kod i dane zostają pod Twoją kontrolą: narzędzia AI działają tylko w ramach Twoich zasad bezpieczeństwa."
       }
     ]
   },
@@ -85,27 +104,22 @@
       {
         "icon": "web",
         "title": "Aplikacje webowe",
-        "text": "Nowoczesne aplikacje w Angular, Blazor, React i Vue.js. Responsywne, szybkie i łatwe w rozwoju."
+        "text": "Nowoczesne aplikacje w Angular, Blazor, React i Vue.js: responsywne, szybkie i łatwe do rozbudowy, gdy Twój biznes rośnie."
       },
       {
         "icon": "server",
         "title": "Backend i API",
-        "text": "C# .NET, REST i GraphQL, mikroserwisy, MS SQL Server. Wydajność, wielowątkowość i stabilność pod obciążeniem."
-      },
-      {
-        "icon": "desktop",
-        "title": "Aplikacje desktopowe",
-        "text": "WPF, WinForms, DevExpress. Modernizacja starszych systemów i migracje do nowych technologii."
+        "text": "API w C# .NET i Javie (REST, GraphQL), mikroserwisy, MS SQL i PostgreSQL. Wydajne i stabilne pod obciążeniem."
       },
       {
         "icon": "mobile",
         "title": "Aplikacje mobilne",
-        "text": "Xamarin oraz Vue.js z Quasarem i Cordovą. Jeden kod na telefon, przeglądarkę i desktop, mniej do utrzymania."
+        "text": "Xamarin oraz Vue.js z Quasarem i Cordovą. Jeden kod na telefon, przeglądarkę i desktop, więc mniej do utrzymania."
       },
       {
-        "icon": "pipeline",
-        "title": "DevOps i CI/CD",
-        "text": "Pipeline'y GitLab CI/CD, Jenkins i GitHub Actions, automatyczne wydania, podpisywanie kodu, Docker i Azure."
+        "icon": "desktop",
+        "title": "Desktop i modernizacja systemów",
+        "text": "WPF, WinForms i DevExpress. Modernizujemy starsze systemy i przenosimy je na nowe technologie bez zatrzymywania biznesu."
       },
       {
         "icon": "layers",
@@ -113,15 +127,43 @@
         "text": "Produkty white-label z izolacją danych klientów, konfiguracją i brandingiem per klient."
       },
       {
+        "icon": "pipeline",
+        "title": "DevOps i CI/CD",
+        "text": "Pipeline'y GitLab CI/CD, Jenkins i GitHub Actions, automatyczne wydania, podpisywanie kodu, Docker i Azure."
+      },
+      {
         "icon": "spark",
         "title": "Wdrożenia AI w zespole",
-        "text": "Agenci AI w procesie wytwarzania, szkolenia i warsztaty dla zespołów programistycznych."
+        "text": "Wprowadzamy agentów AI do Twojego procesu wytwarzania, ze szkoleniami i warsztatami dla programistów."
       }
     ]
   },
+  "process": {
+    "title": "Jak pracujemy",
+    "subtitle": "Prosty i przejrzysty sposób na start i dostarczanie.",
+    "steps": [
+      {
+        "title": "Bezpłatna rozmowa, 30 minut",
+        "text": "Rozmawiamy o Twoich celach, ograniczeniach i terminach. Bez zobowiązań."
+      },
+      {
+        "title": "Propozycja",
+        "text": "Dostajesz zakres, wycenę i ofertę: stała cena albo rozliczenie godzinowe."
+      },
+      {
+        "title": "Krótkie iteracje",
+        "text": "Działające demo co tydzień lub dwa, więc widzisz postęp i możesz wcześnie korygować kierunek."
+      },
+      {
+        "title": "Wdrożenie i wsparcie",
+        "text": "CI/CD, dokumentacja i przekazanie projektu, a w razie potrzeby utrzymanie."
+      }
+    ],
+    "footnote": "Umowy B2B · zdalnie lub na miejscu · strefa CET · polski i angielski"
+  },
   "tech": {
     "title": "Technologie",
-    "subtitle": "Narzędzia i technologie używane na co dzień.",
+    "subtitle": "Technologie stojące za projektami poniżej.",
     "groups": [
       {
         "name": "Backend",
@@ -193,41 +235,30 @@
           "Software factory",
           "SDLC z AI"
         ],
-        "note": "W IG Group: 4× średnia wydajność zespołu, 6× krótszy czas od zgłoszenia do merge'a (0,9 vs 5,4 dnia) i do 16 zgłoszeń zamykanych przez agentów w nocy, każde przejrzane i przetestowane."
+        "note": "W IG Group: 4× średnia wydajność zespołu, 6× krótszy czas od zgłoszenia do merge'a (0,9 vs 5,4 dnia) i do 16 zgłoszeń zamykanych przez agentów w nocy, każde przejrzane i przetestowane przez człowieka."
       }
     ]
   },
   "projects": {
     "title": "Projekty",
-    "subtitle": "Wybrane projekty komercyjne z ostatnich 18 lat oraz kod tej strony.",
+    "subtitle": "Wybrane projekty komercyjne z ostatnich 18 lat oraz otwarty kod tej strony.",
     "gitHubUser": "DavIT-Futures",
     "allReposLabel": "Wszystkie repozytoria na GitHubie",
     "codeLabel": "Kod na GitHubie",
     "items": [
       {
-        "name": "Strona DavIT Futures",
-        "client": "DavIT Futures",
-        "years": "2026",
-        "description": "Ta strona: Blazor WebAssembly na .NET 10, dwa języki, jasny i ciemny motyw, automatyczne wdrożenia przez GitHub Actions na GitHub Pages.",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
-        "tags": [
-          "Blazor",
-          "C# .NET 10",
-          "GitHub Actions"
-        ]
-      },
-      {
         "name": "L2 Dealer",
         "client": "IG Group",
         "years": "2023 – 2026",
-        "description": "Desktopowa platforma tradingowa Level 2. Cały proces dostarczania przebudowany od zera: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów. Efekt: ocena dojrzałości HIGH i wydania 24/7 bez przestojów. Dostarczona funkcja „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
+        "description": "Desktopowa platforma tradingowa Level 2. Przebudowaliśmy cały proces dostarczania: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów, z oceną dojrzałości HIGH. Dostarczyliśmy też „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
         "url": "",
         "tags": [
           "C# .NET",
           "GitLab CI/CD",
           "GitFlow",
           "DevExpress"
-        ]
+        ],
+        "outcome": "15 mln £ w pierwszym miesiącu · wydania 24/7 bez przestojów"
       },
       {
         "name": "Platformy silników ryzyka: LTV, PRC i PRIIPs",
@@ -240,58 +271,63 @@
           "GraphQL",
           "C# .NET Core",
           "MS SQL"
-        ]
+        ],
+        "outcome": "Silverlight → Angular · 100% API pokryte testami BDD"
       },
       {
         "name": "QiaCuity i QiaGuest",
         "client": "Qiagen",
         "years": "2019 – 2020",
-        "description": "Interfejs React/Redux dla laboratoryjnego instrumentu dPCR (cyfrowa reakcja łańcuchowa polimerazy, precyzyjne liczenie kopii DNA w diagnostyce medycznej) działającego na Linuksie oraz aplikacja QiaGuest dla recepcji, zbudowana od zera w Angular i .NET Core na Azure.",
+        "description": "Interfejs instrumentu do cyfrowej PCR (dPCR), który liczy kopie DNA w diagnostyce medycznej, w React/Redux na Linuksie. Do tego QiaGuest, aplikacja dla recepcji zbudowana od zera w Angular i .NET Core na Azure.",
         "url": "",
         "tags": [
           "React",
           "Angular",
           "C# .NET Core",
           "Azure"
-        ]
+        ],
+        "outcome": "QiaGuest zbudowany od zera na Azure"
       },
       {
         "name": "Focis",
         "client": "Focis.co.uk",
         "years": "2018 – 2019",
-        "description": "Kompletny produkt SaaS multi-tenant dla kancelarii prawnych, zbudowany w pojedynkę od początku do końca, później z dodatkowym programistą w zespole: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
+        "description": "SaaS multi-tenant dla kancelarii prawnych, zbudowany od początku do końca przez jednego inżyniera, później z drugim programistą: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
         "url": "",
         "tags": [
           "ASP.NET MVC",
           "Azure",
           "EF Core",
           "Firebase"
-        ]
+        ],
+        "outcome": "Kompletny produkt SaaS zbudowany w pojedynkę"
       },
       {
         "name": "InCenter i InTire",
         "client": "Tyrecheck",
         "years": "2015 – 2017",
-        "description": "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS (łącznie z niskopoziomową komunikacją z czujnikami) i wysyłał je na centralny serwer, a aplikacja webowa zarządzała całą flotą. Prototyp zbudowany w 2 tygodnie wygrał duży kontrakt.",
+        "description": "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS, łącznie z napisaną przez nas niskopoziomową komunikacją z czujnikami, i wysyłał je na centralny serwer, gdzie aplikacja webowa zarządzała całą flotą.",
         "url": "",
         "tags": [
           "Vue.js",
           "Xamarin",
           "ASP.NET MVC",
           "IoT / TPMS"
-        ]
+        ],
+        "outcome": "Prototyp w 2 tygodnie, który wygrał kontrakt"
       },
       {
         "name": "Spirometria white-label",
         "client": "Vitalograph",
         "years": "2014 – 2015",
-        "description": "Aplikacja do badań czynności płuc dla klinik i badań klinicznych, w około 10 wersjach z brandingiem partnerów farmaceutycznych, m.in. Roche.",
+        "description": "Diagnostyka czynności płuc dla klinik i badań klinicznych, z brandingiem każdego partnera farmaceutycznego, zgodnie z regulacjami dla urządzeń medycznych.",
         "url": "",
         "tags": [
           "C# .NET",
           "WinForms",
           "Multi-tenant"
-        ]
+        ],
+        "outcome": "~10 wersji white-label, m.in. dla Roche"
       },
       {
         "name": "Elemos",
@@ -305,26 +341,41 @@
           "RFID",
           "Windows Mobile",
           "Xamarin"
-        ]
+        ],
+        "outcome": "100% pokrycia testami po stronie serwera"
       },
       {
         "name": "Goniec Online",
         "client": "Exorigo / ProService AT",
         "years": "2007 – 2012",
-        "description": "Duży, złożony system dystrybucji funduszy inwestycyjnych wdrożony w wielu polskich bankach: kupno i sprzedaż jednostek, definiowanie sieci dystrybucji, około 70% transakcji funduszy w Polsce.",
+        "description": "Duży, złożony system dystrybucji funduszy inwestycyjnych wdrożony w wielu polskich bankach: kupno i sprzedaż jednostek oraz definiowanie sieci dystrybucji.",
         "url": "",
         "tags": [
           "C# .NET",
           "WinForms",
           "Web Services",
           "MS SQL"
-        ]
+        ],
+        "outcome": "~70% transakcji funduszy w Polsce"
+      },
+      {
+        "name": "Strona DavIT Futures",
+        "client": "DavIT Futures",
+        "years": "2026",
+        "description": "Ta strona: Blazor WebAssembly na .NET 10, dwa języki, jasny i ciemny motyw, automatyczne wdrożenia przez GitHub Actions na GitHub Pages.",
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "tags": [
+          "Blazor",
+          "C# .NET 10",
+          "GitHub Actions"
+        ],
+        "outcome": "Otwarty kod: zobacz, jak budujemy"
       }
     ]
   },
   "cv": {
     "title": "CV",
-    "subtitle": "Pełna historia zawodowa Dawida Domagały w dwóch wersjach.",
+    "subtitle": "Krótka wersja na szybki rzut oka, pełna z projektami, liczbami i referencjami.",
     "versions": [
       {
         "title": "CV skrócone",
@@ -348,7 +399,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Masz projekt albo pytanie? Napisz, odpowiedź przyjdzie szybko.",
+    "subtitle": "Masz pomysł na projekt? Wyślij krótki opis, odpowiemy w ciągu jednego dnia roboczego.",
     "email": "davit.futures@gmail.com",
     "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
     "gitHub": "https://github.com/DavIT-Futures",
@@ -362,7 +413,8 @@
       ],
       "nip": "6932087505",
       "regon": "021923547"
-    }
+    },
+    "emailSubject": "Zapytanie o projekt – DavIT Futures"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone.",

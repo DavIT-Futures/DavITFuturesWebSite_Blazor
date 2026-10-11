@@ -1,0 +1,18 @@
+@inherits SiteComponent
+
+<section class="section" id="how">
+    <div class="container">
+        <SectionHeading Title="@Content!.Process.Title" Subtitle="@Content.Process.Subtitle" />
+        <ol class="steps">
+            @foreach (var (step, i) in Content.Process.Steps.Select((s, i) => (s, i)))
+            {
+                <li class="card step">
+                    <span class="step-no">@(i + 1)</span>
+                    <h3>@step.Title</h3>
+                    <p>@step.Text</p>
+                </li>
+            }
+        </ol>
+        <p class="steps-note">@Content.Process.Footnote</p>
+    </div>
+</section>

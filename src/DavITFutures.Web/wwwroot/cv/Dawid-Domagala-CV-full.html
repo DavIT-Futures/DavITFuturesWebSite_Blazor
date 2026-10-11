@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dawid Domagała – CV</title>
+<script>
+(function () {
+    var d = document.documentElement, t = null;
+    try { t = localStorage.getItem("davit-theme"); } catch (e) { }
+    d.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+})();
+</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap">
+
 <style>
 :root{--bg:#cbd5e1;--ink:#0f172a;--tx:#334155;--mute:#64748b;--line:#e2e8f0;--soft:#f1f5f9;--ac:#2563eb;--acd:#1d4ed8;--acl:#eff6ff;--acb:#bfdbfe;--hero:#0f172a;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -197,8 +207,28 @@ body{background:none!important;padding:0!important;display:block!important}
 .page:last-child{break-after:auto}
 }
 </style>
+<link rel="stylesheet" href="cv-page.css">
 </head>
-<body>
+<body class="cv cv-full">
+<header class="dvt-header">
+  <div class="dvt-inner">
+    <a class="dvt-logo" href="../"><span class="dvt-mark">D</span><span>DavIT<b>Futures</b></span></a>
+    <nav class="dvt-seg" aria-label="CV">
+      <a href="Dawid-Domagala-CV-short.html" class="" data-label="short">Short CV</a>
+      <a href="Dawid-Domagala-CV-full.html" class="active" data-label="full">Full CV</a>
+    </nav>
+    <button type="button" class="dvt-btn dvt-icon dvt-theme" data-label="theme" aria-label="Change theme"></button>
+  </div>
+</header>
+<div class="dvt-sub">
+  <a href="../#cv" data-label="back">← Back to the website</a>
+  <h1>Dawid Domagała · CV</h1>
+  <div class="dvt-actions">
+    <button type="button" class="dvt-btn dvt-print" onclick="window.print()" data-label="print">Print</button>
+    <a class="dvt-btn" href="Dawid-Domagala-CV-full.pdf" download data-label="pdf">Download PDF</a>
+  </div>
+</div>
+
 <div class="bar"><button onclick="window.print()">Print / Save as PDF</button><span>A4 · 4 pages · in the print dialog set Margins: None</span></div>
 <div class="wrap">
 
@@ -377,6 +407,7 @@ body{background:none!important;padding:0!important;display:block!important}
 </div>
 
 </div>
+<script src="cv-page.js"></script>
 </body>
 </html>
 

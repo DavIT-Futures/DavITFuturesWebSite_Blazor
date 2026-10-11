@@ -16,5 +16,9 @@
                 <div class="stat"><dt>@stat.Value</dt><dd>@stat.Label</dd></div>
             }
         </dl>
+        @if (Content.Hero.Clients is { Count: > 0 })
+        {
+            <p class="clients"><span>@Content.Hero.ClientsLabel</span> @string.Join(" · ", Content.Hero.Clients)</p>
+        }
     </div>
 </section>

@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dawid Domagała – CV</title>
+<script>
+(function () {
+    var d = document.documentElement, t = null;
+    try { t = localStorage.getItem("davit-theme"); } catch (e) { }
+    d.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+})();
+</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap" rel="stylesheet">
@@ -184,8 +194,28 @@ li::before{content:"–";position:absolute;left:0;color:var(--ac);font-weight:60
 }
 .blk p,.fs p,.small-print p,.skl dd,.ctx,.guard:not(.wide),.soft p{text-align:justify;hyphens:auto}
 </style>
+<link rel="stylesheet" href="cv-page.css">
 </head>
-<body>
+<body class="cv cv-short">
+<header class="dvt-header">
+  <div class="dvt-inner">
+    <a class="dvt-logo" href="../"><span class="dvt-mark">D</span><span>DavIT<b>Futures</b></span></a>
+    <nav class="dvt-seg" aria-label="CV">
+      <a href="Dawid-Domagala-CV-short.html" class="active" data-label="short">Short CV</a>
+      <a href="Dawid-Domagala-CV-full.html" class="" data-label="full">Full CV</a>
+    </nav>
+    <button type="button" class="dvt-btn dvt-icon dvt-theme" data-label="theme" aria-label="Change theme"></button>
+  </div>
+</header>
+<div class="dvt-sub">
+  <a href="../#cv" data-label="back">← Back to the website</a>
+  <h1>Dawid Domagała · CV</h1>
+  <div class="dvt-actions">
+    <button type="button" class="dvt-btn dvt-print" onclick="window.print()" data-label="print">Print</button>
+    <a class="dvt-btn" href="Dawid-Domagala-CV-short.pdf" download data-label="pdf">Download PDF</a>
+  </div>
+</div>
+
 <div class="bar"><button onclick="window.print()">Print / Save as PDF</button><span>A4 · 2 pages · in the print dialog set Margins: None and enable Background graphics</span></div>
 <div class="wrap">
 
@@ -397,5 +427,6 @@ li::before{content:"–";position:absolute;left:0;color:var(--ac);font-weight:60
 </div>
 
 </div>
+<script src="cv-page.js"></script>
 </body>
 </html>
