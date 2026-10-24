@@ -7,8 +7,8 @@
                 "about":  "O firmie",
                 "services":  "Usługi",
                 "tech":  "Technologie",
-                "projects":  "Projekty",
-                "gitHub":  "GitHub",
+                "projects":  "Projekty komercyjne",
+                "gitHub":  "Pet Projects",
                 "cv":  "CV",
                 "contact":  "Kontakt",
                 "themeLight":  "Jasny motyw",
@@ -241,8 +241,8 @@
                             ]
              },
     "projects":  {
-                     "title":  "Projekty",
-                     "subtitle":  "Wybrane projekty komercyjne z ostatnich 18 lat oraz ta strona.",
+                     "title":  "Projekty komercyjne",
+                     "subtitle":  "Wybrane systemy komercyjne i rozwiązania enterprise zrealizowane w ciągu ostatnich 18 lat dla klientów instytucjonalnych.",
                      "gitHubUser":  "DavIT-Futures",
                      "allReposLabel":  "",
                      "codeLabel":  "Kod na GitHubie",
@@ -375,12 +375,12 @@
                                ]
                  },
     "gitHub":  {
-                   "subtitle":  "Otwarte projekty, architektury referencyjne i narzędzia dostępne publicznie na GitHubie.",
+                   "subtitle":  "Autorskie eksperymenty, ciągła nauka, eksploracja nowej wiedzy i otwarte oprogramowanie.",
                    "viewRepoLabel":  "Zobacz kod na GitHubie",
                    "viewProfileLabel":  "Wszystkie repozytoria na GitHubie",
                    "items":  [
                                  {
-                                     "name":  "FractalsDesktopMultiOS",
+                                     "name":  "Wieloplatformowy Generator Fraktali Desktopowych",
                                      "tags":  [
                                                   "C# 14",
                                                   ".NET 10",
@@ -388,13 +388,13 @@
                                                   "Multi-OS",
                                                   "Fraktale"
                                               ],
-                                     "description":  "Wieloplatformowy generator fraktali desktopowych w C# (.NET 10 i Avalonia UI) dla systemów Windows, Linux i macOS obsługujący zbiory Mandelbrota, Julii, Burning Ship, paproć Barnsleya i trójkąt Sierpińskiego.",
+                                     "description":  "Wieloplatformowa aplikacja desktopowa w C# (.NET 10 i Avalonia UI) dla systemów Windows, Linux i macOS generująca zbiory Mandelbrota, Julii, Burning Ship, paproć Barnsleya oraz trójkąt Sierpińskiego.",
                                      "badge":  ".NET 10 / Multi-OS",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/FractalsDesktopMultiOS"
                                  },
                                  {
-                                     "name":  "NTier-Mvvm-Backend-Api-Orm",
+                                     "name":  "Wzorcowa Architektura Enterprise N-Tier",
                                      "tags":  [
                                                   "C#",
                                                   ".NET 8",
@@ -403,13 +403,13 @@
                                                   "Własny ORM",
                                                   "SQL Server"
                                               ],
-                                     "description":  "Wzorcowa implementacja architektury wielowarstwowej Enterprise N-Tier: .NET 8 LTS, klient WPF MVVM, serwis backendowy CoreWCF, autorski lekki ORM oparty na refleksji, SQL Server oraz testy jednostkowe Moq.",
+                                     "description":  "Referencyjna implementacja architektury wielowarstwowej w .NET 8 LTS: klient desktopowy WPF MVVM, serwis backendowy CoreWCF, autorski lekki ORM oparty na refleksji, SQL Server oraz testy Moq.",
                                      "badge":  "Architektura",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm"
                                  },
                                  {
-                                     "name":  "Pdf_Invoice_generator",
+                                     "name":  "Dwujęzyczny Generator Faktur PDF",
                                      "tags":  [
                                                   "C#",
                                                   ".NET 8",
@@ -418,13 +418,13 @@
                                                   "iTextSharp",
                                                   "Faktury B2B"
                                               ],
-                                     "description":  "Nowoczesna aplikacja desktopowa WPF (.NET 8) do generowania profesjonalnych dwujęzycznych faktur PDF (PL/EN) z obsługą wielu walut, elastycznych modeli rozliczeń i automatycznym podatkiem VAT.",
+                                     "description":  "Nowoczesna aplikacja desktopowa WPF (.NET 8) do szybkiego wystawiania profesjonalnych dwujęzycznych faktur PDF (PL/EN) z obsługą wielu walut, elastycznych modeli rozliczeń i automatycznym podatkiem VAT.",
                                      "badge":  "Aplikacja Desktop",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/Pdf_Invoice_generator"
                                  },
                                  {
-                                     "name":  "Australia-1859-Sim",
+                                     "name":  "Symulator Ekosystemu Australia 1859",
                                      "tags":  [
                                                   "C++",
                                                   "Lotka-Volterra",
@@ -432,27 +432,27 @@
                                                   "VCL",
                                                   "Symulacja"
                                               ],
-                                     "description":  "Symulator życia i ekosystemu wyspowego drapieżnik-ofiara (króliki, lisy, roślinność) oparty na modelu matematycznym Lotki-Volterry z wizualizacją w czasie rzeczywistym.",
+                                     "description":  "Symulator życia i dynamiki ekosystemu wyspowego drapieżnik-ofiara (króliki, lisy, flora) oparty na modelu matematycznym Lotki-Volterry z wizualizacją w czasie rzeczywistym.",
                                      "badge":  "Symulacja",
                                      "language":  "C++",
                                      "url":  "https://github.com/DavIT-Futures/Australia-1859-Sim"
                                  },
                                  {
-                                     "name":  "DavITFuturesWebSite_Blazor",
+                                     "name":  "Strona DavIT Futures (Ta Strona)",
                                      "tags":  [
                                                   "Blazor WebAssembly",
                                                   "C# 14",
                                                   ".NET 10",
                                                   "GitHub Actions",
-                                                  "SPA"
+                                                  "Ta strona"
                                               ],
-                                     "description":  "Oficjalna strona firmowa DavIT Futures: Blazor WebAssembly na .NET 10, C# 14, dwa języki (PL/EN), motyw jasny i ciemny oraz automatyczne wdrożenie GitHub Actions na GitHub Pages.",
-                                     "badge":  "Blazor WASM",
+                                     "description":  "Ta strona internetowa, którą właśnie przeglądasz: stworzona w C# 14 w technologii Blazor WebAssembly (.NET 10), z dynamicznym motywem jasnym/ciemnym, dwujęzycznością i automatycznym CI/CD na GitHub Pages.",
+                                     "badge":  "Ta strona",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor"
                                  },
                                  {
-                                     "name":  "DavITFuturesWebSiteMVC",
+                                     "name":  "Klasyczna Strona ASP.NET MVC",
                                      "tags":  [
                                                   "ASP.NET MVC 5",
                                                   ".NET 4.8",
@@ -460,26 +460,26 @@
                                                   "Razor",
                                                   "jQuery"
                                               ],
-                                     "description":  "Strona firmowa zbudowana w klasycznym ASP.NET MVC 5.3 (.NET Framework 4.8) i widokach Razor, publikowana jako statyczna strona na GitHub Pages przez GitHub Actions.",
+                                     "description":  "Strona firmowa DavIT Futures zbudowana w klasycznym ASP.NET MVC 5.3 (.NET Framework 4.8) i widokach Razor, publikowana jako statyczna witryna na GitHub Pages przez GitHub Actions.",
                                      "badge":  "ASP.NET MVC",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC"
                                  },
                                  {
-                                     "name":  "TradeChameleon",
+                                     "name":  "Pakiet Narzędzi Tradingu Algorytmicznego",
                                      "tags":  [
                                                   "C#",
                                                   ".NET",
                                                   "Trading",
                                                   "Rynki finansowe"
                                               ],
-                                     "description":  "Repozytorium narzędzi analitycznych i tradingu algorytmicznego dla rynków kapitałowych i egzekucji ilościowej.",
+                                     "description":  "Narzędzia analityczne, backtesting oraz moduły egzekucji tradingu ilościowego w .NET dla rynków kapitałowych.",
                                      "badge":  "Trading",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/TradeChameleon"
                                  }
                              ],
-                   "title":  "GitHub \u0026 Open Source",
+                   "title":  "GitHub Pet Projects",
                    "gitHubUser":  "DavIT-Futures"
                },
     "testimonials":  {

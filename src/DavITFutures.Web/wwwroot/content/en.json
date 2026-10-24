@@ -7,8 +7,8 @@
                 "about":  "About",
                 "services":  "Services",
                 "tech":  "Technology",
-                "projects":  "Projects",
-                "gitHub":  "GitHub",
+                "projects":  "Commercial Projects",
+                "gitHub":  "Pet Projects",
                 "cv":  "CV",
                 "contact":  "Contact",
                 "themeLight":  "Light theme",
@@ -241,8 +241,8 @@
                             ]
              },
     "projects":  {
-                     "title":  "Projects",
-                     "subtitle":  "Selected commercial projects from the last 18 years, and this website.",
+                     "title":  "Commercial Projects",
+                     "subtitle":  "Selected commercial and enterprise systems delivered over the last 18 years for institutional clients.",
                      "gitHubUser":  "DavIT-Futures",
                      "allReposLabel":  "",
                      "codeLabel":  "Code on GitHub",
@@ -375,12 +375,12 @@
                                ]
                  },
     "gitHub":  {
-                   "subtitle":  "Public repositories, reference architectures, and open-source tools on GitHub.",
+                   "subtitle":  "Personal experiments, continuous learning, knowledge exploration, and open-source software.",
                    "viewRepoLabel":  "View code on GitHub",
                    "viewProfileLabel":  "All repositories on GitHub",
                    "items":  [
                                  {
-                                     "name":  "FractalsDesktopMultiOS",
+                                     "name":  "Multi-OS Desktop Fractal Generator",
                                      "tags":  [
                                                   "C# 14",
                                                   ".NET 10",
@@ -388,13 +388,13 @@
                                                   "Cross-Platform",
                                                   "Fractals"
                                               ],
-                                     "description":  "Cross-platform desktop fractal generator in C# (.NET 10 and Avalonia UI) for Windows, Linux, and macOS supporting Mandelbrot, Julia, Burning Ship, Barnsley Fern, and Sierpiński triangle.",
+                                     "description":  "Cross-platform desktop application in C# (.NET 10 and Avalonia UI) for Windows, Linux, and macOS generating Mandelbrot, Julia, Burning Ship, Barnsley Fern, and Sierpiński fractals.",
                                      "badge":  ".NET 10 / Multi-OS",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/FractalsDesktopMultiOS"
                                  },
                                  {
-                                     "name":  "NTier-Mvvm-Backend-Api-Orm",
+                                     "name":  "Enterprise N-Tier Reference Architecture",
                                      "tags":  [
                                                   "C#",
                                                   ".NET 8",
@@ -403,13 +403,13 @@
                                                   "Custom ORM",
                                                   "SQL Server"
                                               ],
-                                     "description":  "Enterprise N-Tier reference architecture implementation featuring .NET 8 LTS, WPF MVVM client, CoreWCF backend service, custom lightweight reflection-based ORM, SQL Server, and Moq unit tests.",
+                                     "description":  "Production-grade reference implementation in .NET 8 LTS featuring a WPF MVVM desktop client, CoreWCF backend services, a custom lightweight reflection ORM, and SQL Server.",
                                      "badge":  "Architecture",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm"
                                  },
                                  {
-                                     "name":  "Pdf_Invoice_generator",
+                                     "name":  "Bilingual Desktop PDF Invoice Generator",
                                      "tags":  [
                                                   "C#",
                                                   ".NET 8",
@@ -418,13 +418,13 @@
                                                   "iTextSharp",
                                                   "B2B Invoicing"
                                               ],
-                                     "description":  "Modern .NET 8 WPF desktop application for generating professional bilingual (PL/EN) PDF invoices with multi-currency, flexible billing models, and automated VAT calculation.",
+                                     "description":  "Modern .NET 8 WPF desktop application for generating professional bilingual (PL/EN) PDF invoices with multi-currency support, flexible billing models, and automated VAT calculation.",
                                      "badge":  "Desktop App",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/Pdf_Invoice_generator"
                                  },
                                  {
-                                     "name":  "Australia-1859-Sim",
+                                     "name":  "Island Ecosystem Life Simulator",
                                      "tags":  [
                                                   "C++",
                                                   "Lotka-Volterra",
@@ -438,21 +438,21 @@
                                      "url":  "https://github.com/DavIT-Futures/Australia-1859-Sim"
                                  },
                                  {
-                                     "name":  "DavITFuturesWebSite_Blazor",
+                                     "name":  "DavIT Futures Website (This Site)",
                                      "tags":  [
                                                   "Blazor WebAssembly",
                                                   "C# 14",
                                                   ".NET 10",
                                                   "GitHub Actions",
-                                                  "SPA"
+                                                  "This site"
                                               ],
-                                     "description":  "Official corporate website of DavIT Futures: Blazor WebAssembly on .NET 10, C# 14, bilingual (PL/EN), light and dark themes, and automated GitHub Actions CI/CD to GitHub Pages.",
-                                     "badge":  "Blazor WASM",
+                                     "description":  "This website, which you are viewing right now: written in C# 14 with Blazor WebAssembly (.NET 10), featuring light/dark themes, bilingual support, and automated GitHub Pages deployment.",
+                                     "badge":  "This site",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor"
                                  },
                                  {
-                                     "name":  "DavITFuturesWebSiteMVC",
+                                     "name":  "Classic ASP.NET MVC Website",
                                      "tags":  [
                                                   "ASP.NET MVC 5",
                                                   ".NET 4.8",
@@ -460,26 +460,26 @@
                                                   "Razor",
                                                   "jQuery"
                                               ],
-                                     "description":  "Corporate website built with classic ASP.NET MVC 5.3 (.NET Framework 4.8) and Razor views, deployed as static assets to GitHub Pages via automated GitHub Actions.",
+                                     "description":  "Classic corporate website built with ASP.NET MVC 5.3 (.NET Framework 4.8) and Razor views, deployed as static production assets to GitHub Pages via automated GitHub Actions.",
                                      "badge":  "ASP.NET MVC",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC"
                                  },
                                  {
-                                     "name":  "TradeChameleon",
+                                     "name":  "Algorithmic Trading Analytics Toolkit",
                                      "tags":  [
                                                   "C#",
                                                   ".NET",
                                                   "Trading",
                                                   "Financial Markets"
                                               ],
-                                     "description":  "Financial analytics and algorithmic trading tooling repository for capital markets and quantitative execution.",
+                                     "description":  "Financial analytics, backtesting utilities, and quantitative trading tooling in .NET for capital markets.",
                                      "badge":  "Trading",
                                      "language":  "C#",
                                      "url":  "https://github.com/DavIT-Futures/TradeChameleon"
                                  }
                              ],
-                   "title":  "GitHub \u0026 Open Source",
+                   "title":  "GitHub Pet Projects",
                    "gitHubUser":  "DavIT-Futures"
                },
     "testimonials":  {

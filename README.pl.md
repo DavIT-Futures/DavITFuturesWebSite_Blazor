@@ -18,8 +18,8 @@ To jednostronicowa wizytówka napisana w całości w C# w **Blazor WebAssembly**
 - **O nas** – osoba stojąca za firmą, zdjęcie i krótkie fakty
 - **Usługi** i **Jak pracujemy** – co dostarczamy i jak krok po kroku przebiega projekt
 - **Technologie** – stack pogrupowany według obszarów (backend, frontend, mobile, DevOps, AI)
-- **Projekty** – wybrane projekty komercyjne z klientem, latami, efektem i tagami
-- **GitHub & Open Source** – przegląd publicznych repozytoriów, architektur referencyjnych i narzędzi z bezpośrednimi linkami do kodu
+- **Projekty komercyjne** – wybrane projekty komercyjne z klientem, latami, efektem i tagami
+- **GitHub Pet Projects** – przegląd publicznych repozytoriów, architektur referencyjnych i narzędzi z bezpośrednimi linkami do kodu
 - **Rekomendacje** – opinie osób, z którymi pracowaliśmy
 - **CV** – wersja krótka i pełna, każda jako strona WWW i PDF do druku
 - **Kontakt** – e-mail, LinkedIn i dane firmy

@@ -18,8 +18,8 @@ It is a single-page business card written entirely in C# with **Blazor WebAssemb
 - **About** – the person behind the company, photo and quick facts
 - **Services** and **How we work** – what we deliver and how a project runs, step by step
 - **Technology** – the stack grouped by area (backend, frontend, mobile, DevOps, AI)
-- **Projects** – selected commercial projects with client, years, outcome and tags
-- **GitHub & Open Source** – showcase of public repositories, reference architectures and tools with direct code links
+- **Commercial Projects** – selected commercial projects with client, years, outcome and tags
+- **GitHub Pet Projects** – showcase of public repositories, reference architectures and tools with direct code links
 - **Testimonials** – recommendations from people we worked with
 - **CV** – short and full versions, each as a web page and a printable PDF
 - **Contact** – e-mail, LinkedIn and company details
