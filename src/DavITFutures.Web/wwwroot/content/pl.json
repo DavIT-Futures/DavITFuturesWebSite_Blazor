@@ -8,7 +8,7 @@
                 "services":  "Usługi",
                 "tech":  "Technologie",
                 "projects":  "Projekty komercyjne",
-                "gitHub":  "Pet Projects",
+                "gitHub":  "GitLab Projects",
                 "cv":  "CV",
                 "contact":  "Kontakt",
                 "themeLight":  "Jasny motyw",
@@ -468,14 +468,17 @@
                                  {
                                      "name":  "Pakiet Narzędzi Tradingu Algorytmicznego",
                                      "tags":  [
-                                                  "C#",
-                                                  ".NET",
+                                                  "Java",
+                                                  "Spring Boot",
+                                                  "Angular 22",
+                                                  "PostgreSQL",
+                                                  "Docker",
                                                   "Trading",
-                                                  "Rynki finansowe"
+                                                  "FinTech"
                                               ],
-                                     "description":  "Narzędzia analityczne, backtesting oraz moduły egzekucji tradingu ilościowego w .NET dla rynków kapitałowych.",
-                                     "badge":  "Trading",
-                                     "language":  "C#",
+                                     "description":  "Nowoczesna platforma i zestaw narzędzi do tradingu ilościowego. Backend oparty na nowoczesnej Javie ze Spring Boot, frontend w Angular 22 oraz baza PostgreSQL na obrazie Docker. Kod źródłowy w trakcie przygotowania do publikacji w repozytorium.",
+                                     "badge":  "Java \u0026 Angular / FinTech",
+                                     "language":  "Java / TypeScript",
                                      "url":  "https://github.com/DavIT-Futures/TradeChameleon"
                                  }
                              ],
@@ -484,8 +487,14 @@
                },
     "testimonials":  {
                          "title":  "Opinie",
-                         "subtitle":  "Rekomendacja z LinkedIna, w oryginale.",
+                         "subtitle":  "Rekomendacje z LinkedIna, w oryginale.",
                          "items":  [
+                                       {
+                                           "context":  "Paul był klientem Dawida (portal SaaS i API Focis) · LinkedIn, październik 2026",
+                                           "role":  "Konsultant ds. integracji danych i Legal Tech, współzałożyciel Focis",
+                                           "author":  "Paul Ryan",
+                                           "quote":  "Dawid was one of the very best people I\u0027ve worked with in my career. He has unique ability to quickly understand requirements then offer intelligent decisions on architecture, explained thoroughly and then executed. He was a major influence on development of our SAAS based portal and API."
+                                       },
                                        {
                                            "quote":  "Dawid is an excellent senior developer and a great team player. While working on same projects, Dawid has shown knowledge, will and proactive approach to problem solving. He was working on multiple tasks across multiple products and he always made an impact. Dawid also did great improvements to our delivery pipeline. He is willing to work on demanding tasks and always willing to take responsibility.\n\nI would strongly recommend Dawid as I believe he can bring value to any team. Dawid is also a great person and always happy to help.",
                                            "author":  "Miroslav Vrbanac",
