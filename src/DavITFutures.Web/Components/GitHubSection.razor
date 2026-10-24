@@ -1,0 +1,58 @@
+@inherits SiteComponent
+
+<section class="section section-alt" id="github">
+    <div class="container">
+        <SectionHeading Title="@Content!.GitHub.Title" Subtitle="@Content.GitHub.Subtitle" />
+
+        <div class="cards github-cards">
+            @foreach (var repo in Content.GitHub.Items)
+            {
+                <article class="card github-card">
+                    <div class="github-card-header">
+                        <span class="github-repo-icon" aria-hidden="true">
+                            <Icon Name="github" Size="20" />
+                        </span>
+                        @if (!string.IsNullOrEmpty(repo.Badge))
+                        {
+                            <span class="github-badge">@repo.Badge</span>
+                        }
+                        else if (!string.IsNullOrEmpty(repo.Language))
+                        {
+                            <span class="github-lang">@repo.Language</span>
+                        }
+                    </div>
+
+                    <h3>
+                        <a href="@repo.Url" target="_blank" rel="noopener" class="github-title-link">
+                            @repo.Name
+                        </a>
+                    </h3>
+
+                    <p class="github-desc">@repo.Description</p>
+
+                    <ul class="chips small">
+                        @foreach (var tag in repo.Tags)
+                        {
+                            <li>@tag</li>
+                        }
+                    </ul>
+
+                    <div class="github-card-footer">
+                        <a class="project-link" href="@repo.Url" target="_blank" rel="noopener">
+                            <Icon Name="github" Size="16" /> @Content.GitHub.ViewRepoLabel
+                        </a>
+                    </div>
+                </article>
+            }
+        </div>
+
+        @if (!string.IsNullOrEmpty(Content.GitHub.ViewProfileLabel))
+        {
+            <div class="center">
+                <a class="btn btn-primary" href="https://github.com/@Content.GitHub.GitHubUser" target="_blank" rel="noopener">
+                    <Icon Name="github" Size="18" /> @Content.GitHub.ViewProfileLabel
+                </a>
+            </div>
+        }
+    </div>
+</section>

@@ -10,6 +10,7 @@ public record SiteContent(
     ProcessSection Process,
     TechSection Tech,
     ProjectsSection Projects,
+    GitHubSection GitHub,
     TestimonialsSection Testimonials,
     CvSection Cv,
     ContactSection Contact,
@@ -17,7 +18,7 @@ public record SiteContent(
 
 public record Meta(string Title, string Description);
 
-public record Nav(string About, string Services, string Tech, string Projects, string Cv, string Contact,
+public record Nav(string About, string Services, string Tech, string Projects, string GitHub, string Cv, string Contact,
     string ThemeLight, string ThemeDark, string Language);
 
 public record Hero(string Eyebrow, string Title, string Highlight, string Lead, Link PrimaryCta, Link SecondaryCta,
@@ -52,6 +53,23 @@ public record ProjectsSection(string Title, string Subtitle, string GitHubUser, 
 // Outcome to jedna wyróżniona linia z wynikiem projektu, pokazywana nad opisem.
 public record Project(string Name, string Client, string Years, string Description, string Url,
     IReadOnlyList<string> Tags, string? Outcome = null);
+
+// Sekcja z publicznymi repozytoriami na GitHubie
+public record GitHubSection(
+    string Title,
+    string Subtitle,
+    string GitHubUser,
+    string ViewProfileLabel,
+    string ViewRepoLabel,
+    IReadOnlyList<GitHubRepo> Items);
+
+public record GitHubRepo(
+    string Name,
+    string Description,
+    string Url,
+    IReadOnlyList<string> Tags,
+    string? Language = null,
+    string? Badge = null);
 
 // Opinie przepisane dosłownie z rekomendacji na LinkedIn, dlatego cytat zostaje w oryginale w obu językach.
 public record TestimonialsSection(string Title, string Subtitle, IReadOnlyList<Testimonial> Items, string? MoreLabel = null,
