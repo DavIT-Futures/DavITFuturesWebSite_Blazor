@@ -88,6 +88,15 @@ Workflow ustawia `<base href>` na ścieżkę repozytorium, kopiuje `index.html` 
 Jednorazowo w repozytorium: **Settings → Pages → Source: GitHub Actions**.
 Po podpięciu własnej domeny dodaj plik `src/DavITFutures.Web/wwwroot/CNAME` z nazwą domeny; ścieżka bazowa zostanie wtedy jako `/`.
 
+
+## Autor
+
+**DavIT Futures • Dawid Domagała**
+- **Strona:** [davit-futures.github.io/DavITFuturesWebSite_Blazor](https://davit-futures.github.io/DavITFuturesWebSite_Blazor/)
+- **LinkedIn:** [Dawid Domagała](https://www.linkedin.com/in/dawid-domagala-futures/)
+- **GitHub:** [@DavIT-Futures](https://github.com/DavIT-Futures)
+- **E-mail:** davit.futures@gmail.com
+
 ## Licencja
 
 © DavIT Futures. Wszelkie prawa zastrzeżone. Kod jest publiczny poglądowo; treści, CV i zdjęć nie można wykorzystywać bez zgody.

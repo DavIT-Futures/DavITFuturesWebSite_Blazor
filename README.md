@@ -88,6 +88,15 @@ The workflow rewrites `<base href>` to the repository path, copies `index.html` 
 One-time setup in the repository: **Settings → Pages → Source: GitHub Actions**.
 To use a custom domain, add `src/DavITFutures.Web/wwwroot/CNAME` with the domain name; the base path is then left as `/`.
 
+
+## Author
+
+**DavIT Futures • Dawid Domagała**
+- **Website:** [davit-futures.github.io/DavITFuturesWebSite_Blazor](https://davit-futures.github.io/DavITFuturesWebSite_Blazor/)
+- **LinkedIn:** [Dawid Domagała](https://www.linkedin.com/in/dawid-domagala-futures/)
+- **GitHub:** [@DavIT-Futures](https://github.com/DavIT-Futures)
+- **E-mail:** davit.futures@gmail.com
+
 ## License
 
 © DavIT Futures. All rights reserved. The code is public for reference; the content, CVs and photos may not be reused without permission.
