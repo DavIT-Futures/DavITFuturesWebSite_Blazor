@@ -513,14 +513,14 @@
                                     "title":  "Short CV",
                                     "text":  "Key achievements, skills and career path at a glance.",
                                     "pages":  "2 pages",
-                                    "url":  "cv/Dawid-Domagala-CV-short.html",
+                                    "url":  "/cv/Dawid-Domagala-CV-short.html",
                                     "buttonLabel":  "Open CV"
                                 },
                                 {
                                     "title":  "Full CV",
                                     "text":  "Detailed projects, technologies, achievements and references.",
                                     "pages":  "4 pages",
-                                    "url":  "cv/Dawid-Domagala-CV-full.html",
+                                    "url":  "/cv/Dawid-Domagala-CV-full.html",
                                     "buttonLabel":  "Open CV"
                                 }
                             ]
