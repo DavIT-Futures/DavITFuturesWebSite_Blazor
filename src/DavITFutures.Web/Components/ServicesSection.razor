@@ -1,0 +1,33 @@
+@inherits SiteComponent
+
+<section class="section section-alt" id="services">
+    <div class="container">
+        <SectionHeading Title="@Content!.Services.Title" Subtitle="@Content.Services.Subtitle" />
+
+        <div class="services-matrix">
+            @foreach (var (item, index) in Content.Services.Items.Select((x, i) => (x, i)))
+            {
+                <div class="service-strip">
+                    <div class="service-badge-col">
+                        <span class="service-idx mono">@($"0{index + 1}")</span>
+                        <div class="service-icon-wrap">
+                            <Icon Name="@item.Icon" Size="20" />
+                        </div>
+                    </div>
+                    <div class="service-info-col">
+                        <h3 class="service-title">@item.Title</h3>
+                        <p class="service-desc">@item.Text</p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(item.LinkUrl))
+                    {
+                        <div class="service-action-col">
+                            <a class="service-ext-link" href="@item.LinkUrl" target="_blank" rel="noopener">
+                                @item.LinkLabel <Icon Name="arrow" Size="14" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>

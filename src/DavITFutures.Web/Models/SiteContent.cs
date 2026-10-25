@@ -79,8 +79,8 @@ public record Testimonial(string Quote, string Author, string Role, string Conte
 
 public record CvSection(string Title, string Subtitle, IReadOnlyList<CvVersion> Versions);
 
-public record CvVersion(string Title, string Text, string Pages, string Url, string ButtonLabel, string PdfUrl,
-    string PdfLabel);
+public record CvVersion(string Title, string Text, string Pages, string Url, string ButtonLabel, string? PdfUrl = null,
+    string? PdfLabel = null);
 
 public record ContactSection(string Title, string Subtitle, string Email, string LinkedIn,
     string GitHub, CompanyDetails Company, string? EmailSubject = null);

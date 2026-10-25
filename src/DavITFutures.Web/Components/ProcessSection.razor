@@ -3,16 +3,29 @@
 <section class="section" id="how">
     <div class="container">
         <SectionHeading Title="@Content!.Process.Title" Subtitle="@Content.Process.Subtitle" />
-        <ol class="steps">
-            @foreach (var (step, i) in Content.Process.Steps.Select((s, i) => (s, i)))
-            {
-                <li class="card step">
-                    <span class="step-no">@(i + 1)</span>
-                    <h3>@step.Title</h3>
-                    <p>@step.Text</p>
-                </li>
-            }
-        </ol>
-        <p class="steps-note">@Content.Process.Footnote</p>
+
+        <div class="pipeline-wrapper">
+            <div class="pipeline-track-line" aria-hidden="true"></div>
+            <div class="pipeline-flow">
+                @foreach (var (step, i) in Content.Process.Steps.Select((s, i) => (s, i)))
+                {
+                    <div class="pipeline-stage">
+                        <div class="stage-indicator">
+                            <span class="stage-dot"></span>
+                            <span class="stage-tag mono">@($"PHASE 0{i + 1}")</span>
+                        </div>
+                        <div class="stage-body">
+                            <h3 class="stage-title">@step.Title</h3>
+                            <p class="stage-desc">@step.Text</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="pipeline-footnote">
+            <span class="footnote-tag mono">ASSURANCE</span>
+            <span class="footnote-text">@Content.Process.Footnote</span>
+        </div>
     </div>
 </section>

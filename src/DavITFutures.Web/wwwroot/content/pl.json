@@ -514,18 +514,14 @@
                                     "text":  "Najważniejsze osiągnięcia, umiejętności i przebieg kariery w pigułce.",
                                     "pages":  "2 strony",
                                     "url":  "cv/Dawid-Domagala-CV-short.html",
-                                    "buttonLabel":  "Otwórz CV",
-                                    "pdfUrl":  "cv/Dawid-Domagala-CV-short.pdf",
-                                    "pdfLabel":  "Pobierz PDF"
+                                    "buttonLabel":  "Otwórz CV"
                                 },
                                 {
                                     "title":  "CV pełne",
                                     "text":  "Szczegółowy opis projektów, technologii, osiągnięć i referencji.",
                                     "pages":  "4 strony",
                                     "url":  "cv/Dawid-Domagala-CV-full.html",
-                                    "buttonLabel":  "Otwórz CV",
-                                    "pdfUrl":  "cv/Dawid-Domagala-CV-full.pdf",
-                                    "pdfLabel":  "Pobierz PDF"
+                                    "buttonLabel":  "Otwórz CV"
                                 }
                             ]
            },
