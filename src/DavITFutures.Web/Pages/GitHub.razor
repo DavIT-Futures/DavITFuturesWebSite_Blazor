@@ -1,0 +1,14 @@
+@page "/github"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Projekty GitHub – DavIT Futures" : "GitHub Projects – DavIT Futures")</PageTitle>
+
+<div class="subpage-hero">
+    <div class="container">
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "OPEN SOURCE & EKSPERYMENTY" : "OPEN SOURCE & EXPERIMENTS")</span>
+        <h1 class="subpage-title">@Content!.GitHub.Title</h1>
+        <p class="subpage-lead">@Content.GitHub.Subtitle</p>
+    </div>
+</div>
+
+<GitHubSection ShowHeading="false" />

@@ -2,9 +2,12 @@
 
 <section class="section section-alt" id="tech">
     <div class="container">
-        <SectionHeading Title="@Content!.Tech.Title" Subtitle="@Content.Tech.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.Tech.Title" Subtitle="@Content.Tech.Subtitle" />
+        }
         <div class="tech-grid">
-            @foreach (var group in Content.Tech.Groups)
+            @foreach (var group in Content!.Tech.Groups)
             {
                 <div class="tech-group @(string.IsNullOrEmpty(group.Note) ? "" : "wide")">
                     <h3>@group.Name</h3>
@@ -23,3 +26,7 @@
         </div>
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}

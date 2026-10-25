@@ -1,11 +1,11 @@
 @page "/services"
 @inherits SiteComponent
 
-<PageTitle>@(Site.Language == "pl" ? "Usługi i Model Współpracy – DavIT Futures" : "Engineering Services & How We Work – DavIT Futures")</PageTitle>
+<PageTitle>@(Site.Language == "pl" ? "Usługi – DavIT Futures" : "Services – DavIT Futures")</PageTitle>
 
 <div class="subpage-hero">
     <div class="container">
-        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "OFERTA & PROCES WDROŻENIA" : "SERVICES & EXECUTION")</span>
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "OFERTA & ARCHITEKTURA" : "SERVICES & ARCHITECTURE")</span>
         <h1 class="subpage-title">@Content!.Services.Title</h1>
         <p class="subpage-lead">@Content.Services.Subtitle</p>
     </div>
@@ -15,33 +15,8 @@
 
 <ProcessSection />
 
-<section class="section section-alt">
-    <div class="container">
-        <SectionHeading 
-            Title="@(Site.Language == "pl" ? "Zasady współpracy i gwarancje B2B" : "Cooperation Principles & B2B Assurance")" 
-            Subtitle="@(Site.Language == "pl" ? "Przejrzyste modele rozliczeń, brak ukrytych narzutów i bezpośredni kontakt z doświadczonym inżynierem." : "Transparent billing models, zero proxy overhead, and direct access to the senior engineer.")" />
-
-        <div class="assurance-grid">
-            <div class="assurance-card">
-                <h4>@(Site.Language == "pl" ? "Elastyczne kontrakty B2B" : "Flexible B2B Contracts")</h4>
-                <p>@(Site.Language == "pl" ? "Rozliczenia Time & Materials lub Fixed-Price dla określonych sprintów. Sprawna obsługa klientów z Polski, Unii Europejskiej oraz Wielkiej Brytanii." : "Time & Materials or Fixed-Price models for defined scopes. Seamless B2B invoicing for clients across Poland, EU, and the UK.")</p>
-            </div>
-            <div class="assurance-card">
-                <h4>@(Site.Language == "pl" ? "Bezpośrednia współpraca" : "Direct Senior Engineering")</h4>
-                <p>@(Site.Language == "pl" ? "Pracujesz bezpośrednio z inżynierem z 18-letnim doświadczeniem produkcyjnym. Żadnych juniorów i pośredników zniekształcających wymagania." : "You work directly with the senior engineer designing and coding your platform. No account managers, no hand-offs.")</p>
-            </div>
-            <div class="assurance-card">
-                <h4>@(Site.Language == "pl" ? "Bankowe rygory jakości" : "Banking-Grade Rigour")</h4>
-                <p>@(Site.Language == "pl" ? "Automatyczne testy regresyjne na każdym commicie, bramki jakościowe w CI/CD, bezpieczne podpisywanie kodu i wdrożenia 24/7." : "Automated regression suites, CI/CD quality gates, code signing, and 24/7 zero-downtime releases.")</p>
-            </div>
-            <div class="assurance-card">
-                <h4>@(Site.Language == "pl" ? "Wydajność wspierana AI" : "AI-Augmented Velocity")</h4>
-                <p>@(Site.Language == "pl" ? "Autonomiczne agenty AI pod ludzkim nadzorem przyspieszają cykle wdrożeń do 4× przy zachowaniu 100% kontroli i bezpieczeństwa." : "Autonomous AI agents multiply output up to 4× while human code review guarantees production stability.")</p>
-            </div>
-        </div>
-
-        <div class="section-cta-wrap">
-            <a class="btn btn-primary" href="contact">@(Site.Language == "pl" ? "Porozmawiajmy o Twoim projekcie" : "Let's talk about your project") <Icon Name="arrow" Size="16" /></a>
-        </div>
-    </div>
-</section>
+<div class="container section-cta-wrap" style="margin-bottom: 56px;">
+    <a class="btn btn-primary" href="contact">
+        @(Site.Language == "pl" ? "Porozmawiajmy o Twoim projekcie" : "Let's talk about your project") <Icon Name="arrow" Size="16" />
+    </a>
+</div>

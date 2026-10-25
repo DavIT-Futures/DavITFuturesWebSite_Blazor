@@ -8,7 +8,7 @@
                 "services":  "Usługi",
                 "tech":  "Technologie",
                 "projects":  "Projekty komercyjne",
-                "gitHub":  "GitLab Projects",
+                "gitHub":  "Projekty GitHub",
                 "cv":  "CV",
                 "contact":  "Kontakt",
                 "themeLight":  "Jasny motyw",
@@ -164,7 +164,7 @@
                 },
     "tech":  {
                  "title":  "Technologie",
-                 "subtitle":  "Technologie stojące za projektami poniżej.",
+                 "subtitle":  "Kluczowe technologie, frameworki i standardy inżynieryjne wykorzystywane w codziennej pracy.",
                  "groups":  [
                                 {
                                     "name":  "Backend",

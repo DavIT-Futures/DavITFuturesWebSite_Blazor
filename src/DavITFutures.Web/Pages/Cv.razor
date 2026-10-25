@@ -1,0 +1,25 @@
+@page "/cv"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Curriculum Vitae – DavIT Futures" : "Curriculum Vitae – DavIT Futures")</PageTitle>
+
+<div class="subpage-hero">
+    <div class="container">
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "PROFIL ZAWODOWY & DOŚWIADCZENIE" : "PROFESSIONAL PROFILE & EXPERIENCE")</span>
+        <h1 class="subpage-title">@Content!.Cv.Title</h1>
+        <p class="subpage-lead">@Content.Cv.Subtitle</p>
+    </div>
+</div>
+
+<CvSection ShowHeading="false" />
+
+<div class="container" style="margin-bottom: 56px;">
+    <div class="card" style="padding: 18px 24px; border-left: 3px solid var(--accent); max-width: 720px;">
+        <p class="muted" style="font-size: 14px; line-height: 1.6;">
+            💡 <strong>@(Site.Language == "pl" ? "Wskazówka dotycząca eksportu do PDF:" : "PDF Export Tip:")</strong>
+            @(Site.Language == "pl" 
+                ? "Każda wersja CV otwiera się jako interaktywna strona HTML zoptymalizowana pod format A4. W oknie podglądu kliknij przycisk Drukuj (lub wciśnij Ctrl+P), aby natychmiast zapisać czysty, wektorowy plik PDF bez zbędnych marginesów." 
+                : "Each CV version opens as an interactive HTML document optimized for A4 print. In the preview window, simply click Print (or press Ctrl+P) to save a crisp vector PDF with zero margin clutter.")
+        </p>
+    </div>
+</div>

@@ -2,9 +2,12 @@
 
 <section class="section" id="cv">
     <div class="container">
-        <SectionHeading Title="@Content!.Cv.Title" Subtitle="@Content.Cv.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.Cv.Title" Subtitle="@Content.Cv.Subtitle" />
+        }
         <div class="cards cv-cards">
-            @foreach (var cv in Content.Cv.Versions)
+            @foreach (var cv in Content!.Cv.Versions)
             {
                 <article class="card cv-card">
                     <div class="card-icon"><Icon Name="file" /></div>
@@ -26,3 +29,7 @@
         </div>
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}

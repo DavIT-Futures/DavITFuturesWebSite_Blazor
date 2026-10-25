@@ -606,10 +606,13 @@ p { margin: 0; }
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.02em;
-    animation: pulse 1.4s ease-in-out infinite;
+    animation: breathe 2s ease-in-out infinite;
 }
-.splash-logo b { font-weight: 800; color: #ffffff; }
-@keyframes pulse { 50% { opacity: .45; } }
+.logo-text b, .splash-logo b { font-weight: 800; color: var(--accent-text); margin-left: 2px; }
+@keyframes breathe {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.97); }
+}
 
 .loader-error-box {
     display: flex;

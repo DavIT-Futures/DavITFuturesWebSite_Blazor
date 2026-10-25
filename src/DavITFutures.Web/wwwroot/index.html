@@ -24,72 +24,11 @@
     <link rel="preload" id="webassembly" />
     <link rel="stylesheet" href="css/app.css" />
     <script type="importmap"></script>
-    <style>
-        .splash {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background: #090a0f;
-            user-select: none;
-        }
-        .splash-logo {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            animation: pulse 1.4s ease-in-out infinite;
-        }
-        .splash-logo b {
-            font-weight: 800;
-            color: #ffffff;
-        }
-        @keyframes pulse { 50% { opacity: .45; } }
-        .loader-fallback {
-            position: fixed;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            z-index: 100000;
-            background: rgba(16, 20, 28, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 14px 24px;
-            border-radius: 9999px;
-            color: #94a3b8;
-            font-size: 13px;
-            font-family: system-ui, sans-serif;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-        .loader-fallback button {
-            background: #10b981;
-            color: #050608;
-            border: none;
-            padding: 7px 18px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12.5px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .loader-fallback button:hover {
-            opacity: 0.9;
-        }
-    </style>
 </head>
 
 <body>
     <div id="app">
         <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
-        <div id="loader-fallback" class="loader-fallback">
-            <span>Ładowanie aplikacji trwa dłużej niż zwykle... / Loading is taking longer than usual...</span>
-            <button onclick="location.reload(true)">Odśwież stronę / Reload</button>
-        </div>
     </div>
 
     <div id="blazor-error-ui">
@@ -97,15 +36,6 @@
         <a href="." class="reload">Odśwież / Reload</a>
         <span class="dismiss">🗙</span>
     </div>
-    <script>
-        // Pokaż fallback reload, jeśli Blazor nie wystartuje w 8 sekund
-        setTimeout(function() {
-            var fb = document.getElementById("loader-fallback");
-            if (fb && document.getElementById("app") && document.getElementById("app").querySelector(".splash")) {
-                fb.style.display = "flex";
-            }
-        }, 8000);
-    </script>
     <script src="js/site.js"></script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 </body>

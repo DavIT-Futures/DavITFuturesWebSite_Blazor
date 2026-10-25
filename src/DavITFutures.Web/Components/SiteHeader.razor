@@ -8,17 +8,17 @@
         </a>
 
         <nav class="nav @(_menuOpen ? "is-open" : "")" aria-label="Menu">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="CloseMenu">@Content!.Nav.About</NavLink>
             <NavLink class="nav-link" href="services" @onclick="CloseMenu">@Content!.Nav.Services</NavLink>
             <NavLink class="nav-link" href="projects" @onclick="CloseMenu">@Content!.Nav.Projects</NavLink>
-            <a href="/#tech" @onclick="CloseMenu">@Content!.Nav.Tech</a>
-            <a href="/#github" @onclick="CloseMenu">@Content!.Nav.GitHub</a>
-            <a href="cv/Dawid-Domagala-CV-full.html" target="_blank" rel="noopener" @onclick="CloseMenu">@Content!.Nav.Cv</a>
+            <NavLink class="nav-link" href="github" @onclick="CloseMenu">@Content!.Nav.GitHub</NavLink>
+            <NavLink class="nav-link" href="technology" @onclick="CloseMenu">@Content!.Nav.Tech</NavLink>
+            <NavLink class="nav-link" href="cv" @onclick="CloseMenu">@Content!.Nav.Cv</NavLink>
             <NavLink class="nav-link" href="contact" @onclick="CloseMenu">@Content!.Nav.Contact</NavLink>
+            <NavLink class="nav-link" href="about" @onclick="CloseMenu">@Content!.Nav.About</NavLink>
         </nav>
 
         <div class="header-actions">
-            <div class="lang-switch" role="group" aria-label="@Content.Nav.Language">
+            <div class="lang-switch" role="group" aria-label="@Content!.Nav.Language">
                 @foreach (var lang in SiteState.Languages)
                 {
                     <button type="button" class="@(Site.Language == lang ? "active" : "")"
@@ -27,8 +27,8 @@
                 }
             </div>
             <button type="button" class="icon-btn" @onclick="Site.ToggleThemeAsync"
-                    title="@(Site.Theme == "dark" ? Content.Nav.ThemeLight : Content.Nav.ThemeDark)"
-                    aria-label="@(Site.Theme == "dark" ? Content.Nav.ThemeLight : Content.Nav.ThemeDark)">
+                    title="@(Site.Theme == "dark" ? Content!.Nav.ThemeLight : Content!.Nav.ThemeDark)"
+                    aria-label="@(Site.Theme == "dark" ? Content!.Nav.ThemeLight : Content!.Nav.ThemeDark)">
                 <Icon Name="@(Site.Theme == "dark" ? "sun" : "moon")" Size="20" />
             </button>
             <button type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="@_menuOpen"

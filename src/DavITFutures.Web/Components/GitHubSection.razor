@@ -2,10 +2,13 @@
 
 <section class="section section-alt" id="github">
     <div class="container">
-        <SectionHeading Title="@Content!.GitHub.Title" Subtitle="@Content.GitHub.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.GitHub.Title" Subtitle="@Content.GitHub.Subtitle" />
+        }
 
         <div class="cards github-cards">
-            @foreach (var repo in Content.GitHub.Items)
+            @foreach (var repo in Content!.GitHub.Items)
             {
                 <article class="card github-card">
                     <div class="github-card-header">
@@ -48,7 +51,7 @@
 
         @if (!string.IsNullOrEmpty(Content.GitHub.ViewProfileLabel))
         {
-            <div class="center">
+            <div class="center" style="margin-top: 36px;">
                 <a class="btn btn-primary" href="https://github.com/@Content.GitHub.GitHubUser" target="_blank" rel="noopener">
                     <Icon Name="github" Size="18" /> @Content.GitHub.ViewProfileLabel
                 </a>
@@ -56,3 +59,7 @@
         }
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}

@@ -8,7 +8,7 @@
                 "services":  "Services",
                 "tech":  "Technology",
                 "projects":  "Commercial Projects",
-                "gitHub":  "GitLab Projects",
+                "gitHub":  "GitHub Projects",
                 "cv":  "CV",
                 "contact":  "Contact",
                 "themeLight":  "Light theme",
@@ -164,7 +164,7 @@
                 },
     "tech":  {
                  "title":  "Technology",
-                 "subtitle":  "The stack behind the projects below.",
+                 "subtitle":  "The core technologies, frameworks, and engineering standards behind our software delivery.",
                  "groups":  [
                                 {
                                     "name":  "Backend",

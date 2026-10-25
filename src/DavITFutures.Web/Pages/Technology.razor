@@ -1,0 +1,14 @@
+@page "/technology"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Technologie – DavIT Futures" : "Technology – DavIT Futures")</PageTitle>
+
+<div class="subpage-hero">
+    <div class="container">
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "STOS TECHNOLOGICZNY & STANDARDY" : "ENGINEERING STACK & STANDARDS")</span>
+        <h1 class="subpage-title">@Content!.Tech.Title</h1>
+        <p class="subpage-lead">@Content.Tech.Subtitle</p>
+    </div>
+</div>
+
+<TechSection ShowHeading="false" />

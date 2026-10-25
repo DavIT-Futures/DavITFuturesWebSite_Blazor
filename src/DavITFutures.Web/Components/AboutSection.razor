@@ -3,10 +3,13 @@
 @* O firmie: zdjęcie z krótką wizytówką obok kart z mocnymi stronami. *@
 <section class="section" id="about">
     <div class="container">
-        <SectionHeading Title="@Content!.About.Title" Subtitle="@Content.About.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.About.Title" Subtitle="@Content.About.Subtitle" />
+        }
         <div class="about-grid">
             <aside class="card profile">
-                <img src="@Content.About.Photo" alt="@Content.About.PhotoAlt" width="480" height="600" loading="lazy" />
+                <img src="@Content!.About.Photo" alt="@Content.About.PhotoAlt" width="480" height="600" loading="lazy" />
                 <h3>@Content.About.Name</h3>
                 <p class="profile-role">@Content.About.Role</p>
                 <ul class="profile-facts">
@@ -33,3 +36,7 @@
         </div>
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}
