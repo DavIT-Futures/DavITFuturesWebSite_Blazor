@@ -19,10 +19,6 @@
                     {
                         <div class="cv-actions">
                             <a class="btn btn-primary" href="@cv.Url" target="_blank" rel="noopener">@cv.ButtonLabel <Icon Name="arrow" Size="18" /></a>
-                            @if (!string.IsNullOrEmpty(cv.PdfUrl))
-                            {
-                                <a class="btn btn-ghost" href="@cv.PdfUrl" download>@cv.PdfLabel</a>
-                            }
                         </div>
                     }
                 </article>

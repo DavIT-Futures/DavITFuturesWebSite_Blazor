@@ -476,7 +476,7 @@
                                                   "Trading",
                                                   "FinTech"
                                               ],
-                                     "description":  "Nowoczesna platforma i zestaw narzędzi do tradingu ilościowego. Backend oparty na nowoczesnej Javie ze Spring Boot, frontend w Angular 22 oraz baza PostgreSQL na obrazie Docker. Kod źródłowy w trakcie przygotowania do publikacji w repozytorium.",
+                                     "description":  "Nowoczesna platforma i zestaw narzędzi do tradingu ilościowego stworzona jako rozwiązanie white-label, z pełną możliwością customizacji i konfiguracji za pomocą plików konfiguracyjnych. Backend oparty na nowoczesnej Javie ze Spring Boot, frontend w Angular 22 oraz baza PostgreSQL na obrazie Docker. Kod źródłowy w trakcie przygotowania do publikacji w repozytorium.",
                                      "badge":  "Java \u0026 Angular / FinTech",
                                      "language":  "Java / TypeScript",
                                      "url":  "https://github.com/DavIT-Futures/TradeChameleon"
@@ -540,7 +540,7 @@
                                     "name":  "DavIT Futures",
                                     "owner":  "Dawid Domagała",
                                     "address":  [
-                                                    "ul. Ścinawska 30/8",
+                                                    "ul. Ścinawska 30",
                                                     "53-629 Wrocław"
                                                 ],
                                     "nip":  "6932087505",

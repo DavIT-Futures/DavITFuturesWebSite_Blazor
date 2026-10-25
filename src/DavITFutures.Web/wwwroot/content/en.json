@@ -476,7 +476,7 @@
                                                   "Trading",
                                                   "FinTech"
                                               ],
-                                     "description":  "Quantitative trading and financial analytics platform. Modern Java backend with Spring Boot, Angular 22 frontend, and PostgreSQL database on Docker image. Source code is currently being prepared for repository release.",
+                                     "description":  "Quantitative trading and financial analytics platform designed as a white-label solution with full customization and configuration via configuration files. Modern Java backend with Spring Boot, Angular 22 frontend, and PostgreSQL database on Docker image. Source code is currently being prepared for repository release.",
                                      "badge":  "Java \u0026 Angular / FinTech",
                                      "language":  "Java / TypeScript",
                                      "url":  "https://github.com/DavIT-Futures/TradeChameleon"
@@ -540,7 +540,7 @@
                                     "name":  "DavIT Futures",
                                     "owner":  "Dawid Domagała",
                                     "address":  [
-                                                    "ul. Ścinawska 30/8",
+                                                    "ul. Ścinawska 30",
                                                     "53-629 Wrocław, Poland"
                                                 ],
                                     "nip":  "6932087505",
