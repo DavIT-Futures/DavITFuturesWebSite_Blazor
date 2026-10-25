@@ -22,11 +22,11 @@
                  "lead":  "Projektujemy i budujemy aplikacje webowe, desktopowe, mobilne i backend dla finansów, tradingu i SaaS: od prototypu po produkcję bez przestojów, szybciej dzięki AI i zawsze z testami. Od 2007 roku dla klientów w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
                  "primaryCta":  {
                                     "label":  "Porozmawiajmy o projekcie",
-                                    "url":  "#contact"
+                                    "url": "contact"
                                 },
                  "secondaryCta":  {
                                       "label":  "Zobacz projekty",
-                                      "url":  "#projects"
+                                      "url": "projects"
                                   },
                  "stats":  [
                                {

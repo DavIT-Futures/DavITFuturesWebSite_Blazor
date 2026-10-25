@@ -2,10 +2,13 @@
 
 <section class="section section-alt" id="services">
     <div class="container">
-        <SectionHeading Title="@Content!.Services.Title" Subtitle="@Content.Services.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.Services.Title" Subtitle="@Content.Services.Subtitle" />
+        }
 
         <div class="services-matrix">
-            @foreach (var (item, index) in Content.Services.Items.Select((x, i) => (x, i)))
+            @foreach (var (item, index) in Content!.Services.Items.Select((x, i) => (x, i)))
             {
                 <div class="service-strip">
                     <div class="service-badge-col">
@@ -31,3 +34,7 @@
         </div>
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}

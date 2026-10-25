@@ -22,11 +22,11 @@
                  "lead":  "We design and build web, desktop, mobile and backend software for finance, trading and SaaS: from prototype to zero-downtime production, with AI-accelerated delivery that stays fully tested. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
                  "primaryCta":  {
                                     "label":  "Let\u0027s talk about your project",
-                                    "url":  "#contact"
+                                    "url": "contact"
                                 },
                  "secondaryCta":  {
                                       "label":  "See projects",
-                                      "url":  "#projects"
+                                      "url": "projects"
                                   },
                  "stats":  [
                                {

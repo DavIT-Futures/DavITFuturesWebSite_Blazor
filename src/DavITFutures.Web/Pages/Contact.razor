@@ -1,0 +1,37 @@
+@page "/contact"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Kontakt i Dane Firmy – DavIT Futures" : "Contact & Company Details – DavIT Futures")</PageTitle>
+
+<div class="subpage-hero">
+    <div class="container">
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "BEZPOŚREDNI KONTAKT" : "DIRECT CONTACT")</span>
+        <h1 class="subpage-title">@Content!.Contact.Title</h1>
+        <p class="subpage-lead">@Content.Contact.Subtitle</p>
+    </div>
+</div>
+
+<ContactSection ShowHeading="false" />
+
+<section class="section section-alt">
+    <div class="container">
+        <SectionHeading 
+            Title="@(Site.Language == "pl" ? "Standardy komunikacji" : "Communication Standards")" 
+            Subtitle="@(Site.Language == "pl" ? "Szybka reakcja, poufność i przejrzyste ustalenia od pierwszego kontaktu." : "Rapid turnaround, confidentiality, and clear terms from day one.")" />
+
+        <div class="assurance-grid">
+            <div class="assurance-card">
+                <h4>@(Site.Language == "pl" ? "Gwarantowany czas odpowiedzi" : "Guaranteed Response Time")</h4>
+                <p>@(Site.Language == "pl" ? "Odpowiedź na każde zapytanie projektowe w ciągu 1 dnia roboczego z wstępną oceną technologiczną." : "Every project inquiry receives a response within 1 business day with actionable technical insight.")</p>
+            </div>
+            <div class="assurance-card">
+                <h4>@(Site.Language == "pl" ? "Poufność i umowa NDA" : "Confidentiality & Mutual NDA")</h4>
+                <p>@(Site.Language == "pl" ? "Szanujemy własność intelektualną. Przed przystąpieniem do analizy kodu lub założeń podpisujemy standardowe NDA." : "We respect your intellectual property. Standard mutual NDAs signed prior to detailed disclosures.")</p>
+            </div>
+            <div class="assurance-card">
+                <h4>@(Site.Language == "pl" ? "Lokalizacja i strefa czasowa" : "Location & Time Zone")</h4>
+                <p>@(Site.Language == "pl" ? "Wrocław, Polska · CET/CEST. Praca zdalna dla rynków w Polsce, UE, UK i USA z pełną dostępnością roboczą." : "Wrocław, Poland · Central European Time (CET). Full working overlap with EU and UK clients.")</p>
+            </div>
+        </div>
+    </div>
+</section>

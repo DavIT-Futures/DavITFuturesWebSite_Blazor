@@ -1,0 +1,28 @@
+@page "/projects"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Projekty Komercyjne – DavIT Futures" : "Commercial Projects – DavIT Futures")</PageTitle>
+
+<div class="subpage-hero">
+    <div class="container">
+        <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "PORTFOLIO & CASE STUDIES" : "COMMERCIAL PORTFOLIO")</span>
+        <h1 class="subpage-title">@Content!.Projects.Title</h1>
+        <p class="subpage-lead">@Content.Projects.Subtitle</p>
+    </div>
+</div>
+
+<ProjectsSection ShowHeading="false" />
+
+<GitHubSection />
+
+<section class="section section-alt">
+    <div class="container center">
+        <h2>@(Site.Language == "pl" ? "Planujesz podobne wdrożenie?" : "Planning a Similar System?")</h2>
+        <p class="lead muted" style="margin: 14px auto 28px; max-width: 620px;">
+            @(Site.Language == "pl" 
+                ? "Skonsultuj architekturę, dobór technologii lub audyt kodu bezpośrednio z senior engineerem. Odpowiadamy w 1 dzień roboczy." 
+                : "Discuss system architecture, tech stack selection, or code audits directly with the senior engineer. We respond within 1 business day.")
+        </p>
+        <a class="btn btn-primary" href="contact">@(Site.Language == "pl" ? "Skontaktuj się z nami" : "Get in Touch") <Icon Name="arrow" Size="16" /></a>
+    </div>
+</section>

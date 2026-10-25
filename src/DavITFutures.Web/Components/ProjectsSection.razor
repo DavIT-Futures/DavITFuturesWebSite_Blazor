@@ -2,10 +2,13 @@
 
 <section class="section" id="projects">
     <div class="container">
-        <SectionHeading Title="@Content!.Projects.Title" Subtitle="@Content.Projects.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.Projects.Title" Subtitle="@Content.Projects.Subtitle" />
+        }
 
         <div class="cards projects">
-            @foreach (var p in Content.Projects.Items)
+            @foreach (var p in Content!.Projects.Items)
             {
                 <article class="card project-card">
                     <div class="project-top">
@@ -15,33 +18,27 @@
                     <h3>@p.Name</h3>
                     @if (!string.IsNullOrEmpty(p.Outcome))
                     {
-                        <p class="project-outcome">@p.Outcome</p>
+                        <div class="project-outcome">@p.Outcome</div>
                     }
                     <p>@p.Description</p>
-                    <ul class="chips small">
+                    <div class="chips">
                         @foreach (var tag in p.Tags)
                         {
-                            <li>@tag</li>
+                            <span class="chip">@tag</span>
                         }
-                    </ul>
+                    </div>
                     @if (!string.IsNullOrEmpty(p.Url))
                     {
                         <a class="project-link" href="@p.Url" target="_blank" rel="noopener">
-                            <Icon Name="github" Size="16" /> @Content.Projects.CodeLabel
+                            @Content.Projects.CodeLabel <Icon Name="arrow" Size="16" />
                         </a>
                     }
                 </article>
             }
         </div>
-
-        @* Przycisk do wszystkich repozytoriów pokazuje się tylko, gdy allReposLabel w treści nie jest pusty. *@
-        @if (!string.IsNullOrEmpty(Content.Projects.AllReposLabel))
-        {
-            <div class="center">
-                <a class="btn btn-ghost" href="https://github.com/@Content.Projects.GitHubUser" target="_blank" rel="noopener">
-                    <Icon Name="github" Size="18" /> @Content.Projects.AllReposLabel
-                </a>
-            </div>
-        }
     </div>
 </section>
+
+@code {
+    [Parameter] public bool ShowHeading { get; set; } = true;
+}

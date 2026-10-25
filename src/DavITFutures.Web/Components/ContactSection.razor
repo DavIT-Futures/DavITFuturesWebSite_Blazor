@@ -2,12 +2,15 @@
 
 <section class="section section-alt" id="contact">
     <div class="container">
-        <SectionHeading Title="@Content!.Contact.Title" Subtitle="@Content.Contact.Subtitle" />
+        @if (ShowHeading)
+        {
+            <SectionHeading Title="@Content!.Contact.Title" Subtitle="@Content.Contact.Subtitle" />
+        }
         <div class="contact-grid">
             <div class="contact-links">
                 <a class="contact-item" href="@MailTo">
                     <span class="card-icon"><Icon Name="mail" /></span>
-                    <span><small>E-mail</small>@Content.Contact.Email</span>
+                    <span><small>E-mail</small>@Content!.Contact.Email</span>
                 </a>
                 @if (!string.IsNullOrEmpty(Content.Contact.LinkedIn))
                 {
@@ -20,10 +23,11 @@
                 {
                     <a class="contact-item" href="@Content.Contact.GitHub" target="_blank" rel="noopener">
                         <span class="card-icon"><Icon Name="github" /></span>
-                        <span><small>GitHub</small>@Content.Contact.GitHub.Replace("https://", "")</span>
+                        <span><small>GitHub</small>github.com/DavIT-Futures</span>
                     </a>
                 }
             </div>
+
             <div class="card company">
                 <h3>@Content.Contact.Company.Heading</h3>
                 <p>
@@ -34,14 +38,18 @@
                         @line<br />
                     }
                 </p>
-                <p class="muted">NIP: @Content.Contact.Company.Nip<br />REGON: @Content.Contact.Company.Regon</p>
+                <p class="muted">
+                    NIP: @Content.Contact.Company.Nip<br />
+                    REGON: @Content.Contact.Company.Regon
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 @code {
-    private string MailTo => string.IsNullOrEmpty(Content!.Contact.EmailSubject)
-        ? $"mailto:{Content.Contact.Email}"
-        : $"mailto:{Content.Contact.Email}?subject={Uri.EscapeDataString(Content.Contact.EmailSubject)}";
+    [Parameter] public bool ShowHeading { get; set; } = true;
+
+    private string MailTo =>
+        $"mailto:{Content?.Contact.Email}?subject={Uri.EscapeDataString(Content?.Contact.EmailSubject ?? "Zapytanie o projekt – DavIT Futures")}";
 }

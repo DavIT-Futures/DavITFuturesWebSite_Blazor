@@ -4,23 +4,21 @@
     <div class="container">
         <SectionHeading Title="@Content!.Process.Title" Subtitle="@Content.Process.Subtitle" />
 
-        <div class="pipeline-wrapper">
-            <div class="pipeline-track-line" aria-hidden="true"></div>
-            <div class="pipeline-flow">
-                @foreach (var (step, i) in Content.Process.Steps.Select((s, i) => (s, i)))
-                {
-                    <div class="pipeline-stage">
-                        <div class="stage-indicator">
-                            <span class="stage-dot"></span>
-                            <span class="stage-tag mono">@($"PHASE 0{i + 1}")</span>
-                        </div>
-                        <div class="stage-body">
-                            <h3 class="stage-title">@step.Title</h3>
-                            <p class="stage-desc">@step.Text</p>
-                        </div>
+        <div class="pipeline-track">
+            @foreach (var (step, i) in Content.Process.Steps.Select((s, i) => (s, i)))
+            {
+                <div class="track-step">
+                    <div class="step-marker">
+                        <span class="step-circle mono">@($"0{i + 1}")</span>
+                        <span class="step-line" aria-hidden="true"></span>
                     </div>
-                }
-            </div>
+                    <div class="step-content">
+                        <span class="step-tag mono">@($"PHASE 0{i + 1}")</span>
+                        <h3 class="step-title">@step.Title</h3>
+                        <p class="step-desc">@step.Text</p>
+                    </div>
+                </div>
+            }
         </div>
 
         <div class="pipeline-footnote">

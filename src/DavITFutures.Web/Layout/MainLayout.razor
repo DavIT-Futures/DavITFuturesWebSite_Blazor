@@ -15,7 +15,7 @@
 }
 else if (!string.IsNullOrEmpty(Site.ErrorMessage))
 {
-    <div class="loader-cinematic" role="alert">
+    <div class="splash" role="alert">
         <div class="loader-error-box">
             <p class="loader-error-msg">@Site.ErrorMessage</p>
             <button class="btn btn-primary" @onclick="RetryAsync">Spróbuj ponownie / Retry</button>
@@ -24,12 +24,7 @@ else if (!string.IsNullOrEmpty(Site.ErrorMessage))
 }
 else
 {
-    <div class="loader-cinematic" role="status" aria-live="polite">
-        <div class="loader-screen">
-            <span class="loader-word word-davit">DAVIT</span>
-            <span class="loader-word word-futures">FUTURES</span>
-        </div>
-    </div>
+    <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
 }
 
 @code {

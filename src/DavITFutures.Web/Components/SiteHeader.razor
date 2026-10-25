@@ -2,19 +2,19 @@
 
 <header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="#top" @onclick="CloseMenu">
+        <a class="logo" href="" @onclick="CloseMenu">
             <span class="logo-mark">D</span>
             <span class="logo-text">DavIT<b>Futures</b></span>
         </a>
 
         <nav class="nav @(_menuOpen ? "is-open" : "")" aria-label="Menu">
-            <a href="#about" @onclick="CloseMenu">@Content!.Nav.About</a>
-            <a href="#services" @onclick="CloseMenu">@Content.Nav.Services</a>
-            <a href="#tech" @onclick="CloseMenu">@Content.Nav.Tech</a>
-            <a href="#projects" @onclick="CloseMenu">@Content.Nav.Projects</a>
-            <a href="#github" @onclick="CloseMenu">@Content.Nav.GitHub</a>
-            <a href="#cv" @onclick="CloseMenu">@Content.Nav.Cv</a>
-            <a href="#contact" @onclick="CloseMenu">@Content.Nav.Contact</a>
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="CloseMenu">@Content!.Nav.About</NavLink>
+            <NavLink class="nav-link" href="services" @onclick="CloseMenu">@Content!.Nav.Services</NavLink>
+            <NavLink class="nav-link" href="projects" @onclick="CloseMenu">@Content!.Nav.Projects</NavLink>
+            <a href="/#tech" @onclick="CloseMenu">@Content!.Nav.Tech</a>
+            <a href="/#github" @onclick="CloseMenu">@Content!.Nav.GitHub</a>
+            <a href="cv/Dawid-Domagala-CV-full.html" target="_blank" rel="noopener" @onclick="CloseMenu">@Content!.Nav.Cv</a>
+            <NavLink class="nav-link" href="contact" @onclick="CloseMenu">@Content!.Nav.Contact</NavLink>
         </nav>
 
         <div class="header-actions">
