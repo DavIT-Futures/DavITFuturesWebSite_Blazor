@@ -1,24 +1,95 @@
 @inherits SiteComponent
 
 <section class="hero" id="top">
-    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-        <p class="eyebrow">@Content!.Hero.Eyebrow</p>
-        <h1>@Content.Hero.Title <span class="gradient-text">@Content.Hero.Highlight</span></h1>
-        <p class="lead">@Content.Hero.Lead</p>
-        <div class="hero-cta">
-            <a class="btn btn-primary" href="@Content.Hero.PrimaryCta.Url">@Content.Hero.PrimaryCta.Label <Icon Name="arrow" Size="18" /></a>
-            <a class="btn btn-ghost" href="@Content.Hero.SecondaryCta.Url">@Content.Hero.SecondaryCta.Label</a>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">@(Site.Language == "pl" ? "Dostępny na nowe projekty i doradztwo" : "Available for architecture & engineering")</span>
+                </div>
+                <h1>
+                    @Content!.Hero.Title
+                    <span class="hero-highlight">@Content.Hero.Highlight</span>
+                </h1>
+                <p class="lead">@Content.Hero.Lead</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="@Content.Hero.PrimaryCta.Url">@Content.Hero.PrimaryCta.Label <Icon Name="arrow" Size="16" /></a>
+                    <a class="btn btn-ghost" href="@Content.Hero.SecondaryCta.Url">@Content.Hero.SecondaryCta.Label</a>
+                </div>
+                @if (Content.Hero.Clients is { Count: > 0 })
+                {
+                    <div class="hero-clients">
+                        <span class="clients-label">@Content.Hero.ClientsLabel</span>
+                        <div class="clients-list">
+                            @foreach (var client in Content.Hero.Clients)
+                            {
+                                <span class="client-chip">@client</span>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="hero-aside">
+                <div class="tech-spec-card">
+                    <div class="spec-header">
+                        <span class="spec-terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </span>
+                        <span class="spec-title">ENGINEERING SPEC // 2026</span>
+                        <span class="spec-status">PRODUCTION</span>
+                    </div>
+                    <div class="spec-body">
+                        <div class="spec-row">
+                            <span class="spec-label">DOMAIN</span>
+                            <span class="spec-value">FinTech · Quantitative Trading · SaaS</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">CORE STACK</span>
+                            <span class="spec-value mono">.NET 10 · C# 14 · Blazor WASM · ASP.NET Core</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">FRONTEND</span>
+                            <span class="spec-value mono">Angular 22 · TypeScript · Reactive State</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">DATA &amp; INFRA</span>
+                            <span class="spec-value mono">PostgreSQL · Docker · Spring Boot · CI/CD</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">STANDARDS</span>
+                            <span class="spec-value highlight">Automated regression tests · Bank-grade security</span>
+                        </div>
+                        <div class="spec-footer">
+                            <div class="spec-stat">
+                                <span class="spec-stat-num mono">18+</span>
+                                <span class="spec-stat-desc">@(Site.Language == "pl" ? "lat w inżynierii" : "years in engineering")</span>
+                            </div>
+                            <div class="spec-stat">
+                                <span class="spec-stat-num mono">£15M</span>
+                                <span class="spec-stat-desc">@(Site.Language == "pl" ? "zysk L2 Dealer (1 m-c)" : "L2 Dealer P&L (1st mo)")</span>
+                            </div>
+                            <div class="spec-stat">
+                                <span class="spec-stat-num mono">70%</span>
+                                <span class="spec-stat-desc">@(Site.Language == "pl" ? "rynku funduszy w PL" : "PL fund market share")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <dl class="stats">
+
+        <div class="stats-strip">
             @foreach (var stat in Content.Hero.Stats)
             {
-                <div class="stat"><dt>@stat.Value</dt><dd>@stat.Label</dd></div>
+                <div class="strip-item">
+                    <span class="strip-value mono">@stat.Value</span>
+                    <span class="strip-label">@stat.Label</span>
+                </div>
             }
-        </dl>
-        @if (Content.Hero.Clients is { Count: > 0 })
-        {
-            <p class="clients"><span>@Content.Hero.ClientsLabel</span> @string.Join(" · ", Content.Hero.Clients)</p>
-        }
+        </div>
     </div>
 </section>
