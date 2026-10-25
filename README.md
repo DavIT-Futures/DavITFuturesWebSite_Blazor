@@ -10,7 +10,7 @@
 The website of **DavIT Futures**, a software house from Wrocław, Poland, building .NET and Angular software for finance, trading and SaaS.
 It is a single-page business card written entirely in C# with **Blazor WebAssembly** and served as static files from **GitHub Pages**, with no backend to run or pay for.
 
-**Live site:** https://davit-futures.github.io/DavITFuturesWebSite_Blazor/
+**Live site:** https://davit.com.pl (also hosted at https://davit-futures.github.io/DavITFuturesWebSite_Blazor/)
 
 ## What's on the site
 
@@ -32,7 +32,7 @@ Everything is available in **English and Polish** (switchable at runtime) and in
 | --- | --- |
 | UI framework | Blazor WebAssembly on **.NET 10**, Razor components |
 | Language | C# 14 with nullable reference types, records for the content model |
-| Styling | Hand-written CSS with custom properties (no CSS framework), Inter font |
+| Styling | Hand-written CSS with custom properties (no CSS framework), Plus Jakarta Sans & JetBrains Mono fonts |
 | Content | One JSON file per language, loaded at runtime and deserialized into typed records |
 | State | A small scoped `SiteState` service (language, theme, content) with change notifications |
 | Browser interop | A tiny JS helper for `localStorage` and an inline script that sets theme and language before Blazor starts, so the page never flickers |

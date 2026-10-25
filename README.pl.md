@@ -10,7 +10,7 @@
 Strona internetowa **DavIT Futures**, software house'u z Wrocławia, który tworzy oprogramowanie w .NET i Angularze dla finansów, tradingu i SaaS.
 To jednostronicowa wizytówka napisana w całości w C# w **Blazor WebAssembly**, serwowana jako pliki statyczne z **GitHub Pages**, bez backendu do utrzymania.
 
-**Strona:** https://davit-futures.github.io/DavITFuturesWebSite_Blazor/
+**Strona:** https://davit.com.pl (oraz https://davit-futures.github.io/DavITFuturesWebSite_Blazor/)
 
 ## Co jest na stronie
 
@@ -32,7 +32,7 @@ Cała treść jest dostępna **po angielsku i po polsku** (przełączanie w loci
 | --- | --- |
 | Framework UI | Blazor WebAssembly na **.NET 10**, komponenty Razor |
 | Język | C# 14 z nullable reference types, rekordy jako model treści |
-| Style | Własny CSS ze zmiennymi (bez frameworka CSS), font Inter |
+| Style | Własny CSS ze zmiennymi (bez frameworka CSS), fonty Plus Jakarta Sans oraz JetBrains Mono |
 | Treść | Jeden plik JSON na język, wczytywany w przeglądarce do typowanych rekordów |
 | Stan | Mały serwis `SiteState` (język, motyw, treść) z powiadamianiem komponentów |
 | Interop z przeglądarką | Mały skrypt JS do `localStorage` i skrypt inline ustawiający motyw i język przed startem Blazora, żeby strona nie mrugała |
