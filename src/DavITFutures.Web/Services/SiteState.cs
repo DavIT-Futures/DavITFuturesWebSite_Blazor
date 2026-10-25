@@ -17,34 +17,69 @@ public class SiteState(HttpClient http, IJSRuntime js)
     public string Language { get; private set; } = "en";
     public string Theme { get; private set; } = "dark";
     public SiteContent? Content { get; private set; }
+    public string? ErrorMessage { get; private set; }
 
     public event Action? Changed;
 
     public async Task InitializeAsync()
     {
-        Theme = await js.InvokeAsync<string>("davit.getTheme");
-        var saved = await js.InvokeAsync<string?>("davit.getLanguage");
-        await SetLanguageAsync(saved is not null && Languages.Contains(saved) ? saved : "en");
+        try
+        {
+            Theme = await js.InvokeAsync<string>("davit.getTheme");
+            var saved = await js.InvokeAsync<string?>("davit.getLanguage");
+            await SetLanguageAsync(saved is not null && Languages.Contains(saved) ? saved : "en");
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"[SiteState] Initialization error: {ex.Message}");
+            if (Content is null)
+            {
+                try
+                {
+                    await SetLanguageAsync("en");
+                }
+                catch (Exception fallbackEx)
+                {
+                    Console.Error.WriteLine($"[SiteState] Fallback error: {fallbackEx.Message}");
+                    ErrorMessage = "Failed to load site content.";
+                    Changed?.Invoke();
+                }
+            }
+        }
     }
 
     public async Task SetLanguageAsync(string language)
     {
-        if (!_cache.TryGetValue(language, out var content))
+        try
         {
-            // Bez cache przeglądarki: po wdrożeniu odwiedzający od razu widzą nową treść.
-            using var request = new HttpRequestMessage(HttpMethod.Get, $"content/{language}.json");
-            request.SetBrowserRequestCache(BrowserRequestCache.NoCache);
-            using var response = await http.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-            content = await response.Content.ReadFromJsonAsync<SiteContent>(JsonOptions)
-                      ?? throw new InvalidOperationException($"Brak treści dla języka {language}");
-            _cache[language] = content;
-        }
+            if (!_cache.TryGetValue(language, out var content))
+            {
+                // Bez cache przeglądarki: po wdrożeniu odwiedzający od razu widzą nową treść.
+                using var request = new HttpRequestMessage(HttpMethod.Get, $"content/{language}.json");
+                request.SetBrowserRequestCache(BrowserRequestCache.NoCache);
+                using var response = await http.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+                content = await response.Content.ReadFromJsonAsync<SiteContent>(JsonOptions)
+                          ?? throw new InvalidOperationException($"Brak treści dla języka {language}");
+                _cache[language] = content;
+            }
 
-        Language = language;
-        Content = content;
-        await js.InvokeVoidAsync("davit.setLanguage", language);
-        Changed?.Invoke();
+            Language = language;
+            Content = content;
+            ErrorMessage = null;
+            await js.InvokeVoidAsync("davit.setLanguage", language);
+            Changed?.Invoke();
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"[SiteState] Language error ({language}): {ex.Message}");
+            if (Content is null)
+            {
+                ErrorMessage = $"Nie udało się załadować treści ({language}).";
+                Changed?.Invoke();
+            }
+            throw;
+        }
     }
 
     public async Task ToggleThemeAsync()

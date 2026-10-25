@@ -20,15 +20,128 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="preload" id="webassembly" />
     <link rel="stylesheet" href="css/app.css" />
     <script type="importmap"></script>
+    <style>
+        .loader-cinematic {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #050608;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            user-select: none;
+            overflow: hidden;
+        }
+        .loader-screen {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .loader-word {
+            position: absolute;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            font-size: clamp(3.2rem, 15vw, 11rem);
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0;
+            text-align: center;
+            line-height: 1;
+            pointer-events: none;
+            will-change: opacity, transform, filter;
+        }
+        .word-davit {
+            animation: davitAnim 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .word-futures {
+            animation: futuresAnim 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @keyframes davitAnim {
+            0% { opacity: 0; transform: scale(0.92); filter: blur(8px); }
+            12% { opacity: 1; transform: scale(1); filter: blur(0px); }
+            38% { opacity: 1; transform: scale(1.02); filter: blur(0px); }
+            50%, 100% { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+        }
+        @keyframes futuresAnim {
+            0%, 50% { opacity: 0; transform: scale(0.92); filter: blur(8px); }
+            62% { opacity: 1; transform: scale(1); filter: blur(0px); }
+            88% { opacity: 1; transform: scale(1.02); filter: blur(0px); }
+            100% { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+        }
+        .loader-fallback {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 100000;
+            background: rgba(16, 20, 28, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 24px;
+            border-radius: 9999px;
+            color: #94a3b8;
+            font-size: 13px;
+            font-family: system-ui, sans-serif;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        .loader-fallback button {
+            background: #10b981;
+            color: #050608;
+            border: none;
+            padding: 7px 18px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .loader-fallback button:hover {
+            opacity: 0.9;
+        }
+        .loader-error-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+            padding: 24px;
+            max-width: 480px;
+        }
+        .loader-error-msg {
+            color: #f87171;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
+        <div class="loader-cinematic" role="status" aria-live="polite">
+            <div class="loader-screen">
+                <span class="loader-word word-davit">DAVIT</span>
+                <span class="loader-word word-futures">FUTURES</span>
+            </div>
+            <div id="loader-fallback" class="loader-fallback">
+                <span>Ładowanie aplikacji trwa dłużej niż zwykle... / Loading is taking longer than usual...</span>
+                <button onclick="location.reload(true)">Odśwież stronę / Reload</button>
+            </div>
+        </div>
     </div>
 
     <div id="blazor-error-ui">
@@ -36,6 +149,15 @@
         <a href="." class="reload">Odśwież / Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    <script>
+        // Pokaż fallback reload, jeśli Blazor nie wystartuje w 8 sekund
+        setTimeout(function() {
+            var fb = document.getElementById("loader-fallback");
+            if (fb && document.getElementById("app") && document.getElementById("app").querySelector(".loader-cinematic")) {
+                fb.style.display = "flex";
+            }
+        }, 8000);
+    </script>
     <script src="js/site.js"></script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 </body>

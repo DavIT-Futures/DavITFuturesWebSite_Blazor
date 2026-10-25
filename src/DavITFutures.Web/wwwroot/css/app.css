@@ -596,10 +596,74 @@ p { margin: 0; }
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0; font-size: 13.5px; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 
-/* Ekran startowy */
-.splash { min-height: 100vh; display: grid; place-items: center; background: var(--bg); }
-.splash-logo { font-size: 26px; font-weight: 700; color: var(--text); animation: pulse 1.4s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: .45; } }
+/* Ekran startowy - Cinematic Loader */
+.loader-cinematic {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #050608;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    user-select: none;
+    overflow: hidden;
+}
+.loader-screen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.loader-word {
+    position: absolute;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-size: clamp(3.2rem, 15vw, 11rem);
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0;
+    text-align: center;
+    line-height: 1;
+    pointer-events: none;
+    will-change: opacity, transform, filter;
+}
+.word-davit {
+    animation: davitAnim 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.word-futures {
+    animation: futuresAnim 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes davitAnim {
+    0% { opacity: 0; transform: scale(0.92); filter: blur(8px); }
+    12% { opacity: 1; transform: scale(1); filter: blur(0px); }
+    38% { opacity: 1; transform: scale(1.02); filter: blur(0px); }
+    50%, 100% { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+}
+@keyframes futuresAnim {
+    0%, 50% { opacity: 0; transform: scale(0.92); filter: blur(8px); }
+    62% { opacity: 1; transform: scale(1); filter: blur(0px); }
+    88% { opacity: 1; transform: scale(1.02); filter: blur(0px); }
+    100% { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+}
+.loader-error-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    padding: 24px;
+    max-width: 480px;
+}
+.loader-error-msg {
+    color: #f87171;
+    font-size: 16px;
+    line-height: 1.5;
+}
 
 #blazor-error-ui {
     display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;

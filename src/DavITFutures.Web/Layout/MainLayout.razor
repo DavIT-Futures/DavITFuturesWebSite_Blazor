@@ -13,15 +13,34 @@
     <main id="main">@Body</main>
     <SiteFooter />
 }
+else if (!string.IsNullOrEmpty(Site.ErrorMessage))
+{
+    <div class="loader-cinematic" role="alert">
+        <div class="loader-error-box">
+            <p class="loader-error-msg">@Site.ErrorMessage</p>
+            <button class="btn btn-primary" @onclick="RetryAsync">Spróbuj ponownie / Retry</button>
+        </div>
+    </div>
+}
 else
 {
-    <div class="splash" role="status"><span class="splash-logo">DavIT<b>Futures</b></span></div>
+    <div class="loader-cinematic" role="status" aria-live="polite">
+        <div class="loader-screen">
+            <span class="loader-word word-davit">DAVIT</span>
+            <span class="loader-word word-futures">FUTURES</span>
+        </div>
+    </div>
 }
 
 @code {
     protected override async Task OnInitializedAsync()
     {
         Site.Changed += OnChanged;
+        await Site.InitializeAsync();
+    }
+
+    private async Task RetryAsync()
+    {
         await Site.InitializeAsync();
     }
 
