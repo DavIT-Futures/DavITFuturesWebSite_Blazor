@@ -1,4 +1,5 @@
 @inherits SiteComponent
+@inject NavigationManager Nav
 
 <header class="site-header">
     <div class="container header-inner">
@@ -13,7 +14,7 @@
             <NavLink class="nav-link" href="github" @onclick="CloseMenu">@Content!.Nav.GitHub</NavLink>
             <NavLink class="nav-link" href="technology" @onclick="CloseMenu">@Content!.Nav.Tech</NavLink>
             <NavLink class="nav-link" href="cv" @onclick="CloseMenu">@Content!.Nav.Cv</NavLink>
-            <NavLink class="nav-link" href="contact" @onclick="CloseMenu">@Content!.Nav.Contact</NavLink>
+            <NavLink class="@GetContactNavLinkClass()" href="contact" @onclick="CloseMenu">@Content!.Nav.Contact</NavLink>
             <NavLink class="nav-link" href="about" @onclick="CloseMenu">@Content!.Nav.About</NavLink>
         </nav>
 
@@ -42,5 +43,27 @@
 @code {
     private bool _menuOpen;
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Nav.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e) => InvokeAsync(StateHasChanged);
+
+    private string GetContactNavLinkClass()
+    {
+        var relative = Nav.ToBaseRelativePath(Nav.Uri);
+        return relative.StartsWith("Home/Contact", StringComparison.OrdinalIgnoreCase)
+            ? "nav-link active"
+            : "nav-link";
+    }
+
     private void CloseMenu() => _menuOpen = false;
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        Nav.LocationChanged -= OnLocationChanged;
+    }
 }

@@ -15,5 +15,5 @@ public abstract class SiteComponent : ComponentBase, IDisposable
 
     private void OnSiteChanged() => InvokeAsync(StateHasChanged);
 
-    public void Dispose() => Site.Changed -= OnSiteChanged;
+    public virtual void Dispose() => Site.Changed -= OnSiteChanged;
 }
