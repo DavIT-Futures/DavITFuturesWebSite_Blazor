@@ -553,7 +553,7 @@ p { margin: 0; }
 .project-link:hover { text-decoration: underline; }
 .projects + .center, .section .center { margin-top: 36px; }
 
-/* GitHub Pet Projects */
+/* GitHub Projects */
 .github-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
 .github-card { display: flex; flex-direction: column; }
 .github-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
