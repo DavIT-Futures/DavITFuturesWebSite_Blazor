@@ -602,10 +602,378 @@ p { margin: 0; }
 #testimonials .center { margin-top: 28px; text-align: left; }
 
 /* Technologie */
-.tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
-.tech-group.wide { grid-column: span 2; }
-.tech-group { padding: 22px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); }
-.tech-group h3 { font-size: 13px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent-text); margin-bottom: 14px; font-weight: 700; }
+/* ===== TECHNOLOGIE (Linux Matrix Terminal Console) ===== */
+.tech-console-section {
+    padding-top: 12px;
+}
+.linux-terminal {
+    margin: 16px auto 36px;
+    max-width: 1080px;
+    background: #080b11;
+    border: 1px solid #1c2436;
+    border-radius: 12px;
+    box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(16, 185, 129, 0.16);
+    overflow: hidden;
+    position: relative;
+}
+.linux-terminal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(16, 185, 129, 0.018) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(16, 185, 129, 0.018) 1px, transparent 1px);
+    background-size: 28px 28px;
+    z-index: 1;
+}
+
+/* Terminal Chrome Bar */
+.terminal-titlebar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background: #0f1420;
+    border-bottom: 1px solid #1c2436;
+    gap: 12px;
+}
+.terminal-controls {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+.control-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.control-dot.close { background: #ff5f56; }
+.control-dot.minimize { background: #ffbd2e; }
+.control-dot.maximize { background: #27c93f; }
+
+.terminal-title {
+    font-size: 12px;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.prompt-user { color: #10b981; font-weight: 700; }
+.prompt-path { color: #60a5fa; }
+
+.terminal-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+.term-badge {
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid #232d42;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+.badge-dot-live {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    display: inline-block;
+}
+
+/* Tmux / Multiplexer Category Tabs */
+.terminal-tmux-bar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    background: #0a0e17;
+    border-bottom: 1px solid #1c2436;
+    padding: 0 8px;
+    gap: 2px;
+}
+.tmux-tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #64748b;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all .15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.tmux-tab:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.03);
+}
+.tmux-tab.active {
+    color: #34d399;
+    border-bottom-color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+}
+.tmux-num {
+    color: #10b981;
+    font-weight: 700;
+}
+
+/* Terminal Body */
+.terminal-body {
+    position: relative;
+    z-index: 2;
+    padding: 24px 28px;
+    color: #e2e8f0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.terminal-intro {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #1c2436;
+}
+.terminal-cmd-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+.terminal-prompt {
+    color: #10b981;
+    font-weight: 700;
+}
+.terminal-cmd {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+.terminal-system-info {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-top: 5px;
+}
+.sys-ok {
+    color: #10b981;
+    font-weight: 800;
+    margin-right: 4px;
+}
+.sys-text {
+    color: #94a3b8;
+}
+
+/* Modules Stream */
+.terminal-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.terminal-module-block {
+    background: rgba(15, 20, 31, 0.7);
+    border: 1px solid #1a2233;
+    border-radius: 8px;
+    padding: 20px 22px;
+    transition: all .2s ease;
+}
+.terminal-module-block:hover {
+    border-color: #2b3952;
+    background: rgba(18, 24, 38, 0.85);
+}
+.terminal-module-block.is-ai-module {
+    background: rgba(16, 185, 129, 0.035);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 24px -6px rgba(16, 185, 129, 0.08);
+}
+.module-header {
+    margin-bottom: 14px;
+}
+.module-cmd {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.module-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.module-status-flag {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    letter-spacing: 0.04em;
+}
+.module-name {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+.module-count {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Package Pills Grid */
+.module-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+}
+.package-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 11px;
+    background: #101522;
+    border: 1px solid #1c2538;
+    border-radius: 6px;
+    transition: all .15s ease;
+}
+.package-pill:hover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.09);
+    transform: translateY(-1px);
+}
+.pkg-icon {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+.pkg-title {
+    color: #e2e8f0;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.package-pill:hover .pkg-title {
+    color: #ffffff;
+}
+
+/* AI Terminal Telemetry HUD */
+.terminal-hud-box {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: #090e17;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);
+}
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.hud-tag {
+    color: #34d399;
+    letter-spacing: 0.06em;
+}
+.hud-client {
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #1e283d;
+}
+.hud-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.hud-stat-cell {
+    padding: 10px 8px;
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.18);
+    border-radius: 6px;
+    text-align: center;
+}
+.hud-stat-val {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #10b981;
+    letter-spacing: -0.02em;
+}
+.hud-stat-lbl {
+    display: block;
+    font-size: 10.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+.hud-note-text {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #cbd5e1;
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(16, 185, 129, 0.2);
+    font-style: normal;
+}
+
+/* Terminal Footer */
+.terminal-footer-line {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid #1c2436;
+}
+.terminal-output-quote {
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 6px 0 14px 18px;
+    line-height: 1.5;
+}
+.terminal-prompt-end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.matrix-cursor {
+    color: #10b981;
+    animation: matrixBlink 1s step-end infinite;
+}
+@keyframes matrixBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .terminal-body { padding: 18px 16px; }
+    .hud-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .module-packages-grid { grid-template-columns: 1fr; }
+    .terminal-titlebar { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .terminal-badges { align-self: flex-end; }
+}
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; }
 .chips li,
 .chips .chip,
