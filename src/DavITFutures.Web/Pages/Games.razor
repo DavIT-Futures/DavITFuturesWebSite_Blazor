@@ -25,6 +25,11 @@
     <section class="section">
         <div class="container">
             <div class="civ-hero-card">
+                <div class="civ-title-banner media-preview-wrap" @onclick='() => OpenLightbox("img/games/civ1-title.png")' role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                    <img src="img/games/civ1-title.png" alt="Sid Meier's Civilization (1991) title screen" class="civ-banner-img" />
+                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                </div>
+
                 <div class="civ-hero-header">
                     <div class="civ-title-wrap">
                         <span class="civ-badge">@civ.Badge</span>
@@ -196,6 +201,13 @@
     {
         _lightboxItems.Clear();
         if (Content?.Games is null) return;
+
+        _lightboxItems.Add(new LightboxItem(
+            "img/games/civ1-title.png",
+            "Sid Meier's Civilization (1991)",
+            Site.Language == "pl"
+                ? "Klasyczny ekran tytułowy Civilization 1 (DOS, 1991) – punkt wyjścia dla C# remastera."
+                : "Classic Civilization 1 (DOS, 1991) title screen – the starting point of the C# remaster."));
 
         foreach (var feat in Content.Games.Features)
         {
