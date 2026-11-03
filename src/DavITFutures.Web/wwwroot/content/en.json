@@ -13,7 +13,8 @@
                 "contact":  "Contact",
                 "themeLight":  "Light theme",
                 "themeDark":  "Dark theme",
-                "language":  "Language"
+                "language":  "Language",
+                "games":  "Retro Games"
             },
     "hero":  {
                  "eyebrow":  "Software house · Wrocław, Poland",
@@ -22,11 +23,11 @@
                  "lead":  "We design and build web, desktop, mobile and backend software for finance, trading and SaaS: from prototype to zero-downtime production, with AI-accelerated delivery that stays fully tested. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
                  "primaryCta":  {
                                     "label":  "Let\u0027s talk about your project",
-                                    "url": "contact"
+                                    "url":  "contact"
                                 },
                  "secondaryCta":  {
                                       "label":  "See projects",
-                                      "url": "projects"
+                                      "url":  "projects"
                                   },
                  "stats":  [
                                {
@@ -380,6 +381,22 @@
                    "viewProfileLabel":  "All repositories on GitHub",
                    "items":  [
                                  {
+                                     "name":  "Civ 1.5 Remastered (Civilization 1)",
+                                     "tags":  [
+                                                  "C# 14",
+                                                  ".NET 10",
+                                                  "Avalonia UI",
+                                                  "Civilization 1",
+                                                  "Retro Gaming",
+                                                  "Reverse Engineering",
+                                                  "Multi-OS"
+                                              ],
+                                     "description":  "Open-source C# and Avalonia UI (.NET 10) remaster of Civilization 1 (1991, DOS). Function-by-function translation of the original CIV.EXE keeping classic mechanics while modernizing gameplay: unit hit points \u0026 tactical combat rounds, healing, unit upgrades for gold, non-expiring wonders, 20-turn autosaves, and zero-DOSBox multi-OS execution.",
+                                     "badge":  "Remaster / .NET 10",
+                                     "language":  "C#",
+                                     "url":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
+                                 },
+                                 {
                                      "name":  "Multi-OS Desktop Fractal Generator",
                                      "tags":  [
                                                   "C# 14",
@@ -547,5 +564,118 @@
     "footer":  {
                    "rights":  "All rights reserved.",
                    "builtWith":  "Built with Blazor WebAssembly and .NET 10."
-               }
+               },
+    "games":  {
+                  "eyebrow":  "GAMES REMASTERING \u0026 REVERSE ENGINEERING",
+                  "title":  "Retro Games Remaster",
+                  "subtitle":  "Modernizing iconic DOS-era titles to 21st-century standards: native C# (.NET 10) \u0026 Avalonia UI and C++20 \u0026 Raylib, preserving 100% of original atmosphere and aesthetics while eliminating legacy technological limitations.",
+                  "civ15":  {
+                                "title":  "Civ 1.5 Remastered",
+                                "badge":  ".NET 10 / Avalonia UI",
+                                "tagline":  "Open-source remaster of Civilization 1 (1991, DOS) in C# and Avalonia UI with zero DOSBox needed",
+                                "description":  "The original CIV.EXE binary was translated function by function into clean, high-performance C#. The game preserves 100% of the authentic 1991 retro feel, graphics, and audio, while delivering vital Quality of Life enhancements that players have wanted for decades.",
+                                "badges":  [
+                                               ".NET 10.0",
+                                               "C# 14",
+                                               "Avalonia UI 12.1",
+                                               "Civilization 1 (1991)",
+                                               "Windows / Linux / macOS",
+                                               "Open Source (MIT)"
+                                           ],
+                                "playInstructionsTitle":  "How to Play (Zero installation, no DOSBox)",
+                                "playSteps":  [
+                                                  "Download the latest release for your platform (Windows, Linux, macOS).",
+                                                  "Extract the archive and place the original 1991 CIVILIZATION folder next to the Civ_1_5_Remastered.Desktop executable.",
+                                                  "Run Civ_1_5_Remastered.Desktop.exe and enjoy silky smooth gameplay with native performance!"
+                                              ],
+                                "gitHubUrl":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
+                                "gitHubLabel":  "Code on GitHub",
+                                "websiteUrl":  "https://davit-futures.github.io/Civ_1_5_Remastered/",
+                                "websiteLabel":  "Official Project Website",
+                                "releasesUrl":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered/releases",
+                                "releasesLabel":  "Download Latest Release"
+                            },
+                  "whatsNewTitle":  "What\u0027s New in Civ 1.5 Remastered",
+                  "whatsNewSubtitle":  "Key gameplay mechanics enhancements and modernization features compared to the 1991 original.",
+                  "features":  [
+                                   {
+                                       "id":  "unit-health",
+                                       "title":  "Units have health \u0026 tactical combat rounds",
+                                       "description":  "Units have hit points (standard 3 HP, veteran 4 HP, elite 5 HP), and current health is displayed on health bars across the map and during battles. Combat is no longer decided by a single roll of the dice: battles are fought in rounds, where the losing side loses 1 HP each round. A weak unit will no longer sink a mighty Battleship on a single lucky roll!",
+                                       "image":  "img/games/unit-health.png",
+                                       "secondImage":  "img/games/battles.png",
+                                       "badge":  "Combat Revolution",
+                                       "caption":  "Unit health bars on the map and close-up of a chariot engaging a damaged barbarian legion."
+                                   },
+                                   {
+                                       "id":  "load-game",
+                                       "title":  "Load Game directly in the game menu",
+                                       "description":  "The game menu features a long-requested Load Game option right in the GAME menu. There is no need to exit or restart the application to load a saved game. The load list displays both your custom saved games and the latest autosaves.",
+                                       "image":  "img/games/load-game.png",
+                                       "secondImage":  null,
+                                       "badge":  "Quality of Life",
+                                       "caption":  "Load Game option right in the main GAME menu."
+                                   },
+                                   {
+                                       "id":  "saves",
+                                       "title":  "10 save slots and 20 turn autosaves",
+                                       "description":  "Save your games in 10 independent slots (CIVIL0 – CIVIL9) instead of the original 4. Furthermore, the game automatically saves every turn into a rolling pool of 20 autosaves (AUTO00 – AUTO19). If a strategic mistake occurs, you can step back up to 20 turns (the original only autosaved once every 1,000 years).",
+                                       "image":  "img/games/saves.png",
+                                       "secondImage":  null,
+                                       "badge":  "Progress Safety",
+                                       "caption":  "20 rolling autosaves generated every turn."
+                                   },
+                                   {
+                                       "id":  "wonders",
+                                       "title":  "Wonders never become obsolete",
+                                       "description":  "In the original Civilization 1, most Wonders of the World stopped working once a specific technology was discovered (e.g. Hanging Gardens with Invention, Pyramids with Communism). In Civ 1.5, every Wonder works for as long as you hold its city. The Civilopedia has been updated accordingly.",
+                                       "image":  "img/games/wonders.png",
+                                       "secondImage":  null,
+                                       "badge":  "Game Balance",
+                                       "caption":  "Memphis with the Hanging Gardens, providing citizen happiness throughout the entire game."
+                                   },
+                                   {
+                                       "id":  "upgrades",
+                                       "title":  "Upgrade units for gold in cities",
+                                       "description":  "An outdated unit stationed in your city can be upgraded to its modern successor once you discover the prerequisite technology (E key or Orders -\u003e Upgrade): Militia -\u003e Phalanx -\u003e Musketeers -\u003e Riflemen -\u003e Mech. Inf.; Knights -\u003e Armor; Cruiser -\u003e Battleship. The unit keeps its veteran or elite rank!",
+                                       "image":  "img/games/upgrades.png",
+                                       "secondImage":  null,
+                                       "badge":  "Army Evolution",
+                                       "caption":  "Upgrading militia to phalanx for gold in the orders menu."
+                                   },
+                                   {
+                                       "id":  "railroads",
+                                       "title":  "True railroad hubs in cities",
+                                       "description":  "As soon as a player discovers Railroad, every city is automatically treated as having a railroad. In the original, a city only had a basic road, causing trains to lose a third of their movement points in every transit city. Travel across the empire is now completely seamless.",
+                                       "image":  "img/games/railroads.png",
+                                       "secondImage":  null,
+                                       "badge":  "Logistics",
+                                       "caption":  "Railroad track running continuously through Thebes."
+                                   },
+                                   {
+                                       "id":  "demographics",
+                                       "title":  "Fixed 16-bit demographics for large empires",
+                                       "description":  "The demographics screen in the DOS original operated on signed 16-bit integers and suffered arithmetic overflows in large empires, displaying bizarre negative approval, disease, or productivity ratings. In Civ 1.5, all demographic indicators are calculated with full 32/64-bit precision.",
+                                       "image":  "img/games/demographics.png",
+                                       "secondImage":  null,
+                                       "badge":  "DOS Bug Fix",
+                                       "caption":  "A large empire with size 15-22 cities tracked accurately without integer overflow."
+                                   }
+                               ],
+                  "australia1859":  {
+                                        "title":  "Australia 1859 Sim",
+                                        "badge":  "C++20 \u0026 Raylib",
+                                        "description":  "Second project in the remaster series: modernization of a 2005 predator-prey island ecosystem simulator (Borland C++Builder / VCL) to modern C++20 and ultra-lightweight Raylib 5.5, with cross-platform native builds on Windows, Linux, and macOS.",
+                                        "url":  "https://github.com/DavIT-Futures/Australia-1859-Sim",
+                                        "urlLabel":  "View Australia 1859 Sim",
+                                        "tags":  [
+                                                     "C++20",
+                                                     "Raylib 5.5",
+                                                     "Lotka-Volterra",
+                                                     "Life Simulation",
+                                                     "Multi-OS",
+                                                     "CMake"
+                                                 ]
+                                    }
+              }
 }

@@ -777,3 +777,268 @@ p { margin: 0; }
     justify-content: center;
     margin-top: 36px;
 }
+
+/* ===== Games Remastering / Civ 1.5 Remastered ===== */
+.civ-hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+.civ-hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.civ-title-wrap {
+    flex: 1;
+    min-width: 280px;
+}
+.civ-badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--accent-text);
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-border);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+}
+.civ-title {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin: 4px 0 8px;
+}
+.civ-tagline {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.civ-links-top {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.civ-desc {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+.civ-badges-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+.civ-chip {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+.civ-play-strip {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+.civ-play-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.civ-play-steps {
+    padding-left: 20px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+.civ-play-steps li + li {
+    margin-top: 8px;
+}
+.civ-folder-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* What's New Cards Grid */
+.whats-new-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    margin-top: 36px;
+}
+.whats-new-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.whats-new-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.card-media {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 1px solid var(--border);
+}
+.feature-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.feature-badge {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-border);
+    color: var(--accent-text);
+    margin-bottom: 10px;
+}
+.feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 10px;
+    line-height: 1.35;
+}
+.feature-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    flex: 1;
+    margin-bottom: 14px;
+}
+.feature-caption {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+}
+
+/* Civ CTA Banner */
+.civ-cta-banner {
+    margin-top: 48px;
+    border: 1px solid var(--accent-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.08), transparent 60%), var(--surface);
+}
+.civ-cta-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 6px;
+}
+.civ-cta-text p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0;
+}
+.civ-cta-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Other Remaster Card */
+.other-remaster-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+}
+.other-remaster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.other-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-text);
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-border);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+.other-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+.other-desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    max-width: 820px;
+}
+
+@media (max-width: 768px) {
+    .civ-hero-card { padding: 20px; }
+    .civ-play-strip { grid-template-columns: 1fr; }
+    .whats-new-grid { grid-template-columns: 1fr; }
+    .civ-cta-banner { flex-direction: column; align-items: flex-start; padding: 20px; }
+}

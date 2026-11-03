@@ -11,6 +11,7 @@
         <nav class="nav @(_menuOpen ? "is-open" : "")" aria-label="Menu">
             <NavLink class="nav-link" href="services" @onclick="CloseMenu">@Content!.Nav.Services</NavLink>
             <NavLink class="nav-link" href="projects" @onclick="CloseMenu">@Content!.Nav.Projects</NavLink>
+            <NavLink class="nav-link" href="games" @onclick="CloseMenu">@(Content!.Nav.Games ?? (Site.Language == "pl" ? "Gry & Remastery" : "Retro Games"))</NavLink>
             <NavLink class="nav-link" href="github" @onclick="CloseMenu">@Content!.Nav.GitHub</NavLink>
             <NavLink class="nav-link" href="technology" @onclick="CloseMenu">@Content!.Nav.Tech</NavLink>
             <NavLink class="nav-link" href="cv" @onclick="CloseMenu">@Content!.Nav.Cv</NavLink>

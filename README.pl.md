@@ -19,6 +19,7 @@ To jednostronicowa wizytówka napisana w całości w C# w **Blazor WebAssembly**
 - **Usługi** i **Jak pracujemy** – co dostarczamy i jak krok po kroku przebiega projekt
 - **Technologie** – stack pogrupowany według obszarów (backend, frontend, mobile, DevOps, AI)
 - **Projekty komercyjne** – wybrane projekty komercyjne z klientem, latami, efektem i tagami
+- **Retro Games Remaster** – dedykowana sekcja modernizacji gier klasycznych (Civ 1.5 Remastered, Australia 1859 Sim) z zestawieniem nowości „Co nowego” oraz instrukcjami uruchomienia bez DOSBoksa
 - **Projekty GitHub** – przegląd publicznych repozytoriów, architektur referencyjnych i narzędzi z bezpośrednimi linkami do kodu
 - **Rekomendacje** – opinie osób, z którymi pracowaliśmy
 - **CV** – wersja krótka i pełna, każda jako strona WWW i PDF do druku

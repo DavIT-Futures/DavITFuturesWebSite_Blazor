@@ -14,12 +14,13 @@ public record SiteContent(
     TestimonialsSection Testimonials,
     CvSection Cv,
     ContactSection Contact,
-    Footer Footer);
+    Footer Footer,
+    GamesRemasterSection? Games = null);
 
 public record Meta(string Title, string Description);
 
 public record Nav(string About, string Services, string Tech, string Projects, string GitHub, string Cv, string Contact,
-    string ThemeLight, string ThemeDark, string Language);
+    string ThemeLight, string ThemeDark, string Language, string? Games = null);
 
 public record Hero(string Eyebrow, string Title, string Highlight, string Lead, Link PrimaryCta, Link SecondaryCta,
     IReadOnlyList<Stat> Stats, string? ClientsLabel = null, IReadOnlyList<string>? Clients = null);
@@ -70,6 +71,49 @@ public record GitHubRepo(
     IReadOnlyList<string> Tags,
     string? Language = null,
     string? Badge = null);
+
+// Sekcja dedykowana: Games Remastering / Retro Games Remaster
+public record GamesRemasterSection(
+    string Eyebrow,
+    string Title,
+    string Subtitle,
+    CivGameDetails Civ15,
+    string WhatsNewTitle,
+    string WhatsNewSubtitle,
+    IReadOnlyList<GameFeatureItem> Features,
+    OtherGameDetails? Australia1859 = null);
+
+public record CivGameDetails(
+    string Title,
+    string Badge,
+    string Tagline,
+    string Description,
+    IReadOnlyList<string> Badges,
+    string PlayInstructionsTitle,
+    IReadOnlyList<string> PlaySteps,
+    string GitHubUrl,
+    string GitHubLabel,
+    string WebsiteUrl,
+    string WebsiteLabel,
+    string ReleasesUrl,
+    string ReleasesLabel);
+
+public record GameFeatureItem(
+    string Id,
+    string Title,
+    string Description,
+    string Image,
+    string? Badge = null,
+    string? SecondImage = null,
+    string? Caption = null);
+
+public record OtherGameDetails(
+    string Title,
+    string Badge,
+    string Description,
+    string Url,
+    string UrlLabel,
+    IReadOnlyList<string> Tags);
 
 // Opinie przepisane dosłownie z rekomendacji na LinkedIn, dlatego cytat zostaje w oryginale w obu językach.
 public record TestimonialsSection(string Title, string Subtitle, IReadOnlyList<Testimonial> Items, string? MoreLabel = null,

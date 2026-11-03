@@ -1,0 +1,158 @@
+@page "/games"
+@page "/retro-games"
+@page "/games-remastering"
+@inherits SiteComponent
+
+<PageTitle>@(Site.Language == "pl" ? "Retro Games Remaster – Civ 1.5 Remastered – DavIT Futures" : "Retro Games Remaster – Civ 1.5 Remastered – DavIT Futures")</PageTitle>
+
+@if (Content?.Games is not null)
+{
+    var g = Content.Games;
+    var civ = g.Civ15;
+
+    <!-- Subpage Hero -->
+    <div class="subpage-hero">
+        <div class="container">
+            <span class="subpage-eyebrow mono">
+                <Icon Name="gamepad" Size="14" /> @g.Eyebrow
+            </span>
+            <h1 class="subpage-title">@g.Title</h1>
+            <p class="subpage-lead">@g.Subtitle</p>
+        </div>
+    </div>
+
+    <!-- Flagship: Civ 1.5 Remastered Hero Section -->
+    <section class="section">
+        <div class="container">
+            <div class="civ-hero-card">
+                <div class="civ-hero-header">
+                    <div class="civ-title-wrap">
+                        <span class="civ-badge">@civ.Badge</span>
+                        <h2 class="civ-title">@civ.Title</h2>
+                        <p class="civ-tagline">@civ.Tagline</p>
+                    </div>
+                    <div class="civ-links-top">
+                        <a class="btn btn-primary" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                            <Icon Name="github" Size="18" /> @civ.GitHubLabel
+                        </a>
+                        <a class="btn btn-ghost" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                            <Icon Name="web" Size="18" /> @civ.WebsiteLabel
+                        </a>
+                        <a class="btn btn-ghost" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
+                            <Icon Name="download" Size="18" /> @civ.ReleasesLabel
+                        </a>
+                    </div>
+                </div>
+
+                <p class="civ-desc">@civ.Description</p>
+
+                <div class="civ-badges-wrap">
+                    @foreach (var badge in civ.Badges)
+                    {
+                        <span class="civ-chip">@badge</span>
+                    }
+                </div>
+
+                <!-- How to Play Strip -->
+                <div class="civ-play-strip">
+                    <div class="civ-play-content">
+                        <h3 class="civ-play-title">
+                            <Icon Name="spark" Size="18" /> @civ.PlayInstructionsTitle
+                        </h3>
+                        <ol class="civ-play-steps">
+                            @foreach (var step in civ.PlaySteps)
+                            {
+                                <li>@step</li>
+                            }
+                        </ol>
+                    </div>
+                    <div class="civ-play-media">
+                        <img src="img/games/game-folder.png" alt="Civilization game folder structure" class="civ-folder-img" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section class="section section-alt" id="whats-new">
+        <div class="container">
+            <SectionHeading Title="@g.WhatsNewTitle" Subtitle="@g.WhatsNewSubtitle" />
+
+            <div class="whats-new-grid">
+                @foreach (var item in g.Features)
+                {
+                    <article class="whats-new-card" id="@item.Id">
+                        <div class="card-media">
+                            <img src="@item.Image" alt="@item.Title" class="feature-img" loading="lazy" />
+                            @if (!string.IsNullOrEmpty(item.SecondImage))
+                            {
+                                <img src="@item.SecondImage" alt="@item.Title - szczegóły" class="feature-img secondary-img" loading="lazy" />
+                            }
+                        </div>
+
+                        <div class="card-body">
+                            @if (!string.IsNullOrEmpty(item.Badge))
+                            {
+                                <span class="feature-badge">@item.Badge</span>
+                            }
+                            <h3 class="feature-title">@item.Title</h3>
+                            <p class="feature-desc">@item.Description</p>
+
+                            @if (!string.IsNullOrEmpty(item.Caption))
+                            {
+                                <p class="feature-caption">
+                                    <Icon Name="file" Size="14" /> @item.Caption
+                                </p>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+
+            <!-- Call to Action Banner -->
+            <div class="civ-cta-banner">
+                <div class="civ-cta-text">
+                    <h3>@(Site.Language == "pl" ? "Chcesz wypróbować Civ 1.5 Remastered lub przejrzeć kod?" : "Ready to play Civ 1.5 Remastered or explore the source code?")</h3>
+                    <p>@(Site.Language == "pl" ? "Kod projektu jest w 100% open-source pod licencją MIT na GitHubie. Działa bez DOSBoksa na Windowsie, Linuksie i macOS." : "100% open-source project under MIT license on GitHub. Zero DOSBox required, runs cross-platform.")</p>
+                </div>
+                <div class="civ-cta-actions">
+                    <a class="btn btn-primary" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                        <Icon Name="github" Size="18" /> @(Site.Language == "pl" ? "Przejdź do repozytorium GitHub" : "Go to GitHub Repository")
+                    </a>
+                    <a class="btn btn-ghost" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                        <Icon Name="web" Size="18" /> @(Site.Language == "pl" ? "Strona Civ 1.5 (Astro)" : "Civ 1.5 Website (Astro)")
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Remasters: Australia 1859 Sim -->
+    @if (g.Australia1859 is not null)
+    {
+        var aus = g.Australia1859;
+        <section class="section">
+            <div class="container">
+                <div class="other-remaster-card">
+                    <div class="other-remaster-header">
+                        <div>
+                            <span class="other-badge">@aus.Badge</span>
+                            <h3 class="other-title">@aus.Title</h3>
+                        </div>
+                        <a class="btn btn-ghost" href="@aus.Url" target="_blank" rel="noopener">
+                            <Icon Name="github" Size="16" /> @aus.UrlLabel
+                        </a>
+                    </div>
+                    <p class="other-desc">@aus.Description</p>
+                    <ul class="chips small">
+                        @foreach (var tag in aus.Tags)
+                        {
+                            <li>@tag</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </section>
+    }
+}
