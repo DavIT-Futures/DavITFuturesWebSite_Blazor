@@ -12,20 +12,22 @@
             {
                 <article class="card project-card">
                     <div class="project-top">
-                        <span class="project-client">
-                            @if (GetClientLogo(p.Client) is { } logo)
-                            {
-                                <span class="project-client-logo-box">
-                                    <img src="@logo" alt="@p.Client logo" class="project-client-logo" loading="lazy" />
-                                </span>
-                            }
-                            else
-                            {
-                                <span class="client-badge-dot" aria-hidden="true"></span>
-                            }
-                            <span class="project-client-name">@p.Client</span>
-                        </span>
-                        <span class="project-years">@p.Years</span>
+                        @if (GetClientLogo(p.Client) is { } logo)
+                        {
+                            <div class="project-client-logo-box">
+                                <img src="@logo" alt="@p.Client logo" class="project-client-logo" loading="lazy" />
+                            </div>
+                        }
+                        <div class="project-client-meta">
+                            <span class="project-client-name">
+                                @if (GetClientLogo(p.Client) is null)
+                                {
+                                    <span class="client-badge-dot" aria-hidden="true"></span>
+                                }
+                                @p.Client
+                            </span>
+                            <span class="project-years">@p.Years</span>
+                        </div>
                     </div>
                     <h3>@p.Name</h3>
                     @if (!string.IsNullOrEmpty(p.Outcome))

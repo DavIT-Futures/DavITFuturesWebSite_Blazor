@@ -606,14 +606,27 @@ p { margin: 0; }
 .tech-group.wide { grid-column: span 2; }
 .tech-group { padding: 22px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); }
 .tech-group h3 { font-size: 13px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent-text); margin-bottom: 14px; font-weight: 700; }
-.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
-.chips li {
-    padding: 5px 11px; border-radius: 6px;
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; }
+.chips li,
+.chips .chip,
+.chip {
+    padding: 3px 8px; border-radius: 5px;
     background: var(--surface-2); border: 1px solid var(--border);
-    font-size: 13px; font-weight: 500; font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500; font-family: var(--font-mono);
+    color: var(--text-muted); letter-spacing: 0.02em; line-height: 1.45;
+    display: inline-flex; align-items: center;
+    transition: all .15s ease;
 }
-.chips.small { margin-top: 16px; }
-.chips.small li { padding: 3px 8px; font-size: 12px; }
+.chips li:hover,
+.chips .chip:hover,
+.chip:hover {
+    border-color: var(--accent-border);
+    color: var(--accent-text);
+    background: var(--accent-subtle);
+}
+.chips.small { margin-top: 14px; }
+.chips.small li,
+.chips.small .chip { padding: 2px 7px; font-size: 10.5px; }
 .tech-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13.5px; }
 .card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 600; font-size: 13.5px; color: var(--accent-text); }
 .card-link:hover { text-decoration: underline; }
@@ -628,72 +641,76 @@ p { margin: 0; }
 }
 .project-top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    color: var(--text-muted);
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
     margin-bottom: 14px;
 }
-.project-client {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    padding: 5px 14px 5px 6px;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: all .2s ease;
-}
 .project-client-logo-box {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 116px;
-    height: 54px;
-    padding: 6px 10px;
+    width: 100%;
+    height: 76px;
+    padding: 10px 20px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-    flex-shrink: 0;
+    transition: all .2s ease;
 }
 .project-client-logo {
-    max-width: 100%;
-    max-height: 40px;
+    max-width: 85%;
+    max-height: 48px;
     width: auto;
     height: auto;
     object-fit: contain;
     display: block;
+    transition: transform .2s ease;
+}
+.project-card:hover .project-client-logo-box {
+    box-shadow: inset 0 0 0 1px var(--accent-border), 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.project-card:hover .project-client-logo {
+    transform: scale(1.03);
+}
+.project-client-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+.project-client-name {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--accent-text);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-align: left;
 }
 .client-badge-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: var(--accent);
     box-shadow: 0 0 8px var(--accent);
     flex-shrink: 0;
-    margin: 0 6px;
-}
-.project-card:hover .project-client {
-    border-color: var(--accent);
-    background: var(--accent-subtle);
-    color: var(--accent-text);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .project-years {
     font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11.5px;
+    font-weight: 600;
     color: var(--text-muted);
     margin-left: auto;
     white-space: nowrap;
+    text-align: right;
+}
+.project-card .chips {
+    margin-top: 14px;
 }
 .stars { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-family: var(--font-mono); }
 .project-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 13.5px; font-weight: 600; color: var(--accent-text); }
