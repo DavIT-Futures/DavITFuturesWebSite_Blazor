@@ -1,682 +1,708 @@
 {
-    "meta":  {
-                 "title":  "DavIT Futures – Senior Full-Stack, .NET, Web Frontends i DevOps",
-                 "description":  "DavIT Futures – kompleksowa inżynieria oprogramowania dla finansów i SaaS: wysokowydajny .NET, nowoczesne frontendy webowe, bazy danych oraz zautomatyzowane środowiska DevOps CI/CD. Wrocław."
-             },
-    "nav":  {
-                "about":  "O firmie",
-                "services":  "Usługi",
-                "tech":  "Technologie",
-                "projects":  "Projekty komercyjne",
-                "gitHub":  "Projekty GitHub",
-                "cv":  "CV",
-                "contact":  "Kontakt",
-                "themeLight":  "Jasny motyw",
-                "themeDark":  "Ciemny motyw",
-                "language":  "Język",
-                "games":  "Gry \u0026 Remastery"
+    "meta": {
+        "title": "DavIT Futures – Senior Full-Stack, .NET, Web Frontends i DevOps",
+        "description": "DavIT Futures – kompleksowa inżynieria oprogramowania dla finansów i SaaS: wysokowydajny .NET, nowoczesne frontendy webowe, bazy danych oraz zautomatyzowane środowiska DevOps CI/CD. Wrocław."
+    },
+    "nav": {
+        "about": "O firmie",
+        "services": "Usługi",
+        "tech": "Technologie",
+        "projects": "Projekty komercyjne",
+        "gitHub": "Projekty GitHub",
+        "cv": "CV",
+        "contact": "Kontakt",
+        "themeLight": "Jasny motyw",
+        "themeDark": "Ciemny motyw",
+        "language": "Język",
+        "games": "Gry & Remastery"
+    },
+    "hero": {
+        "eyebrow": "Software house · Wrocław",
+        "title": "Oprogramowanie klasy tradingowej",
+        "highlight": "dla Twojego biznesu",
+        "lead": "Inżynieria full-stack z kompleksowym podejściem end-to-end: wysokowydajny backend .NET, nowoczesne frontendy webowe, zoptymalizowane bazy danych i zautomatyzowane pipeline'y DevOps CI/CD. Od pierwszej linii kodu i rygorystycznych testów po automatyczne wdrożenia produkcyjne bez przestojów. Od 2007 roku, dla klientów z Polski, Irlandii, Czech i Wielkiej Brytanii.",
+        "primaryCta": {
+            "label": "Porozmawiajmy o projekcie",
+            "url": "contact"
+        },
+        "secondaryCta": {
+            "label": "Zobacz projekty",
+            "url": "projects"
+        },
+        "stats": [
+            {
+                "value": "18+",
+                "label": "lat budowania oprogramowania produkcyjnego"
             },
-    "hero":  {
-                 "eyebrow":  "Software house · Wrocław",
-                 "title":  "Oprogramowanie klasy tradingowej",
-                 "highlight":  "dla Twojego biznesu",
-                 "lead":  "Inżynieria full-stack z kompleksowym podejściem end-to-end: wysokowydajny backend .NET, nowoczesne frontendy webowe, zoptymalizowane bazy danych i zautomatyzowane pipeline'y DevOps CI/CD. Od pierwszej linii kodu i rygorystycznych testów po automatyczne wdrożenia produkcyjne bez przestojów. Od 2007 roku, dla klientów z Polski, Irlandii, Czech i Wielkiej Brytanii.",
-                 "primaryCta":  {
-                                    "label":  "Porozmawiajmy o projekcie",
-                                    "url":  "contact"
-                                },
-                 "secondaryCta":  {
-                                      "label":  "Zobacz projekty",
-                                      "url":  "projects"
-                                  },
-                 "stats":  [
-                               {
-                                   "value":  "18+",
-                                   "label":  "lat budowania oprogramowania produkcyjnego"
-                               },
-                               {
-                                   "value":  "4",
-                                   "label":  "kraje: PL, IE, CZ, UK"
-                               },
-                               {
-                                   "value":  "4×",
-                                   "label":  "średnia wydajność zespołu, dzięki agentom AI"
-                               },
-                               {
-                                   "value":  "15 mln £",
-                                   "label":  "zysku w pierwszym miesiącu wdrożenia tradingowego w IG Group"
-                               },
-                               {
-                                   "value":  "70%",
-                                   "label":  "transakcji funduszy w Polsce szło przez Goniec Online"
-                               }
-                           ],
-                 "clientsLabel":  "Realizacje dla",
-                 "clients":  [
-                                 "IG Group",
-                                 "Credit Suisse",
-                                 "Qiagen",
-                                 "Vitalograph",
-                                 "AMCS Group",
-                                 "Tyrecheck"
-                             ]
-             },
-    "about":  {
-                  "title":  "O firmie",
-                  "subtitle":  "DavIT Futures to firma inżynierska Dawida Domagały. Rozmawiasz i pracujesz bezpośrednio z inżynierem z 18-letnim stażem, który bierze pełną odpowiedzialność za cały proces wytwarzania oprogramowania: od koncepcji, wyboru technologii i architektury bazodanowej, przez implementację backendu i frontendów webowych, aż po zaawansowane pipeline'y CI/CD, testy automatyczne i stabilne wydania produkcyjne.",
-                  "photo":  "img/dawid-domagala.jpg",
-                  "photoAlt":  "Dawid Domagała",
-                  "name":  "Dawid Domagała",
-                  "role":  "Założyciel · Senior Full-Stack Architect & DevOps Lead (.NET, Web Frontends, Bazy Danych)",
-                  "facts":  [
-                                "18+ lat w bankowości, tradingu, medtechu i SaaS",
-                                "Magister elektroniki, Politechnika Wrocławska",
-                                "Wrocław · strefa czasowa CET",
-                                "Polski i angielski (biegle)"
-                            ],
-                  "items":  [
-                                {
-                                    "icon":  "finance",
-                                    "title":  "Finanse i trading",
-                                    "text":  "Znamy trading od środka: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP w IG Group, silniki ryzyka w Credit Suisse i dystrybucja funduszy inwestycyjnych. Mówimy językiem Twojego rynku, nie tylko kodu.",
-                                    "linkLabel":  "IG Group",
-                                    "linkUrl":  "https://www.ig.com"
-                                },
-                                {
-                                    "icon":  "shield",
-                                    "title":  "Jakość i bezpieczeństwo",
-                                    "text":  "Testy automatyczne przy każdej zmianie, bramki jakości, które zatrzymują regresje, i bezpieczeństwo na poziomie bankowym. Korporacyjny rygor bez korporacyjnej powolności."
-                                },
-                                {
-                                    "icon":  "pipeline",
-                                    "title":  "DevOps, CI/CD i Release Management",
-                                    "text":  "Automatyzacja całego cyklu życia oprogramowania: potężne pipeline'y CI/CD (GitLab, GitHub Actions, Jenkins), konteneryzacja Docker, bramki jakości (quality gates), testy regresyjne i bezpieczny proces publikacji multi-OS bez przestojów produkcyjnych."
-                                },
-                                {
-                                    "icon":  "spark",
-                                    "title":  "Szybkość dzięki AI",
-                                    "text":  "Agenci AI przyspieszają pracę, a każdą zmianę przegląda i testuje człowiek. Twój kod i dane zostają pod Twoją kontrolą: narzędzia AI działają tylko w ramach Twoich zasad bezpieczeństwa."
-                                }
-                            ]
-              },
-    "services":  {
-                     "title":  "Usługi",
-                     "subtitle":  "Od pomysłu i prototypu po wdrożenie produkcyjne i utrzymanie.",
-                     "items":  [
-                                   {
-                                       "icon":  "web",
-                                       "title":  "Aplikacje webowe (Web Frontends)",
-                                       "text":  "Tworzymy elastyczne, responsywne interfejsy w ekosystemach Angular, React, Vue.js i Blazor. Dobieramy technologię optymalnie do wymagań produktu, dbając o płynność działania, architekturę stanu i łatwość późniejszej rozbudowy."
-                                   },
-                                   {
-                                       "icon":  "server",
-                                       "title":  "Backend i API",
-                                       "text":  "API w C# .NET i Javie (REST, GraphQL), mikroserwisy, MS SQL i PostgreSQL. Wydajne i stabilne pod obciążeniem."
-                                   },
-                                   {
-                                       "icon":  "mobile",
-                                       "title":  "Aplikacje mobilne",
-                                       "text":  "Xamarin oraz Vue.js z Quasarem i Cordovą. Jeden kod na telefon, przeglądarkę i desktop, więc mniej do utrzymania."
-                                   },
-                                   {
-                                       "icon":  "desktop",
-                                       "title":  "Desktop i modernizacja systemów",
-                                       "text":  "WPF, WinForms i DevExpress. Modernizujemy starsze systemy i przenosimy je na nowe technologie bez zatrzymywania biznesu."
-                                   },
-                                   {
-                                       "icon":  "layers",
-                                       "title":  "SaaS multi-tenant",
-                                       "text":  "Produkty white-label z izolacją danych klientów, konfiguracją i brandingiem per klient."
-                                   },
-                                   {
-                                       "icon":  "pipeline",
-                                       "title":  "DevOps i CI/CD",
-                                       "text":  "Pipeline\u0027y GitLab CI/CD, Jenkins i GitHub Actions, automatyczne wydania, podpisywanie kodu, Docker i Azure."
-                                   },
-                                   {
-                                       "icon":  "spark",
-                                       "title":  "Wdrożenia AI w zespole",
-                                       "text":  "Wprowadzamy agentów AI do Twojego procesu wytwarzania, ze szkoleniami i warsztatami dla programistów."
-                                   }
-                               ]
-                 },
-    "process":  {
-                    "title":  "Jak pracujemy",
-                    "subtitle":  "Prosty i przejrzysty sposób na start i dostarczanie.",
-                    "steps":  [
-                                  {
-                                      "title":  "Krótka rozmowa wstępna",
-                                      "text":  "Napisz do mnie lub połączmy się na krótką rozmowę. Opowiedz o swoim pomyśle, systemie lub wyzwaniu technicznym – rozmawiasz bezpośrednio z inżynierem, po partnersku i bez handlowców."
-                                  },
-                                  {
-                                      "title":  "Propozycja",
-                                      "text":  "Dostajesz zakres, wycenę i ofertę: stała cena albo rozliczenie godzinowe."
-                                  },
-                                  {
-                                      "title":  "Krótkie iteracje",
-                                      "text":  "Działające demo co tydzień lub dwa, więc widzisz postęp i możesz wcześnie korygować kierunek."
-                                  },
-                                  {
-                                      "title":  "Wdrożenie i wsparcie",
-                                      "text":  "CI/CD, dokumentacja i przekazanie projektu, a w razie potrzeby utrzymanie."
-                                  }
-                              ],
-                    "footnote":  "Umowy B2B · zdalnie lub na miejscu · strefa CET · polski i angielski"
-                },
-    "tech":  {
-                 "title":  "Technologie",
-                 "subtitle":  "Kluczowe technologie, frameworki i standardy inżynieryjne wykorzystywane w codziennej pracy.",
-                 "groups":  [
-                                {
-                                    "name":  "Backend",
-                                    "items":  [
-                                                  "C#",
-                                                  ".NET 10",
-                                                  "ASP.NET Core",
-                                                  "Java",
-                                                  "Spring Boot",
-                                                  "REST",
-                                                  "GraphQL",
-                                                  "Mikroserwisy",
-                                                  "EF Core",
-                                                  "MS SQL Server",
-                                                  "PostgreSQL"
-                                              ]
-                                },
-                                {
-                                    "name":  "Frontend, desktop i mobile",
-                                    "items":  [
-                                                  "Angular 22",
-                                                  "Blazor",
-                                                  "TypeScript",
-                                                  "RxJS",
-                                                  "React",
-                                                  "Vue.js",
-                                                  "Quasar",
-                                                  "HTML / CSS",
-                                                  "WPF",
-                                                  "WinForms",
-                                                  "Xamarin"
-                                              ]
-                                },
-                                {
-                                    "name":  "DevOps i chmura",
-                                    "items":  [
-                                                  "GitLab CI/CD",
-                                                  "GitHub Actions",
-                                                  "Jenkins",
-                                                  "Docker",
-                                                  "Azure",
-                                                  "OpenShift",
-                                                  "PowerShell",
-                                                  "Bash"
-                                              ]
-                                },
-                                {
-                                    "name":  "Jakość",
-                                    "items":  [
-                                                  "NUnit",
-                                                  "Moq",
-                                                  "SpecFlow",
-                                                  "TDD / BDD",
-                                                  "Testy integracyjne",
-                                                  "Bramki pokrycia kodu",
-                                                  "SonarQube"
-                                              ]
-                                },
-                                {
-                                    "name":  "AI",
-                                    "items":  [
-                                                  "Claude Code",
-                                                  "Gemini",
-                                                  "Cursor",
-                                                  "GitHub Copilot",
-                                                  "Agentic coding",
-                                                  "Sub-agenci",
-                                                  "Agent skills",
-                                                  "Software factory",
-                                                  "SDLC z AI"
-                                              ],
-                                    "note":  "W IG Group: 4× średnia wydajność zespołu, 6× krótszy czas od zgłoszenia do merge\u0027a (0,9 vs 5,4 dnia) i do 16 zgłoszeń zamykanych przez agentów w nocy, każde przejrzane i przetestowane przez człowieka."
-                                }
-                            ]
-             },
-    "projects":  {
-                     "title":  "Projekty komercyjne",
-                     "subtitle":  "Wybrane systemy komercyjne i rozwiązania enterprise zrealizowane w ciągu ostatnich 18 lat dla klientów instytucjonalnych.",
-                     "gitHubUser":  "DavIT-Futures",
-                     "allReposLabel":  "",
-                     "codeLabel":  "Kod na GitHubie",
-                     "items":  [
-                                   {
-                                       "name":  "L2 Dealer",
-                                       "client":  "IG Group",
-                                       "years":  "2023 – 2026",
-                                       "description":  "Desktopowa platforma tradingowa Level 2. Przebudowaliśmy cały proces dostarczania: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów, z oceną dojrzałości HIGH. Dostarczyliśmy też „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "C# .NET",
-                                                    "GitLab CI/CD",
-                                                    "GitFlow",
-                                                    "DevExpress"
-                                                ],
-                                       "outcome":  "15 mln £ w pierwszym miesiącu · wydania 24/7 bez przestojów"
-                                   },
-                                   {
-                                       "name":  "Platformy silników ryzyka: LTV, PRC i PRIIPs",
-                                       "client":  "Credit Suisse",
-                                       "years":  "2017 – 2022",
-                                       "description":  "Migracja z Silverlight do Angular 10 z backendem GraphQL, podział monolitu na mikroserwisy .NET Core, wielowątkowe obliczenia ryzyka, optymalizacja i przyspieszenie zapytań MS SQL, regulacyjne dokumenty KID (PRIIPs) z testami BDD całego API.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "Angular",
-                                                    "GraphQL",
-                                                    "C# .NET Core",
-                                                    "MS SQL"
-                                                ],
-                                       "outcome":  "Silverlight → Angular · 100% API pokryte testami BDD"
-                                   },
-                                   {
-                                       "name":  "QiaCuity i QiaGuest",
-                                       "client":  "Qiagen",
-                                       "years":  "2019 – 2020",
-                                       "description":  "Interfejs instrumentu do cyfrowej PCR (dPCR), który liczy kopie DNA w diagnostyce medycznej, w React/Redux na Linuksie. Do tego QiaGuest, aplikacja dla recepcji zbudowana od zera w Angular i .NET Core na Azure.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "React",
-                                                    "Angular",
-                                                    "C# .NET Core",
-                                                    "Azure"
-                                                ],
-                                       "outcome":  "QiaGuest zbudowany od zera na Azure"
-                                   },
-                                   {
-                                       "name":  "Focis",
-                                       "client":  "Focis.co.uk",
-                                       "years":  "2018 – 2019",
-                                       "description":  "SaaS multi-tenant dla kancelarii prawnych, zbudowany od początku do końca przez jednego inżyniera, później z drugim programistą: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "ASP.NET MVC",
-                                                    "Azure",
-                                                    "EF Core",
-                                                    "Firebase"
-                                                ],
-                                       "outcome":  "Kompletny produkt SaaS zbudowany w pojedynkę"
-                                   },
-                                   {
-                                       "name":  "InCenter i InTire",
-                                       "client":  "Tyrecheck",
-                                       "years":  "2015 – 2017",
-                                       "description":  "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS, łącznie z napisaną przez nas niskopoziomową komunikacją z czujnikami, i wysyłał je na centralny serwer, gdzie aplikacja webowa zarządzała całą flotą.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "Vue.js",
-                                                    "Xamarin",
-                                                    "ASP.NET MVC",
-                                                    "IoT / TPMS"
-                                                ],
-                                       "outcome":  "Prototyp w 2 tygodnie, który wygrał kontrakt"
-                                   },
-                                   {
-                                       "name":  "Spirometria white-label",
-                                       "client":  "Vitalograph",
-                                       "years":  "2014 – 2015",
-                                       "description":  "Diagnostyka czynności płuc dla klinik i badań klinicznych, z brandingiem każdego partnera farmaceutycznego, zgodnie z regulacjami dla urządzeń medycznych.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "C# .NET",
-                                                    "WinForms",
-                                                    "Multi-tenant"
-                                                ],
-                                       "outcome":  "~10 wersji white-label, m.in. dla Roche"
-                                   },
-                                   {
-                                       "name":  "Elemos",
-                                       "client":  "AMCS Group",
-                                       "years":  "2012 – 2014",
-                                       "description":  "Oprogramowanie dla branży odpadów i recyklingu: aplikacja biurowa WPF i aplikacja w śmieciarkach na terminalach z Windows Mobile, później zmigrowana na Xamarin, z RFID, planowaniem tras i śledzeniem pojazdów na żywo.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "WPF",
-                                                    "WCF",
-                                                    "RFID",
-                                                    "Windows Mobile",
-                                                    "Xamarin"
-                                                ],
-                                       "outcome":  "100% pokrycia testami po stronie serwera"
-                                   },
-                                   {
-                                       "name":  "Goniec Online",
-                                       "client":  "Exorigo / ProService AT",
-                                       "years":  "2007 – 2012",
-                                       "description":  "Duży, złożony system dystrybucji funduszy inwestycyjnych wdrożony w wielu polskich bankach: kupno i sprzedaż jednostek oraz definiowanie sieci dystrybucji.",
-                                       "url":  "",
-                                       "tags":  [
-                                                    "C# .NET",
-                                                    "WinForms",
-                                                    "Web Services",
-                                                    "MS SQL"
-                                                ],
-                                       "outcome":  "~70% transakcji funduszy w Polsce"
-                                   },
-                                   {
-                                       "name":  "Strona DavIT Futures",
-                                       "client":  "DavIT Futures",
-                                       "years":  "2026",
-                                       "description":  "Ta strona: Blazor WebAssembly na .NET 10, dwa języki, jasny i ciemny motyw, automatyczne wdrożenia przez GitHub Actions na GitHub Pages.",
-                                       "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
-                                       "tags":  [
-                                                    "Blazor",
-                                                    "C# .NET 10",
-                                                    "GitHub Actions"
-                                                ],
-                                       "outcome":  "Otwarty kod: zobacz, jak budujemy"
-                                   }
-                               ]
-                 },
-    "gitHub":  {
-                   "subtitle":  "Autorskie eksperymenty, ciągła nauka, eksploracja nowej wiedzy i otwarte oprogramowanie.",
-                   "viewRepoLabel":  "Zobacz kod na GitHubie",
-                   "viewProfileLabel":  "Wszystkie repozytoria na GitHubie",
-                   "items":  [
-                                 {
-                                     "name":  "Civ 1.5 Remastered (Civilization 1)",
-                                     "tags":  [
-                                                  "C# 14",
-                                                  ".NET 10",
-                                                  "Avalonia UI",
-                                                  "Civilization 1",
-                                                  "Retro Gaming",
-                                                  "Reverse Engineering",
-                                                  "Multi-OS"
-                                              ],
-                                     "description":  "Otwarty remaster kultowej gry strategicznej Civilization (1991, DOS) w nowoczesnym C# i Avalonia UI (.NET 10). Tłumaczenie funkcji CIV.EXE z zachowaniem klasycznego klimatu i usunięciem archaizmów: punkty życia jednostek, walka w rundach, regeneracja, ulepszanie jednostek za złoto, trwałe cuda świata, 20 autosave\u0027ów co turę i natywne uruchamianie bez DOSBoksa.",
-                                     "badge":  "Remaster / .NET 10",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
-                                 },
-                                 {
-                                     "name":  "Wieloplatformowy Generator Fraktali Desktopowych",
-                                     "tags":  [
-                                                  "C# 14",
-                                                  ".NET 10",
-                                                  "Avalonia UI",
-                                                  "Multi-OS",
-                                                  "Fraktale"
-                                              ],
-                                     "description":  "Wieloplatformowa aplikacja desktopowa w C# (.NET 10 i Avalonia UI) dla systemów Windows, Linux i macOS generująca zbiory Mandelbrota, Julii, Burning Ship, paproć Barnsleya oraz trójkąt Sierpińskiego.",
-                                     "badge":  ".NET 10 / Multi-OS",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/FractalsDesktopMultiOS"
-                                 },
-                                 {
-                                     "name":  "Wzorcowa Architektura Enterprise N-Tier",
-                                     "tags":  [
-                                                  "C#",
-                                                  ".NET 8",
-                                                  "CoreWCF",
-                                                  "WPF MVVM",
-                                                  "Własny ORM",
-                                                  "SQL Server"
-                                              ],
-                                     "description":  "Referencyjna implementacja architektury wielowarstwowej w .NET 8 LTS: klient desktopowy WPF MVVM, serwis backendowy CoreWCF, autorski lekki ORM oparty na refleksji, SQL Server oraz testy Moq.",
-                                     "badge":  "Architektura",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm"
-                                 },
-                                 {
-                                     "name":  "Dwujęzyczny Generator Faktur PDF",
-                                     "tags":  [
-                                                  "C#",
-                                                  ".NET 8",
-                                                  "WPF",
-                                                  "XAML",
-                                                  "iTextSharp",
-                                                  "Faktury B2B"
-                                              ],
-                                     "description":  "Nowoczesna aplikacja desktopowa WPF (.NET 8) do szybkiego wystawiania profesjonalnych dwujęzycznych faktur PDF (PL/EN) z obsługą wielu walut, elastycznych modeli rozliczeń i automatycznym podatkiem VAT.",
-                                     "badge":  "Aplikacja Desktop",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/Pdf_Invoice_generator"
-                                 },
-                                 {
-                                     "name":  "Symulator Ekosystemu Australia 1859",
-                                     "tags":  [
-                                                  "C++",
-                                                  "Lotka-Volterra",
-                                                  "Borland C++Builder",
-                                                  "VCL",
-                                                  "Symulacja"
-                                              ],
-                                     "description":  "Symulator życia i dynamiki ekosystemu wyspowego drapieżnik-ofiara (króliki, lisy, flora) oparty na modelu matematycznym Lotki-Volterry z wizualizacją w czasie rzeczywistym.",
-                                     "badge":  "Symulacja",
-                                     "language":  "C++",
-                                     "url":  "https://github.com/DavIT-Futures/Australia-1859-Sim"
-                                 },
-                                 {
-                                     "name":  "Strona DavIT Futures (Ta Strona)",
-                                     "tags":  [
-                                                  "Blazor WebAssembly",
-                                                  "C# 14",
-                                                  ".NET 10",
-                                                  "GitHub Actions",
-                                                  "Ta strona"
-                                              ],
-                                     "description":  "Ta strona internetowa, którą właśnie przeglądasz: stworzona w C# 14 w technologii Blazor WebAssembly (.NET 10), z dynamicznym motywem jasnym/ciemnym, dwujęzycznością i automatycznym CI/CD na GitHub Pages.",
-                                     "badge":  "Ta strona",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor"
-                                 },
-                                 {
-                                     "name":  "Klasyczna Strona ASP.NET MVC",
-                                     "tags":  [
-                                                  "ASP.NET MVC 5",
-                                                  ".NET 4.8",
-                                                  "C#",
-                                                  "Razor",
-                                                  "jQuery"
-                                              ],
-                                     "description":  "Strona firmowa DavIT Futures zbudowana w klasycznym ASP.NET MVC 5.3 (.NET Framework 4.8) i widokach Razor, publikowana jako statyczna witryna na GitHub Pages przez GitHub Actions.",
-                                     "badge":  "ASP.NET MVC",
-                                     "language":  "C#",
-                                     "url":  "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC"
-                                 },
-                                 {
-                                     "name":  "Pakiet Narzędzi Tradingu Algorytmicznego",
-                                     "tags":  [
-                                                  "Java",
-                                                  "Spring Boot",
-                                                  "Angular 22",
-                                                  "PostgreSQL",
-                                                  "Docker",
-                                                  "Trading",
-                                                  "FinTech"
-                                              ],
-                                     "description":  "Nowoczesna platforma i zestaw narzędzi do tradingu ilościowego stworzona jako rozwiązanie white-label, z pełną możliwością customizacji i konfiguracji za pomocą plików konfiguracyjnych. Backend oparty na nowoczesnej Javie ze Spring Boot, frontend w Angular 22 oraz baza PostgreSQL na obrazie Docker. Kod źródłowy w trakcie przygotowania do publikacji w repozytorium.",
-                                     "badge":  "Java \u0026 Angular / FinTech",
-                                     "language":  "Java / TypeScript",
-                                     "url":  "https://github.com/DavIT-Futures/TradeChameleon"
-                                 }
-                             ],
-                   "title":  "Projekty GitHub",
-                   "gitHubUser":  "DavIT-Futures"
-               },
-    "testimonials":  {
-                         "title":  "Opinie",
-                         "subtitle":  "Rekomendacje z LinkedIna, w oryginale.",
-                         "items":  [
-                                       {
-                                           "context":  "Paul był klientem Dawida (portal SaaS i API Focis) · LinkedIn, październik 2026",
-                                           "role":  "Konsultant ds. integracji danych i Legal Tech, współzałożyciel Focis",
-                                           "author":  "Paul Ryan",
-                                           "quote":  "Dawid was one of the very best people I\u0027ve worked with in my career. He has unique ability to quickly understand requirements then offer intelligent decisions on architecture, explained thoroughly and then executed. He was a major influence on development of our SAAS based portal and API."
-                                       },
-                                       {
-                                           "quote":  "Dawid is an excellent senior developer and a great team player. While working on same projects, Dawid has shown knowledge, will and proactive approach to problem solving. He was working on multiple tasks across multiple products and he always made an impact. Dawid also did great improvements to our delivery pipeline. He is willing to work on demanding tasks and always willing to take responsibility.\n\nI would strongly recommend Dawid as I believe he can bring value to any team. Dawid is also a great person and always happy to help.",
-                                           "author":  "Miroslav Vrbanac",
-                                           "role":  "Full Stack Developer, Asset Management Technology, Director w UBS",
-                                           "context":  "Pracował z Dawidem w jednym zespole w Credit Suisse · LinkedIn, wrzesień 2019"
-                                       }
-                                   ],
-                         "moreLabel":  "Rekomendacje na LinkedInie",
-                         "moreUrl":  "https://www.linkedin.com/in/dawid-domagala-futures/details/recommendations/"
-                     },
-    "cv":  {
-               "title":  "CV",
-               "subtitle":  "Krótka wersja na szybki rzut oka, pełna z projektami, liczbami i referencjami.",
-               "versions":  [
-                                {
-                                    "title":  "CV skrócone",
-                                    "text":  "Najważniejsze osiągnięcia, umiejętności i przebieg kariery w pigułce.",
-                                    "pages":  "2 strony",
-                                    "url":  "/cv/Dawid-Domagala-CV-short.html",
-                                    "buttonLabel":  "Otwórz CV"
-                                },
-                                {
-                                    "title":  "CV pełne",
-                                    "text":  "Szczegółowy opis projektów, technologii, osiągnięć i referencji.",
-                                    "pages":  "4 strony",
-                                    "url":  "/cv/Dawid-Domagala-CV-full.html",
-                                    "buttonLabel":  "Otwórz CV"
-                                }
-                            ]
-           },
-    "contact":  {
-                    "title":  "Kontakt",
-                    "subtitle":  "Masz pomysł na projekt? Wyślij krótki opis, odpowiemy w ciągu jednego dnia roboczego.",
-                    "email":  "davit.futures@gmail.com",
-                    "linkedIn":  "https://www.linkedin.com/in/dawid-domagala-futures/",
-                    "gitHub":  "https://github.com/DavIT-Futures",
-                    "company":  {
-                                    "heading":  "Dane firmy",
-                                    "name":  "DavIT Futures",
-                                    "owner":  "Dawid Domagała",
-                                    "address":  [
-                                                    "ul. Ścinawska 30",
-                                                    "53-629 Wrocław"
-                                                ],
-                                    "nip":  "6932087505",
-                                    "regon":  "021923547"
-                                },
-                    "emailSubject":  "Zapytanie o projekt – DavIT Futures"
-                },
-    "footer":  {
-                   "rights":  "Wszelkie prawa zastrzeżone.",
-                   "builtWith":  "Zbudowane w Blazor WebAssembly i .NET 10."
-               },
-    "games":  {
-                  "eyebrow":  "GAMES REMASTERING \u0026 REVERSE ENGINEERING",
-                  "title":  "Retro Games Remaster",
-                  "subtitle":  "Modernizacja kultowych tytułów z epoki DOS do XXI wieku: natywny kod C# (.NET 10) i Avalonia UI oraz C++20 i Raylib, zachowanie 100% oryginalnego klimatu i grafiki oraz eliminacja frustrujących ograniczeń technologicznych sprzed lat.",
-                  "civ15":  {
-                                "title":  "Civ 1.5 Remastered",
-                                "badge":  ".NET 10 / Avalonia UI",
-                                "tagline":  "Otwarty remaster kultowej gry Civilization 1 (1991, DOS) w C# i Avalonia UI bez DOSBoxa",
-                                "description":  "Oryginalny plik CIV.EXE został przetłumaczony funkcja po funkcji do nowoczesnego, czystego kodu C#. Gra zachowuje autentyczny klimat, oprawę graficzną i dźwiękową z 1991 roku, jednocześnie wprowadzając kluczowe usprawnienia rozgrywki (Quality of Life), o których gracze marzyli od dekad.",
-                                "badges":  [
-                                               ".NET 10.0",
-                                               "C# 14",
-                                               "Avalonia UI 12.1",
-                                               "Civilization 1 (1991)",
-                                               "Windows / Linux / macOS",
-                                               "Open Source (MIT)"
-                                           ],
-                                "playInstructionsTitle":  "Jak zagrać (Zero instalacji, bez DOSBoxa)",
-                                "playSteps":  [
-                                                  "Pobierz najnowsze wydanie dla swojego systemu operacyjnego (Windows, Linux, macOS).",
-                                                  "Wypakuj archiwum i umieść folder CIVILIZATION z oryginalną grą z 1991 roku obok pliku wykonywalnego Civ_1_5_Remastered.Desktop.",
-                                                  "Uruchom Civ_1_5_Remastered.Desktop.exe i ciesz się płynną rozgrywką w natywnej wydajności!"
-                                              ],
-                                "gitHubUrl":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
-                                "gitHubLabel":  "Kod na GitHubie",
-                                "websiteUrl":  "https://davit-futures.github.io/Civ_1_5_Remastered/",
-                                "websiteLabel":  "Oficjalna strona projektu",
-                                "releasesUrl":  "https://github.com/DavIT-Futures/Civ_1_5_Remastered/releases",
-                                "releasesLabel":  "Pobierz najnowsze wydanie"
-                            },
-                  "whatsNewTitle":  "Co nowego w Civ 1.5 Remastered",
-                  "whatsNewSubtitle":  "Zestaw najważniejszych usprawnień mechaniki rozgrywki względem oryginału z 1991 roku.",
-                  "features":  [
-                                   {
-                                       "id":  "unit-health",
-                                       "title":  "Punkty życia jednostek i taktyczna walka w rundach",
-                                       "description":  "Jednostki posiadają punkty życia (standardowa 3 HP, weteran 4 HP, elita 5 HP), a aktualny stan zdrowia prezentują paski HP na mapie i w trakcie walki. Starcia nie są już rozstrzygane pojedynczym, losowym rzutem kostką – walka toczy się w kolejnych rundach, w których przegrywający traci po 1 HP. Słaba jednostka nie zatopi już potężnego pancernika jednym szczęśliwym rzutem!",
-                                       "image":  "img/games/unit-health-zoom.png",
-                                       "secondImage":  "img/games/unit-health.png",
-                                       "thirdImage":  "img/games/battles.png",
-                                       "badge":  "Rewolucja w walce",
-                                       "caption":  "Zbliżenie powiększonych pasków zdrowia HP nad jednostkami, widok globalny mapy oraz taktyczna walka rydwanu z rannym legionem."
-                                   },
-                                   {
-                                       "id":  "load-game",
-                                       "title":  "Wczytywanie gry bezpośrednio w menu (Load Game)",
-                                       "description":  "Menu gry zyskało długo wyczekiwaną opcję Load Game bezpośrednio w menu GAME. Nie trzeba już zamykać programu ani restartować aplikacji, aby wczytać stan gry. Lista prezentuje zarówno Twoje własne zapisy, jak i najnowsze autosave\u0027y.",
-                                       "image":  "img/games/load-game.png",
-                                       "secondImage":  null,
-                                       "badge":  "Quality of Life",
-                                       "caption":  "Opcja Load Game bezpośrednio w menu głównym rozgrywki."
-                                   },
-                                   {
-                                       "id":  "saves",
-                                       "title":  "10 slotów zapisu i 20 autosave\u0027ów co turę",
-                                       "description":  "Możliwość zapisu w 10 niezależnych slotach (CIVIL0 – CIVIL9) zamiast archaicznych 4. Co więcej, gra wykonuje automatyczny zapis co każdą turę do puli 20 autosave\u0027ów (AUTO00 – AUTO19). W razie błędu strategicznego możesz cofnąć się nawet o 20 tur wstecz (oryginał zapisywał stan automatycznie raz na... 1000 lat).",
-                                       "image":  "img/games/saves.png",
-                                       "secondImage":  null,
-                                       "badge":  "Bezpieczeństwo postępu",
-                                       "caption":  "20 automatycznych stanów zapisu tworzonych co turę."
-                                   },
-                                   {
-                                       "id":  "wonders",
-                                       "title":  "Cuda Świata nigdy nie tracą ważności",
-                                       "description":  "W oryginalnym Civilization 1 większość Cudów Świata stawała się bezużyteczna po odkryciu konkretnego wynalazku (np. Wiszące Ogrody po Wynalazku, Piramidy po Komunizmie). W Civ 1.5 każdy wybudowany Cud Świata działa tak długo, jak kontrolujesz miasto, w którym się znajduje. Civilopedia została zaktualizowana o nowe reguły.",
-                                       "image":  "img/games/wonders.png",
-                                       "secondImage":  null,
-                                       "badge":  "Balans rozgrywki",
-                                       "caption":  "Memfis z Wiszącymi Ogrodami, uszczęśliwiającymi mieszkańców przez całą rozgrywkę."
-                                   },
-                                   {
-                                       "id":  "upgrades",
-                                       "title":  "Ulepszanie jednostek za złoto w miastach",
-                                       "description":  "Przestarzałą jednostkę stacjonującą w Twoim mieście możesz ulepszyć do jej nowocześniejszego odpowiednika po odkryciu odpowiedniej technologii (klawisz E lub menu Orders -\u003e Upgrade): Milicja -\u003e Falanga -\u003e Muszkieterzy -\u003e Strzelcy -\u003e Piechota Zmechanizowana; Rycerze -\u003e Pancerne; Krążownik -\u003e Pancernik. Jednostka zachowuje rangę weterana lub elity!",
-                                       "image":  "img/games/upgrades.png",
-                                       "secondImage":  null,
-                                       "badge":  "Ewolucja armii",
-                                       "caption":  "Ulepszanie milicji do falangi za złoto w menu rozkazów."
-                                   },
-                                   {
-                                       "id":  "railroads",
-                                       "title":  "Pełne węzły kolejowe w miastach",
-                                       "description":  "Gdy tylko gracz odkryje technologię Railroad, każde miasto automatycznie traktowane jest jak węzeł kolejowy. W oryginale miasto posiadało jedynie drogę, przez co pociągi traciły 1/3 punktu ruchu na tranzyt przez każdą metropolię. Teraz podróż koleją przez imperium jest w pełni płynna.",
-                                       "image":  "img/games/railroads.png",
-                                       "secondImage":  null,
-                                       "badge":  "Logistyka",
-                                       "caption":  "Trasa kolejowa przebiegająca bezpośrednio przez Teby."
-                                   },
-                                   {
-                                       "id":  "demographics",
-                                       "title":  "Naprawiona demografia wielkich imperiów",
-                                       "description":  "Ekran demografii w wersji DOS operował na 16-bitowych liczbach ze znakiem i przy dużych państwach ulegał przepełnieniu (overflow), pokazując absurdalne wartości ujemne aprobaty, wskaźnika chorób czy produkcji. W Civ 1.5 statystyki liczone są z pełną 32/64-bitową precyzją.",
-                                       "image":  "img/games/demographics.png",
-                                       "secondImage":  null,
-                                       "badge":  "Poprawka błędów DOS",
-                                       "caption":  "Wielkie imperium z miastami wielkości 15–22 liczone bez przekłamań i błędów."
-                                   }
-                               ],
-                  "australia1859":  {
-                                        "title":  "Australia 1859 Sim",
-                                        "badge":  "C++20 \u0026 Raylib",
-                                        "description":  "Drugi projekt z serii remasteryngu: modernizacja historycznego symulatora życia ekosystemu wyspowego z 2005 roku (Borland C++Builder / VCL) do standardu C++20 i ultralekkiej biblioteki Raylib 5.5, ze wsparciem dla Windows, Linux i macOS.",
-                                        "url":  "https://github.com/DavIT-Futures/Australia-1859-Sim",
-                                        "urlLabel":  "Zobacz projekt Australia 1859 Sim",
-                                        "tags":  [
-                                                     "C++20",
-                                                     "Raylib 5.5",
-                                                     "Lotka-Volterra",
-                                                     "Symulacja życia",
-                                                     "Multi-OS",
-                                                     "CMake"
-                                                 ]
-                                    }
-              }
+            {
+                "value": "4",
+                "label": "kraje: PL, IE, CZ, UK"
+            },
+            {
+                "value": "4×",
+                "label": "średnia wydajność zespołu, dzięki agentom AI"
+            },
+            {
+                "value": "15 mln £",
+                "label": "zysku w pierwszym miesiącu wdrożenia tradingowego w IG Group"
+            },
+            {
+                "value": "70%",
+                "label": "transakcji funduszy w Polsce szło przez Goniec Online"
+            }
+        ],
+        "clientsLabel": "Realizacje dla",
+        "clients": [
+            "IG Group",
+            "Credit Suisse",
+            "Qiagen",
+            "Vitalograph",
+            "AMCS Group",
+            "Tyrecheck"
+        ],
+        "clientBrands": [
+            {
+                "name": "IG Group",
+                "logo": "img/clients/ig-group.svg"
+            },
+            {
+                "name": "Credit Suisse",
+                "logo": "img/clients/credit-suisse.svg"
+            },
+            {
+                "name": "Qiagen",
+                "logo": "img/clients/qiagen.svg"
+            },
+            {
+                "name": "Vitalograph",
+                "logo": "img/clients/vitalograph.svg"
+            },
+            {
+                "name": "AMCS Group",
+                "logo": "img/clients/amcs-group.svg"
+            },
+            {
+                "name": "Tyrecheck",
+                "logo": "img/clients/tyrecheck.svg"
+            }
+        ]
+    },
+    "about": {
+        "title": "O firmie",
+        "subtitle": "DavIT Futures to firma inżynierska Dawida Domagały. Rozmawiasz i pracujesz bezpośrednio z inżynierem z 18-letnim stażem, który bierze pełną odpowiedzialność za cały proces wytwarzania oprogramowania: od koncepcji, wyboru technologii i architektury bazodanowej, przez implementację backendu i frontendów webowych, aż po zaawansowane pipeline'y CI/CD, testy automatyczne i stabilne wydania produkcyjne.",
+        "photo": "img/dawid-domagala.jpg",
+        "photoAlt": "Dawid Domagała",
+        "name": "Dawid Domagała",
+        "role": "Założyciel · Senior Full-Stack Architect & DevOps Lead (.NET, Web Frontends, Bazy Danych)",
+        "facts": [
+            "18+ lat w bankowości, tradingu, medtechu i SaaS",
+            "Magister elektroniki, Politechnika Wrocławska",
+            "Wrocław · strefa czasowa CET",
+            "Polski i angielski (biegle)"
+        ],
+        "items": [
+            {
+                "icon": "finance",
+                "title": "Finanse i trading",
+                "text": "Znamy trading od środka: desktopowa platforma Level 2 L2 Dealer i webowa platforma WTP w IG Group, silniki ryzyka w Credit Suisse i dystrybucja funduszy inwestycyjnych. Mówimy językiem Twojego rynku, nie tylko kodu.",
+                "linkLabel": "IG Group",
+                "linkUrl": "https://www.ig.com"
+            },
+            {
+                "icon": "shield",
+                "title": "Jakość i bezpieczeństwo",
+                "text": "Testy automatyczne przy każdej zmianie, bramki jakości, które zatrzymują regresje, i bezpieczeństwo na poziomie bankowym. Korporacyjny rygor bez korporacyjnej powolności."
+            },
+            {
+                "icon": "pipeline",
+                "title": "DevOps, CI/CD i Release Management",
+                "text": "Automatyzacja całego cyklu życia oprogramowania: potężne pipeline'y CI/CD (GitLab, GitHub Actions, Jenkins), konteneryzacja Docker, bramki jakości (quality gates), testy regresyjne i bezpieczny proces publikacji multi-OS bez przestojów produkcyjnych."
+            },
+            {
+                "icon": "spark",
+                "title": "Szybkość dzięki AI",
+                "text": "Agenci AI przyspieszają pracę, a każdą zmianę przegląda i testuje człowiek. Twój kod i dane zostają pod Twoją kontrolą: narzędzia AI działają tylko w ramach Twoich zasad bezpieczeństwa."
+            }
+        ]
+    },
+    "services": {
+        "title": "Usługi",
+        "subtitle": "Od pomysłu i prototypu po wdrożenie produkcyjne i utrzymanie.",
+        "items": [
+            {
+                "icon": "web",
+                "title": "Aplikacje webowe (Web Frontends)",
+                "text": "Tworzymy elastyczne, responsywne interfejsy w ekosystemach Angular, React, Vue.js i Blazor. Dobieramy technologię optymalnie do wymagań produktu, dbając o płynność działania, architekturę stanu i łatwość późniejszej rozbudowy."
+            },
+            {
+                "icon": "server",
+                "title": "Backend i API",
+                "text": "API w C# .NET i Javie (REST, GraphQL), mikroserwisy, MS SQL i PostgreSQL. Wydajne i stabilne pod obciążeniem."
+            },
+            {
+                "icon": "mobile",
+                "title": "Aplikacje mobilne",
+                "text": "Xamarin oraz Vue.js z Quasarem i Cordovą. Jeden kod na telefon, przeglądarkę i desktop, więc mniej do utrzymania."
+            },
+            {
+                "icon": "desktop",
+                "title": "Desktop i modernizacja systemów",
+                "text": "WPF, WinForms i DevExpress. Modernizujemy starsze systemy i przenosimy je na nowe technologie bez zatrzymywania biznesu."
+            },
+            {
+                "icon": "layers",
+                "title": "SaaS multi-tenant",
+                "text": "Produkty white-label z izolacją danych klientów, konfiguracją i brandingiem per klient."
+            },
+            {
+                "icon": "pipeline",
+                "title": "DevOps i CI/CD",
+                "text": "Pipeline'y GitLab CI/CD, Jenkins i GitHub Actions, automatyczne wydania, podpisywanie kodu, Docker i Azure."
+            },
+            {
+                "icon": "spark",
+                "title": "Wdrożenia AI w zespole",
+                "text": "Wprowadzamy agentów AI do Twojego procesu wytwarzania, ze szkoleniami i warsztatami dla programistów."
+            }
+        ]
+    },
+    "process": {
+        "title": "Jak pracujemy",
+        "subtitle": "Prosty i przejrzysty sposób na start i dostarczanie.",
+        "steps": [
+            {
+                "title": "Krótka rozmowa wstępna",
+                "text": "Napisz do mnie lub połączmy się na krótką rozmowę. Opowiedz o swoim pomyśle, systemie lub wyzwaniu technicznym – rozmawiasz bezpośrednio z inżynierem, po partnersku i bez handlowców."
+            },
+            {
+                "title": "Propozycja",
+                "text": "Dostajesz zakres, wycenę i ofertę: stała cena albo rozliczenie godzinowe."
+            },
+            {
+                "title": "Krótkie iteracje",
+                "text": "Działające demo co tydzień lub dwa, więc widzisz postęp i możesz wcześnie korygować kierunek."
+            },
+            {
+                "title": "Wdrożenie i wsparcie",
+                "text": "CI/CD, dokumentacja i przekazanie projektu, a w razie potrzeby utrzymanie."
+            }
+        ],
+        "footnote": "Umowy B2B · zdalnie lub na miejscu · strefa CET · polski i angielski"
+    },
+    "tech": {
+        "title": "Technologie",
+        "subtitle": "Kluczowe technologie, frameworki i standardy inżynieryjne wykorzystywane w codziennej pracy.",
+        "groups": [
+            {
+                "name": "Backend",
+                "items": [
+                    "C#",
+                    ".NET 10",
+                    "ASP.NET Core",
+                    "Java",
+                    "Spring Boot",
+                    "REST",
+                    "GraphQL",
+                    "Mikroserwisy",
+                    "EF Core",
+                    "MS SQL Server",
+                    "PostgreSQL"
+                ]
+            },
+            {
+                "name": "Frontend, desktop i mobile",
+                "items": [
+                    "Angular 22",
+                    "Blazor",
+                    "TypeScript",
+                    "RxJS",
+                    "React",
+                    "Vue.js",
+                    "Quasar",
+                    "HTML / CSS",
+                    "WPF",
+                    "WinForms",
+                    "Xamarin"
+                ]
+            },
+            {
+                "name": "DevOps i chmura",
+                "items": [
+                    "GitLab CI/CD",
+                    "GitHub Actions",
+                    "Jenkins",
+                    "Docker",
+                    "Azure",
+                    "OpenShift",
+                    "PowerShell",
+                    "Bash"
+                ]
+            },
+            {
+                "name": "Jakość",
+                "items": [
+                    "NUnit",
+                    "Moq",
+                    "SpecFlow",
+                    "TDD / BDD",
+                    "Testy integracyjne",
+                    "Bramki pokrycia kodu",
+                    "SonarQube"
+                ]
+            },
+            {
+                "name": "AI",
+                "items": [
+                    "Claude Code",
+                    "Gemini",
+                    "Cursor",
+                    "GitHub Copilot",
+                    "Agentic coding",
+                    "Sub-agenci",
+                    "Agent skills",
+                    "Software factory",
+                    "SDLC z AI"
+                ],
+                "note": "W IG Group: 4× średnia wydajność zespołu, 6× krótszy czas od zgłoszenia do merge'a (0,9 vs 5,4 dnia) i do 16 zgłoszeń zamykanych przez agentów w nocy, każde przejrzane i przetestowane przez człowieka."
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projekty komercyjne",
+        "subtitle": "Wybrane systemy komercyjne i rozwiązania enterprise zrealizowane w ciągu ostatnich 18 lat dla klientów instytucjonalnych.",
+        "gitHubUser": "DavIT-Futures",
+        "allReposLabel": "",
+        "codeLabel": "Kod na GitHubie",
+        "items": [
+            {
+                "name": "L2 Dealer",
+                "client": "IG Group",
+                "years": "2023 – 2026",
+                "description": "Desktopowa platforma tradingowa Level 2. Przebudowaliśmy cały proces dostarczania: pipeline GitLab CI/CD (17k+ linii), GitFlow z gałęziami wydań i merge requestami, bramki jakości i duże refaktory kluczowych modułów, z oceną dojrzałości HIGH. Dostarczyliśmy też „Price In Size”, część inicjatywy firmy, która w pierwszym miesiącu zarobiła 15 mln funtów.",
+                "url": "",
+                "tags": [
+                    "C# .NET",
+                    "GitLab CI/CD",
+                    "GitFlow",
+                    "DevExpress"
+                ],
+                "outcome": "15 mln £ w pierwszym miesiącu · wydania 24/7 bez przestojów"
+            },
+            {
+                "name": "Platformy silników ryzyka: LTV, PRC i PRIIPs",
+                "client": "Credit Suisse",
+                "years": "2017 – 2022",
+                "description": "Migracja z Silverlight do Angular 10 z backendem GraphQL, podział monolitu na mikroserwisy .NET Core, wielowątkowe obliczenia ryzyka, optymalizacja i przyspieszenie zapytań MS SQL, regulacyjne dokumenty KID (PRIIPs) z testami BDD całego API.",
+                "url": "",
+                "tags": [
+                    "Angular",
+                    "GraphQL",
+                    "C# .NET Core",
+                    "MS SQL"
+                ],
+                "outcome": "Silverlight → Angular · 100% API pokryte testami BDD"
+            },
+            {
+                "name": "QiaCuity i QiaGuest",
+                "client": "Qiagen",
+                "years": "2019 – 2020",
+                "description": "Interfejs instrumentu do cyfrowej PCR (dPCR), który liczy kopie DNA w diagnostyce medycznej, w React/Redux na Linuksie. Do tego QiaGuest, aplikacja dla recepcji zbudowana od zera w Angular i .NET Core na Azure.",
+                "url": "",
+                "tags": [
+                    "React",
+                    "Angular",
+                    "C# .NET Core",
+                    "Azure"
+                ],
+                "outcome": "QiaGuest zbudowany od zera na Azure"
+            },
+            {
+                "name": "Focis",
+                "client": "Focis.co.uk",
+                "years": "2018 – 2019",
+                "description": "SaaS multi-tenant dla kancelarii prawnych, zbudowany od początku do końca przez jednego inżyniera, później z drugim programistą: obieg dokumentów, dynamiczne formularze, izolacja danych klientów, powiadomienia push i logowanie SMS.",
+                "url": "",
+                "tags": [
+                    "ASP.NET MVC",
+                    "Azure",
+                    "EF Core",
+                    "Firebase"
+                ],
+                "outcome": "Kompletny produkt SaaS zbudowany w pojedynkę"
+            },
+            {
+                "name": "InCenter i InTire",
+                "client": "Tyrecheck",
+                "years": "2015 – 2017",
+                "description": "Zarządzanie flotą ciężarówek i ciśnieniem w oponach. Router Wi-Fi na każdej ciężarówce zbierał dane z czujników TPMS, łącznie z napisaną przez nas niskopoziomową komunikacją z czujnikami, i wysyłał je na centralny serwer, gdzie aplikacja webowa zarządzała całą flotą.",
+                "url": "",
+                "tags": [
+                    "Vue.js",
+                    "Xamarin",
+                    "ASP.NET MVC",
+                    "IoT / TPMS"
+                ],
+                "outcome": "Prototyp w 2 tygodnie, który wygrał kontrakt"
+            },
+            {
+                "name": "Spirometria white-label",
+                "client": "Vitalograph",
+                "years": "2014 – 2015",
+                "description": "Diagnostyka czynności płuc dla klinik i badań klinicznych, z brandingiem każdego partnera farmaceutycznego, zgodnie z regulacjami dla urządzeń medycznych.",
+                "url": "",
+                "tags": [
+                    "C# .NET",
+                    "WinForms",
+                    "Multi-tenant"
+                ],
+                "outcome": "~10 wersji white-label, m.in. dla Roche"
+            },
+            {
+                "name": "Elemos",
+                "client": "AMCS Group",
+                "years": "2012 – 2014",
+                "description": "Oprogramowanie dla branży odpadów i recyklingu: aplikacja biurowa WPF i aplikacja w śmieciarkach na terminalach z Windows Mobile, później zmigrowana na Xamarin, z RFID, planowaniem tras i śledzeniem pojazdów na żywo.",
+                "url": "",
+                "tags": [
+                    "WPF",
+                    "WCF",
+                    "RFID",
+                    "Windows Mobile",
+                    "Xamarin"
+                ],
+                "outcome": "100% pokrycia testami po stronie serwera"
+            },
+            {
+                "name": "Goniec Online",
+                "client": "Exorigo / ProService AT",
+                "years": "2007 – 2012",
+                "description": "Duży, złożony system dystrybucji funduszy inwestycyjnych wdrożony w wielu polskich bankach: kupno i sprzedaż jednostek oraz definiowanie sieci dystrybucji.",
+                "url": "",
+                "tags": [
+                    "C# .NET",
+                    "WinForms",
+                    "Web Services",
+                    "MS SQL"
+                ],
+                "outcome": "~70% transakcji funduszy w Polsce"
+            },
+            {
+                "name": "Strona DavIT Futures",
+                "client": "DavIT Futures",
+                "years": "2026",
+                "description": "Ta strona: Blazor WebAssembly na .NET 10, dwa języki, jasny i ciemny motyw, automatyczne wdrożenia przez GitHub Actions na GitHub Pages.",
+                "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+                "tags": [
+                    "Blazor",
+                    "C# .NET 10",
+                    "GitHub Actions"
+                ],
+                "outcome": "Otwarty kod: zobacz, jak budujemy"
+            }
+        ]
+    },
+    "gitHub": {
+        "subtitle": "Autorskie eksperymenty, ciągła nauka, eksploracja nowej wiedzy i otwarte oprogramowanie.",
+        "viewRepoLabel": "Zobacz kod na GitHubie",
+        "viewProfileLabel": "Wszystkie repozytoria na GitHubie",
+        "items": [
+            {
+                "name": "Civ 1.5 Remastered (Civilization 1)",
+                "tags": [
+                    "C# 14",
+                    ".NET 10",
+                    "Avalonia UI",
+                    "Civilization 1",
+                    "Retro Gaming",
+                    "Reverse Engineering",
+                    "Multi-OS"
+                ],
+                "description": "Otwarty remaster kultowej gry strategicznej Civilization (1991, DOS) w nowoczesnym C# i Avalonia UI (.NET 10). Tłumaczenie funkcji CIV.EXE z zachowaniem klasycznego klimatu i usunięciem archaizmów: punkty życia jednostek, walka w rundach, regeneracja, ulepszanie jednostek za złoto, trwałe cuda świata, 20 autosave'ów co turę i natywne uruchamianie bez DOSBoksa.",
+                "badge": "Remaster / .NET 10",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
+            },
+            {
+                "name": "Wieloplatformowy Generator Fraktali Desktopowych",
+                "tags": [
+                    "C# 14",
+                    ".NET 10",
+                    "Avalonia UI",
+                    "Multi-OS",
+                    "Fraktale"
+                ],
+                "description": "Wieloplatformowa aplikacja desktopowa w C# (.NET 10 i Avalonia UI) dla systemów Windows, Linux i macOS generująca zbiory Mandelbrota, Julii, Burning Ship, paproć Barnsleya oraz trójkąt Sierpińskiego.",
+                "badge": ".NET 10 / Multi-OS",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS"
+            },
+            {
+                "name": "Wzorcowa Architektura Enterprise N-Tier",
+                "tags": [
+                    "C#",
+                    ".NET 8",
+                    "CoreWCF",
+                    "WPF MVVM",
+                    "Własny ORM",
+                    "SQL Server"
+                ],
+                "description": "Referencyjna implementacja architektury wielowarstwowej w .NET 8 LTS: klient desktopowy WPF MVVM, serwis backendowy CoreWCF, autorski lekki ORM oparty na refleksji, SQL Server oraz testy Moq.",
+                "badge": "Architektura",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm"
+            },
+            {
+                "name": "Dwujęzyczny Generator Faktur PDF",
+                "tags": [
+                    "C#",
+                    ".NET 8",
+                    "WPF",
+                    "XAML",
+                    "iTextSharp",
+                    "Faktury B2B"
+                ],
+                "description": "Nowoczesna aplikacja desktopowa WPF (.NET 8) do szybkiego wystawiania profesjonalnych dwujęzycznych faktur PDF (PL/EN) z obsługą wielu walut, elastycznych modeli rozliczeń i automatycznym podatkiem VAT.",
+                "badge": "Aplikacja Desktop",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/Pdf_Invoice_generator"
+            },
+            {
+                "name": "Symulator Ekosystemu Australia 1859",
+                "tags": [
+                    "C++",
+                    "Lotka-Volterra",
+                    "Borland C++Builder",
+                    "VCL",
+                    "Symulacja"
+                ],
+                "description": "Symulator życia i dynamiki ekosystemu wyspowego drapieżnik-ofiara (króliki, lisy, flora) oparty na modelu matematycznym Lotki-Volterry z wizualizacją w czasie rzeczywistym.",
+                "badge": "Symulacja",
+                "language": "C++",
+                "url": "https://github.com/DavIT-Futures/Australia-1859-Sim"
+            },
+            {
+                "name": "Strona DavIT Futures (Ta Strona)",
+                "tags": [
+                    "Blazor WebAssembly",
+                    "C# 14",
+                    ".NET 10",
+                    "GitHub Actions",
+                    "Ta strona"
+                ],
+                "description": "Ta strona internetowa, którą właśnie przeglądasz: stworzona w C# 14 w technologii Blazor WebAssembly (.NET 10), z dynamicznym motywem jasnym/ciemnym, dwujęzycznością i automatycznym CI/CD na GitHub Pages.",
+                "badge": "Ta strona",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor"
+            },
+            {
+                "name": "Klasyczna Strona ASP.NET MVC",
+                "tags": [
+                    "ASP.NET MVC 5",
+                    ".NET 4.8",
+                    "C#",
+                    "Razor",
+                    "jQuery"
+                ],
+                "description": "Strona firmowa DavIT Futures zbudowana w klasycznym ASP.NET MVC 5.3 (.NET Framework 4.8) i widokach Razor, publikowana jako statyczna witryna na GitHub Pages przez GitHub Actions.",
+                "badge": "ASP.NET MVC",
+                "language": "C#",
+                "url": "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC"
+            },
+            {
+                "name": "Pakiet Narzędzi Tradingu Algorytmicznego",
+                "tags": [
+                    "Java",
+                    "Spring Boot",
+                    "Angular 22",
+                    "PostgreSQL",
+                    "Docker",
+                    "Trading",
+                    "FinTech"
+                ],
+                "description": "Nowoczesna platforma i zestaw narzędzi do tradingu ilościowego stworzona jako rozwiązanie white-label, z pełną możliwością customizacji i konfiguracji za pomocą plików konfiguracyjnych. Backend oparty na nowoczesnej Javie ze Spring Boot, frontend w Angular 22 oraz baza PostgreSQL na obrazie Docker. Kod źródłowy w trakcie przygotowania do publikacji w repozytorium.",
+                "badge": "Java & Angular / FinTech",
+                "language": "Java / TypeScript",
+                "url": "https://github.com/DavIT-Futures/TradeChameleon"
+            }
+        ],
+        "title": "Projekty GitHub",
+        "gitHubUser": "DavIT-Futures"
+    },
+    "testimonials": {
+        "title": "Opinie",
+        "subtitle": "Rekomendacje z LinkedIna, w oryginale.",
+        "items": [
+            {
+                "context": "Paul był klientem Dawida (portal SaaS i API Focis) · LinkedIn, październik 2026",
+                "role": "Konsultant ds. integracji danych i Legal Tech, współzałożyciel Focis",
+                "author": "Paul Ryan",
+                "quote": "Dawid was one of the very best people I've worked with in my career. He has unique ability to quickly understand requirements then offer intelligent decisions on architecture, explained thoroughly and then executed. He was a major influence on development of our SAAS based portal and API."
+            },
+            {
+                "quote": "Dawid is an excellent senior developer and a great team player. While working on same projects, Dawid has shown knowledge, will and proactive approach to problem solving. He was working on multiple tasks across multiple products and he always made an impact. Dawid also did great improvements to our delivery pipeline. He is willing to work on demanding tasks and always willing to take responsibility.\n\nI would strongly recommend Dawid as I believe he can bring value to any team. Dawid is also a great person and always happy to help.",
+                "author": "Miroslav Vrbanac",
+                "role": "Full Stack Developer, Asset Management Technology, Director w UBS",
+                "context": "Pracował z Dawidem w jednym zespole w Credit Suisse · LinkedIn, wrzesień 2019"
+            }
+        ],
+        "moreLabel": "Rekomendacje na LinkedInie",
+        "moreUrl": "https://www.linkedin.com/in/dawid-domagala-futures/details/recommendations/"
+    },
+    "cv": {
+        "title": "CV",
+        "subtitle": "Krótka wersja na szybki rzut oka, pełna z projektami, liczbami i referencjami.",
+        "versions": [
+            {
+                "title": "CV skrócone",
+                "text": "Najważniejsze osiągnięcia, umiejętności i przebieg kariery w pigułce.",
+                "pages": "2 strony",
+                "url": "/cv/Dawid-Domagala-CV-short.html",
+                "buttonLabel": "Otwórz CV"
+            },
+            {
+                "title": "CV pełne",
+                "text": "Szczegółowy opis projektów, technologii, osiągnięć i referencji.",
+                "pages": "4 strony",
+                "url": "/cv/Dawid-Domagala-CV-full.html",
+                "buttonLabel": "Otwórz CV"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Masz pomysł na projekt? Wyślij krótki opis, odpowiemy w ciągu jednego dnia roboczego.",
+        "email": "davit.futures@gmail.com",
+        "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
+        "gitHub": "https://github.com/DavIT-Futures",
+        "company": {
+            "heading": "Dane firmy",
+            "name": "DavIT Futures",
+            "owner": "Dawid Domagała",
+            "address": [
+                "ul. Ścinawska 30",
+                "53-629 Wrocław"
+            ],
+            "nip": "6932087505",
+            "regon": "021923547"
+        },
+        "emailSubject": "Zapytanie o projekt – DavIT Futures"
+    },
+    "footer": {
+        "rights": "Wszelkie prawa zastrzeżone.",
+        "builtWith": "Zbudowane w Blazor WebAssembly i .NET 10."
+    },
+    "games": {
+        "eyebrow": "GAMES REMASTERING & REVERSE ENGINEERING",
+        "title": "Retro Games Remaster",
+        "subtitle": "Modernizacja kultowych tytułów z epoki DOS do XXI wieku: natywny kod C# (.NET 10) i Avalonia UI oraz C++20 i Raylib, zachowanie 100% oryginalnego klimatu i grafiki oraz eliminacja frustrujących ograniczeń technologicznych sprzed lat.",
+        "civ15": {
+            "title": "Civ 1.5 Remastered",
+            "badge": ".NET 10 / Avalonia UI",
+            "tagline": "Otwarty remaster kultowej gry Civilization 1 (1991, DOS) w C# i Avalonia UI bez DOSBoxa",
+            "description": "Oryginalny plik CIV.EXE został przetłumaczony funkcja po funkcji do nowoczesnego, czystego kodu C#. Gra zachowuje autentyczny klimat, oprawę graficzną i dźwiękową z 1991 roku, jednocześnie wprowadzając kluczowe usprawnienia rozgrywki (Quality of Life), o których gracze marzyli od dekad.",
+            "badges": [
+                ".NET 10.0",
+                "C# 14",
+                "Avalonia UI 12.1",
+                "Civilization 1 (1991)",
+                "Windows / Linux / macOS",
+                "Open Source (MIT)"
+            ],
+            "playInstructionsTitle": "Jak zagrać (Zero instalacji, bez DOSBoxa)",
+            "playSteps": [
+                "Pobierz najnowsze wydanie dla swojego systemu operacyjnego (Windows, Linux, macOS).",
+                "Wypakuj archiwum i umieść folder CIVILIZATION z oryginalną grą z 1991 roku obok pliku wykonywalnego Civ_1_5_Remastered.Desktop.",
+                "Uruchom Civ_1_5_Remastered.Desktop.exe i ciesz się płynną rozgrywką w natywnej wydajności!"
+            ],
+            "gitHubUrl": "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
+            "gitHubLabel": "Kod na GitHubie",
+            "websiteUrl": "https://davit-futures.github.io/Civ_1_5_Remastered/",
+            "websiteLabel": "Oficjalna strona projektu",
+            "releasesUrl": "https://github.com/DavIT-Futures/Civ_1_5_Remastered/releases",
+            "releasesLabel": "Pobierz najnowsze wydanie"
+        },
+        "whatsNewTitle": "Co nowego w Civ 1.5 Remastered",
+        "whatsNewSubtitle": "Zestaw najważniejszych usprawnień mechaniki rozgrywki względem oryginału z 1991 roku.",
+        "features": [
+            {
+                "id": "unit-health",
+                "title": "Punkty życia jednostek i taktyczna walka w rundach",
+                "description": "Jednostki posiadają punkty życia (standardowa 3 HP, weteran 4 HP, elita 5 HP), a aktualny stan zdrowia prezentują paski HP na mapie i w trakcie walki. Starcia nie są już rozstrzygane pojedynczym, losowym rzutem kostką – walka toczy się w kolejnych rundach, w których przegrywający traci po 1 HP. Słaba jednostka nie zatopi już potężnego pancernika jednym szczęśliwym rzutem!",
+                "image": "img/games/unit-health-zoom.png",
+                "secondImage": "img/games/unit-health.png",
+                "thirdImage": "img/games/battles.png",
+                "badge": "Rewolucja w walce",
+                "caption": "Zbliżenie powiększonych pasków zdrowia HP nad jednostkami, widok globalny mapy oraz taktyczna walka rydwanu z rannym legionem."
+            },
+            {
+                "id": "load-game",
+                "title": "Wczytywanie gry bezpośrednio w menu (Load Game)",
+                "description": "Menu gry zyskało długo wyczekiwaną opcję Load Game bezpośrednio w menu GAME. Nie trzeba już zamykać programu ani restartować aplikacji, aby wczytać stan gry. Lista prezentuje zarówno Twoje własne zapisy, jak i najnowsze autosave'y.",
+                "image": "img/games/load-game.png",
+                "secondImage": null,
+                "badge": "Quality of Life",
+                "caption": "Opcja Load Game bezpośrednio w menu głównym rozgrywki."
+            },
+            {
+                "id": "saves",
+                "title": "10 slotów zapisu i 20 autosave'ów co turę",
+                "description": "Możliwość zapisu w 10 niezależnych slotach (CIVIL0 – CIVIL9) zamiast archaicznych 4. Co więcej, gra wykonuje automatyczny zapis co każdą turę do puli 20 autosave'ów (AUTO00 – AUTO19). W razie błędu strategicznego możesz cofnąć się nawet o 20 tur wstecz (oryginał zapisywał stan automatycznie raz na... 1000 lat).",
+                "image": "img/games/saves.png",
+                "secondImage": null,
+                "badge": "Bezpieczeństwo postępu",
+                "caption": "20 automatycznych stanów zapisu tworzonych co turę."
+            },
+            {
+                "id": "wonders",
+                "title": "Cuda Świata nigdy nie tracą ważności",
+                "description": "W oryginalnym Civilization 1 większość Cudów Świata stawała się bezużyteczna po odkryciu konkretnego wynalazku (np. Wiszące Ogrody po Wynalazku, Piramidy po Komunizmie). W Civ 1.5 każdy wybudowany Cud Świata działa tak długo, jak kontrolujesz miasto, w którym się znajduje. Civilopedia została zaktualizowana o nowe reguły.",
+                "image": "img/games/wonders.png",
+                "secondImage": null,
+                "badge": "Balans rozgrywki",
+                "caption": "Memfis z Wiszącymi Ogrodami, uszczęśliwiającymi mieszkańców przez całą rozgrywkę."
+            },
+            {
+                "id": "upgrades",
+                "title": "Ulepszanie jednostek za złoto w miastach",
+                "description": "Przestarzałą jednostkę stacjonującą w Twoim mieście możesz ulepszyć do jej nowocześniejszego odpowiednika po odkryciu odpowiedniej technologii (klawisz E lub menu Orders -> Upgrade): Milicja -> Falanga -> Muszkieterzy -> Strzelcy -> Piechota Zmechanizowana; Rycerze -> Pancerne; Krążownik -> Pancernik. Jednostka zachowuje rangę weterana lub elity!",
+                "image": "img/games/upgrades.png",
+                "secondImage": null,
+                "badge": "Ewolucja armii",
+                "caption": "Ulepszanie milicji do falangi za złoto w menu rozkazów."
+            },
+            {
+                "id": "railroads",
+                "title": "Pełne węzły kolejowe w miastach",
+                "description": "Gdy tylko gracz odkryje technologię Railroad, każde miasto automatycznie traktowane jest jak węzeł kolejowy. W oryginale miasto posiadało jedynie drogę, przez co pociągi traciły 1/3 punktu ruchu na tranzyt przez każdą metropolię. Teraz podróż koleją przez imperium jest w pełni płynna.",
+                "image": "img/games/railroads.png",
+                "secondImage": null,
+                "badge": "Logistyka",
+                "caption": "Trasa kolejowa przebiegająca bezpośrednio przez Teby."
+            },
+            {
+                "id": "demographics",
+                "title": "Naprawiona demografia wielkich imperiów",
+                "description": "Ekran demografii w wersji DOS operował na 16-bitowych liczbach ze znakiem i przy dużych państwach ulegał przepełnieniu (overflow), pokazując absurdalne wartości ujemne aprobaty, wskaźnika chorób czy produkcji. W Civ 1.5 statystyki liczone są z pełną 32/64-bitową precyzją.",
+                "image": "img/games/demographics.png",
+                "secondImage": null,
+                "badge": "Poprawka błędów DOS",
+                "caption": "Wielkie imperium z miastami wielkości 15–22 liczone bez przekłamań i błędów."
+            }
+        ],
+        "australia1859": {
+            "title": "Australia 1859 Sim",
+            "badge": "C++20 & Raylib",
+            "description": "Drugi projekt z serii remasteryngu: modernizacja historycznego symulatora życia ekosystemu wyspowego z 2005 roku (Borland C++Builder / VCL) do standardu C++20 i ultralekkiej biblioteki Raylib 5.5, ze wsparciem dla Windows, Linux i macOS.",
+            "url": "https://github.com/DavIT-Futures/Australia-1859-Sim",
+            "urlLabel": "Zobacz projekt Australia 1859 Sim",
+            "tags": [
+                "C++20",
+                "Raylib 5.5",
+                "Lotka-Volterra",
+                "Symulacja życia",
+                "Multi-OS",
+                "CMake"
+            ]
+        }
+    }
 }

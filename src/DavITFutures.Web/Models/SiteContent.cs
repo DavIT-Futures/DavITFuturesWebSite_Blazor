@@ -23,7 +23,10 @@ public record Nav(string About, string Services, string Tech, string Projects, s
     string ThemeLight, string ThemeDark, string Language, string? Games = null);
 
 public record Hero(string Eyebrow, string Title, string Highlight, string Lead, Link PrimaryCta, Link SecondaryCta,
-    IReadOnlyList<Stat> Stats, string? ClientsLabel = null, IReadOnlyList<string>? Clients = null);
+    IReadOnlyList<Stat> Stats, string? ClientsLabel = null, IReadOnlyList<string>? Clients = null,
+    IReadOnlyList<ClientBrand>? ClientBrands = null);
+
+public record ClientBrand(string Name, string Logo, string? Url = null);
 
 public record Stat(string Value, string Label);
 
