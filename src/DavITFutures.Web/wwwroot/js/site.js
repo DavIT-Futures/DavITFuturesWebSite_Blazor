@@ -16,3 +16,22 @@ window.davit = (() => {
         }
     };
 })();
+
+// Lightbox modal keyboard handler
+window.davitLightbox = {
+    attach: dotNetRef => {
+        const handler = e => {
+            if (e.key === "Escape") {
+                dotNetRef.invokeMethodAsync("OnJsKey", "Escape");
+            } else if (e.key === "ArrowLeft") {
+                dotNetRef.invokeMethodAsync("OnJsKey", "ArrowLeft");
+            } else if (e.key === "ArrowRight") {
+                dotNetRef.invokeMethodAsync("OnJsKey", "ArrowRight");
+            }
+        };
+        window.addEventListener("keydown", handler);
+        return {
+            detach: () => window.removeEventListener("keydown", handler)
+        };
+    }
+};

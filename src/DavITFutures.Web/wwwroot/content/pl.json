@@ -602,10 +602,11 @@
                                        "id":  "unit-health",
                                        "title":  "Punkty życia jednostek i taktyczna walka w rundach",
                                        "description":  "Jednostki posiadają punkty życia (standardowa 3 HP, weteran 4 HP, elita 5 HP), a aktualny stan zdrowia prezentują paski HP na mapie i w trakcie walki. Starcia nie są już rozstrzygane pojedynczym, losowym rzutem kostką – walka toczy się w kolejnych rundach, w których przegrywający traci po 1 HP. Słaba jednostka nie zatopi już potężnego pancernika jednym szczęśliwym rzutem!",
-                                       "image":  "img/games/unit-health.png",
-                                       "secondImage":  "img/games/battles.png",
+                                       "image":  "img/games/unit-health-zoom.png",
+                                       "secondImage":  "img/games/unit-health.png",
+                                       "thirdImage":  "img/games/battles.png",
                                        "badge":  "Rewolucja w walce",
-                                       "caption":  "Paski zdrowia jednostek na mapie oraz zbliżenie walki rydwanu z rannym legionem barbarzyńców."
+                                       "caption":  "Zbliżenie powiększonych pasków zdrowia HP nad jednostkami, widok globalny mapy oraz taktyczna walka rydwanu z rannym legionem."
                                    },
                                    {
                                        "id":  "load-game",

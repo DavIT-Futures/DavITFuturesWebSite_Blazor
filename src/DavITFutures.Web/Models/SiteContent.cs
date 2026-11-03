@@ -105,6 +105,12 @@ public record GameFeatureItem(
     string Image,
     string? Badge = null,
     string? SecondImage = null,
+    string? ThirdImage = null,
+    string? Caption = null);
+
+public record LightboxItem(
+    string Url,
+    string Title,
     string? Caption = null);
 
 public record OtherGameDetails(

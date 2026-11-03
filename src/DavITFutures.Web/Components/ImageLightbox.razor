@@ -1,0 +1,189 @@
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+@if (IsOpen && Images is not null && Images.Count > 0)
+{
+    var safeIndex = Math.Clamp(CurrentIndex, 0, Images.Count - 1);
+    var item = Images[safeIndex];
+
+    <div class="lightbox-overlay" @onclick="HandleBackdropClick" @onkeydown="HandleKeyDown" tabindex="0" role="dialog" aria-modal="true" aria-label="Galeria zrzutów ekranu">
+        <div class="lightbox-dialog" @onclick:stopPropagation="true">
+            <!-- Header bar -->
+            <div class="lightbox-header">
+                <div class="lightbox-info">
+                    <span class="lightbox-counter">@(safeIndex + 1) / @Images.Count</span>
+                    <h3 class="lightbox-title">@item.Title</h3>
+                </div>
+                <button type="button" class="lightbox-close" @onclick="Close" aria-label="Zamknij (Esc)" title="Zamknij (Esc)">
+                    <Icon Name="close" Size="22" />
+                </button>
+            </div>
+
+            <!-- Main view with navigation arrows -->
+            <div class="lightbox-main">
+                <button type="button" class="lightbox-arrow prev" @onclick="Prev" aria-label="Poprzedni obrazek (Strzałka w lewo)" title="Poprzedni (←)">
+                    <Icon Name="chevron-left" Size="32" />
+                </button>
+
+                <div class="lightbox-image-stage">
+                    <img src="@item.Url" alt="@item.Title" class="lightbox-image" />
+                    @if (!string.IsNullOrEmpty(item.Caption))
+                    {
+                        <p class="lightbox-caption">
+                            <Icon Name="spark" Size="14" /> @item.Caption
+                        </p>
+                    }
+                </div>
+
+                <button type="button" class="lightbox-arrow next" @onclick="Next" aria-label="Następny obrazek (Strzałka w prawo)" title="Następny (→)">
+                    <Icon Name="chevron-right" Size="32" />
+                </button>
+            </div>
+
+            <!-- Thumbnail strip -->
+            @if (Images.Count > 1)
+            {
+                <div class="lightbox-thumbs-bar">
+                    @for (int i = 0; i < Images.Count; i++)
+                    {
+                        var idx = i;
+                        var thumb = Images[idx];
+                        <button type="button" 
+                                class="lightbox-thumb @(idx == safeIndex ? "active" : "")" 
+                                @onclick="() => SelectIndex(idx)"
+                                title="@thumb.Title">
+                            <img src="@thumb.Url" alt="@thumb.Title" />
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool IsOpen { get; set; }
+    [Parameter] public IReadOnlyList<LightboxItem> Images { get; set; } = Array.Empty<LightboxItem>();
+    [Parameter] public int CurrentIndex { get; set; } = 0;
+    [Parameter] public EventCallback OnClose { get; set; }
+    [Parameter] public EventCallback<int> OnIndexChanged { get; set; }
+
+    private DotNetObjectReference<ImageLightbox>? _dotNetRef;
+    private IJSObjectReference? _jsHandler;
+    private bool _listenerAttached;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (IsOpen && !_listenerAttached)
+        {
+            try
+            {
+                _dotNetRef = DotNetObjectReference.Create(this);
+                _jsHandler = await JS.InvokeAsync<IJSObjectReference>("davitLightbox.attach", _dotNetRef);
+                _listenerAttached = true;
+            }
+            catch
+            {
+                // Fallback do @onkeydown na elemencie
+            }
+        }
+        else if (!IsOpen && _listenerAttached)
+        {
+            await DetachListenerAsync();
+        }
+    }
+
+    [JSInvokable]
+    public async Task OnJsKey(string key)
+    {
+        if (!IsOpen) return;
+
+        if (key == "Escape")
+        {
+            await Close();
+        }
+        else if (key == "ArrowLeft")
+        {
+            await Prev();
+        }
+        else if (key == "ArrowRight")
+        {
+            await Next();
+        }
+        StateHasChanged();
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Escape") await Close();
+        else if (e.Key == "ArrowLeft") await Prev();
+        else if (e.Key == "ArrowRight") await Next();
+    }
+
+    private async Task HandleBackdropClick()
+    {
+        await Close();
+    }
+
+    private async Task Close()
+    {
+        await DetachListenerAsync();
+        if (OnClose.HasDelegate)
+        {
+            await OnClose.InvokeAsync();
+        }
+    }
+
+    private async Task Prev()
+    {
+        if (Images.Count <= 1) return;
+        var nextIdx = (CurrentIndex - 1 + Images.Count) % Images.Count;
+        CurrentIndex = nextIdx;
+        if (OnIndexChanged.HasDelegate)
+        {
+            await OnIndexChanged.InvokeAsync(nextIdx);
+        }
+    }
+
+    private async Task Next()
+    {
+        if (Images.Count <= 1) return;
+        var nextIdx = (CurrentIndex + 1) % Images.Count;
+        CurrentIndex = nextIdx;
+        if (OnIndexChanged.HasDelegate)
+        {
+            await OnIndexChanged.InvokeAsync(nextIdx);
+        }
+    }
+
+    private async Task SelectIndex(int idx)
+    {
+        CurrentIndex = idx;
+        if (OnIndexChanged.HasDelegate)
+        {
+            await OnIndexChanged.InvokeAsync(idx);
+        }
+    }
+
+    private async Task DetachListenerAsync()
+    {
+        if (_listenerAttached && _jsHandler is not null)
+        {
+            try
+            {
+                await _jsHandler.InvokeVoidAsync("detach");
+                await _jsHandler.DisposeAsync();
+            }
+            catch { }
+            _jsHandler = null;
+            _listenerAttached = false;
+        }
+        _dotNetRef?.Dispose();
+        _dotNetRef = null;
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await DetachListenerAsync();
+    }
+}

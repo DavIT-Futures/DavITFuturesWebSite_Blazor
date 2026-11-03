@@ -52,24 +52,6 @@
                         <span class="civ-chip">@badge</span>
                     }
                 </div>
-
-                <!-- How to Play Strip -->
-                <div class="civ-play-strip">
-                    <div class="civ-play-content">
-                        <h3 class="civ-play-title">
-                            <Icon Name="spark" Size="18" /> @civ.PlayInstructionsTitle
-                        </h3>
-                        <ol class="civ-play-steps">
-                            @foreach (var step in civ.PlaySteps)
-                            {
-                                <li>@step</li>
-                            }
-                        </ol>
-                    </div>
-                    <div class="civ-play-media">
-                        <img src="img/games/game-folder.png" alt="Civilization game folder structure" class="civ-folder-img" loading="lazy" />
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -82,12 +64,29 @@
             <div class="whats-new-grid">
                 @foreach (var item in g.Features)
                 {
+                    var mediaClass = !string.IsNullOrEmpty(item.ThirdImage) 
+                        ? "has-three" 
+                        : (!string.IsNullOrEmpty(item.SecondImage) ? "has-two" : "");
+
                     <article class="whats-new-card" id="@item.Id">
-                        <div class="card-media">
-                            <img src="@item.Image" alt="@item.Title" class="feature-img" loading="lazy" />
+                        <div class="card-media @mediaClass">
+                            <div class="media-preview-wrap" @onclick="() => OpenLightbox(item.Image)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                <img src="@item.Image" alt="@item.Title" class="feature-img" loading="lazy" />
+                                <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                            </div>
                             @if (!string.IsNullOrEmpty(item.SecondImage))
                             {
-                                <img src="@item.SecondImage" alt="@item.Title - szczegóły" class="feature-img secondary-img" loading="lazy" />
+                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(item.SecondImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                    <img src="@item.SecondImage" alt="@item.Title - szczegóły" class="feature-img secondary-img" loading="lazy" />
+                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(item.ThirdImage))
+                            {
+                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(item.ThirdImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                    <img src="@item.ThirdImage" alt="@item.Title - walka" class="feature-img tertiary-img" loading="lazy" />
+                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                                </div>
                             }
                         </div>
 
@@ -108,6 +107,25 @@
                         </div>
                     </article>
                 }
+            </div>
+
+            <!-- How to Play Strip (przeniesione na koniec sekcji) -->
+            <div class="civ-play-strip" style="margin-top: 48px;">
+                <div class="civ-play-content">
+                    <h3 class="civ-play-title">
+                        <Icon Name="spark" Size="18" /> @civ.PlayInstructionsTitle
+                    </h3>
+                    <ol class="civ-play-steps">
+                        @foreach (var step in civ.PlaySteps)
+                        {
+                            <li>@step</li>
+                        }
+                    </ol>
+                </div>
+                <div class="civ-play-media media-preview-wrap" @onclick='() => OpenLightbox("img/games/game-folder.png")' role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                    <img src="img/games/game-folder.png" alt="Civilization game folder structure" class="civ-folder-img" loading="lazy" />
+                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                </div>
             </div>
 
             <!-- Call to Action Banner -->
@@ -154,5 +172,84 @@
                 </div>
             </div>
         </section>
+    }
+
+    <!-- Lightbox Gallery Modal -->
+    <ImageLightbox IsOpen="_lightboxOpen" 
+                   Images="_lightboxItems" 
+                   CurrentIndex="_lightboxIndex" 
+                   OnClose="CloseLightbox" 
+                   OnIndexChanged="SetLightboxIndex" />
+}
+
+@code {
+    private bool _lightboxOpen;
+    private int _lightboxIndex;
+    private List<LightboxItem> _lightboxItems = new();
+
+    protected override void OnParametersSet()
+    {
+        BuildLightboxItems();
+    }
+
+    private void BuildLightboxItems()
+    {
+        _lightboxItems.Clear();
+        if (Content?.Games is null) return;
+
+        foreach (var feat in Content.Games.Features)
+        {
+            if (!string.IsNullOrEmpty(feat.Image))
+            {
+                _lightboxItems.Add(new LightboxItem(
+                    feat.Image,
+                    feat.Title,
+                    feat.Caption ?? feat.Description));
+            }
+            if (!string.IsNullOrEmpty(feat.SecondImage))
+            {
+                _lightboxItems.Add(new LightboxItem(
+                    feat.SecondImage,
+                    $"{feat.Title} – {(Site.Language == "pl" ? "Widok szczegółowy" : "Detailed view")}",
+                    feat.Caption));
+            }
+            if (!string.IsNullOrEmpty(feat.ThirdImage))
+            {
+                _lightboxItems.Add(new LightboxItem(
+                    feat.ThirdImage,
+                    $"{feat.Title} – {(Site.Language == "pl" ? "Zbliżenie taktyczne" : "Tactical view")}",
+                    feat.Caption));
+            }
+        }
+
+        if (Content.Games.Civ15 is not null)
+        {
+            _lightboxItems.Add(new LightboxItem(
+                "img/games/game-folder.png",
+                Content.Games.Civ15.PlayInstructionsTitle,
+                Site.Language == "pl"
+                    ? "Struktura folderu gry i uruchomienie Civ 1.5 Remastered obok oryginalnych plików Civilization 1 (1991)."
+                    : "Civilization game folder structure and Civ 1.5 executable setup."));
+        }
+    }
+
+    private void OpenLightbox(string imageUrl)
+    {
+        var idx = _lightboxItems.FindIndex(x => x.Url == imageUrl);
+        if (idx >= 0)
+        {
+            _lightboxIndex = idx;
+            _lightboxOpen = true;
+        }
+    }
+
+    private void CloseLightbox()
+    {
+        _lightboxOpen = false;
+    }
+
+    private void SetLightboxIndex(int idx)
+    {
+        _lightboxIndex = idx;
     }
 }

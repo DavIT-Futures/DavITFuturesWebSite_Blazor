@@ -602,10 +602,11 @@
                                        "id":  "unit-health",
                                        "title":  "Units have health \u0026 tactical combat rounds",
                                        "description":  "Units have hit points (standard 3 HP, veteran 4 HP, elite 5 HP), and current health is displayed on health bars across the map and during battles. Combat is no longer decided by a single roll of the dice: battles are fought in rounds, where the losing side loses 1 HP each round. A weak unit will no longer sink a mighty Battleship on a single lucky roll!",
-                                       "image":  "img/games/unit-health.png",
-                                       "secondImage":  "img/games/battles.png",
+                                       "image":  "img/games/unit-health-zoom.png",
+                                       "secondImage":  "img/games/unit-health.png",
+                                       "thirdImage":  "img/games/battles.png",
                                        "badge":  "Combat Revolution",
-                                       "caption":  "Unit health bars on the map and close-up of a chariot engaging a damaged barbarian legion."
+                                       "caption":  "Zoomed-in unit health bars (HP), full strategic map view, and tactical chariot battle against a damaged barbarian legion."
                                    },
                                    {
                                        "id":  "load-game",
