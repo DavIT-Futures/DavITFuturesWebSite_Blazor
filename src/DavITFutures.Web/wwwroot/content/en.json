@@ -1,7 +1,7 @@
 {
     "meta":  {
-                 "title":  "DavIT Futures – .NET \u0026 Angular software for finance and SaaS",
-                 "description":  "DavIT Futures – senior .NET and Angular engineering for finance, trading and SaaS. Web, desktop, mobile and backend software, from prototype to zero-downtime production. Wrocław, Poland."
+                 "title":  "DavIT Futures – Senior Full-Stack Engineering, .NET, Web Frontends \u0026 DevOps",
+                 "description":  "DavIT Futures – senior full-stack software engineering for finance and SaaS: high-performance .NET, modern web frontends, databases, and automated DevOps CI/CD. From architecture to zero-downtime production. Wrocław, Poland."
              },
     "nav":  {
                 "about":  "About",
@@ -20,7 +20,7 @@
                  "eyebrow":  "Software house · Wrocław, Poland",
                  "title":  "Trading-grade software",
                  "highlight":  "for your business",
-                 "lead":  "We design and build web, desktop, mobile and backend software for finance, trading and SaaS: from prototype to zero-downtime production, with AI-accelerated delivery that stays fully tested. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
+                 "lead":  "Senior full-stack engineering with an end-to-end delivery mindset: high-performance .NET backends, diverse modern web frontends, optimized databases and hardened DevOps CI/CD pipelines. From code and automated tests to seamless production releases and zero-downtime operations. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
                  "primaryCta":  {
                                     "label":  "Let\u0027s talk about your project",
                                     "url":  "contact"
@@ -63,11 +63,11 @@
              },
     "about":  {
                   "title":  "About",
-                  "subtitle":  "DavIT Futures is Dawid Domagała\u0027s software company. You work directly with the senior engineer who designs and builds your product: no account managers, no hand-offs, no juniors learning on your budget.",
+                  "subtitle":  "DavIT Futures is Dawid Domagała\u0027s engineering company. You work directly with a senior engineer of 18+ years experience who takes full ownership of the entire software delivery lifecycle: from concept, architecture, and database design, through backend and modern web frontend implementation, to robust CI/CD pipelines, automated testing, and zero-downtime production releases.",
                   "photo":  "img/dawid-domagala.jpg",
                   "photoAlt":  "Dawid Domagała",
                   "name":  "Dawid Domagała",
-                  "role":  "Founder · senior .NET and Angular engineer, team lead",
+                  "role":  "Founder · Senior Full-Stack Architect & DevOps Lead (.NET, Modern Web, Databases)",
                   "facts":  [
                                 "18+ years in banking, trading, medtech and SaaS",
                                 "MSc in Electronics, Wrocław University of Technology",
@@ -89,8 +89,8 @@
                                 },
                                 {
                                     "icon":  "pipeline",
-                                    "title":  "DevOps and pipelines",
-                                    "text":  "We build CI/CD pipelines end to end: one-click releases, 24/7 zero-downtime deployments, automated code signing and release notes."
+                                    "title":  "DevOps, CI/CD and Release Management",
+                                    "text":  "End-to-end automation of the software delivery lifecycle: enterprise CI/CD pipelines (GitLab with thousands of lines, GitHub Actions, Jenkins), Docker containerization, quality gates, automated testing, and multi-OS zero-downtime releases."
                                 },
                                 {
                                     "icon":  "spark",
@@ -105,8 +105,8 @@
                      "items":  [
                                    {
                                        "icon":  "web",
-                                       "title":  "Web applications",
-                                       "text":  "Modern apps in Angular, Blazor, React and Vue.js: responsive, fast and easy to extend as your business grows."
+                                       "title":  "Web applications (Modern Frontends)",
+                                       "text":  "Modern apps in Angular, React, Vue.js and Blazor: responsive, fast, and easy to extend. We pick the right frontend technology for your product requirements, with strong state architecture and long-term maintainability."
                                    },
                                    {
                                        "icon":  "server",

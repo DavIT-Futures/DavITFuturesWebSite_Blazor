@@ -1,7 +1,7 @@
 {
     "meta":  {
-                 "title":  "DavIT Futures – oprogramowanie .NET i Angular dla finansów i SaaS",
-                 "description":  "DavIT Futures – doświadczony zespół .NET i Angular dla finansów, tradingu i SaaS. Aplikacje webowe, desktopowe, mobilne i backend, od prototypu po produkcję bez przestojów. Wrocław."
+                 "title":  "DavIT Futures – Senior Full-Stack, .NET, Web Frontends i DevOps",
+                 "description":  "DavIT Futures – kompleksowa inżynieria oprogramowania dla finansów i SaaS: wysokowydajny .NET, nowoczesne frontendy webowe, bazy danych oraz zautomatyzowane środowiska DevOps CI/CD. Wrocław."
              },
     "nav":  {
                 "about":  "O firmie",
@@ -20,7 +20,7 @@
                  "eyebrow":  "Software house · Wrocław",
                  "title":  "Oprogramowanie klasy tradingowej",
                  "highlight":  "dla Twojego biznesu",
-                 "lead":  "Projektujemy i budujemy aplikacje webowe, desktopowe, mobilne i backend dla finansów, tradingu i SaaS: od prototypu po produkcję bez przestojów, szybciej dzięki AI i zawsze z testami. Od 2007 roku dla klientów w Polsce, Irlandii, Czechach i Wielkiej Brytanii.",
+                 "lead":  "Inżynieria full-stack z kompleksowym podejściem end-to-end: wysokowydajny backend .NET, nowoczesne frontendy webowe, zoptymalizowane bazy danych i zautomatyzowane pipeline'y DevOps CI/CD. Od pierwszej linii kodu i rygorystycznych testów po automatyczne wdrożenia produkcyjne bez przestojów. Od 2007 roku, dla klientów z Polski, Irlandii, Czech i Wielkiej Brytanii.",
                  "primaryCta":  {
                                     "label":  "Porozmawiajmy o projekcie",
                                     "url":  "contact"
@@ -63,11 +63,11 @@
              },
     "about":  {
                   "title":  "O firmie",
-                  "subtitle":  "DavIT Futures to firma programistyczna Dawida Domagały. Pracujesz bezpośrednio z doświadczonym inżynierem, który projektuje i buduje Twój produkt: bez opiekunów klienta, bez przekazywania pracy dalej i bez juniorów uczących się na Twoim budżecie.",
+                  "subtitle":  "DavIT Futures to firma inżynierska Dawida Domagały. Rozmawiasz i pracujesz bezpośrednio z inżynierem z 18-letnim stażem, który bierze pełną odpowiedzialność za cały proces wytwarzania oprogramowania: od koncepcji, wyboru technologii i architektury bazodanowej, przez implementację backendu i frontendów webowych, aż po zaawansowane pipeline'y CI/CD, testy automatyczne i stabilne wydania produkcyjne.",
                   "photo":  "img/dawid-domagala.jpg",
                   "photoAlt":  "Dawid Domagała",
                   "name":  "Dawid Domagała",
-                  "role":  "Założyciel · senior .NET i Angular, lider zespołów",
+                  "role":  "Założyciel · Senior Full-Stack Architect & DevOps Lead (.NET, Web Frontends, Bazy Danych)",
                   "facts":  [
                                 "18+ lat w bankowości, tradingu, medtechu i SaaS",
                                 "Magister elektroniki, Politechnika Wrocławska",
@@ -89,8 +89,8 @@
                                 },
                                 {
                                     "icon":  "pipeline",
-                                    "title":  "DevOps i pipeline\u0027y",
-                                    "text":  "Budujemy pipeline\u0027y CI/CD od początku do końca: wydania jednym kliknięciem, wdrożenia 24/7 bez przestojów, automatyczne podpisywanie kodu i release notes."
+                                    "title":  "DevOps, CI/CD i Release Management",
+                                    "text":  "Automatyzacja całego cyklu życia oprogramowania: potężne pipeline'y CI/CD (GitLab, GitHub Actions, Jenkins), konteneryzacja Docker, bramki jakości (quality gates), testy regresyjne i bezpieczny proces publikacji multi-OS bez przestojów produkcyjnych."
                                 },
                                 {
                                     "icon":  "spark",
@@ -105,8 +105,8 @@
                      "items":  [
                                    {
                                        "icon":  "web",
-                                       "title":  "Aplikacje webowe",
-                                       "text":  "Nowoczesne aplikacje w Angular, Blazor, React i Vue.js: responsywne, szybkie i łatwe do rozbudowy, gdy Twój biznes rośnie."
+                                       "title":  "Aplikacje webowe (Web Frontends)",
+                                       "text":  "Tworzymy elastyczne, responsywne interfejsy w ekosystemach Angular, React, Vue.js i Blazor. Dobieramy technologię optymalnie do wymagań produktu, dbając o płynność działania, architekturę stanu i łatwość późniejszej rozbudowy."
                                    },
                                    {
                                        "icon":  "server",

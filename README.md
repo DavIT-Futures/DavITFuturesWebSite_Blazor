@@ -7,7 +7,7 @@
 ![Blazor WebAssembly](https://img.shields.io/badge/Blazor-WebAssembly-5C2D91?logo=blazor&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-222?logo=github)
 
-The website of **DavIT Futures**, a software house from Wrocław, Poland, building .NET and Angular software for finance, trading and SaaS.
+The website of **DavIT Futures**, a software house from Wrocław, Poland, building senior full-stack software (.NET, modern web frontends, databases and DevOps) for finance, trading and SaaS.
 It is a single-page business card written entirely in C# with **Blazor WebAssembly** and served as static files from **GitHub Pages**, with no backend to run or pay for.
 
 **Live site:** https://davit.com.pl (also hosted at https://davit-futures.github.io/DavITFuturesWebSite_Blazor/)
