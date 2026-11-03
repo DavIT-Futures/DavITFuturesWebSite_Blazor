@@ -32,11 +32,11 @@
                         <p class="civ-tagline">@civ.Tagline</p>
                     </div>
                     <div class="civ-links-top">
-                        <a class="btn btn-primary" href="@civ.GitHubUrl" target="_blank" rel="noopener">
-                            <Icon Name="github" Size="18" /> @civ.GitHubLabel
-                        </a>
-                        <a class="btn btn-ghost" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                        <a class="btn btn-primary" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
                             <Icon Name="web" Size="18" /> @civ.WebsiteLabel
+                        </a>
+                        <a class="btn btn-ghost" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                            <Icon Name="github" Size="18" /> @civ.GitHubLabel
                         </a>
                         <a class="btn btn-ghost" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
                             <Icon Name="download" Size="18" /> @civ.ReleasesLabel
@@ -135,11 +135,11 @@
                     <p>@(Site.Language == "pl" ? "Kod projektu jest w 100% open-source pod licencją MIT na GitHubie. Działa bez DOSBoksa na Windowsie, Linuksie i macOS." : "100% open-source project under MIT license on GitHub. Zero DOSBox required, runs cross-platform.")</p>
                 </div>
                 <div class="civ-cta-actions">
-                    <a class="btn btn-primary" href="@civ.GitHubUrl" target="_blank" rel="noopener">
-                        <Icon Name="github" Size="18" /> @(Site.Language == "pl" ? "Przejdź do repozytorium GitHub" : "Go to GitHub Repository")
+                    <a class="btn btn-primary" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                        <Icon Name="web" Size="18" /> @(Site.Language == "pl" ? "Oficjalna strona Civ 1.5" : "Official Civ 1.5 Website")
                     </a>
-                    <a class="btn btn-ghost" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
-                        <Icon Name="web" Size="18" /> @(Site.Language == "pl" ? "Strona Civ 1.5 (Astro)" : "Civ 1.5 Website (Astro)")
+                    <a class="btn btn-ghost" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                        <Icon Name="github" Size="18" /> @(Site.Language == "pl" ? "Repozytorium GitHub" : "GitHub Repository")
                     </a>
                 </div>
             </div>
