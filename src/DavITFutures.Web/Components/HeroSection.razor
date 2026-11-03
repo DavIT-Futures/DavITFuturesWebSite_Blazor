@@ -17,23 +17,6 @@
                     <a class="btn btn-primary" href="@Content.Hero.PrimaryCta.Url">@Content.Hero.PrimaryCta.Label <Icon Name="arrow" Size="16" /></a>
                     <a class="btn btn-ghost" href="@Content.Hero.SecondaryCta.Url">@Content.Hero.SecondaryCta.Label</a>
                 </div>
-                @if (Content.Hero.ClientBrands is { Count: > 0 } || Content.Hero.Clients is { Count: > 0 })
-                {
-                    <div class="hero-clients">
-                        <span class="clients-label">@Content.Hero.ClientsLabel</span>
-                        <div class="clients-cards">
-                            @foreach (var brand in GetClientBrands())
-                            {
-                                <a class="client-card" href="projects" title="@(Site.Language == "pl" ? $"Zobacz projekty: {brand.Name}" : $"View projects: {brand.Name}")">
-                                    <div class="client-logo-box">
-                                        <img src="@brand.Logo" alt="@brand.Name logo" class="client-logo-img" loading="lazy" />
-                                    </div>
-                                    <span class="client-caption">@brand.Name</span>
-                                </a>
-                            }
-                        </div>
-                    </div>
-                }
             </div>
 
             <div class="hero-aside">
@@ -86,6 +69,26 @@
                 </div>
             </div>
         </div>
+
+        @if (Content.Hero.ClientBrands is { Count: > 0 } || Content.Hero.Clients is { Count: > 0 })
+        {
+            <div class="hero-clients-showcase">
+                <div class="clients-showcase-header">
+                    <span class="clients-label">@Content.Hero.ClientsLabel</span>
+                </div>
+                <div class="clients-cards">
+                    @foreach (var brand in GetClientBrands())
+                    {
+                        <a class="client-card" href="projects" title="@(Site.Language == "pl" ? $"Zobacz projekty: {brand.Name}" : $"View projects: {brand.Name}")">
+                            <div class="client-logo-box">
+                                <img src="@brand.Logo" alt="@brand.Name logo" class="client-logo-img" loading="lazy" />
+                            </div>
+                            <span class="client-caption">@brand.Name</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        }
 
         <div class="stats-strip">
             @foreach (var stat in Content.Hero.Stats)

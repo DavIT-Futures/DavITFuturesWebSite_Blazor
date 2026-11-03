@@ -13,8 +13,17 @@
                 <article class="card project-card">
                     <div class="project-top">
                         <span class="project-client">
-                            <span class="client-badge-dot" aria-hidden="true"></span>
-                            @p.Client
+                            @if (GetClientLogo(p.Client) is { } logo)
+                            {
+                                <span class="project-client-logo-box">
+                                    <img src="@logo" alt="@p.Client logo" class="project-client-logo" loading="lazy" />
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="client-badge-dot" aria-hidden="true"></span>
+                            }
+                            <span class="project-client-name">@p.Client</span>
                         </span>
                         <span class="project-years">@p.Years</span>
                     </div>
@@ -44,4 +53,18 @@
 
 @code {
     [Parameter] public bool ShowHeading { get; set; } = true;
+
+    private static string? GetClientLogo(string client) => client switch
+    {
+        "IG Group" => "img/clients/ig-group.svg",
+        "Credit Suisse" => "img/clients/credit-suisse.svg",
+        "Qiagen" => "img/clients/qiagen.svg",
+        "Vitalograph" => "img/clients/vitalograph.svg",
+        "AMCS Group" => "img/clients/amcs-group.svg",
+        "Tyrecheck" => "img/clients/tyrecheck.svg",
+        "Exorigo / ProService AT" => "img/clients/exorigo.png",
+        "DavIT Futures" => "img/clients/davit-futures.svg",
+        "Focis.co.uk" => "img/clients/focis.svg",
+        _ => null
+    };
 }
