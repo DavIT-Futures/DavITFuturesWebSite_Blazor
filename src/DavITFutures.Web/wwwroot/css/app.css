@@ -602,7 +602,7 @@ p { margin: 0; }
 #testimonials .center { margin-top: 28px; text-align: left; }
 
 /* Technologie */
-/* ===== TECHNOLOGIE (Linux Matrix Terminal Console) ===== */
+/* ===== TECHNOLOGIE (Clean Linux Console) ===== */
 .tech-console-section {
     padding-top: 12px;
 }
@@ -627,7 +627,7 @@ p { margin: 0; }
     z-index: 1;
 }
 
-/* Terminal Chrome Bar */
+/* Pasek okna terminala */
 .terminal-titlebar {
     position: relative;
     z-index: 2;
@@ -691,7 +691,7 @@ p { margin: 0; }
     display: inline-block;
 }
 
-/* Tmux / Multiplexer Category Tabs */
+/* Zakładki kategorii */
 .terminal-tmux-bar {
     position: relative;
     z-index: 2;
@@ -700,17 +700,17 @@ p { margin: 0; }
     background: #0a0e17;
     border-bottom: 1px solid #1c2436;
     padding: 0 8px;
-    gap: 2px;
+    gap: 4px;
 }
 .tmux-tab {
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
-    color: #64748b;
+    color: #8b9bb4;
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 600;
-    padding: 10px 14px;
+    padding: 11px 16px;
     cursor: pointer;
     transition: all .15s ease;
     display: inline-flex;
@@ -718,7 +718,7 @@ p { margin: 0; }
     gap: 6px;
 }
 .tmux-tab:hover {
-    color: #e2e8f0;
+    color: #f1f5f9;
     background: rgba(255, 255, 255, 0.03);
 }
 .tmux-tab.active {
@@ -726,65 +726,26 @@ p { margin: 0; }
     border-bottom-color: #10b981;
     background: rgba(16, 185, 129, 0.08);
 }
-.tmux-num {
-    color: #10b981;
-    font-weight: 700;
-}
 
-/* Terminal Body */
+/* Treść konsoli */
 .terminal-body {
     position: relative;
     z-index: 2;
-    padding: 24px 28px;
+    padding: 24px 28px 32px;
     color: #e2e8f0;
-    font-size: 13px;
     line-height: 1.6;
 }
-.terminal-intro {
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px dashed #1c2436;
-}
-.terminal-cmd-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    font-size: 13px;
-}
-.terminal-prompt {
-    color: #10b981;
-    font-weight: 700;
-}
-.terminal-cmd {
-    color: #f1f5f9;
-    font-weight: 600;
-}
-.terminal-system-info {
-    font-size: 11.5px;
-    color: #64748b;
-    margin-top: 5px;
-}
-.sys-ok {
-    color: #10b981;
-    font-weight: 800;
-    margin-right: 4px;
-}
-.sys-text {
-    color: #94a3b8;
-}
 
-/* Modules Stream */
 .terminal-modules {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 24px;
 }
 .terminal-module-block {
     background: rgba(15, 20, 31, 0.7);
     border: 1px solid #1a2233;
     border-radius: 8px;
-    padding: 20px 22px;
+    padding: 22px 24px;
     transition: all .2s ease;
 }
 .terminal-module-block:hover {
@@ -797,33 +758,17 @@ p { margin: 0; }
     box-shadow: 0 0 24px -6px rgba(16, 185, 129, 0.08);
 }
 .module-header {
-    margin-bottom: 14px;
-}
-.module-cmd {
-    display: block;
-    font-size: 11px;
-    color: #64748b;
-    margin-bottom: 4px;
-    font-weight: 500;
-}
-.module-title-wrap {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1a2233;
+    gap: 12px;
     flex-wrap: wrap;
 }
-.module-status-flag {
-    font-size: 10.5px;
-    font-weight: 800;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 2px 7px;
-    border-radius: 4px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    letter-spacing: 0.04em;
-}
 .module-name {
-    font-size: 15.5px;
+    font-size: 16px;
     font-weight: 700;
     color: #f8fafc;
     margin: 0;
@@ -831,11 +776,11 @@ p { margin: 0; }
 }
 .module-count {
     font-size: 11.5px;
-    color: #64748b;
-    font-weight: 500;
+    color: var(--accent-text);
+    font-weight: 600;
 }
 
-/* Package Pills Grid */
+/* Siatka technologii */
 .module-packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -845,7 +790,7 @@ p { margin: 0; }
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 7px 11px;
+    padding: 8px 12px;
     background: #101522;
     border: 1px solid #1c2538;
     border-radius: 6px;
@@ -859,12 +804,12 @@ p { margin: 0; }
 .pkg-icon {
     color: #10b981;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 12px;
     flex-shrink: 0;
 }
 .pkg-title {
     color: #e2e8f0;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
@@ -876,8 +821,8 @@ p { margin: 0; }
 
 /* AI Terminal Telemetry HUD */
 .terminal-hud-box {
-    margin-top: 18px;
-    padding: 16px 18px;
+    margin-top: 20px;
+    padding: 16px 20px;
     border-radius: 8px;
     background: #090e17;
     border: 1px solid rgba(16, 185, 129, 0.35);
@@ -939,32 +884,6 @@ p { margin: 0; }
     padding-top: 12px;
     border-top: 1px dashed rgba(16, 185, 129, 0.2);
     font-style: normal;
-}
-
-/* Terminal Footer */
-.terminal-footer-line {
-    margin-top: 26px;
-    padding-top: 18px;
-    border-top: 1px solid #1c2436;
-}
-.terminal-output-quote {
-    color: #94a3b8;
-    font-size: 12px;
-    margin: 6px 0 14px 18px;
-    line-height: 1.5;
-}
-.terminal-prompt-end {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.matrix-cursor {
-    color: #10b981;
-    animation: matrixBlink 1s step-end infinite;
-}
-@keyframes matrixBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
 }
 
 @media (max-width: 768px) {

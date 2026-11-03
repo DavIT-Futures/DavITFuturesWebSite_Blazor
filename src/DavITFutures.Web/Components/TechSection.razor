@@ -16,7 +16,7 @@
                     <span class="control-dot maximize"></span>
                 </div>
                 <div class="terminal-title mono">
-                    <span class="prompt-user">davit@futures</span>:<span class="prompt-path">~/stack/production</span> (zsh)
+                    <span class="prompt-user">davit@futures</span>:<span class="prompt-path">~/technology-stack</span>
                 </div>
                 <div class="terminal-badges mono">
                     <span class="term-badge"><span class="badge-dot-live"></span> ONLINE</span>
@@ -24,55 +24,39 @@
                 </div>
             </div>
 
-            <!-- Pasek tmux / zakładek kategorii -->
+            <!-- Zakładki kategorii -->
             <div class="terminal-tmux-bar mono">
                 <button type="button" class="tmux-tab @(selectedGroup == null ? "active" : "")" @onclick="() => SelectGroup(null)">
-                    <span class="tmux-num">[0]</span> ALL_MODULES
+                    @(Site.Language == "pl" ? "Wszystkie" : "All")
                 </button>
                 @if (Content?.Tech?.Groups is not null)
                 {
-                    for (int i = 0; i < Content.Tech.Groups.Count; i++)
+                    foreach (var g in Content.Tech.Groups)
                     {
-                        var g = Content.Tech.Groups[i];
-                        var idx = i + 1;
                         <button type="button" class="tmux-tab @(selectedGroup == g.Name ? "active" : "")" @onclick="() => SelectGroup(g.Name)">
-                            <span class="tmux-num">[@idx]</span> @GetShortGroupName(g.Name)
+                            @GetTabLabel(g.Name)
                         </button>
                     }
                 }
             </div>
 
-            <!-- Wnętrze konsoli -->
-            <div class="terminal-body mono">
-                <div class="terminal-intro">
-                    <div class="terminal-cmd-line">
-                        <span class="terminal-prompt">davit@futures:~$</span>
-                        <span class="terminal-cmd">./inspect-stack.sh --status=verified --env=enterprise</span>
-                    </div>
-                    <div class="terminal-system-info">
-                        <span class="sys-ok">[OK]</span> <span class="sys-text">Runtime verified // 5 subsystem clusters // 46 active enterprise packages</span>
-                    </div>
-                </div>
-
+            <!-- Treść konsoli -->
+            <div class="terminal-body">
                 <div class="terminal-modules">
                     @foreach (var group in GetVisibleGroups())
                     {
                         var isAi = group.Name.Contains("AI", StringComparison.OrdinalIgnoreCase);
                         <div class="terminal-module-block @(isAi ? "is-ai-module" : "")">
                             <div class="module-header">
-                                <span class="module-cmd">$ sys.load --cluster="@GetClusterKey(group.Name)"</span>
-                                <div class="module-title-wrap">
-                                    <span class="module-status-flag">[ACTIVE]</span>
-                                    <h3 class="module-name">@group.Name</h3>
-                                    <span class="module-count">(@group.Items.Count packages)</span>
-                                </div>
+                                <h3 class="module-name mono">@group.Name</h3>
+                                <span class="module-count mono">@group.Items.Count @(Site.Language == "pl" ? "technologii" : "technologies")</span>
                             </div>
 
                             <div class="module-packages-grid">
                                 @foreach (var item in group.Items)
                                 {
-                                    <div class="package-pill">
-                                        <span class="pkg-icon">[✓]</span>
+                                    <div class="package-pill mono">
+                                        <span class="pkg-icon">✓</span>
                                         <span class="pkg-title">@item</span>
                                     </div>
                                 }
@@ -81,14 +65,14 @@
                             @if (!string.IsNullOrEmpty(group.Note))
                             {
                                 <div class="terminal-hud-box">
-                                    <div class="hud-header">
-                                        <span class="hud-tag">TELEMETRY // REAL-WORLD AGENTIC IMPACT</span>
-                                        <span class="hud-client">CLIENT: IG GROUP</span>
+                                    <div class="hud-header mono">
+                                        <span class="hud-tag">TELEMETRY // IG GROUP</span>
+                                        <span class="hud-client">AUTONOMOUS SOFTWARE FACTORY</span>
                                     </div>
-                                    <div class="hud-stats-grid">
+                                    <div class="hud-stats-grid mono">
                                         <div class="hud-stat-cell">
                                             <span class="hud-stat-val">4.0×</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Średnia wydajność zespołu" : "Team velocity ratio")</span>
+                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Wydajność zespołu" : "Team velocity")</span>
                                         </div>
                                         <div class="hud-stat-cell">
                                             <span class="hud-stat-val">0.9d</span>
@@ -96,11 +80,11 @@
                                         </div>
                                         <div class="hud-stat-cell">
                                             <span class="hud-stat-val">16 PRs</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Zamykanych w nocy przez agentów" : "Resolved overnight by agents")</span>
+                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Zamykanych w nocy" : "Closed overnight")</span>
                                         </div>
                                         <div class="hud-stat-cell">
                                             <span class="hud-stat-val">100%</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Przetestowane i przejrzane" : "Human review & test verified")</span>
+                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Nadzór człowieka" : "Human reviewed")</span>
                                         </div>
                                     </div>
                                     <p class="hud-note-text">@group.Note</p>
@@ -108,22 +92,6 @@
                             }
                         </div>
                     }
-                </div>
-
-                <div class="terminal-footer-line">
-                    <div class="terminal-cmd-line">
-                        <span class="terminal-prompt">davit@futures:~$</span>
-                        <span class="terminal-cmd">cat /etc/standards/manifest</span>
-                    </div>
-                    <div class="terminal-output-quote">
-                        @(Site.Language == "pl" 
-                            ? ">> Standardy: Zautomatyzowane testy regresyjne, zero długu technologicznego, bankowe rygory bezpieczeństwa." 
-                            : ">> Standards: Automated regression tests, zero tech debt, bank-grade security & clean architecture.")
-                    </div>
-                    <div class="terminal-prompt-end">
-                        <span class="terminal-prompt">davit@futures:~$</span>
-                        <span class="matrix-cursor">█</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -147,23 +115,16 @@
         return Content.Tech.Groups.Where(g => g.Name.Equals(selectedGroup, StringComparison.OrdinalIgnoreCase));
     }
 
-    private static string GetShortGroupName(string name) => name switch
+    private string GetTabLabel(string name)
     {
-        "Backend" => "BACKEND.SYS",
-        "Frontend, desktop i mobile" or "Frontend, desktop and mobile" => "FRONTENDS.UI",
-        "DevOps i chmura" or "DevOps and cloud" => "DEVOPS.INFRA",
-        "Jakość" or "Quality" => "QUALITY.QA",
-        "AI" => "AI_FACTORY.AGENTS",
-        _ => name.ToUpperInvariant()
-    };
-
-    private static string GetClusterKey(string name) => name switch
-    {
-        "Backend" => "core.backend",
-        "Frontend, desktop i mobile" or "Frontend, desktop and mobile" => "client.frontends",
-        "DevOps i chmura" or "DevOps and cloud" => "infra.devops",
-        "Jakość" or "Quality" => "standards.qa",
-        "AI" => "agentic.mesh",
-        _ => "system"
-    };
+        if (name.Contains("Frontend", StringComparison.OrdinalIgnoreCase))
+            return "Frontend & Mobile";
+        if (name.Contains("DevOps", StringComparison.OrdinalIgnoreCase))
+            return Site.Language == "pl" ? "DevOps & Chmura" : "DevOps & Cloud";
+        if (name.Contains("Jakość", StringComparison.OrdinalIgnoreCase) || name.Contains("Quality", StringComparison.OrdinalIgnoreCase))
+            return Site.Language == "pl" ? "Jakość" : "Quality";
+        if (name.Equals("AI", StringComparison.OrdinalIgnoreCase))
+            return Site.Language == "pl" ? "AI & Agenci" : "AI & Agents";
+        return name;
+    }
 }
