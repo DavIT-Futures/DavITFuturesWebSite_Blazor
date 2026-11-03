@@ -1240,10 +1240,12 @@ p { margin: 0; }
 
 /* ===== Games Remastering / Civ 1.5 Remastered ===== */
 /* Civ 1.5 Remastered Title Screen Banner */
-.civ-title-banner {
-    display: flex;
+.civ-title-banner,
+.civ-title-banner.media-preview-wrap {
+    display: flex !important;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background: #000000;
     border-radius: 12px;
     padding: 20px 24px;
@@ -1265,6 +1267,7 @@ p { margin: 0; }
     max-height: 260px;
     width: auto;
     height: auto;
+    margin: 0 auto;
     object-fit: contain;
     display: block;
     image-rendering: -webkit-optimize-contrast;
