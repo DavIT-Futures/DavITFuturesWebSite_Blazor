@@ -703,6 +703,31 @@
                 "Multi-OS",
                 "CMake"
             ]
+        },
+        "dlc": {
+            "badge": "NOWE OFICJALNE DLC",
+            "title": "DLC: Polska i Japonia (Poles & Japanese)",
+            "casimirImage": "img/games/casimir.png",
+            "casimirName": "Król Kazimierz III Wielki — Polska",
+            "casimirCaption": "Król Kazimierz III Wielki — przywódca cywilizacji Polski.",
+            "tokugawaImage": "img/games/tokugawa.png",
+            "tokugawaName": "Szogun Tokugawa Ieyasu — Japonia",
+            "tokugawaCaption": "Szogun Tokugawa Ieyasu — przywódca cywilizacji Japonii.",
+            "polandAnthemTitle": "Hymn Polski",
+            "polandAnthemSubtitle": "Mazurek Dąbrowskiego (General MIDI)",
+            "polandAnthemAudio": "audio/poland_anthem.wav",
+            "polandMidiUrl": "audio/poland.mid",
+            "japanAnthemTitle": "Hymn Japonii",
+            "japanAnthemSubtitle": "Kimigayo (General MIDI)",
+            "japanAnthemAudio": "audio/japan_anthem.wav",
+            "japanMidiUrl": "audio/japan.mid",
+            "description": "Civ 1.5 Remastered rozszerza klasyczne 14 nacji o wbudowane, oficjalne DLC wprowadzające dwie w pełni grywalne nacje: Polskę (Poles) pod wodzą Kazimierza Wielkiego oraz Japonię (Japanese) pod przywództwem szoguna Tokugawy, umieszczone na samym szczycie menu wyboru nacji!",
+            "highlights": [
+                "Wyjątkowe biało-czerwone barwy: Obie nacje dzielą unikalną parę kolorów z dwupikselowymi, naprzemiennymi biało-czerwonymi pasami na mundurach jednostek bojowych oraz flagach miast.",
+                "Autentyczne hymny narodowe MIDI: Wierne aranżacje MIDI Mazurka Dąbrowskiego oraz japońskiego hymnu Kimigayo odtwarzane we wszystkich 8 trybach dźwięku (od PC Speaker, Tandy i AdLib, przez Roland MT-32, po General MIDI) — przy wyborze nacji, zdobywaniu wrogich miast, odkrywaniu technologii i rozbudowie pałacu.",
+                "Historyczne pozycje startowe na mapie Ziemi: Wierne współrzędne geograficzne na mapie globu (Warszawa w Europie Środkowej oraz Honsiu na Wyspach Japońskich).",
+                "Kompletne pule 48 miast: Dedykowane bazy 48 historycznych miast dla każdego państwa (Warszawa, Kraków, Łódź, Wrocław, Poznań, Gdańsk... / Kioto, Tokio, Osaka, Edo, Kagoshima, Nara, Nagoja...)."
+            ]
         }
     }
 }

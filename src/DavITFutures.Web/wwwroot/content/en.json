@@ -703,6 +703,31 @@
                 "Multi-OS",
                 "CMake"
             ]
+        },
+        "dlc": {
+            "badge": "NEW OFFICIAL DLC",
+            "title": "DLC: Poland & Japan (Poles & Japanese)",
+            "casimirImage": "img/games/casimir.png",
+            "casimirName": "King Casimir III the Great — Poland",
+            "casimirCaption": "King Casimir III the Great (Kazimierz Wielki) — Leader of the Polish civilization.",
+            "tokugawaImage": "img/games/tokugawa.png",
+            "tokugawaName": "Shogun Tokugawa Ieyasu — Japan",
+            "tokugawaCaption": "Shogun Tokugawa Ieyasu — Leader of the Japanese civilization.",
+            "polandAnthemTitle": "Poland Anthem",
+            "polandAnthemSubtitle": "Mazurek Dąbrowskiego (General MIDI)",
+            "polandAnthemAudio": "audio/poland_anthem.wav",
+            "polandMidiUrl": "audio/poland.mid",
+            "japanAnthemTitle": "Japan Anthem",
+            "japanAnthemSubtitle": "Kimigayo (General MIDI)",
+            "japanAnthemAudio": "audio/japan_anthem.wav",
+            "japanMidiUrl": "audio/japan.mid",
+            "description": "Civ 1.5 Remastered expands the classic 14 nations with an official built-in DLC introducing two playable civilizations: Poland (Poles) led by Casimir the Great and Japan (Japanese) led by Tokugawa, positioned right at the top of the tribe selection menu!",
+            "highlights": [
+                "Distinctive White & Red Regalia: Both nations share an iconic red-and-white color scheme, featuring alternating 2-pixel striped uniforms on military unit sprites and city banners.",
+                "Authentic National Anthems in MIDI: Full studio MIDI arrangements of Poland's Mazurek Dąbrowskiego and Japan's Kimigayo play seamlessly across all 8 sound drivers (PC Speaker, Tandy, AdLib, Roland MT-32, General MIDI) — during tribe selection, city captures, technological breakthroughs, and palace expansions.",
+                "Historical Earth Map Start Locations: Accurate geographical coordinates on the Earth scenario map (Warsaw in Central Europe and Honshu in the Japanese archipelago).",
+                "Comprehensive City Lists: Complete, historically researched pools of 48 authentic cities each (Warsaw, Krakow, Lodz, Wroclaw, Poznan, Gdansk... / Kyoto, Tokyo, Osaka, Edo, Kagoshima, Nara, Nagoya...)."
+            ]
         }
     }
 }

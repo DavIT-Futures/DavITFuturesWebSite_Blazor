@@ -84,7 +84,28 @@ public record GamesRemasterSection(
     string WhatsNewTitle,
     string WhatsNewSubtitle,
     IReadOnlyList<GameFeatureItem> Features,
-    OtherGameDetails? Australia1859 = null);
+    OtherGameDetails? Australia1859 = null,
+    CivDlcDetails? Dlc = null);
+
+public record CivDlcDetails(
+    string Badge,
+    string Title,
+    string CasimirImage,
+    string CasimirName,
+    string CasimirCaption,
+    string TokugawaImage,
+    string TokugawaName,
+    string TokugawaCaption,
+    string PolandAnthemTitle,
+    string PolandAnthemSubtitle,
+    string PolandAnthemAudio,
+    string PolandMidiUrl,
+    string JapanAnthemTitle,
+    string JapanAnthemSubtitle,
+    string JapanAnthemAudio,
+    string JapanMidiUrl,
+    string Description,
+    IReadOnlyList<string> Highlights);
 
 public record CivGameDetails(
     string Title,

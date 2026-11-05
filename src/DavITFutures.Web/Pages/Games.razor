@@ -58,6 +58,83 @@
                     }
                 </div>
             </div>
+
+            <!-- Official DLC: Poland & Japan Showcase -->
+            @if (g.Dlc is not null)
+            {
+                var dlc = g.Dlc;
+                <div class="civ-dlc-card" id="dlc-poland-japan">
+                    <div class="civ-dlc-header">
+                        <span class="civ-badge dlc-badge-glow">@dlc.Badge</span>
+                        <h2 class="civ-dlc-title">@dlc.Title</h2>
+                    </div>
+
+                    <!-- 1. Leader Portraits First -->
+                    <div class="civ-dlc-photos">
+                        <figure class="dlc-photo-card">
+                            <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                <img src="@dlc.CasimirImage" alt="@dlc.CasimirName" class="dlc-portrait-img" loading="lazy" />
+                                <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                            </div>
+                            <figcaption class="dlc-photo-caption">@dlc.CasimirName</figcaption>
+                        </figure>
+
+                        <figure class="dlc-photo-card">
+                            <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.TokugawaImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                <img src="@dlc.TokugawaImage" alt="@dlc.TokugawaName" class="dlc-portrait-img" loading="lazy" />
+                                <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                            </div>
+                            <figcaption class="dlc-photo-caption">@dlc.TokugawaName</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- 2. Both anthems with instant play button directly under the photos -->
+                    <div class="dlc-anthems-grid">
+                        <div class="dlc-anthem-card">
+                            <div class="dlc-anthem-meta">
+                                <span class="dlc-anthem-flag" aria-hidden="true">🇵🇱</span>
+                                <div>
+                                    <strong class="dlc-anthem-name">@dlc.PolandAnthemTitle</strong>
+                                    <span class="dlc-anthem-sub">@dlc.PolandAnthemSubtitle</span>
+                                </div>
+                            </div>
+                            <div class="dlc-anthem-playback">
+                                <audio controls preload="none" class="dlc-audio-player" src="@dlc.PolandAnthemAudio"></audio>
+                                <a class="btn btn-ghost btn-sm" href="@dlc.PolandMidiUrl" download="poland.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
+                                    <Icon Name="download" Size="14" /> .MID
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="dlc-anthem-card">
+                            <div class="dlc-anthem-meta">
+                                <span class="dlc-anthem-flag" aria-hidden="true">🇯🇵</span>
+                                <div>
+                                    <strong class="dlc-anthem-name">@dlc.JapanAnthemTitle</strong>
+                                    <span class="dlc-anthem-sub">@dlc.JapanAnthemSubtitle</span>
+                                </div>
+                            </div>
+                            <div class="dlc-anthem-playback">
+                                <audio controls preload="none" class="dlc-audio-player" src="@dlc.JapanAnthemAudio"></audio>
+                                <a class="btn btn-ghost btn-sm" href="@dlc.JapanMidiUrl" download="japan.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
+                                    <Icon Name="download" Size="14" /> .MID
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Full description below -->
+                    <div class="civ-dlc-desc">
+                        <p class="civ-dlc-lead">@dlc.Description</p>
+                        <ul class="civ-dlc-list">
+                            @foreach (var hl in dlc.Highlights)
+                            {
+                                <li>@hl</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
         </div>
     </section>
 
@@ -208,6 +285,19 @@
             Site.Language == "pl"
                 ? "Klasyczny ekran tytułowy Civilization 1 (DOS, 1991) – punkt wyjścia dla C# remastera."
                 : "Classic Civilization 1 (DOS, 1991) title screen – the starting point of the C# remaster."));
+
+        if (Content.Games.Dlc is not null)
+        {
+            var dlc = Content.Games.Dlc;
+            _lightboxItems.Add(new LightboxItem(
+                dlc.CasimirImage,
+                dlc.CasimirName,
+                dlc.CasimirCaption));
+            _lightboxItems.Add(new LightboxItem(
+                dlc.TokugawaImage,
+                dlc.TokugawaName,
+                dlc.TokugawaCaption));
+        }
 
         foreach (var feat in Content.Games.Features)
         {

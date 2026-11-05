@@ -1805,3 +1805,207 @@ p { margin: 0; }
     transform: scale(1.08);
     box-shadow: 0 0 14px var(--accent);
 }
+
+
+/* ==========================================================================
+   Civ 1.5 Remastered DLC Showcase (Poland & Japan)
+   ========================================================================== */
+.civ-dlc-card {
+    margin-top: 36px;
+    background: radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.08), transparent 70%), var(--surface);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.civ-dlc-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.dlc-badge-glow {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 4px 14px;
+    box-shadow: 0 0 16px rgba(220, 38, 38, 0.45);
+    margin-bottom: 10px;
+}
+
+.civ-dlc-title {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 800;
+    color: var(--text);
+    margin: 8px 0 0;
+    letter-spacing: -0.02em;
+}
+
+.civ-dlc-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.dlc-photo-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dlc-photo-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dlc-photo-card .media-preview-wrap {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dlc-portrait-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+}
+
+.dlc-photo-caption {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.dlc-anthems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.dlc-anthem-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.dlc-anthem-card:hover {
+    border-color: var(--accent-border);
+}
+
+.dlc-anthem-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dlc-anthem-flag {
+    font-size: 28px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.dlc-anthem-name {
+    display: block;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.dlc-anthem-sub {
+    display: block;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.dlc-anthem-playback {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dlc-audio-player {
+    flex: 1;
+    height: 38px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.civ-dlc-desc {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+}
+
+.civ-dlc-lead {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text);
+    margin: 0 0 16px;
+}
+
+.civ-dlc-list {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+.civ-dlc-list li + li {
+    margin-top: 10px;
+}
+
+.civ-dlc-list strong {
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .civ-dlc-card {
+        padding: 20px 16px;
+    }
+    .civ-dlc-photos {
+        grid-template-columns: 1fr;
+    }
+    .dlc-anthems-grid {
+        grid-template-columns: 1fr;
+    }
+    .dlc-anthem-playback {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .dlc-anthem-playback .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
