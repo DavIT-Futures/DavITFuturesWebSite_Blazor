@@ -4,11 +4,16 @@ using Microsoft.AspNetCore.Components;
 
 namespace DavITFutures.Web.Components;
 
-// Baza dla komponentów, które przerysowują się po zmianie języka lub motywu.
+/// <summary>
+/// Base class for UI components that reactively re-render upon language or visual theme modifications.
+/// </summary>
 public abstract class SiteComponent : ComponentBase, IDisposable
 {
     [Inject] protected SiteState Site { get; set; } = default!;
 
+    /// <summary>
+    /// Gets the strongly-typed localized content for the active language.
+    /// </summary>
     protected SiteContent? Content => Site.Content;
 
     protected override void OnInitialized() => Site.Changed += OnSiteChanged;
