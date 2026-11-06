@@ -10,69 +10,58 @@
     var g = Content.Games;
     var civ = g.Civ15;
 
-    <!-- Subpage Hero -->
-    <div class="subpage-hero">
+    <!-- Subpage Hero (tighter, no subtitle) -->
+    <div class="subpage-hero games-hero">
         <div class="container">
             <span class="subpage-eyebrow mono">
                 <Icon Name="gamepad" Size="14" /> @g.Eyebrow
             </span>
             <h1 class="subpage-title">@g.Title</h1>
-            <p class="subpage-lead games-lead-full">@g.Subtitle</p>
         </div>
     </div>
 
     <!-- Flagship: Civ 1.5 Remastered Hero Section -->
-    <section class="section">
+    <section class="section games-flagship-section">
         <div class="container">
             <div class="civ-hero-card">
+                <!-- 1. Ekran startowy Civilization -->
                 <div class="civ-title-banner media-preview-wrap" @onclick='() => OpenLightbox("img/games/civ1-title.png")' role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
                     <img src="img/games/civ1-title.png" alt="Sid Meier's Civilization (1991) title screen" class="civ-banner-img" />
                     <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
                 </div>
 
-                <div class="civ-hero-body">
-                    <div class="civ-hero-meta">
-                        <div class="civ-title-wrap">
-                            <span class="civ-badge">@civ.Badge</span>
-                            <h2 class="civ-title">@civ.Title</h2>
-                            <p class="civ-tagline">@civ.Tagline</p>
-
-                            <!-- Platform Badges directly under Title/Tagline -->
-                            <div class="civ-platform-badges">
-                                <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" class="platform-shield-badge" />
-                                <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" class="platform-shield-badge" />
-                                <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" class="platform-shield-badge" />
-                                <img src="https://img.shields.io/badge/100%25_Native-Zero_DOSBox-2ea44f?style=for-the-badge" alt="100% Native Zero DOSBox" class="platform-shield-badge" />
-                            </div>
-
-                            <div class="civ-badges-wrap">
-                                @foreach (var badge in civ.Badges)
-                                {
-                                    <span class="civ-chip">@badge</span>
-                                }
+                <!-- 2. Pod spodem: zwięzły opis, link do oficjalnej strony projektu i ikony Windows, Linux, Mac -->
+                <div class="civ-hero-footer">
+                    <div class="civ-hero-summary">
+                        <div class="civ-headline-row">
+                            <h2 class="civ-hero-title">@civ.Title</h2>
+                            <div class="civ-platforms-inline">
+                                <span class="os-badge win"><Icon Name="windows" Size="14" /> Windows</span>
+                                <span class="os-badge linux"><Icon Name="linux" Size="14" /> Linux</span>
+                                <span class="os-badge mac"><Icon Name="apple" Size="14" /> macOS</span>
+                                <span class="os-badge native">⚡ @(Site.Language == "pl" ? "Zero DOSBox • Native C#" : "Zero DOSBox • Native C#")</span>
                             </div>
                         </div>
+                        <p class="civ-short-desc">
+                            @(Site.Language == "pl" 
+                                ? "Otwarty remaster kultowej gry Civilization 1 (1991, DOS) przepisany od podstaw funkcja po funkcji do nowoczesnego C#. Gra działa natywnie na współczesnych systemach operacyjnych bez konieczności uruchamiania emulatora DOSBox, zachowując 100% oryginalnego klimatu i grafiki retro."
+                                : "Open-source remaster of classic Civilization 1 (1991, DOS) rewritten function-by-function in clean C#. Runs natively on modern operating systems with zero DOSBox required, preserving 100% of authentic retro VGA graphics, sound, and gameplay.")
+                        </p>
+                    </div>
 
-                        <!-- Main Actions: Official Project Website as prominent #1 CTA -->
-                        <div class="civ-actions-group">
-                            <a class="btn-civ-website" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
-                                <div class="btn-civ-icon">
-                                    <Icon Name="web" Size="22" />
-                                </div>
-                                <div class="btn-civ-text">
-                                    <span class="btn-civ-label">@civ.WebsiteLabel</span>
-                                    <span class="btn-civ-url">davit-futures.github.io</span>
-                                </div>
-                                <Icon Name="external" Size="16" Class="btn-civ-arrow" />
+                    <div class="civ-hero-actions">
+                        <a class="btn btn-primary btn-civ-website" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                            <Icon Name="web" Size="18" />
+                            <span>@civ.WebsiteLabel</span>
+                            <Icon Name="external" Size="14" />
+                        </a>
+                        <div class="civ-aux-actions">
+                            <a class="btn btn-ghost btn-sm" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                                <Icon Name="github" Size="16" /> @civ.GitHubLabel
                             </a>
-                            <div class="civ-sub-actions">
-                                <a class="btn btn-ghost" href="@civ.GitHubUrl" target="_blank" rel="noopener">
-                                    <Icon Name="github" Size="18" /> @civ.GitHubLabel
-                                </a>
-                                <a class="btn btn-ghost" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
-                                    <Icon Name="download" Size="18" /> @civ.ReleasesLabel
-                                </a>
-                            </div>
+                            <a class="btn btn-ghost btn-sm" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
+                                <Icon Name="download" Size="16" /> @civ.ReleasesLabel
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -88,61 +77,64 @@
                         <h2 class="civ-dlc-title">@dlc.Title</h2>
                     </div>
 
-                    <!-- 1. Leader Portraits (Compact, smaller images) -->
-                    <div class="civ-dlc-photos">
-                        <figure class="dlc-photo-card">
-                            <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
-                                <img src="@dlc.CasimirImage" alt="@dlc.CasimirName" class="dlc-portrait-img" loading="lazy" />
-                                <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
-                            </div>
-                            <figcaption class="dlc-photo-caption">@dlc.CasimirName</figcaption>
-                        </figure>
-
-                        <figure class="dlc-photo-card">
-                            <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.TokugawaImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
-                                <img src="@dlc.TokugawaImage" alt="@dlc.TokugawaName" class="dlc-portrait-img" loading="lazy" />
-                                <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
-                            </div>
-                            <figcaption class="dlc-photo-caption">@dlc.TokugawaName</figcaption>
-                        </figure>
-                    </div>
-
-                    <!-- 2. Both anthems with instant play button directly under the photos -->
-                    <div class="dlc-anthems-grid">
-                        <div class="dlc-anthem-card">
-                            <div class="dlc-anthem-meta">
-                                <span class="dlc-anthem-flag" aria-hidden="true">🇵🇱</span>
-                                <div>
-                                    <strong class="dlc-anthem-name">@dlc.PolandAnthemTitle</strong>
-                                    <span class="dlc-anthem-sub">@dlc.PolandAnthemSubtitle</span>
+                    <!-- 1. Leader Portraits + Anthems side-by-side (portraits 50% larger, audio 2x smaller) -->
+                    <div class="civ-dlc-showcase">
+                        <!-- Polska: Portret Kazimierza + Hymn obok -->
+                        <div class="dlc-civ-card">
+                            <figure class="dlc-civ-portrait">
+                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                    <img src="@dlc.CasimirImage" alt="@dlc.CasimirName" class="dlc-portrait-img" loading="lazy" />
+                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
                                 </div>
-                            </div>
-                            <div class="dlc-anthem-playback">
-                                <audio controls preload="none" class="dlc-audio-player" src="@dlc.PolandAnthemAudio"></audio>
-                                <a class="btn btn-ghost btn-sm" href="@dlc.PolandMidiUrl" download="poland.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
-                                    <Icon Name="download" Size="14" /> .MID
-                                </a>
+                                <figcaption class="dlc-photo-caption">@dlc.CasimirName</figcaption>
+                            </figure>
+
+                            <div class="dlc-civ-side">
+                                <div class="dlc-anthem-meta">
+                                    <span class="dlc-anthem-flag" aria-hidden="true">🇵🇱</span>
+                                    <div>
+                                        <strong class="dlc-anthem-name">@dlc.PolandAnthemTitle</strong>
+                                        <span class="dlc-anthem-sub">@dlc.PolandAnthemSubtitle</span>
+                                    </div>
+                                </div>
+                                <div class="dlc-anthem-playback">
+                                    <audio controls preload="none" class="dlc-audio-player compact" src="@dlc.PolandAnthemAudio"></audio>
+                                    <a class="btn btn-ghost btn-sm" href="@dlc.PolandMidiUrl" download="poland.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
+                                        <Icon Name="download" Size="14" /> .MID
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="dlc-anthem-card">
-                            <div class="dlc-anthem-meta">
-                                <span class="dlc-anthem-flag" aria-hidden="true">🇯🇵</span>
-                                <div>
-                                    <strong class="dlc-anthem-name">@dlc.JapanAnthemTitle</strong>
-                                    <span class="dlc-anthem-sub">@dlc.JapanAnthemSubtitle</span>
+                        <!-- Japonia: Portret Tokugawy + Hymn obok -->
+                        <div class="dlc-civ-card">
+                            <figure class="dlc-civ-portrait">
+                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.TokugawaImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                    <img src="@dlc.TokugawaImage" alt="@dlc.TokugawaName" class="dlc-portrait-img" loading="lazy" />
+                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
                                 </div>
-                            </div>
-                            <div class="dlc-anthem-playback">
-                                <audio controls preload="none" class="dlc-audio-player" src="@dlc.JapanAnthemAudio"></audio>
-                                <a class="btn btn-ghost btn-sm" href="@dlc.JapanMidiUrl" download="japan.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
-                                    <Icon Name="download" Size="14" /> .MID
-                                </a>
+                                <figcaption class="dlc-photo-caption">@dlc.TokugawaName</figcaption>
+                            </figure>
+
+                            <div class="dlc-civ-side">
+                                <div class="dlc-anthem-meta">
+                                    <span class="dlc-anthem-flag" aria-hidden="true">🇯🇵</span>
+                                    <div>
+                                        <strong class="dlc-anthem-name">@dlc.JapanAnthemTitle</strong>
+                                        <span class="dlc-anthem-sub">@dlc.JapanAnthemSubtitle</span>
+                                    </div>
+                                </div>
+                                <div class="dlc-anthem-playback">
+                                    <audio controls preload="none" class="dlc-audio-player compact" src="@dlc.JapanAnthemAudio"></audio>
+                                    <a class="btn btn-ghost btn-sm" href="@dlc.JapanMidiUrl" download="japan.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
+                                        <Icon Name="download" Size="14" /> .MID
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 3. Four Highlights in ONE single row without any narrative intro paragraph -->
+                    <!-- 2. Four Highlights in ONE single row -->
                     <div class="civ-dlc-highlights-row">
                         @foreach (var hl in dlc.Highlights)
                         {
@@ -272,18 +264,19 @@
                     </div>
 
                     <!-- Platform Badges for Australia Sim -->
-                    <div class="civ-platform-badges australia-badges">
-                        <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" class="platform-shield-badge" />
-                        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" class="platform-shield-badge" />
-                        <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" class="platform-shield-badge" />
-                        <img src="https://img.shields.io/badge/C%2B%2B-20-blue?style=for-the-badge&logo=c%2B%2B" alt="C++20" class="platform-shield-badge" />
-                        <img src="https://img.shields.io/badge/Raylib-5.5-orange?style=for-the-badge" alt="Raylib 5.5" class="platform-shield-badge" />
+                    <div class="civ-platforms-inline" style="margin: 12px 0 16px;">
+                        <span class="os-badge win"><Icon Name="windows" Size="14" /> Windows</span>
+                        <span class="os-badge linux"><Icon Name="linux" Size="14" /> Linux</span>
+                        <span class="os-badge mac"><Icon Name="apple" Size="14" /> macOS</span>
+                        <span class="os-badge">C++20</span>
+                        <span class="os-badge">Raylib 5.5</span>
                     </div>
 
                     <p class="other-desc">@aus.Description</p>
 
                     @if (aus.Screenshots is not null && aus.Screenshots.Count > 0)
                     {
+                        <!-- 2x2 Grid for Australia Sim screenshots (twice as large) -->
                         <div class="australia-screens-grid">
                             @foreach (var sc in aus.Screenshots)
                             {
