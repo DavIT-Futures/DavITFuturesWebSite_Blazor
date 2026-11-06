@@ -77,18 +77,10 @@
                         <h2 class="civ-dlc-title">@dlc.Title</h2>
                     </div>
 
-                    <!-- 1. Leader Portraits + Anthems side-by-side (portraits +40px, player vertical and compact) -->
+                    <!-- 1. Leader Portraits + Anthems side-by-side (Kazimierz on right of Poland card, Tokugawa on left of Japan card) -->
                     <div class="civ-dlc-showcase">
-                        <!-- Polska: Portret Kazimierza + Hymn obok w układzie pionowym -->
-                        <div class="dlc-civ-card">
-                            <figure class="dlc-civ-portrait">
-                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
-                                    <img src="@dlc.CasimirImage" alt="@dlc.CasimirName" class="dlc-portrait-img" loading="lazy" />
-                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
-                                </div>
-                                <figcaption class="dlc-photo-caption">@dlc.CasimirName</figcaption>
-                            </figure>
-
+                        <!-- Polska: Hymn z lewej strony, Kazimierz Wielki z prawej strony -->
+                        <div class="dlc-civ-card dlc-civ-card-reversed">
                             <div class="dlc-civ-side">
                                 <div class="dlc-anthem-meta">
                                     <span class="dlc-anthem-flag" aria-hidden="true">🇵🇱</span>
@@ -101,9 +93,17 @@
                                     <audio controls controlsList="nodownload noplaybackrate nofullscreen" preload="none" class="dlc-audio-player compact" src="@dlc.PolandAnthemAudio"></audio>
                                 </div>
                             </div>
+
+                            <figure class="dlc-civ-portrait">
+                                <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                    <img src="@dlc.CasimirImage" alt="@dlc.CasimirName" class="dlc-portrait-img" loading="lazy" />
+                                    <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                                </div>
+                                <figcaption class="dlc-photo-caption">@dlc.CasimirName</figcaption>
+                            </figure>
                         </div>
 
-                        <!-- Japonia: Portret Tokugawy + Hymn obok w układzie pionowym -->
+                        <!-- Japonia: Portret Tokugawy z lewej strony, Hymn z prawej strony -->
                         <div class="dlc-civ-card">
                             <figure class="dlc-civ-portrait">
                                 <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.TokugawaImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
@@ -270,7 +270,7 @@
 
                     @if (aus.Screenshots is not null && aus.Screenshots.Count > 0)
                     {
-                        <!-- 2x2 Grid for Australia Sim screenshots (twice as large) -->
+                        <!-- 2x2 Grid for Australia Sim (3 screenshots + 1 info card) -->
                         <div class="australia-screens-grid">
                             @foreach (var sc in aus.Screenshots)
                             {
@@ -284,6 +284,25 @@
                                         <span class="australia-caption-text">@sc.Caption</span>
                                     </figcaption>
                                 </figure>
+                            }
+
+                            @if (!string.IsNullOrEmpty(aus.InfoCardTitle))
+                            {
+                                <div class="australia-info-card">
+                                    <div class="info-card-header">
+                                        <span class="info-card-badge">
+                                            <Icon Name="spark" Size="13" /> @aus.InfoCardBadge
+                                        </span>
+                                        <h4 class="info-card-title">@aus.InfoCardTitle</h4>
+                                    </div>
+                                    <p class="info-card-desc">@aus.InfoCardDescription</p>
+                                    <ul class="info-card-points">
+                                        <li><span>🌱</span> @(Site.Language == "pl" ? "Dynamiczny odrost trawy i nośność ekosystemu" : "Vegetation growth & ecosystem carrying capacity")</li>
+                                        <li><span>🐇</span> @(Site.Language == "pl" ? "Metabolizm, głód i rozród populacji ofiar" : "Metabolic energy, hunger & prey reproduction")</li>
+                                        <li><span>🦊</span> @(Site.Language == "pl" ? "Drapieżnictwo i cykle Lotki-Volterry" : "Predation cycles & Lotka-Volterra dynamics")</li>
+                                        <li><span>⚡</span> @(Site.Language == "pl" ? "Natywna wydajność C++20 i ultralekki Raylib 5.5" : "Native C++20 performance & lightweight Raylib 5.5")</li>
+                                    </ul>
+                                </div>
                             }
                         </div>
                     }

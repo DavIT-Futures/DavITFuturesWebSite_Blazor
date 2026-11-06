@@ -627,17 +627,17 @@
       {
         "id": "unit-health",
         "title": "Units have health & tactical combat rounds",
-        "description": "Units have hit points (standard 3 HP, veteran 4 HP, elite 5 HP), and current health is displayed on health bars across the map and during battles. Combat is no longer decided by a single roll of the dice: battles are fought in rounds, where the losing side loses 1 HP each round. A weak unit will no longer sink a mighty Battleship on a single lucky roll!",
-        "image": "img/games/unit-health-zoom.png",
-        "secondImage": "img/games/unit-health.png",
-        "thirdImage": "img/games/battles.png",
+        "description": "Units feature hit points (standard 3 HP, veteran 4 HP, elite 5 HP) with health bars on map and in combat. Battles are resolved in tactical rounds losing 1 HP per round rather than a single random dice roll.",
+        "image": "img/games/battles.png",
+        "secondImage": null,
+        "thirdImage": null,
         "badge": "Combat Revolution",
-        "caption": "Zoomed-in unit health bars (HP), full strategic map view, and tactical chariot battle against a damaged barbarian legion."
+        "caption": "Tactical combat rounds with unit hit points and health bars (VGA 320x200)."
       },
       {
         "id": "load-game",
         "title": "Load Game directly in the game menu",
-        "description": "The game menu features a long-requested Load Game option right in the GAME menu. There is no need to exit or restart the application to load a saved game. The load list displays both your custom saved games and the latest autosaves.",
+        "description": "Load Game option available directly in the in-game menu without restarting the app. The load list displays both your custom saves and the latest autosaves.",
         "image": "img/games/load-game.png",
         "secondImage": null,
         "badge": "Quality of Life",
@@ -646,7 +646,7 @@
       {
         "id": "saves",
         "title": "10 save slots and 20 turn autosaves",
-        "description": "Save your games in 10 independent slots (CIVIL0 – CIVIL9) instead of the original 4. Furthermore, the game automatically saves every turn into a rolling pool of 20 autosaves (AUTO00 – AUTO19). If a strategic mistake occurs, you can step back up to 20 turns (the original only autosaved once every 1,000 years).",
+        "description": "Save across 10 independent slots (CIVIL0–9) instead of the original 4, plus an automatic rolling pool of 20 autosaves per turn to quickly recover from strategic mistakes.",
         "image": "img/games/saves.png",
         "secondImage": null,
         "badge": "Progress Safety",
@@ -655,7 +655,7 @@
       {
         "id": "wonders",
         "title": "Wonders never become obsolete",
-        "description": "In the original Civilization 1, most Wonders of the World stopped working once a specific technology was discovered (e.g. Hanging Gardens with Invention, Pyramids with Communism). In Civ 1.5, every Wonder works for as long as you hold its city. The Civilopedia has been updated accordingly.",
+        "description": "Every Wonder of the World retains its full powers for as long as you hold its city, without expiring after modern tech discoveries. Civilopedia reflects all updated rules.",
         "image": "img/games/wonders.png",
         "secondImage": null,
         "badge": "Game Balance",
@@ -664,7 +664,7 @@
       {
         "id": "upgrades",
         "title": "Upgrade units for gold in cities",
-        "description": "An outdated unit stationed in your city can be upgraded to its modern successor once you discover the prerequisite technology (E key or Orders -> Upgrade): Militia -> Phalanx -> Musketeers -> Riflemen -> Mech. Inf.; Knights -> Armor; Cruiser -> Battleship. The unit keeps its veteran or elite rank!",
+        "description": "Upgrade outdated units in cities to their modern equivalents for gold once prerequisite tech is discovered (E key). Upgraded units retain their veteran or elite status.",
         "image": "img/games/upgrades.png",
         "secondImage": null,
         "badge": "Army Evolution",
@@ -673,7 +673,7 @@
       {
         "id": "railroads",
         "title": "True railroad hubs in cities",
-        "description": "As soon as a player discovers Railroad, every city is automatically treated as having a railroad. In the original, a city only had a basic road, causing trains to lose a third of their movement points in every transit city. Travel across the empire is now completely seamless.",
+        "description": "Upon discovering Railroad, every city automatically functions as a full rail hub. Trains no longer lose movement points transiting through metropolises, enabling seamless travel across your empire.",
         "image": "img/games/railroads.png",
         "secondImage": null,
         "badge": "Logistics",
@@ -682,7 +682,7 @@
       {
         "id": "demographics",
         "title": "Fixed 16-bit demographics for large empires",
-        "description": "The demographics screen in the DOS original operated on signed 16-bit integers and suffered arithmetic overflows in large empires, displaying bizarre negative approval, disease, or productivity ratings. In Civ 1.5, all demographic indicators are calculated with full 32/64-bit precision.",
+        "description": "Fixed 16-bit integer overflow bugs from the DOS original that showed negative approval and production. All demographic indicators in Civ 1.5 are computed with full 32/64-bit precision.",
         "image": "img/games/demographics.png",
         "secondImage": null,
         "badge": "DOS Bug Fix",
@@ -710,11 +710,6 @@
           "caption": "Real-time Raylib simulation view: rabbit and fox populations with grass vegetation in Lotka-Volterra dynamic equilibrium."
         },
         {
-          "image": "img/games/australia/island-generator.png",
-          "title": "Island Shape Generator",
-          "caption": "Procedural contour synthesis combining geometric bounds with 4 sinusoidal wave functions and random noise."
-        },
-        {
           "image": "img/games/australia/island-bays.png",
           "title": "Bays & Fjords Generator",
           "caption": "Diamond algorithm carving natural coves, fjords, and organic coastal shorelines."
@@ -724,11 +719,14 @@
           "title": "Population & Mortality Analytics",
           "caption": "Live telemetry dashboard: predator/prey counts, metabolic energy balance in Joules, and mortality causes."
         }
-      ]
+      ],
+      "infoCardTitle": "Ecological Model & C++20",
+      "infoCardBadge": "ALife Simulation",
+      "infoCardDescription": "Comprehensive Artificial Life (ALife) ecosystem simulator modeling the historic 1859 Australian rabbit crisis. Vegetation, herbivores, and predators interact in an emergent trophic closed loop on a procedural island. Re-engineered from 2005 Borland C++ to modern C++20 and ultra-lightweight Raylib 5.5 graphics."
     },
     "dlc": {
       "badge": "FAN-MADE DLC",
-      "title": "Fan-Made DLC: New Civilizations – Poland & Japan",
+      "title": "Fan-Made DLC: Two New Civilizations – Poland & Japan",
       "casimirImage": "img/games/casimir.png",
       "casimirName": "King Casimir III the Great — Poland",
       "casimirCaption": "King Casimir III the Great (Kazimierz Wielki) — Leader of the Polish civilization.",

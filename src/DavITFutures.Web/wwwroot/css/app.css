@@ -1287,6 +1287,11 @@ p { margin: 0; }
 }
 .games-flagship-section {
     padding-top: 12px !important;
+    padding-bottom: 20px !important;
+}
+
+#whats-new.section {
+    padding-top: 24px !important;
 }
 
 .civ-hero-card {
@@ -2182,6 +2187,79 @@ p { margin: 0; }
     color: var(--text-muted);
 }
 
+.australia-info-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.australia-info-card:hover {
+    border-color: var(--accent-border);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    width: fit-content;
+}
+
+.info-card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.info-card-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.info-card-points {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.info-card-points li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-card-points li span {
+    font-size: 14px;
+}
+
 @media (max-width: 1080px) {
     .civ-dlc-showcase {
         grid-template-columns: 1fr;
@@ -2216,6 +2294,9 @@ p { margin: 0; }
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .dlc-civ-card.dlc-civ-card-reversed {
+        flex-direction: column-reverse;
     }
     .dlc-civ-portrait {
         flex: 0 0 auto;

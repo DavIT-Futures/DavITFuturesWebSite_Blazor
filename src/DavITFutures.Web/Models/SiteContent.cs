@@ -144,7 +144,10 @@ public record OtherGameDetails(
     string Url,
     string UrlLabel,
     IReadOnlyList<string> Tags,
-    IReadOnlyList<GameScreenshotItem>? Screenshots = null);
+    IReadOnlyList<GameScreenshotItem>? Screenshots = null,
+    string? InfoCardTitle = null,
+    string? InfoCardBadge = null,
+    string? InfoCardDescription = null);
 
 public record GameScreenshotItem(
     string Image,
