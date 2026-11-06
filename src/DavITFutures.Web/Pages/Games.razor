@@ -77,9 +77,9 @@
                         <h2 class="civ-dlc-title">@dlc.Title</h2>
                     </div>
 
-                    <!-- 1. Leader Portraits + Anthems side-by-side (portraits 50% larger, audio 2x smaller) -->
+                    <!-- 1. Leader Portraits + Anthems side-by-side (portraits +40px, player vertical and compact) -->
                     <div class="civ-dlc-showcase">
-                        <!-- Polska: Portret Kazimierza + Hymn obok -->
+                        <!-- Polska: Portret Kazimierza + Hymn obok w układzie pionowym -->
                         <div class="dlc-civ-card">
                             <figure class="dlc-civ-portrait">
                                 <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
@@ -92,21 +92,18 @@
                             <div class="dlc-civ-side">
                                 <div class="dlc-anthem-meta">
                                     <span class="dlc-anthem-flag" aria-hidden="true">🇵🇱</span>
-                                    <div>
+                                    <div class="dlc-anthem-text">
                                         <strong class="dlc-anthem-name">@dlc.PolandAnthemTitle</strong>
                                         <span class="dlc-anthem-sub">@dlc.PolandAnthemSubtitle</span>
                                     </div>
                                 </div>
                                 <div class="dlc-anthem-playback">
-                                    <audio controls preload="none" class="dlc-audio-player compact" src="@dlc.PolandAnthemAudio"></audio>
-                                    <a class="btn btn-ghost btn-sm" href="@dlc.PolandMidiUrl" download="poland.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
-                                        <Icon Name="download" Size="14" /> .MID
-                                    </a>
+                                    <audio controls controlsList="nodownload noplaybackrate nofullscreen" preload="none" class="dlc-audio-player compact" src="@dlc.PolandAnthemAudio"></audio>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Japonia: Portret Tokugawy + Hymn obok -->
+                        <!-- Japonia: Portret Tokugawy + Hymn obok w układzie pionowym -->
                         <div class="dlc-civ-card">
                             <figure class="dlc-civ-portrait">
                                 <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.TokugawaImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
@@ -119,16 +116,13 @@
                             <div class="dlc-civ-side">
                                 <div class="dlc-anthem-meta">
                                     <span class="dlc-anthem-flag" aria-hidden="true">🇯🇵</span>
-                                    <div>
+                                    <div class="dlc-anthem-text">
                                         <strong class="dlc-anthem-name">@dlc.JapanAnthemTitle</strong>
                                         <span class="dlc-anthem-sub">@dlc.JapanAnthemSubtitle</span>
                                     </div>
                                 </div>
                                 <div class="dlc-anthem-playback">
-                                    <audio controls preload="none" class="dlc-audio-player compact" src="@dlc.JapanAnthemAudio"></audio>
-                                    <a class="btn btn-ghost btn-sm" href="@dlc.JapanMidiUrl" download="japan.mid" title="@(Site.Language == "pl" ? "Pobierz plik MIDI" : "Download MIDI file")">
-                                        <Icon Name="download" Size="14" /> .MID
-                                    </a>
+                                    <audio controls controlsList="nodownload noplaybackrate nofullscreen" preload="none" class="dlc-audio-player compact" src="@dlc.JapanAnthemAudio"></audio>
                                 </div>
                             </div>
                         </div>

@@ -1937,7 +1937,7 @@ p { margin: 0; }
 .civ-dlc-showcase {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 24px;
     margin-bottom: 24px;
 }
 
@@ -1945,7 +1945,7 @@ p { margin: 0; }
     background: var(--surface-2);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 16px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1960,15 +1960,15 @@ p { margin: 0; }
 
 .dlc-civ-portrait {
     margin: 0;
-    flex: 0 0 170px;
+    flex: 0 0 210px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .dlc-civ-portrait .media-preview-wrap {
-    width: 100%;
-    height: 220px;
+    width: 210px;
+    height: 260px;
     border-radius: 8px;
     overflow: hidden;
     background: #000;
@@ -1981,8 +1981,8 @@ p { margin: 0; }
 }
 
 .dlc-portrait-img {
-    max-width: 100%;
-    max-height: 220px;
+    max-width: 210px;
+    max-height: 260px;
     object-fit: contain;
     display: block;
     image-rendering: crisp-edges;
@@ -2001,20 +2001,29 @@ p { margin: 0; }
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    gap: 14px;
     min-width: 0;
 }
 
 .dlc-anthem-meta {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
 .dlc-anthem-flag {
     font-size: 26px;
-    line-height: 1;
+    line-height: 1.1;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+    flex-shrink: 0;
+}
+
+.dlc-anthem-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
 }
 
 .dlc-anthem-name {
@@ -2027,21 +2036,32 @@ p { margin: 0; }
 
 .dlc-anthem-sub {
     display: block;
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--text-muted);
     font-family: var(--font-mono);
+    line-height: 1.35;
+    word-break: break-word;
 }
 
 .dlc-anthem-playback {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    width: 100%;
 }
 
 .dlc-audio-player.compact {
-    flex: 1;
+    width: 100%;
+    max-width: 220px;
     height: 32px;
+    border-radius: 16px;
     outline: none;
+    display: block;
+}
+
+/* Hide volume / mute button and overflow 3-dots in WebKit/Blink (Chrome, Edge, Safari) */
+.dlc-audio-player::-webkit-media-controls-volume-control-container,
+.dlc-audio-player::-webkit-media-controls-mute-button,
+.dlc-audio-player::-webkit-media-controls-volume-slider,
+.dlc-audio-player::-webkit-media-controls-overflow-button {
+    display: none !important;
 }
 
 /* Fan-Made DLC: 4 Highlights in ONE single line */
@@ -2162,12 +2182,15 @@ p { margin: 0; }
     color: var(--text-muted);
 }
 
+@media (max-width: 1080px) {
+    .civ-dlc-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 992px) {
     .civ-dlc-highlights-row {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .civ-dlc-showcase {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -2196,13 +2219,18 @@ p { margin: 0; }
     }
     .dlc-civ-portrait {
         flex: 0 0 auto;
-        width: 180px;
+        width: 210px;
     }
     .dlc-civ-side {
         width: 100%;
+        align-items: center;
     }
     .dlc-anthem-meta {
         justify-content: center;
+        text-align: center;
+    }
+    .dlc-audio-player.compact {
+        max-width: 280px;
     }
 }
 
