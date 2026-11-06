@@ -417,7 +417,7 @@
                     "Reverse Engineering",
                     "Multi-OS"
                 ],
-                "description": "Otwarty remaster kultowej gry strategicznej Civilization (1991, DOS) w nowoczesnym C# i Avalonia UI (.NET 10). Tłumaczenie funkcji CIV.EXE z zachowaniem klasycznego klimatu i usunięciem archaizmów: punkty życia jednostek, walka w rundach, regeneracja, ulepszanie jednostek za złoto, trwałe cuda świata, 20 autosave'ów co turę i natywne uruchamianie bez DOSBoksa.",
+                "description": "Otwarty remaster kultowej gry strategicznej Civilization (1991, DOS) w nowoczesnym C# i Avalonia UI (.NET 10). Tłumaczenie funkcji CIV.EXE z zachowaniem klasycznego klimatu i usunięciem archaizmów: punkty życia jednostek, walka w rundach, regeneracja, ulepszanie jednostek za złoto, trwałe cuda świata, 20 autosave'ów co turę oraz 100% natywne uruchamianie na Windows, Linux i macOS bez DOSBoxa.",
                 "badge": "Remaster / .NET 10",
                 "language": "C#",
                 "url": "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
@@ -598,21 +598,22 @@
         "civ15": {
             "title": "Civ 1.5 Remastered",
             "badge": ".NET 10 / Avalonia UI",
-            "tagline": "Otwarty remaster kultowej gry Civilization 1 (1991, DOS) w C# i Avalonia UI bez DOSBoxa",
+            "tagline": "Otwarty remaster gry Civilization 1 (1991, DOS) działający w 100% natywnie na Windows, Linux i macOS bez DOSBoxa",
             "description": "Oryginalny plik CIV.EXE został przetłumaczony funkcja po funkcji do nowoczesnego, czystego kodu C#. Gra zachowuje autentyczny klimat, oprawę graficzną i dźwiękową z 1991 roku, jednocześnie wprowadzając kluczowe usprawnienia rozgrywki (Quality of Life), o których gracze marzyli od dekad.",
             "badges": [
                 ".NET 10.0",
                 "C# 14",
                 "Avalonia UI 12.1",
                 "Civilization 1 (1991)",
-                "Windows / Linux / macOS",
+                "Windows • Linux • macOS (Natywnie)",
+                "Bez DOSBoxa i Wine",
                 "Open Source (MIT)"
             ],
             "playInstructionsTitle": "Jak zagrać (Zero instalacji, bez DOSBoxa)",
             "playSteps": [
-                "Pobierz najnowsze wydanie dla swojego systemu operacyjnego (Windows, Linux, macOS).",
+                "Pobierz gotową, samodzielną paczkę dla swojego systemu (Windows x64, Linux x64, macOS Apple Silicon lub macOS Intel).",
                 "Wypakuj archiwum i umieść folder CIVILIZATION z oryginalną grą z 1991 roku obok pliku wykonywalnego Civ_1_5_Remastered.Desktop.",
-                "Uruchom Civ_1_5_Remastered.Desktop.exe i ciesz się płynną rozgrywką w natywnej wydajności!"
+                "Uruchom bezpośrednio plik Civ_1_5_Remastered.Desktop — bez emulatora DOSBox, Wine czy instalacji środowiska .NET!"
             ],
             "gitHubUrl": "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
             "gitHubLabel": "Kod na GitHubie",
@@ -687,6 +688,15 @@
                 "secondImage": null,
                 "badge": "Poprawka błędów DOS",
                 "caption": "Wielkie imperium z miastami wielkości 15–22 liczone bez przekłamań i błędów."
+            },
+            {
+                "id": "multiplatform",
+                "title": "Pełna wieloplatformowość: Windows, Linux i macOS",
+                "description": "Civ 1.5 Remastered to w 100% 64-bitowa, natywna aplikacja desktopowa stworzona w C# 14, .NET 10 i Avalonia UI. Wydawana jest w postaci samodzielnych paczek binarnych dla systemów Windows x64, Linux x64, macOS Apple Silicon (ARM64) oraz macOS Intel (x64). Bez DOSBoxa, bez Wine i bez konieczności instalowania środowiska .NET — pełna wydajność 60 FPS, tryb pełnoekranowy i natywna integracja z nowoczesnymi systemami operacyjnymi.",
+                "image": "img/games/whats-new.png",
+                "secondImage": null,
+                "badge": "Multiplatform",
+                "caption": "Działa w 100% natywnie na systemach Windows, Linux i macOS bez emulacji i DOSBoxa."
             }
         ],
         "australia1859": {

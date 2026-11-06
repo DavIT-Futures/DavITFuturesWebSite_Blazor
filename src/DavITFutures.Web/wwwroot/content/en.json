@@ -417,7 +417,7 @@
                     "Reverse Engineering",
                     "Multi-OS"
                 ],
-                "description": "Open-source C# and Avalonia UI (.NET 10) remaster of Civilization 1 (1991, DOS). Function-by-function translation of the original CIV.EXE keeping classic mechanics while modernizing gameplay: unit hit points & tactical combat rounds, healing, unit upgrades for gold, non-expiring wonders, 20-turn autosaves, and zero-DOSBox multi-OS execution.",
+                "description": "Open-source C# and Avalonia UI (.NET 10) remaster of Civilization 1 (1991, DOS). Function-by-function translation of the original CIV.EXE keeping classic mechanics while modernizing gameplay: unit hit points & tactical combat rounds, healing, unit upgrades for gold, non-expiring wonders, 20-turn autosaves, and 100% native execution on Windows, Linux, and macOS without DOSBox.",
                 "badge": "Remaster / .NET 10",
                 "language": "C#",
                 "url": "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
@@ -598,21 +598,22 @@
         "civ15": {
             "title": "Civ 1.5 Remastered",
             "badge": ".NET 10 / Avalonia UI",
-            "tagline": "Open-source remaster of Civilization 1 (1991, DOS) in C# and Avalonia UI with zero DOSBox needed",
+            "tagline": "Open-source remaster of Civilization 1 (1991, DOS) running natively on Windows, Linux, and macOS with zero DOSBox needed",
             "description": "The original CIV.EXE binary was translated function by function into clean, high-performance C#. The game preserves 100% of the authentic 1991 retro feel, graphics, and audio, while delivering vital Quality of Life enhancements that players have wanted for decades.",
             "badges": [
                 ".NET 10.0",
                 "C# 14",
                 "Avalonia UI 12.1",
                 "Civilization 1 (1991)",
-                "Windows / Linux / macOS",
+                "Windows • Linux • macOS (Native)",
+                "Zero DOSBox Required",
                 "Open Source (MIT)"
             ],
             "playInstructionsTitle": "How to Play (Zero installation, no DOSBox)",
             "playSteps": [
-                "Download the latest release for your platform (Windows, Linux, macOS).",
+                "Download the standalone release for your platform (Windows x64, Linux x64, macOS Apple Silicon or macOS Intel).",
                 "Extract the archive and place the original 1991 CIVILIZATION folder next to the Civ_1_5_Remastered.Desktop executable.",
-                "Run Civ_1_5_Remastered.Desktop.exe and enjoy silky smooth gameplay with native performance!"
+                "Run the native executable (Civ_1_5_Remastered.Desktop) directly — no DOSBox, Wine, or .NET runtime install required!"
             ],
             "gitHubUrl": "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
             "gitHubLabel": "Code on GitHub",
@@ -687,6 +688,15 @@
                 "secondImage": null,
                 "badge": "DOS Bug Fix",
                 "caption": "A large empire with size 15-22 cities tracked accurately without integer overflow."
+            },
+            {
+                "id": "multiplatform",
+                "title": "True Multiplatform: Windows, Linux and macOS",
+                "description": "Civ 1.5 Remastered is a pure 64-bit cross-platform desktop application built with C# 14, .NET 10, and Avalonia UI. It provides standalone, self-contained native builds for Windows x64, Linux x64, macOS Apple Silicon (ARM64), and macOS Intel (x64). No DOSBox, no Wine, and no .NET runtime installation required — pure native 60 FPS performance, borderless fullscreen, and modern OS desktop integration out of the box.",
+                "image": "img/games/whats-new.png",
+                "secondImage": null,
+                "badge": "True Multiplatform",
+                "caption": "Runs 100% natively on Windows, Linux, and macOS without emulation or DOSBox."
             }
         ],
         "australia1859": {
