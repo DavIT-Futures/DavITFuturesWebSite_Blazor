@@ -17,7 +17,7 @@
                 <Icon Name="gamepad" Size="14" /> @g.Eyebrow
             </span>
             <h1 class="subpage-title">@g.Title</h1>
-            <p class="subpage-lead">@g.Subtitle</p>
+            <p class="subpage-lead games-lead-full">@g.Subtitle</p>
         </div>
     </div>
 
@@ -30,42 +30,55 @@
                     <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
                 </div>
 
-                <div class="civ-hero-header">
-                    <div class="civ-title-wrap">
-                        <span class="civ-badge">@civ.Badge</span>
-                        <h2 class="civ-title">@civ.Title</h2>
-                        <div class="civ-platforms-bar">
-                            <span class="os-pill os-win"><Icon Name="windows" Size="14" /> Windows</span>
-                            <span class="os-pill os-linux"><Icon Name="linux" Size="14" /> Linux</span>
-                            <span class="os-pill os-mac"><Icon Name="apple" Size="14" /> macOS</span>
-                            <span class="os-pill os-nodir">⚡ @(Site.Language == "pl" ? "100% Natywnie • Bez DOSBoxa" : "100% Native • Zero DOSBox")</span>
+                <div class="civ-hero-body">
+                    <div class="civ-hero-meta">
+                        <div class="civ-title-wrap">
+                            <span class="civ-badge">@civ.Badge</span>
+                            <h2 class="civ-title">@civ.Title</h2>
+                            <p class="civ-tagline">@civ.Tagline</p>
+
+                            <!-- Platform Badges directly under Title/Tagline -->
+                            <div class="civ-platform-badges">
+                                <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" class="platform-shield-badge" />
+                                <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" class="platform-shield-badge" />
+                                <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" class="platform-shield-badge" />
+                                <img src="https://img.shields.io/badge/100%25_Native-Zero_DOSBox-2ea44f?style=for-the-badge" alt="100% Native Zero DOSBox" class="platform-shield-badge" />
+                            </div>
+
+                            <div class="civ-badges-wrap">
+                                @foreach (var badge in civ.Badges)
+                                {
+                                    <span class="civ-chip">@badge</span>
+                                }
+                            </div>
                         </div>
-                        <p class="civ-tagline">@civ.Tagline</p>
-                    </div>
-                    <div class="civ-links-top">
-                        <a class="btn btn-primary" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
-                            <Icon Name="web" Size="18" /> @civ.WebsiteLabel
-                        </a>
-                        <a class="btn btn-ghost" href="@civ.GitHubUrl" target="_blank" rel="noopener">
-                            <Icon Name="github" Size="18" /> @civ.GitHubLabel
-                        </a>
-                        <a class="btn btn-ghost" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
-                            <Icon Name="download" Size="18" /> @civ.ReleasesLabel
-                        </a>
-                    </div>
-                </div>
 
-                <p class="civ-desc">@civ.Description</p>
-
-                <div class="civ-badges-wrap">
-                    @foreach (var badge in civ.Badges)
-                    {
-                        <span class="civ-chip">@badge</span>
-                    }
+                        <!-- Main Actions: Official Project Website as prominent #1 CTA -->
+                        <div class="civ-actions-group">
+                            <a class="btn-civ-website" href="@civ.WebsiteUrl" target="_blank" rel="noopener">
+                                <div class="btn-civ-icon">
+                                    <Icon Name="web" Size="22" />
+                                </div>
+                                <div class="btn-civ-text">
+                                    <span class="btn-civ-label">@civ.WebsiteLabel</span>
+                                    <span class="btn-civ-url">davit-futures.github.io</span>
+                                </div>
+                                <Icon Name="external" Size="16" Class="btn-civ-arrow" />
+                            </a>
+                            <div class="civ-sub-actions">
+                                <a class="btn btn-ghost" href="@civ.GitHubUrl" target="_blank" rel="noopener">
+                                    <Icon Name="github" Size="18" /> @civ.GitHubLabel
+                                </a>
+                                <a class="btn btn-ghost" href="@civ.ReleasesUrl" target="_blank" rel="noopener">
+                                    <Icon Name="download" Size="18" /> @civ.ReleasesLabel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Official DLC: Poland & Japan Showcase -->
+            <!-- Fan-Made DLC: Poland & Japan Showcase -->
             @if (g.Dlc is not null)
             {
                 var dlc = g.Dlc;
@@ -75,7 +88,7 @@
                         <h2 class="civ-dlc-title">@dlc.Title</h2>
                     </div>
 
-                    <!-- 1. Leader Portraits First -->
+                    <!-- 1. Leader Portraits (Compact, smaller images) -->
                     <div class="civ-dlc-photos">
                         <figure class="dlc-photo-card">
                             <div class="media-preview-wrap" @onclick="() => OpenLightbox(dlc.CasimirImage)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
@@ -129,15 +142,22 @@
                         </div>
                     </div>
 
-                    <!-- 3. Full description below -->
-                    <div class="civ-dlc-desc">
-                        <p class="civ-dlc-lead">@dlc.Description</p>
-                        <ul class="civ-dlc-list">
-                            @foreach (var hl in dlc.Highlights)
-                            {
-                                <li>@hl</li>
-                            }
-                        </ul>
+                    <!-- 3. Four Highlights in ONE single row without any narrative intro paragraph -->
+                    <div class="civ-dlc-highlights-row">
+                        @foreach (var hl in dlc.Highlights)
+                        {
+                            var parts = hl.Split(':', 2);
+                            <div class="civ-dlc-highlight-card">
+                                <div class="highlight-title">
+                                    <Icon Name="spark" Size="14" />
+                                    <span>@parts[0].Trim()</span>
+                                </div>
+                                @if (parts.Length > 1)
+                                {
+                                    <p class="highlight-desc">@parts[1].Trim()</p>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             }
@@ -184,14 +204,6 @@
                                 <span class="feature-badge">@item.Badge</span>
                             }
                             <h3 class="feature-title">@item.Title</h3>
-                            @if (item.Id == "multiplatform")
-                            {
-                                <div class="card-platforms-strip">
-                                    <span class="os-pill os-win"><Icon Name="windows" Size="13" /> Windows</span>
-                                    <span class="os-pill os-linux"><Icon Name="linux" Size="13" /> Linux</span>
-                                    <span class="os-pill os-mac"><Icon Name="apple" Size="13" /> macOS</span>
-                                </div>
-                            }
                             <p class="feature-desc">@item.Description</p>
 
                             @if (!string.IsNullOrEmpty(item.Caption))
@@ -205,7 +217,7 @@
                 }
             </div>
 
-            <!-- How to Play Strip (przeniesione na koniec sekcji) -->
+            <!-- How to Play Strip -->
             <div class="civ-play-strip" style="margin-top: 48px;">
                 <div class="civ-play-content">
                     <h3 class="civ-play-title">
@@ -246,7 +258,7 @@
     @if (g.Australia1859 is not null)
     {
         var aus = g.Australia1859;
-        <section class="section">
+        <section class="section" id="australia-sim">
             <div class="container">
                 <div class="other-remaster-card">
                     <div class="other-remaster-header">
@@ -258,8 +270,38 @@
                             <Icon Name="github" Size="16" /> @aus.UrlLabel
                         </a>
                     </div>
+
+                    <!-- Platform Badges for Australia Sim -->
+                    <div class="civ-platform-badges australia-badges">
+                        <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" class="platform-shield-badge" />
+                        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" class="platform-shield-badge" />
+                        <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" class="platform-shield-badge" />
+                        <img src="https://img.shields.io/badge/C%2B%2B-20-blue?style=for-the-badge&logo=c%2B%2B" alt="C++20" class="platform-shield-badge" />
+                        <img src="https://img.shields.io/badge/Raylib-5.5-orange?style=for-the-badge" alt="Raylib 5.5" class="platform-shield-badge" />
+                    </div>
+
                     <p class="other-desc">@aus.Description</p>
-                    <ul class="chips small">
+
+                    @if (aus.Screenshots is not null && aus.Screenshots.Count > 0)
+                    {
+                        <div class="australia-screens-grid">
+                            @foreach (var sc in aus.Screenshots)
+                            {
+                                <figure class="australia-screen-card">
+                                    <div class="media-preview-wrap" @onclick="() => OpenLightbox(sc.Image)" role="button" tabindex="0" title="@(Site.Language == "pl" ? "Kliknij, aby powiększyć w galerii" : "Click to view in full gallery")">
+                                        <img src="@sc.Image" alt="@sc.Title" class="australia-thumb-img" loading="lazy" />
+                                        <span class="zoom-badge"><Icon Name="zoom" Size="14" /></span>
+                                    </div>
+                                    <figcaption class="australia-screen-caption">
+                                        <strong class="australia-caption-title">@sc.Title</strong>
+                                        <span class="australia-caption-text">@sc.Caption</span>
+                                    </figcaption>
+                                </figure>
+                            }
+                        </div>
+                    }
+
+                    <ul class="chips small" style="margin-top: 24px;">
                         @foreach (var tag in aus.Tags)
                         {
                             <li>@tag</li>
@@ -346,6 +388,17 @@
                 Site.Language == "pl"
                     ? "Struktura folderu gry i uruchomienie Civ 1.5 Remastered obok oryginalnych plików Civilization 1 (1991)."
                     : "Civilization game folder structure and Civ 1.5 executable setup."));
+        }
+
+        if (Content.Games.Australia1859?.Screenshots is not null)
+        {
+            foreach (var sc in Content.Games.Australia1859.Screenshots)
+            {
+                _lightboxItems.Add(new LightboxItem(
+                    sc.Image,
+                    sc.Title,
+                    sc.Caption));
+            }
         }
     }
 

@@ -1193,6 +1193,10 @@ p { margin: 0; }
     color: var(--text-muted);
     max-width: 720px;
 }
+.subpage-lead.games-lead-full,
+.subpage-lead.lead-full {
+    max-width: 100%;
+}
 .nav a.active {
     color: var(--accent);
     font-weight: 700;
@@ -1283,16 +1287,18 @@ p { margin: 0; }
     position: relative;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
 }
-.civ-hero-header {
+.civ-hero-body {
+    margin-top: 24px;
+}
+.civ-hero-meta {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 24px;
-    margin-bottom: 20px;
+    gap: 32px;
     flex-wrap: wrap;
 }
 .civ-title-wrap {
-    flex: 1;
+    flex: 1 1 500px;
     min-width: 280px;
 }
 .civ-badge {
@@ -1318,24 +1324,30 @@ p { margin: 0; }
     font-size: 16px;
     font-weight: 600;
     color: var(--text-muted);
+    line-height: 1.5;
 }
-.civ-links-top {
+.civ-platform-badges {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin: 16px 0 14px;
 }
-.civ-desc {
-    font-size: 15.5px;
-    line-height: 1.65;
-    color: var(--text);
-    margin-bottom: 20px;
-    max-width: 900px;
+.platform-shield-badge {
+    height: 28px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    display: block;
+}
+.platform-shield-badge:hover {
+    transform: translateY(-2px);
 }
 .civ-badges-wrap {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 28px;
+    margin-top: 10px;
 }
 .civ-chip {
     font-family: var(--font-mono);
@@ -1347,6 +1359,80 @@ p { margin: 0; }
     border: 1px solid var(--border);
     color: var(--text);
 }
+.civ-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    min-width: 290px;
+    flex: 0 0 auto;
+}
+.btn-civ-website {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+.btn-civ-website:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+.btn-civ-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+.btn-civ-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+}
+.btn-civ-label {
+    font-size: 15.5px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.btn-civ-url {
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+    opacity: 0.85;
+    letter-spacing: 0.02em;
+}
+.btn-civ-arrow {
+    opacity: 0.8;
+    transition: transform 0.2s ease;
+}
+.btn-civ-website:hover .btn-civ-arrow {
+    transform: translate(2px, -2px);
+    opacity: 1;
+}
+.civ-sub-actions {
+    display: flex;
+    gap: 10px;
+}
+.civ-sub-actions .btn {
+    flex: 1;
+    justify-content: center;
+}
+
 .civ-play-strip {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -1848,13 +1934,9 @@ p { margin: 0; }
 .civ-dlc-photos {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 24px;
-    margin-bottom: 28px;
-}
-.dlc-photo-card {
-    max-width: 220px;
-    width: 100%;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .dlc-photo-card {
@@ -1865,7 +1947,8 @@ p { margin: 0; }
     background: var(--surface-2);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 16px;
+    padding: 12px;
+    width: 200px;
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1877,7 +1960,7 @@ p { margin: 0; }
 
 .dlc-photo-card .media-preview-wrap {
     width: 100%;
-    max-width: 320px;
+    height: 150px;
     border-radius: 8px;
     overflow: hidden;
     background: #000;
@@ -1890,17 +1973,15 @@ p { margin: 0; }
 }
 
 .dlc-portrait-img {
-    width: 100%;
-    max-width: 240px;
-    height: auto;
-    aspect-ratio: 3 / 4;
+    max-width: 100%;
+    max-height: 150px;
     object-fit: contain;
     display: block;
 }
 
 .dlc-photo-caption {
-    margin-top: 12px;
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 12.5px;
     font-weight: 600;
     color: var(--text-muted);
     text-align: center;
@@ -1910,7 +1991,7 @@ p { margin: 0; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .dlc-anthem-card {
@@ -1967,42 +2048,146 @@ p { margin: 0; }
     outline: none;
 }
 
-.civ-dlc-desc {
+/* Fan-Made DLC: 4 Highlights in ONE single line */
+.civ-dlc-highlights-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.civ-dlc-highlight-card {
     background: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px 28px;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.civ-dlc-lead {
-    font-size: 15.5px;
-    line-height: 1.65;
+.civ-dlc-highlight-card:hover {
+    border-color: var(--accent-border);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.civ-dlc-highlight-card .highlight-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--text);
-    margin: 0 0 16px;
+    line-height: 1.3;
 }
 
-.civ-dlc-list {
+.civ-dlc-highlight-card .highlight-title svg {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.civ-dlc-highlight-card .highlight-desc {
     margin: 0;
-    padding-left: 20px;
+    font-size: 12px;
+    line-height: 1.45;
     color: var(--text-muted);
-    font-size: 14.5px;
-    line-height: 1.7;
 }
 
-.civ-dlc-list li + li {
-    margin-top: 10px;
+/* Australia 1859 Sim Gallery */
+.australia-badges {
+    margin: 12px 0 16px;
 }
 
-.civ-dlc-list strong {
+.australia-screens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.australia-screen-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.australia-screen-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.australia-screen-card .media-preview-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.australia-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: crisp-edges;
+    transition: transform 0.3s ease;
+}
+
+.australia-screen-card:hover .australia-thumb-img {
+    transform: scale(1.04);
+}
+
+.australia-screen-caption {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.australia-caption-title {
+    font-size: 13px;
+    font-weight: 700;
     color: var(--text);
+    line-height: 1.3;
+}
+
+.australia-caption-text {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+    .civ-dlc-highlights-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .australia-screens-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+    .civ-hero-card {
+        padding: 20px;
+    }
+    .civ-actions-group {
+        width: 100%;
+    }
     .civ-dlc-card {
         padding: 20px 16px;
-    }
-    .civ-dlc-photos {
-        grid-template-columns: 1fr;
     }
     .dlc-anthems-grid {
         grid-template-columns: 1fr;
@@ -2017,54 +2202,15 @@ p { margin: 0; }
     }
 }
 
-/* Platform Badges (Windows, Linux, macOS) */
-.civ-platforms-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin: 8px 0 12px;
-}
-
-.card-platforms-strip {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    margin: 8px 0 12px;
-}
-
-.os-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    font-size: 12.5px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.os-win {
-    background: rgba(0, 120, 215, 0.15);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-}
-
-.os-linux {
-    background: rgba(234, 179, 8, 0.15);
-    color: #facc15;
-    border: 1px solid rgba(250, 204, 21, 0.35);
-}
-
-.os-mac {
-    background: rgba(255, 255, 255, 0.12);
-    color: #e2e8f0;
-    border: 1px solid rgba(226, 232, 240, 0.3);
-}
-
-.os-nodir {
-    background: rgba(34, 197, 94, 0.15);
-    color: #4ade80;
-    border: 1px solid rgba(74, 222, 128, 0.35);
+@media (max-width: 576px) {
+    .civ-dlc-highlights-row {
+        grid-template-columns: 1fr;
+    }
+    .australia-screens-grid {
+        grid-template-columns: 1fr;
+    }
+    .dlc-photo-card {
+        width: 100%;
+        max-width: 220px;
+    }
 }

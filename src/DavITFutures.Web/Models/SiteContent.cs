@@ -143,7 +143,13 @@ public record OtherGameDetails(
     string Description,
     string Url,
     string UrlLabel,
-    IReadOnlyList<string> Tags);
+    IReadOnlyList<string> Tags,
+    IReadOnlyList<GameScreenshotItem>? Screenshots = null);
+
+public record GameScreenshotItem(
+    string Image,
+    string Title,
+    string Caption);
 
 // Opinie przepisane dosłownie z rekomendacji na LinkedIn, dlatego cytat zostaje w oryginale w obu językach.
 public record TestimonialsSection(string Title, string Subtitle, IReadOnlyList<Testimonial> Items, string? MoreLabel = null,
