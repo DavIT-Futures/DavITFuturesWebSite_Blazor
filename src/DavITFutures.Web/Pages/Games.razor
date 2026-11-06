@@ -34,6 +34,12 @@
                     <div class="civ-title-wrap">
                         <span class="civ-badge">@civ.Badge</span>
                         <h2 class="civ-title">@civ.Title</h2>
+                        <div class="civ-platforms-bar">
+                            <span class="os-pill os-win"><Icon Name="windows" Size="14" /> Windows</span>
+                            <span class="os-pill os-linux"><Icon Name="linux" Size="14" /> Linux</span>
+                            <span class="os-pill os-mac"><Icon Name="apple" Size="14" /> macOS</span>
+                            <span class="os-pill os-nodir">⚡ @(Site.Language == "pl" ? "100% Natywnie • Bez DOSBoxa" : "100% Native • Zero DOSBox")</span>
+                        </div>
                         <p class="civ-tagline">@civ.Tagline</p>
                     </div>
                     <div class="civ-links-top">
@@ -178,6 +184,14 @@
                                 <span class="feature-badge">@item.Badge</span>
                             }
                             <h3 class="feature-title">@item.Title</h3>
+                            @if (item.Id == "multiplatform")
+                            {
+                                <div class="card-platforms-strip">
+                                    <span class="os-pill os-win"><Icon Name="windows" Size="13" /> Windows</span>
+                                    <span class="os-pill os-linux"><Icon Name="linux" Size="13" /> Linux</span>
+                                    <span class="os-pill os-mac"><Icon Name="apple" Size="13" /> macOS</span>
+                                </div>
+                            }
                             <p class="feature-desc">@item.Description</p>
 
                             @if (!string.IsNullOrEmpty(item.Caption))

@@ -733,10 +733,10 @@
             "japanMidiUrl": "audio/japan.mid",
             "description": "Civ 1.5 Remastered expands the classic 14 nations with an official built-in DLC introducing two playable civilizations: Poland (Poles) led by Casimir the Great and Japan (Japanese) led by Tokugawa, positioned right at the top of the tribe selection menu!",
             "highlights": [
-                "Distinctive White & Red Regalia: Both nations share an iconic red-and-white color scheme, featuring alternating 2-pixel striped uniforms on military unit sprites and city banners.",
-                "Authentic National Anthems in MIDI: Full studio MIDI arrangements of Poland's Mazurek Dąbrowskiego and Japan's Kimigayo play seamlessly across all 8 sound drivers (PC Speaker, Tandy, AdLib, Roland MT-32, General MIDI) — during tribe selection, city captures, technological breakthroughs, and palace expansions.",
-                "Historical Earth Map Start Locations: Accurate geographical coordinates on the Earth scenario map (Warsaw in Central Europe and Honshu in the Japanese archipelago).",
-                "Comprehensive City Lists: Complete, historically researched pools of 48 authentic cities each (Warsaw, Krakow, Lodz, Wroclaw, Poznan, Gdansk... / Kyoto, Tokyo, Osaka, Edo, Kagoshima, Nara, Nagoya...)."
+                "White & Red Regalia: Iconic striped 2-pixel red-and-white uniforms on unit sprites and city banners.",
+                "Authentic MIDI Anthems: Studio arrangements of Mazurek Dąbrowskiego & Kimigayo across all 8 sound drivers.",
+                "Earth Map Start: Historically accurate coordinates for Warsaw and Honshu on the Earth scenario.",
+                "48 Cities Each: Historically researched city lists for both nations (Warsaw, Kyoto, Kraków, Tokyo...)."
             ]
         }
     }
