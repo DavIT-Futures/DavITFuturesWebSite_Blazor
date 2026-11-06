@@ -645,12 +645,12 @@
       },
       {
         "id": "saves",
-        "title": "10 slotów zapisu i 20 autosave'ów co turę",
-        "description": "Zapis w 10 niezależnych slotach (CIVIL0–9) zamiast archaicznych 4 oraz automatyczny zapis co turę do puli 20 autosave'ów. W razie błędu strategicznego możesz cofnąć rozgrywkę o dowolną liczbę tur wstecz.",
-        "image": "img/games/saves.png",
+        "title": "20 slotów zapisu i 20 autosave'ów co turę",
+        "description": "Zapis w 20 niezależnych slotach (CIVIL0–19) zamiast archaicznych 4 oraz automatyczny zapis co turę do puli 20 autosave'ów. W razie błędu strategicznego możesz cofnąć rozgrywkę o dowolną liczbę tur wstecz.",
+        "image": "img/games/saved-games.png",
         "secondImage": null,
         "badge": "Bezpieczeństwo postępu",
-        "caption": "20 automatycznych stanów zapisu tworzonych co turę."
+        "caption": "20 niezależnych slotów na manualne zapisy stanu gry (CIVIL0–CIVIL19)."
       },
       {
         "id": "wonders",

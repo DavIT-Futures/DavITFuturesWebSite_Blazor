@@ -645,12 +645,12 @@
       },
       {
         "id": "saves",
-        "title": "10 save slots and 20 turn autosaves",
-        "description": "Save across 10 independent slots (CIVIL0–9) instead of the original 4, plus an automatic rolling pool of 20 autosaves per turn to quickly recover from strategic mistakes.",
-        "image": "img/games/saves.png",
+        "title": "20 save slots and 20 turn autosaves",
+        "description": "Save across 20 independent slots (CIVIL0–19) instead of the original 4, plus an automatic rolling pool of 20 autosaves per turn to quickly recover from strategic mistakes.",
+        "image": "img/games/saved-games.png",
         "secondImage": null,
         "badge": "Progress Safety",
-        "caption": "20 rolling autosaves generated every turn."
+        "caption": "20 independent slots for manual save games (CIVIL0–CIVIL19)."
       },
       {
         "id": "wonders",
