@@ -6,7 +6,12 @@ using Microsoft.JSInterop;
 
 namespace DavITFutures.Web.Services;
 
-// Trzyma bieżący język, motyw i wczytaną treść; komponenty odświeżają się po zdarzeniu Changed.
+/// <summary>
+/// Manages reactive application state including active localization, visual theme, and cached site content.
+/// </summary>
+/// <remarks>
+/// Components subscribing to the <see cref="Changed"/> event automatically refresh their presentation upon state transitions.
+/// </remarks>
 public class SiteState(HttpClient http, IJSRuntime js)
 {
     public static readonly string[] Languages = ["pl", "en"];
@@ -14,11 +19,29 @@ public class SiteState(HttpClient http, IJSRuntime js)
     private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
     private readonly Dictionary<string, SiteContent> _cache = new();
 
+    /// <summary>
+    /// Gets the current ISO 639-1 language code (e.g., "pl", "en").
+    /// </summary>
     public string Language { get; private set; } = "en";
+
+    /// <summary>
+    /// Gets the current theme identifier ("dark" or "light").
+    /// </summary>
     public string Theme { get; private set; } = "dark";
+
+    /// <summary>
+    /// Gets the localized content model for the active language.
+    /// </summary>
     public SiteContent? Content { get; private set; }
+
+    /// <summary>
+    /// Gets the last error message encountered during state updates, if any.
+    /// </summary>
     public string? ErrorMessage { get; private set; }
 
+    /// <summary>
+    /// Event triggered whenever the language, theme, or content model changes.
+    /// </summary>
     public event Action? Changed;
 
     public async Task InitializeAsync()
