@@ -1,6 +1,8 @@
 namespace DavITFutures.Web.Models;
 
-// Treść strony w jednym języku; pliki wwwroot/content/{pl,en}.json mają ten sam kształt.
+/// <summary>
+/// Root data transfer record representing the full site content model for a specific locale.
+/// </summary>
 public record SiteContent(
     Meta Meta,
     Nav Nav,
@@ -17,19 +19,37 @@ public record SiteContent(
     Footer Footer,
     GamesRemasterSection? Games = null);
 
+/// <summary>
+/// Document metadata for SEO page title and description.
+/// </summary>
 public record Meta(string Title, string Description);
 
+/// <summary>
+/// Navigation menu localized labels and control texts.
+/// </summary>
 public record Nav(string About, string Services, string Tech, string Projects, string GitHub, string Cv, string Contact,
     string ThemeLight, string ThemeDark, string Language, string? Games = null);
 
+/// <summary>
+/// Content structure for the hero banner section including headline, call to action, and statistics.
+/// </summary>
 public record Hero(string Eyebrow, string Title, string Highlight, string Lead, Link PrimaryCta, Link SecondaryCta,
     IReadOnlyList<Stat> Stats, string? ClientsLabel = null, IReadOnlyList<string>? Clients = null,
     IReadOnlyList<ClientBrand>? ClientBrands = null);
 
+/// <summary>
+/// Client brand identification and logo information.
+/// </summary>
 public record ClientBrand(string Name, string Logo, string? Url = null);
 
+/// <summary>
+/// Numerical metric and descriptive label pair.
+/// </summary>
 public record Stat(string Value, string Label);
 
+/// <summary>
+/// Hyperlink specification comprising a human-readable label and target URL.
+/// </summary>
 public record Link(string Label, string Url);
 
 public record AboutSection(string Title, string Subtitle, string Photo, string PhotoAlt, string Name, string Role,
