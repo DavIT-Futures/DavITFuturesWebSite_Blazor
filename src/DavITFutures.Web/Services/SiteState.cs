@@ -12,7 +12,7 @@ namespace DavITFutures.Web.Services;
 /// <remarks>
 /// Components subscribing to the <see cref="Changed"/> event automatically refresh their presentation upon state transitions.
 /// </remarks>
-public class SiteState(HttpClient http, IJSRuntime js)
+public class SiteState(HttpClient http, IJSRuntime js) : ISiteState
 {
     public static readonly string[] Languages = ["pl", "en"];
 
