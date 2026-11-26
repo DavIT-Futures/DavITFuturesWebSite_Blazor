@@ -495,19 +495,36 @@
         "image": "img/github/civ.jpg"
       },
       {
-        "name": "Fractal generator",
+        "name": "TradeChameleon: white-label trading platform",
         "tags": [
+          "Java 25",
+          "Spring Boot 4",
+          "Angular 21",
+          "React 19",
+          "PostgreSQL",
+          "Docker",
+          "FinTech"
+        ],
+        "description": "White-label **training** trading platform: four fictional brokers on one code base, each with its own branding, currency and rules. **Java 25** and **Spring Boot 4**, clients in **Angular 21** and **React 19**, **PostgreSQL** in **Docker**.",
+        "badge": "Java, Angular & React / FinTech",
+        "language": "Java / TypeScript",
+        "url": "https://github.com/DavIT-Futures/TradeChameleon",
+        "image": "img/github/tradechameleon.jpg"
+      },
+      {
+        "name": "DavIT Futures website",
+        "tags": [
+          "Blazor WebAssembly",
           "C# 14",
           ".NET 10",
-          "Avalonia UI",
-          "Cross-Platform",
-          "Fractals"
+          "GitHub Actions",
+          "This site"
         ],
-        "description": "Desktop app in **C#** and **Avalonia UI** for Windows, Linux and macOS. Draws Mandelbrot, Julia, Burning Ship, Barnsley fern and Sierpiński.",
-        "badge": ".NET 10 / Multi-OS",
+        "description": "The site you are on: **Blazor WebAssembly**, **.NET 10**, a **three.js** board, two languages and two themes, deployed by **GitHub Actions**.",
+        "badge": "This site",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS",
-        "image": "img/github/fractals.jpg"
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "image": "img/github/website.jpg"
       },
       {
         "name": "N-tier reference architecture",
@@ -557,19 +574,19 @@
         "image": "img/github/australia.jpg"
       },
       {
-        "name": "DavIT Futures website",
+        "name": "Fractal generator",
         "tags": [
-          "Blazor WebAssembly",
           "C# 14",
           ".NET 10",
-          "GitHub Actions",
-          "This site"
+          "Avalonia UI",
+          "Cross-Platform",
+          "Fractals"
         ],
-        "description": "The site you are on: **Blazor WebAssembly**, **.NET 10**, a **three.js** board, two languages and two themes, deployed by **GitHub Actions**.",
-        "badge": "This site",
+        "description": "Desktop app in **C#** and **Avalonia UI** for Windows, Linux and macOS. Draws Mandelbrot, Julia, Burning Ship, Barnsley fern and Sierpiński.",
+        "badge": ".NET 10 / Multi-OS",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
-        "image": "img/github/website.jpg"
+        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS",
+        "image": "img/github/fractals.jpg"
       },
       {
         "name": "Previous site in ASP.NET MVC",
@@ -585,23 +602,6 @@
         "language": "C#",
         "url": "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC",
         "image": "img/github/mvc.svg"
-      },
-      {
-        "name": "TradeChameleon: white-label trading platform",
-        "tags": [
-          "Java 25",
-          "Spring Boot 4",
-          "Angular 21",
-          "React 19",
-          "PostgreSQL",
-          "Docker",
-          "FinTech"
-        ],
-        "description": "White-label **training** trading platform: four fictional brokers on one code base, each with its own branding, currency and rules. **Java 25** and **Spring Boot 4**, clients in **Angular 21** and **React 19**, **PostgreSQL** in **Docker**.",
-        "badge": "Java, Angular & React / FinTech",
-        "language": "Java / TypeScript",
-        "url": "https://github.com/DavIT-Futures/TradeChameleon",
-        "image": "img/github/tradechameleon.jpg"
       }
     ],
     "title": "GitHub Projects",
