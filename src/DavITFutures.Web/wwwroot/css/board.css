@@ -369,3 +369,8 @@ body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 960
 .github-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .github-card:hover .github-thumb img { transform: scale(1.03); }
 @media (prefers-reduced-motion: reduce) { .github-card:hover .github-thumb img { transform: none; } }
+
+/* ===== Projekty komercyjne: loga klientów przygaszone w ciemnym motywie, pełne po najechaniu ===== */
+:root:not([data-theme="light"]) .project-client-logo-box { background: #d6d3c8; opacity: 0.55; transition: opacity 0.25s ease; }
+:root:not([data-theme="light"]) .project-card:hover .project-client-logo-box,
+:root:not([data-theme="light"]) .project-card:focus-within .project-client-logo-box { opacity: 0.9; }
