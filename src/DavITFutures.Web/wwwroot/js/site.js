@@ -13,6 +13,15 @@ window.davit = (() => {
         setLanguage: lang => {
             document.documentElement.lang = lang;
             write("davit-lang", lang);
+        },
+        scrollToId: id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+            el.classList.remove("is-flash");
+            void el.offsetWidth;
+            el.classList.add("is-flash");
         }
     };
 })();

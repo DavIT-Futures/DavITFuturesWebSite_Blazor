@@ -1,0 +1,18 @@
+@* Karta katalogowa układu na płycie: wycięcie jak w obudowie DIP, piny po bokach, oznaczenie RefDes. *@
+<div class="sheet @Class">
+    <span class="sheet-notch" aria-hidden="true"></span>
+    <div class="sheet-ref"><span>@RefDes</span><span>@Part</span></div>
+    @ChildContent
+</div>
+
+@code {
+    /// <summary>Reference designator printed on the board, e.g. "U1 · DD-2007".</summary>
+    [Parameter, EditorRequired] public string RefDes { get; set; } = "";
+
+    /// <summary>Short part description shown on the right of the header.</summary>
+    [Parameter] public string Part { get; set; } = "";
+
+    [Parameter] public string? Class { get; set; }
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

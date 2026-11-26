@@ -1,0 +1,251 @@
+@inherits SiteComponent
+@implements IAsyncDisposable
+@using System.Text.RegularExpressions
+@inject IJSRuntime JS
+
+@* Ekran analizatora stanów logicznych: każdy projekt komercyjny to kanał, stan wysoki to lata pracy. *@
+<div class="scope-stage">
+    <div class="scope">
+        <div class="scope-head">
+            <span class="scope-run">● RUN</span>
+            <span>CAPTURE <b>@_first → @_last</b></span>
+            <span class="hide-m">@(Pl ? "KANAŁY" : "CHANNELS") <b>@Projects.Count</b></span>
+            <span class="hide-m">DECODER <b>@(Pl ? "KLIENT/PROJEKT" : "CLIENT/PROJECT")</b></span>
+            <span class="hide-m">SPAN <b>@_span.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture) @(Pl ? "lat" : "y")</b></span>
+            <span class="scope-ctl">
+                <button type="button" class="hw-key" @onclick="() => ZoomAsync(1 / 0.6)" aria-label="@(Pl ? "Oddal" : "Zoom out")">−</button>
+                <button type="button" class="hw-key" @onclick="() => ZoomAsync(0.6)" aria-label="@(Pl ? "Przybliż" : "Zoom in")">+</button>
+                <button type="button" class="hw-key" @onclick="FitAsync">FIT</button>
+            </span>
+        </div>
+        <div class="scope-screen">
+            <canvas @ref="_canvas" tabindex="0"
+                    aria-label="@(Pl ? $"Oś czasu projektów {_first}–{_last}, jeden kanał na projekt. Strzałki zmieniają projekt, plus i minus przybliżają." : $"Project timeline {_first}–{_last}, one channel per project. Arrow keys change the project, plus and minus zoom.")"></canvas>
+            <div class="scope-readout" @ref="_readout" hidden></div>
+        </div>
+        <p class="scope-hint hide-m">@(Pl ? "Najedź, aby zmierzyć · kliknij impuls, aby zdekodować projekt · przeciągnij lub Shift + kółko, aby przesunąć i przybliżyć" : "Hover to measure · click a pulse to decode the project · drag or Shift + wheel to pan and zoom")</p>
+        @if (ShowMeasurements)
+        {
+            <div class="scope-meas">
+                @foreach (var (stat, i) in Content!.Hero.Stats.Select((s, i) => (s, i)))
+                {
+                    <div class="meas">
+                        <span class="meas-k">MEAS @(i + 1) · @MeasNames[i % MeasNames.Length]</span>
+                        <span class="meas-v">@stat.Value</span>
+                        <span class="meas-l">@stat.Label</span>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@if (ShowDecoder)
+{
+    var p = Projects[_selected];
+    <div class="decoder" id="decoder">
+        <div class="decoder-list" role="tablist" aria-label="@Content!.Projects.Title">
+            @foreach (var (item, i) in Projects.Select((x, i) => (x, i)))
+            {
+                var index = i;
+                <button type="button" role="tab" class="@(index == _selected ? "on" : "")" aria-selected="@(index == _selected)"
+                        @onclick="() => SelectAsync(index)">
+                    <span class="ch-swatch" style="background:@Color(index)"></span>CH@(index + 1) @Short(item.Client)
+                </button>
+            }
+        </div>
+        <div class="decoder-body" role="tabpanel" aria-live="polite">
+            <div class="decoder-meta">
+                <span style="color:@Color(_selected)">CH@(_selected + 1) · @ColorNames[_selected % ColorNames.Length]</span>
+                <span>@p.Client</span>
+                <span>@p.Years</span>
+                <span>FRAME @((_selected + 1).ToString("00"))/@Projects.Count.ToString("00")</span>
+            </div>
+            <h3>@p.Name</h3>
+            <p>@p.Description</p>
+            <div class="chips">
+                @foreach (var tag in p.Tags)
+                {
+                    <span class="chip">@tag</span>
+                }
+            </div>
+            @if (!string.IsNullOrEmpty(p.Outcome))
+            {
+                <div class="decoder-out" style="color:@Color(_selected)">DECODED ▸ @p.Outcome</div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    /// <summary>Shows the project decoder (list and details) under the screen.</summary>
+    [Parameter] public bool ShowDecoder { get; set; } = true;
+
+    /// <summary>Shows the hero statistics as measurement readouts under the screen.</summary>
+    [Parameter] public bool ShowMeasurements { get; set; } = true;
+
+    /// <summary>Called when a channel is picked on the screen; used where there is no decoder.</summary>
+    [Parameter] public EventCallback<int> OnSelect { get; set; }
+
+    // Kolory kanałów według kodu paskowego rezystorów: 1 brązowy, 2 czerwony, 3 pomarańczowy...
+    public static readonly string[] Colors = ["#9a6331", "#e5484d", "#f0812a", "#f2c94c", "#46c174", "#4a90ff", "#a77bf3", "#9aa3ab", "#eef1f4"];
+    public static readonly string[] ColorNames = ["BRN", "RED", "ORG", "YEL", "GRN", "BLU", "VIO", "GRY", "WHT"];
+    private static readonly string[] MeasNames = ["DURATION", "SPREAD", "THROUGHPUT", "PEAK", "SHARE"];
+
+    private ElementReference _canvas;
+    private ElementReference _readout;
+    private IJSObjectReference? _module;
+    private IJSObjectReference? _scope;
+    private DotNetObjectReference<LogicAnalyzer>? _self;
+    private string? _renderedLanguage;
+    private string? _renderedTheme;
+    private int _selected;
+    private double _span;
+    private int _first, _last;
+
+    private bool Pl => Site.Language == "pl";
+    private IReadOnlyList<Project> Projects => Content!.Projects.Items;
+
+    public static string Color(int index) => Colors[index % Colors.Length];
+
+    // Krótka nazwa klienta na etykietę kanału, np. „Exorigo / ProService AT” → „EXORIGO”.
+    public static string Short(string client)
+    {
+        var name = client.Split(" / ")[0].Replace(".co.uk", "", StringComparison.OrdinalIgnoreCase);
+        return name.ToUpperInvariant();
+    }
+
+    public static (double Start, double End) Range(string years)
+    {
+        var y = Regex.Matches(years, @"\d{4}").Select(m => int.Parse(m.Value)).ToArray();
+        if (y.Length == 0) return (0, 0);
+        return y.Length == 1 ? (y[0], y[0] + 0.9) : (y[0], y[^1] + 1);
+    }
+
+    // Oś kariery na wykresie: odcinki stykają się bez nakładania. CV podaje tylko lata, więc miesiące są przybliżone.
+    // Focis to projekt poboczny i może nachodzić na Credit Suisse; Qiagen wycina dziurę w Credit Suisse.
+    private static readonly Dictionary<string, (double Start, double End)[]> Career = new()
+    {
+        ["EXORIGO"] = [(2007.5, 2012.4)],
+        ["AMCS GROUP"] = [(2012.4, 2014.3)],
+        ["VITALOGRAPH"] = [(2014.3, 2015.4)],
+        ["TYRECHECK"] = [(2015.4, 2017.4)],
+        ["CREDIT SUISSE"] = [(2017.4, 2019.3), (2020.5, 2023.0)],
+        ["QIAGEN"] = [(2019.3, 2020.5)],
+        ["FOCIS"] = [(2018.2, 2019.2)],
+        ["IG GROUP"] = [(2023.0, 2026.92)],
+        ["DAVIT FUTURES"] = [(2026.0, 2026.92)],
+    };
+
+    public static (double Start, double End)[] Spans(Project p) =>
+        Career.TryGetValue(Short(p.Client), out var spans) ? spans : [Range(p.Years)];
+
+    protected override void OnParametersSet()
+    {
+        var ranges = Projects.SelectMany(Spans).Where(r => r.End > 0).ToList();
+        _first = (int)ranges.Min(r => r.Start);
+        _last = (int)Math.Floor(ranges.Max(r => r.End) - 0.01);
+        if (_span == 0) _span = Math.Round(ranges.Max(r => r.End) - ranges.Min(r => r.Start) + 0.5, 1);
+        if (_selected >= Projects.Count) _selected = 0;
+    }
+
+    private object BuildData() => new
+    {
+        lang = Site.Language,
+        theme = Site.Theme,
+        labels = new
+        {
+            year = Pl ? "ROK" : "YEAR",
+            now = Pl ? "TERAZ" : "NOW",
+            allLow = Pl ? "wszystkie kanały w stanie niskim" : "all channels LOW",
+            high = Pl ? "WYSOKI" : "HIGH"
+        },
+        channels = Projects.Select((p, i) =>
+        {
+            var spans = Spans(p);
+            return new
+            {
+                client = p.Client, name = p.Name, @short = Short(p.Client), color = Color(i),
+                note = Short(p.Client) == "FOCIS" ? (Pl ? "WEEKENDY · PRACA DLA STARTUPU" : "WEEKEND STARTUP WORK") : null,
+                start = spans.Min(s => s.Start), end = spans.Max(s => s.End),
+                spans = spans.Select(s => new[] { s.Start, s.End })
+            };
+        })
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                _self = DotNetObjectReference.Create(this);
+                _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/analyzer.js");
+                _scope = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _readout, _self, BuildData());
+                await _scope.InvokeVoidAsync("select", _selected);
+                _renderedLanguage = Site.Language;
+                _renderedTheme = Site.Theme;
+            }
+            catch (JSException ex)
+            {
+                // Bez canvasa strona dalej działa: lista projektów i dekoder są zwykłym HTML.
+                Console.Error.WriteLine($"[LogicAnalyzer] {ex.Message}");
+            }
+        }
+        else if (_scope is not null && (_renderedLanguage != Site.Language || _renderedTheme != Site.Theme))
+        {
+            _renderedLanguage = Site.Language;
+            _renderedTheme = Site.Theme;
+            await _scope.InvokeVoidAsync("update", BuildData());
+        }
+    }
+
+    private async Task SelectAsync(int index)
+    {
+        _selected = index;
+        if (_scope is not null) await _scope.InvokeVoidAsync("select", index);
+    }
+
+    private async Task ZoomAsync(double factor)
+    {
+        if (_scope is not null) await _scope.InvokeVoidAsync("zoom", factor);
+    }
+
+    private async Task FitAsync()
+    {
+        if (_scope is not null) await _scope.InvokeVoidAsync("fit");
+    }
+
+    [JSInvokable]
+    public async Task OnChannelSelected(int index)
+    {
+        _selected = index;
+        await OnSelect.InvokeAsync(index);
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public void OnSpanChanged(double span)
+    {
+        _span = span;
+        StateHasChanged();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        base.Dispose();
+        try
+        {
+            if (_scope is not null)
+            {
+                await _scope.InvokeVoidAsync("dispose");
+                await _scope.DisposeAsync();
+            }
+            if (_module is not null) await _module.DisposeAsync();
+        }
+        catch (JSDisconnectedException)
+        {
+        }
+        _self?.Dispose();
+    }
+}

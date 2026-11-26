@@ -1,4 +1,332 @@
 @page "/"
 @inherits SiteComponent
+@implements IAsyncDisposable
+@inject IJSRuntime JS
+@inject NavigationManager Nav
 
-<HeroSection />
+@* Strona główna jako płyta główna: każda sekcja ma swój układ, kamera 3D leci do niego przy przewijaniu. *@
+<canvas class="board-canvas" @ref="_canvas" aria-hidden="true"></canvas>
+
+<div class="board-home">
+    <section class="board-sec board-hero" id="board-hero" data-board="hero">
+        <BoardSheet RefDes="U1 · DD-2007" Part="@(Pl ? "CPU · 18 LAT TAKTOWANIA" : "CPU · 18 YRS CLOCK")">
+            <p class="sheet-eyebrow">@C.Hero.Eyebrow</p>
+            <h1>@C.Hero.Title <em>@C.Hero.Highlight</em></h1>
+            <p class="sheet-lead">@C.Hero.Lead</p>
+            <div class="sheet-btns">
+                <a class="btn btn-primary" href="@C.Hero.PrimaryCta.Url">@C.Hero.PrimaryCta.Label</a>
+                <a class="btn btn-ghost" href="@C.Hero.SecondaryCta.Url">@C.Hero.SecondaryCta.Label</a>
+            </div>
+            <div class="pinout">
+                @foreach (var (s, i) in C.Hero.Stats.Select((s, i) => (s, i)))
+                {
+                    <span class="pin-n">PIN @(i + 1)</span>
+                    <span class="pin-v">@s.Value</span>
+                    <span class="pin-l">@s.Label</span>
+                }
+            </div>
+            @if (C.Hero.Clients is { Count: > 0 })
+            {
+                <p class="sheet-clients">@C.Hero.ClientsLabel: <b>@string.Join(" · ", C.Hero.Clients)</b></p>
+            }
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-about" data-board="about">
+        <BoardSheet RefDes="U2 · SKILL CORE" Part="@C.About.Title.ToUpperInvariant()">
+            <h2>@C.About.Name</h2>
+            <div class="sheet-person">
+                <img src="@C.About.Photo" alt="@C.About.PhotoAlt" width="116" height="138" loading="lazy" />
+                <div>
+                    <p class="sheet-role">@C.About.Role</p>
+                    <ul class="sheet-facts">
+                        @foreach (var f in C.About.Facts)
+                        {
+                            <li>@f</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <p>@C.About.Subtitle</p>
+            @if (C.Testimonials.Items.Count > 0)
+            {
+                var t = C.Testimonials.Items[0];
+                <blockquote class="sheet-quote">
+                    “@FirstSentences(t.Quote)”
+                    <cite>@t.Author · @t.Role</cite>
+                </blockquote>
+            }
+            <a class="sheet-more" href="about">@(Pl ? "Więcej o mnie i rekomendacje" : "More about me and recommendations") →</a>
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-services" data-board="services">
+        <BoardSheet RefDes="J1–J4 · DIMM BANK" Part="@C.Services.Title.ToUpperInvariant()">
+            <h2>@C.Services.Title</h2>
+            <p>@C.Services.Subtitle</p>
+            <table class="sheet-tbl">
+                <tbody>
+                    @foreach (var (s, i) in C.Services.Items.Select((s, i) => (s, i)))
+                    {
+                        <tr><td>CH@(i)</td><td><b>@s.Title</b>@s.Text</td></tr>
+                    }
+                </tbody>
+            </table>
+            <a class="sheet-more" href="services">@(Pl ? "Wszystkie usługi" : "All services") →</a>
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-process" data-board="process">
+        <BoardSheet RefDes="L1–L4 · VRM" Part="@(Pl ? "FAZY ZASILANIA" : "POWER STAGES")">
+            <h2>@C.Process.Title</h2>
+            <p>@C.Process.Subtitle</p>
+            <table class="sheet-tbl">
+                <tbody>
+                    @foreach (var (s, i) in C.Process.Steps.Select((s, i) => (s, i)))
+                    {
+                        <tr><td>@(Pl ? "FAZA" : "PHASE") @(i + 1)</td><td><b>@s.Title</b>@s.Text</td></tr>
+                    }
+                </tbody>
+            </table>
+            <p class="sheet-note">@C.Process.Footnote</p>
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-tech" data-board="tech">
+        <BoardSheet RefDes="U5–U9 · STACK" Part="@(Pl ? "WYKAZ CZĘŚCI" : "BILL OF MATERIALS")">
+            <h2>@C.Tech.Title</h2>
+            <p>@C.Tech.Subtitle</p>
+            <table class="sheet-tbl">
+                <tbody>
+                    @foreach (var (g, i) in C.Tech.Groups.Select((g, i) => (g, i)))
+                    {
+                        <tr>
+                            <td>U@(5 + i)</td>
+                            <td>
+                                <b>@g.Name</b>
+                                <span class="chips">
+                                    @foreach (var item in g.Items)
+                                    {
+                                        <span class="chip">@item</span>
+                                    }
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (C.Tech.Groups.FirstOrDefault(g => !string.IsNullOrEmpty(g.Note)) is { } noted)
+            {
+                <p class="sheet-note">@noted.Note</p>
+            }
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-projects" data-board="projects">
+        <BoardSheet RefDes="@($"U10–U{9 + C.Projects.Items.Count}")" Part="@C.Projects.Title.ToUpperInvariant()">
+            <h2>@C.Projects.Title</h2>
+            <p>@C.Projects.Subtitle</p>
+            <div class="plist">
+                @foreach (var (p, i) in C.Projects.Items.Select((p, i) => (p, i)))
+                {
+                    var index = i;
+                    <button type="button" class="prow @(index == _project ? "on" : "")" aria-expanded="@(index == _project)" @onclick="() => PickProjectAsync(index)">
+                        <span class="prow-r" style="--ch:@LogicAnalyzer.Color(index)">U@(10 + index)</span>
+                        <span class="prow-t">@p.Name<small>@p.Client</small></span>
+                        <span class="prow-y">@p.Years</span>
+                    </button>
+                    @if (index == _project)
+                    {
+                        <div class="pdetail">
+                            @if (!string.IsNullOrEmpty(p.Outcome))
+                            {
+                                <div class="pdetail-out">▸ @p.Outcome</div>
+                            }
+                            <p>@p.Description</p>
+                            <span class="chips">
+                                @foreach (var tag in p.Tags)
+                                {
+                                    <span class="chip">@tag</span>
+                                }
+                            </span>
+                        </div>
+                    }
+                }
+            </div>
+            <a class="sheet-more" href="projects">@(Pl ? "Wszystkie projekty z opisami" : "All projects in detail") →</a>
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec board-wide" id="board-timeline" data-board="timeline">
+        <BoardSheet RefDes="LA1 · CAREER TRACE" Part="@(Pl ? "ANALIZATOR STANÓW LOGICZNYCH" : "LOGIC ANALYZER")" Class="sheet-wide">
+            <h2>@(Pl ? "Oś kariery 2007–2026" : "Career timeline 2007–2026")</h2>
+            <p>@(Pl ? "Każdy projekt to osobny kanał, stan wysoki to lata pracy. Kliknij impuls, aby otworzyć opis projektu." : "Each project is a channel and a high signal marks the years of work. Click a pulse to open the project.")</p>
+            <LogicAnalyzer ShowDecoder="false" ShowMeasurements="false" OnSelect="OnTimelineSelectAsync" />
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-cv" data-board="cv">
+        <BoardSheet RefDes="U20 · U21 · SPI FLASH" Part="CV">
+            <h2>@C.Cv.Title</h2>
+            <p>@C.Cv.Subtitle</p>
+            <div class="flash">
+                @foreach (var (v, i) in C.Cv.Versions.Select((v, i) => (v, i)))
+                {
+                    <div>
+                        <span class="flash-r">U@(20 + i) · @v.Pages.ToUpperInvariant()</span>
+                        <h3>@v.Title</h3>
+                        <p>@v.Text</p>
+                        <div class="sheet-btns">
+                            @if (!string.IsNullOrEmpty(v.Url))
+                            {
+                                <a class="btn btn-primary" href="@v.Url" @onclick="() => Nav.NavigateTo(v.Url, forceLoad: true)" @onclick:preventDefault>@v.ButtonLabel</a>
+                            }
+                            @if (!string.IsNullOrEmpty(v.PdfUrl))
+                            {
+                                <a class="btn btn-ghost" href="@v.PdfUrl" target="_blank" rel="noopener">@(v.PdfLabel ?? "PDF")</a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </BoardSheet>
+    </section>
+
+    <section class="board-sec" id="board-contact" data-board="contact">
+        <BoardSheet RefDes="J9–J11 · I/O" Part="@C.Contact.Title.ToUpperInvariant()">
+            <h2>@C.Contact.Title</h2>
+            <p>@C.Contact.Subtitle</p>
+            <div class="io">
+                <div><span class="io-r">J9</span><a href="@MailTo">@C.Contact.Email</a></div>
+                <div><span class="io-r">J10</span><a href="@C.Contact.LinkedIn" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+                @if (!string.IsNullOrEmpty(C.Contact.GitHub))
+                {
+                    <div><span class="io-r">J11</span><a href="@C.Contact.GitHub" target="_blank" rel="noopener">GitHub ↗</a></div>
+                }
+            </div>
+            <p class="sheet-company">
+                @C.Contact.Company.Name · @C.Contact.Company.Owner<br />
+                @string.Join(", ", C.Contact.Company.Address)<br />
+                NIP @C.Contact.Company.Nip · REGON @C.Contact.Company.Regon
+            </p>
+        </BoardSheet>
+    </section>
+
+    <p class="board-hint" aria-hidden="true">@(Pl ? "Przewijaj, aby iść po ścieżkach · kliknij układ, aby go obejrzeć" : "Scroll to follow the traces · click a chip to inspect it")</p>
+</div>
+
+@code {
+    private ElementReference _canvas;
+    private IJSObjectReference? _module;
+    private IJSObjectReference? _board;
+    private DotNetObjectReference<Home>? _self;
+    private string? _theme;
+    private string? _language;
+    private int _project;
+
+    private SiteContent C => Content!;
+    private bool Pl => Site.Language == "pl";
+
+    private string MailTo =>
+        $"mailto:{C.Contact.Email}?subject={Uri.EscapeDataString(C.Contact.EmailSubject ?? "Project enquiry – DavIT Futures")}";
+
+    // Pierwsze dwa zdania rekomendacji jako krótki cytat; pełny tekst jest na stronie O mnie.
+    private static string FirstSentences(string quote)
+    {
+        var text = quote.Split("\n")[0];
+        var parts = text.Split(". ");
+        return parts.Length > 2 ? string.Join(". ", parts.Take(2)) + "." : text;
+    }
+
+    private object BuildData() => new
+    {
+        theme = Site.Theme,
+        skills = new[] { "FULL-STACK", ".NET · WEB · SQL", "DEVOPS · CI/CD", Pl ? "AI · 18+ LAT" : "AI · 18+ YRS" },
+        phases = Pl ? new[] { "ROZMOWA", "OFERTA", "ITERACJE", "WDROŻENIE" } : new[] { "CHAT", "PROPOSAL", "ITERATIONS", "RELEASE" },
+        io = new[] { "E-MAIL", "LINKEDIN", "GITHUB" },
+        labels = new { cpu = "DavIT Futures", about = C.About.Name, contact = C.Contact.Title },
+        process = C.Process.Steps.Select(s => s.Title),
+        services = C.Services.Items.Select(s => s.Title),
+        tech = C.Tech.Groups.Select(g => new { name = g.Name, items = g.Items }),
+        cv = C.Cv.Versions.Select(v => v.Title),
+        cvPages = C.Cv.Versions.Select(v => v.Pages.ToUpperInvariant()),
+        projects = C.Projects.Items.Select(p => new
+        {
+            name = p.Name,
+            years = p.Years,
+            @short = LogicAnalyzer.Short(p.Client),
+            chip = p.Name.Split(':')[0].ToUpperInvariant()
+        })
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                _self = DotNetObjectReference.Create(this);
+                _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/board.js");
+                _board = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _self, BuildData());
+                _theme = Site.Theme;
+                _language = Site.Language;
+            }
+            catch (JSException ex)
+            {
+                // Bez WebGL strona dalej działa: treść jest w HTML, tło zastępuje CSS.
+                Console.Error.WriteLine($"[Board] {ex.Message}");
+            }
+        }
+        else if (_board is not null && _module is not null && _language != Site.Language)
+        {
+            // Napisy na układach są w teksturach, więc po zmianie języka płyta jest budowana od nowa.
+            _language = Site.Language;
+            _theme = Site.Theme;
+            await _board.InvokeVoidAsync("dispose");
+            await _board.DisposeAsync();
+            _board = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _self, BuildData());
+        }
+        else if (_board is not null && _theme != Site.Theme)
+        {
+            _theme = Site.Theme;
+            await _board.InvokeVoidAsync("setTheme", Site.Theme);
+        }
+    }
+
+    private async Task PickProjectAsync(int index)
+    {
+        _project = index;
+        if (_board is not null) await _board.InvokeVoidAsync("focusProject", index);
+    }
+
+    private async Task OnTimelineSelectAsync(int index)
+    {
+        await PickProjectAsync(index);
+        await JS.InvokeVoidAsync("davit.scrollToId", "board-projects");
+    }
+
+    [JSInvokable]
+    public void OnProjectPicked(int index)
+    {
+        _project = index;
+        StateHasChanged();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        base.Dispose();
+        try
+        {
+            if (_board is not null)
+            {
+                await _board.InvokeVoidAsync("dispose");
+                await _board.DisposeAsync();
+            }
+            if (_module is not null) await _module.DisposeAsync();
+        }
+        catch (JSDisconnectedException)
+        {
+        }
+        _self?.Dispose();
+    }
+}
