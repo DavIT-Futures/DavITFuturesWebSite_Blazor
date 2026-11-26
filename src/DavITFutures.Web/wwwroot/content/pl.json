@@ -783,9 +783,19 @@
       ],
       "screenshots": [
         {
-          "image": "img/games/australia/island-simulation.png",
-          "title": "Ekosystem wyspy, najnowsza wersja",
-          "caption": "Wersja 2.0 po około 800 tikach: króliki (jasne plamy) zjadają trawę, kilka lisów poluje, a po prawej liczniki śmierci z głodu, starości i polowań na żywo."
+          "image": "img/games/australia/volcano-generator.png",
+          "title": "Generator wyspy, wulkaniczne serce",
+          "caption": "Proceduralna wyspa z szumem terenu: plaża, pas trawy i czarne góry, które w najwyższym miejscu żarzą się na czerwono."
+        },
+        {
+          "image": "img/games/australia/volcano-rabbits.png",
+          "title": "Króliki zasiedlają trawę",
+          "caption": "Początek symulacji: kolonie królików rozchodzą się po trawie wokół wulkanu, a pojawiają się pierwsze lisy."
+        },
+        {
+          "image": "img/games/australia/volcano-foxes.png",
+          "title": "Lisy i wyjedzona wyspa",
+          "caption": "Później króliki zjadły większość trawy (jasne obszary), a stado lisów poluje na nie wokół wielkiego wulkanu."
         }
       ],
       "infoCardTitle": "Model Ekologiczny & C++20",

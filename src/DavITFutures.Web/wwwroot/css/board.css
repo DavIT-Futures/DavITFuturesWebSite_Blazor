@@ -377,3 +377,8 @@ body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 960
 
 /* Australia 1859: jeden pełny zrzut okna symulatora, bez przycinania */
 .australia-screen-card .media-preview-wrap { aspect-ratio: 1280 / 748; }
+
+/* Australia screenshots: dimmed in dark mode like the client logos, full on hover */
+:root:not([data-theme="light"]) .australia-thumb-img { opacity: 0.78; transition: opacity 0.25s ease, transform 0.3s ease; }
+:root:not([data-theme="light"]) .australia-screen-card:hover .australia-thumb-img,
+:root:not([data-theme="light"]) .australia-screen-card:focus-within .australia-thumb-img { opacity: 1; }

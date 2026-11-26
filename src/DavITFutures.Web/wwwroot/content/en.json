@@ -783,9 +783,19 @@
       ],
       "screenshots": [
         {
-          "image": "img/games/australia/island-simulation.png",
-          "title": "Island ecosystem, latest build",
-          "caption": "Version 2.0 after about 800 ticks: rabbits (pale patches) graze the grass while a few foxes hunt, with live counters for starvation, old age and hunting on the right."
+          "image": "img/games/australia/volcano-generator.png",
+          "title": "Island generator, volcanic core",
+          "caption": "The procedural island with terrain noise: beach, grass belt and a black mountain ridge that glows red where the slope is highest."
+        },
+        {
+          "image": "img/games/australia/volcano-rabbits.png",
+          "title": "Rabbits settle the grassland",
+          "caption": "Early simulation: rabbit colonies spread across the grass around the volcano while the first foxes arrive."
+        },
+        {
+          "image": "img/games/australia/volcano-foxes.png",
+          "title": "Foxes and an overgrazed island",
+          "caption": "Later on the rabbits have eaten most of the grass (pale areas) and a pack of foxes hunts them around the big volcano."
         }
       ],
       "infoCardTitle": "Ecological Model & C++20",
