@@ -98,6 +98,7 @@
     private IJSObjectReference? _scope;
     private DotNetObjectReference<LogicAnalyzer>? _self;
     private string? _renderedLanguage;
+    private string? _renderedTheme;
     private int _selected;
     private double _span;
     private int _first, _last;
@@ -121,9 +122,27 @@
         return y.Length == 1 ? (y[0], y[0] + 0.9) : (y[0], y[^1] + 1);
     }
 
+    // Oś kariery na wykresie: odcinki stykają się bez nakładania. CV podaje tylko lata, więc miesiące są przybliżone.
+    // Focis to projekt poboczny i może nachodzić na Credit Suisse; Qiagen wycina dziurę w Credit Suisse.
+    private static readonly Dictionary<string, (double Start, double End)[]> Career = new()
+    {
+        ["EXORIGO"] = [(2007.5, 2012.4)],
+        ["AMCS GROUP"] = [(2012.4, 2014.3)],
+        ["VITALOGRAPH"] = [(2014.3, 2015.4)],
+        ["TYRECHECK"] = [(2015.4, 2017.4)],
+        ["CREDIT SUISSE"] = [(2017.4, 2019.3), (2020.5, 2023.0)],
+        ["QIAGEN"] = [(2019.3, 2020.5)],
+        ["FOCIS"] = [(2018.2, 2019.2)],
+        ["IG GROUP"] = [(2023.0, 2026.92)],
+        ["DAVIT FUTURES"] = [(2026.0, 2026.92)],
+    };
+
+    public static (double Start, double End)[] Spans(Project p) =>
+        Career.TryGetValue(Short(p.Client), out var spans) ? spans : [Range(p.Years)];
+
     protected override void OnParametersSet()
     {
-        var ranges = Projects.Select(p => Range(p.Years)).Where(r => r.End > 0).ToList();
+        var ranges = Projects.SelectMany(Spans).Where(r => r.End > 0).ToList();
         _first = (int)ranges.Min(r => r.Start);
         _last = (int)Math.Floor(ranges.Max(r => r.End) - 0.01);
         if (_span == 0) _span = Math.Round(ranges.Max(r => r.End) - ranges.Min(r => r.Start) + 0.5, 1);
@@ -133,6 +152,7 @@
     private object BuildData() => new
     {
         lang = Site.Language,
+        theme = Site.Theme,
         labels = new
         {
             year = Pl ? "ROK" : "YEAR",
@@ -142,8 +162,13 @@
         },
         channels = Projects.Select((p, i) =>
         {
-            var (start, end) = Range(p.Years);
-            return new { client = p.Client, name = p.Name, @short = Short(p.Client), color = Color(i), start, end };
+            var spans = Spans(p);
+            return new
+            {
+                client = p.Client, name = p.Name, @short = Short(p.Client), color = Color(i),
+                start = spans.Min(s => s.Start), end = spans.Max(s => s.End),
+                spans = spans.Select(s => new[] { s.Start, s.End })
+            };
         })
     };
 
@@ -158,6 +183,7 @@
                 _scope = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _readout, _self, BuildData());
                 await _scope.InvokeVoidAsync("select", _selected);
                 _renderedLanguage = Site.Language;
+                _renderedTheme = Site.Theme;
             }
             catch (JSException ex)
             {
@@ -165,9 +191,10 @@
                 Console.Error.WriteLine($"[LogicAnalyzer] {ex.Message}");
             }
         }
-        else if (_scope is not null && _renderedLanguage != Site.Language)
+        else if (_scope is not null && (_renderedLanguage != Site.Language || _renderedTheme != Site.Theme))
         {
             _renderedLanguage = Site.Language;
+            _renderedTheme = Site.Theme;
             await _scope.InvokeVoidAsync("update", BuildData());
         }
     }

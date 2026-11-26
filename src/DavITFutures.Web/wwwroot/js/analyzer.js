@@ -8,21 +8,42 @@ function seeded(seed) {
     return () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
 }
 
-// Gęste przełączenia w czasie trwania projektu, deterministyczne, żeby obraz był taki sam przy każdym wejściu.
-function activity(range, i) {
-    const r = seeded(31 + i * 17);
-    const [a, b] = range;
-    const edges = [[a, 1]];
-    let t = a + r() * 0.05, lvl = 1;
-    while (t < b) {
-        t += r() < 0.15 ? 0.004 + r() * 0.01 : 0.02 + r() * 0.09;
-        if (t >= b) break;
-        lvl ^= 1;
-        edges.push([t, lvl]);
+// Kolory ekranu dla obu motywów; w jasnym kanały dostają ciemniejsze odcienie, żeby były czytelne na papierze.
+const PAL = {
+    dark: {
+        bg: "#06080a", grid: "#141c22", panel: "#0b1014", tickMinor: "#4a565f", tickMajor: "#8a959e", tick: "#26313a",
+        clk: "#56616a", selRow: "rgba(255,255,255,.04)", text: "#86919a", textHi: "#dde3e8", sub: "#5f6b74",
+        label: "#c6ced4", labelHi: "#f4f6f8", sep: "#10171c", sweep: "180,230,255", sweepLine: "rgba(200,240,255,.35)",
+        cursor: "#f4f6f8", cursorText: "#06080a", now: "#5ad08a", blend: "lighter", channels: null
+    },
+    light: {
+        bg: "#f7f5ee", grid: "#e3dfd2", panel: "#efebdf", tickMinor: "#a39c8a", tickMajor: "#5c574b", tick: "#cfc8b6",
+        clk: "#8f8977", selRow: "rgba(0,0,0,.045)", text: "#6d6757", textHi: "#1d1b16", sub: "#8f8977",
+        label: "#3a362d", labelHi: "#111", sep: "#e3dfd2", sweep: "160,120,30", sweepLine: "rgba(140,100,20,.35)",
+        cursor: "#1d1b16", cursorText: "#f7f5ee", now: "#1f8a4c", blend: "multiply",
+        channels: ["#7a4a20", "#c8323a", "#cc5f12", "#a37d08", "#24884a", "#2f6fd6", "#7a4fc6", "#5d666e", "#2d3237"]
     }
-    edges.push([b, 0]);
+};
+
+// Gęste przełączenia w czasie trwania projektu, deterministyczne, żeby obraz był taki sam przy każdym wejściu.
+function activity(spans, i) {
+    const r = seeded(31 + i * 17);
+    const edges = [];
+    for (const [a, b] of spans) {
+        edges.push([a, 1]);
+        let t = a + r() * 0.05, lvl = 1;
+        while (t < b) {
+            t += r() < 0.15 ? 0.004 + r() * 0.01 : 0.02 + r() * 0.09;
+            if (t >= b) break;
+            lvl ^= 1;
+            edges.push([t, lvl]);
+        }
+        edges.push([b, 0]);
+    }
     return edges;
 }
+const spansOf = c => c.spans && c.spans.length ? c.spans : [[c.start, c.end]];
+const isOn = (c, t) => spansOf(c).some(([a, b]) => t >= a && t < b);
 
 export function create(canvas, readout, dotnet, data) {
     const g = canvas.getContext("2d");
@@ -30,7 +51,8 @@ export function create(canvas, readout, dotnet, data) {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const font = getComputedStyle(document.documentElement).getPropertyValue("--font-mono").trim() || "monospace";
 
-    let d = data, edges = [], selected = 0;
+    let d = data, edges = [], selected = 0, P = PAL.dark;
+    const colorOf = i => (P.channels ? P.channels[i % P.channels.length] : d.channels[i].color);
     let T0 = 2006.6, T1 = 2027, vs = T0, ve = T1;
     let W = 0, H = 0, dpr = 1, LW = 0, RH = 0;
     const RUL = 26;
@@ -38,7 +60,8 @@ export function create(canvas, readout, dotnet, data) {
 
     function load(next) {
         d = next;
-        edges = d.channels.map((c, i) => activity([c.start, c.end], i));
+        edges = d.channels.map((c, i) => activity(spansOf(c), i));
+        P = PAL[d.theme === "light" ? "light" : "dark"];
         T0 = Math.min(...d.channels.map(c => c.start)) - 0.4;
         T1 = Math.max(...d.channels.map(c => c.end)) + 0.1;
         vs = Math.max(vs, T0); ve = Math.min(ve, T1);
@@ -71,11 +94,11 @@ export function create(canvas, readout, dotnet, data) {
     function draw() {
         if (!W) return;
         g.setTransform(dpr, 0, 0, dpr, 0, 0);
-        g.fillStyle = "#06080a";
+        g.fillStyle = P.bg;
         g.fillRect(0, 0, W, H);
         const top = RUL, bot = H - 4, rows = d.channels.length + 1;
 
-        g.strokeStyle = "#141c22";
+        g.strokeStyle = P.grid;
         g.lineWidth = 1;
         g.setLineDash([2, 4]);
         for (let i = 0; i <= 10; i++) {
@@ -85,7 +108,7 @@ export function create(canvas, readout, dotnet, data) {
         g.setLineDash([]);
 
         // linijka z latami
-        g.fillStyle = "#0b1014";
+        g.fillStyle = P.panel;
         g.fillRect(0, 0, W, RUL);
         const span = ve - vs, ppy = (W - LW - 12) / span;
         const step = ppy * 0.25 >= 48 ? 0.25 : ppy >= 44 ? 1 : ppy * 2 >= 44 ? 2 : ppy * 4 >= 44 ? 4 : 5;
@@ -96,30 +119,30 @@ export function create(canvas, readout, dotnet, data) {
             const x = X(t);
             if (x < LW + 14) continue;
             const yr = Math.floor(t + 1e-6), q = Math.round((t - yr) * 4);
-            g.fillStyle = q ? "#4a565f" : "#8a959e";
+            g.fillStyle = q ? P.tickMinor : P.tickMajor;
             g.fillText(q ? `Q${q + 1}` : String(yr), x, RUL / 2);
-            g.fillStyle = "#26313a";
+            g.fillStyle = P.tick;
             g.fillRect(x, RUL - 6, 1, 6);
         }
 
         for (let row = 0; row < rows; row++) {
             const y0 = top + row * RH, clk = row === 0, pi = row - 1;
             const ch = clk ? null : d.channels[pi];
-            const col = clk ? "#56616a" : ch.color;
+            const col = clk ? P.clk : colorOf(pi);
             const sel = !clk && pi === selected, hov = row === hoverRow;
-            if (sel) { g.fillStyle = "rgba(255,255,255,.04)"; g.fillRect(0, y0, W, RH); }
+            if (sel) { g.fillStyle = P.selRow; g.fillRect(0, y0, W, RH); }
 
-            g.fillStyle = "#0b1014";
+            g.fillStyle = P.panel;
             g.fillRect(0, y0, LW - 6, RH - 1);
             g.fillStyle = col;
             g.fillRect(0, y0 + 4, 3, RH - 9);
             g.textAlign = "left";
-            g.fillStyle = sel || hov ? "#dde3e8" : "#86919a";
+            g.fillStyle = sel || hov ? P.textHi : P.text;
             g.font = `600 10.5px ${font}`;
             g.fillText(clk ? "CLK" : "CH" + (pi + 1), 10, y0 + RH / 2 - (mobile() ? 0 : 6));
             if (!mobile()) {
                 g.font = `500 10px ${font}`;
-                g.fillStyle = sel ? col : "#5f6b74";
+                g.fillStyle = sel ? col : P.sub;
                 g.fillText(clk ? d.labels.year : ch.short.slice(0, 16), 10, y0 + RH / 2 + 7);
             }
 
@@ -154,7 +177,18 @@ export function create(canvas, readout, dotnet, data) {
 
             // adnotacja dekodera nad impulsem
             if (!clk) {
-                const xa = Math.max(X(ch.start), LW + 1), xb = Math.min(X(ch.end), W - 2);
+                const sp = spansOf(ch), longest = sp.reduce((m, x) => (x[1] - x[0] > m[1] - m[0] ? x : m), sp[0]);
+                for (const seg of sp) {
+                const xa = Math.max(X(seg[0]), LW + 1), xb = Math.min(X(seg[1]), W - 2);
+                if (seg !== longest && xb > xa + 6) {
+                    const ya = y0 + 3, yb = y0 + RH * 0.44 - 3, h = yb - ya, k = Math.min(5, h / 2);
+                    g.beginPath();
+                    g.moveTo(xa, ya + h / 2); g.lineTo(xa + k, ya); g.lineTo(xb - k, ya);
+                    g.lineTo(xb, ya + h / 2); g.lineTo(xb - k, yb); g.lineTo(xa + k, yb); g.closePath();
+                    g.fillStyle = col; g.globalAlpha = sel ? 0.32 : 0.16; g.fill();
+                    g.globalAlpha = sel ? 1 : 0.55; g.strokeStyle = col; g.lineWidth = 1; g.stroke(); g.globalAlpha = 1;
+                    continue;
+                }
                 if (xb > xa + 6) {
                     const ya = y0 + 3, yb = y0 + RH * 0.44 - 3, h = yb - ya, k = Math.min(5, h / 2);
                     g.beginPath();
@@ -163,7 +197,7 @@ export function create(canvas, readout, dotnet, data) {
                     g.fillStyle = col; g.globalAlpha = sel ? 0.32 : 0.16; g.fill();
                     g.globalAlpha = sel ? 1 : 0.55; g.strokeStyle = col; g.lineWidth = 1; g.stroke(); g.globalAlpha = 1;
                     g.font = `600 9.5px ${font}`;
-                    g.fillStyle = sel || hov ? "#f4f6f8" : "#c6ced4";
+                    g.fillStyle = sel || hov ? P.labelHi : P.label;
                     g.textAlign = "center";
                     const opts = [`${ch.short} · ${ch.name}`, ch.short];
                     const label = opts.find(o => g.measureText(o).width < xb - xa - 12);
@@ -179,36 +213,37 @@ export function create(canvas, readout, dotnet, data) {
                         g.globalAlpha = 1;
                     }
                 }
+                }
             }
             g.restore();
-            g.fillStyle = "#10171c";
+            g.fillStyle = P.sep;
             g.fillRect(0, y0 + RH - 1, W, 1);
         }
 
         if (sweep >= 0) {
             const x = LW + sweep * (W - LW);
             const gr = g.createLinearGradient(x - 140, 0, x, 0);
-            gr.addColorStop(0, "rgba(180,230,255,0)");
-            gr.addColorStop(1, "rgba(180,230,255,.10)");
-            g.globalCompositeOperation = "lighter";
+            gr.addColorStop(0, `rgba(${P.sweep},0)`);
+            gr.addColorStop(1, `rgba(${P.sweep},.10)`);
+            g.globalCompositeOperation = P.blend;
             g.fillStyle = gr;
             g.fillRect(Math.max(LW, x - 140), top, Math.min(140, x - LW), bot - top);
-            g.fillStyle = "rgba(200,240,255,.35)";
+            g.fillStyle = P.sweepLine;
             g.fillRect(x, top, 1, bot - top);
             g.globalCompositeOperation = "source-over";
         }
 
         if (hoverX !== null && hoverX > LW) {
-            g.strokeStyle = "#f4f6f8"; g.setLineDash([4, 3]); g.lineWidth = 1;
+            g.strokeStyle = P.cursor; g.setLineDash([4, 3]); g.lineWidth = 1;
             g.beginPath(); g.moveTo(hoverX + 0.5, 0); g.lineTo(hoverX + 0.5, bot); g.stroke(); g.setLineDash([]);
-            g.fillStyle = "#f4f6f8"; g.fillRect(hoverX - 27, 2, 54, RUL - 6);
-            g.fillStyle = "#06080a"; g.textAlign = "center"; g.font = `700 10.5px ${font}`;
+            g.fillStyle = P.cursor; g.fillRect(hoverX - 27, 2, 54, RUL - 6);
+            g.fillStyle = P.cursorText; g.textAlign = "center"; g.font = `700 10.5px ${font}`;
             g.fillText(fmt(TX(hoverX), true), hoverX, RUL / 2 - 1);
         }
 
         const xn = X(T1 - 0.1);
         if (xn < W + 1) {
-            g.fillStyle = "#5ad08a"; g.font = `700 9.5px ${font}`; g.textAlign = "right";
+            g.fillStyle = P.now; g.font = `700 9.5px ${font}`; g.textAlign = "right";
             g.fillText(d.labels.now + " ▸", xn - 3, RUL + RH / 2);
         }
     }
@@ -221,7 +256,7 @@ export function create(canvas, readout, dotnet, data) {
         if (hoverRow > d.channels.length) hoverRow = -1;
         if (hoverX === null) { readout.hidden = true; draw(); return; }
         const t = TX(x);
-        const on = d.channels.map((c, i) => (t >= c.start && t < c.end ? i : -1)).filter(i => i >= 0);
+        const on = d.channels.map((c, i) => (isOn(c, t) ? i : -1)).filter(i => i >= 0);
         readout.hidden = false;
         readout.replaceChildren();
         const head = document.createElement("div");
@@ -235,7 +270,7 @@ export function create(canvas, readout, dotnet, data) {
         for (const i of on) {
             const line = document.createElement("div");
             const sw = document.createElement("span");
-            sw.style.color = d.channels[i].color;
+            sw.style.color = colorOf(i);
             sw.textContent = "■ ";
             line.append(sw, `CH${i + 1} ${d.labels.high} · ${d.channels[i].client}`);
             readout.append(line);
@@ -281,7 +316,7 @@ export function create(canvas, readout, dotnet, data) {
         if (row >= 0 && row < d.channels.length) { select(row, true); return; }
         if (x > LW) {
             const t = TX(x);
-            const hit = d.channels.findIndex(c => t >= c.start && t < c.end);
+            const hit = d.channels.findIndex(c => isOn(c, t));
             if (hit >= 0) select(hit, true);
         }
     };
