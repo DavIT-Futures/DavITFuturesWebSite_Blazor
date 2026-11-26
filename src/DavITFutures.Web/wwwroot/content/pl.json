@@ -495,19 +495,36 @@
         "image": "img/github/civ.jpg"
       },
       {
-        "name": "Generator fraktali",
+        "name": "TradeChameleon: platforma tradingowa white-label",
         "tags": [
+          "Java 25",
+          "Spring Boot 4",
+          "Angular 21",
+          "React 19",
+          "PostgreSQL",
+          "Docker",
+          "FinTech"
+        ],
+        "description": "Platforma tradingowa white-label do **nauki**: cztery fikcyjne brokery na jednym kodzie, każdy z własnym brandingiem, walutą i zasadami. **Java 25** i **Spring Boot 4**, klienty w **Angular 21** i **React 19**, **PostgreSQL** w **Dockerze**.",
+        "badge": "Java, Angular & React / FinTech",
+        "language": "Java / TypeScript",
+        "url": "https://github.com/DavIT-Futures/TradeChameleon",
+        "image": "img/github/tradechameleon.jpg"
+      },
+      {
+        "name": "Strona DavIT Futures",
+        "tags": [
+          "Blazor WebAssembly",
           "C# 14",
           ".NET 10",
-          "Avalonia UI",
-          "Multi-OS",
-          "Fraktale"
+          "GitHub Actions",
+          "Ta strona"
         ],
-        "description": "Aplikacja desktopowa w **C#** i **Avalonia UI** na Windows, Linux i macOS. Rysuje zbiory Mandelbrota i Julii, Burning Ship, paproć Barnsleya i trójkąt Sierpińskiego.",
-        "badge": ".NET 10 / Multi-OS",
+        "description": "Strona, na której jesteś: **Blazor WebAssembly**, **.NET 10**, płyta w **three.js**, dwa języki i dwa motywy, wdrażana przez **GitHub Actions**.",
+        "badge": "Ta strona",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS",
-        "image": "img/github/fractals.jpg"
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "image": "img/github/website.jpg"
       },
       {
         "name": "Wzorcowa architektura N-tier",
@@ -557,19 +574,19 @@
         "image": "img/github/australia.jpg"
       },
       {
-        "name": "Strona DavIT Futures",
+        "name": "Generator fraktali",
         "tags": [
-          "Blazor WebAssembly",
           "C# 14",
           ".NET 10",
-          "GitHub Actions",
-          "Ta strona"
+          "Avalonia UI",
+          "Multi-OS",
+          "Fraktale"
         ],
-        "description": "Strona, na której jesteś: **Blazor WebAssembly**, **.NET 10**, płyta w **three.js**, dwa języki i dwa motywy, wdrażana przez **GitHub Actions**.",
-        "badge": "Ta strona",
+        "description": "Aplikacja desktopowa w **C#** i **Avalonia UI** na Windows, Linux i macOS. Rysuje zbiory Mandelbrota i Julii, Burning Ship, paproć Barnsleya i trójkąt Sierpińskiego.",
+        "badge": ".NET 10 / Multi-OS",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
-        "image": "img/github/website.jpg"
+        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS",
+        "image": "img/github/fractals.jpg"
       },
       {
         "name": "Poprzednia strona w ASP.NET MVC",
@@ -585,23 +602,6 @@
         "language": "C#",
         "url": "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC",
         "image": "img/github/mvc.svg"
-      },
-      {
-        "name": "TradeChameleon: analityka tradingowa",
-        "tags": [
-          "Java",
-          "Spring Boot",
-          "Angular 22",
-          "PostgreSQL",
-          "Docker",
-          "Trading",
-          "FinTech"
-        ],
-        "description": "Platforma white-label do analityki tradingu ilościowego, konfigurowana plikami. **Java** ze **Spring Boot**, **Angular 22**, **PostgreSQL**, dostarczana jako obraz **Docker**. Kod jest przygotowywany do publikacji.",
-        "badge": "Java & Angular / FinTech",
-        "language": "Java / TypeScript",
-        "url": "https://github.com/DavIT-Futures/TradeChameleon",
-        "image": "img/github/trading.svg"
       }
     ],
     "title": "Projekty GitHub",
