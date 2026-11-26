@@ -783,19 +783,19 @@
       ],
       "screenshots": [
         {
-          "image": "img/games/australia/island-simulation.png",
-          "title": "Symulacja ekosystemu wyspy",
-          "caption": "Widok symulacji w Raylib: populacje królików, lisów i wegetacja trawy w dynamicznej równowadze Lotki-Volterry."
+          "image": "img/games/australia/volcano-generator.png",
+          "title": "Generator wyspy, wulkaniczne serce",
+          "caption": "Proceduralna wyspa z szumem terenu: plaża, pas trawy i czarne góry, które w najwyższym miejscu żarzą się na czerwono."
         },
         {
-          "image": "img/games/australia/island-bays.png",
-          "title": "Generator zatok i fiordów",
-          "caption": "Algorytm diamentowy rzeźbiący naturalne zatoki, fiordy i nieregularną linię brzegową wyspy."
+          "image": "img/games/australia/volcano-rabbits.png",
+          "title": "Króliki zasiedlają trawę",
+          "caption": "Początek symulacji: kolonie królików rozchodzą się po trawie wokół wulkanu, a pojawiają się pierwsze lisy."
         },
         {
-          "image": "img/games/australia/island-stats.png",
-          "title": "Statystyki populacji i dynamiki",
-          "caption": "Panel telemetryczny: liczebność drapieżników i ofiar, bilans energii w dżulach i wskaźniki zgonów."
+          "image": "img/games/australia/volcano-foxes.png",
+          "title": "Lisy i wyjedzona wyspa",
+          "caption": "Później króliki zjadły większość trawy (jasne obszary), a stado lisów poluje na nie wokół wielkiego wulkanu."
         }
       ],
       "infoCardTitle": "Model Ekologiczny & C++20",

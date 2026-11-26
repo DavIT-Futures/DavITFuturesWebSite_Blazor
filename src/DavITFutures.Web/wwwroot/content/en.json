@@ -783,19 +783,19 @@
       ],
       "screenshots": [
         {
-          "image": "img/games/australia/island-simulation.png",
-          "title": "Island Ecosystem Simulation",
-          "caption": "Real-time Raylib simulation view: rabbit and fox populations with grass vegetation in Lotka-Volterra dynamic equilibrium."
+          "image": "img/games/australia/volcano-generator.png",
+          "title": "Island generator, volcanic core",
+          "caption": "The procedural island with terrain noise: beach, grass belt and a black mountain ridge that glows red where the slope is highest."
         },
         {
-          "image": "img/games/australia/island-bays.png",
-          "title": "Bays & Fjords Generator",
-          "caption": "Diamond algorithm carving natural coves, fjords, and organic coastal shorelines."
+          "image": "img/games/australia/volcano-rabbits.png",
+          "title": "Rabbits settle the grassland",
+          "caption": "Early simulation: rabbit colonies spread across the grass around the volcano while the first foxes arrive."
         },
         {
-          "image": "img/games/australia/island-stats.png",
-          "title": "Population & Mortality Analytics",
-          "caption": "Live telemetry dashboard: predator/prey counts, metabolic energy balance in Joules, and mortality causes."
+          "image": "img/games/australia/volcano-foxes.png",
+          "title": "Foxes and an overgrazed island",
+          "caption": "Later on the rabbits have eaten most of the grass (pale areas) and a pack of foxes hunts them around the big volcano."
         }
       ],
       "infoCardTitle": "Ecological Model & C++20",
