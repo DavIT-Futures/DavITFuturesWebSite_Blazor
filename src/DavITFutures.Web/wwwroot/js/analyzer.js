@@ -187,6 +187,14 @@ export function create(canvas, readout, dotnet, data) {
                     g.lineTo(xb, ya + h / 2); g.lineTo(xb - k, yb); g.lineTo(xa + k, yb); g.closePath();
                     g.fillStyle = col; g.globalAlpha = sel ? 0.32 : 0.16; g.fill();
                     g.globalAlpha = sel ? 1 : 0.55; g.strokeStyle = col; g.lineWidth = 1; g.stroke(); g.globalAlpha = 1;
+                    // kolejny odcinek tego samego klienta: skrócona nazwa, np. „CREDIT S”
+                    g.font = `600 9.5px ${font}`;
+                    g.fillStyle = sel || hov ? P.labelHi : P.label;
+                    g.textAlign = "center";
+                    const words = ch.short.split(" ");
+                    const tries = [ch.short, words.length > 1 ? `${words[0]} ${words[1][0]}` : null, words[0]].filter(Boolean);
+                    const fit = tries.find(o => g.measureText(o).width < xb - xa - 12);
+                    if (fit) g.fillText(fit, (xa + xb) / 2, (ya + yb) / 2 + 0.5);
                     continue;
                 }
                 if (xb > xa + 6) {
@@ -203,13 +211,22 @@ export function create(canvas, readout, dotnet, data) {
                     const label = opts.find(o => g.measureText(o).width < xb - xa - 12);
                     if (label) {
                         g.fillText(label, (xa + xb) / 2, (ya + yb) / 2 + 0.5);
+                        if (ch.note) {
+                            // dopisek obok impulsu, np. praca weekendowa przy projekcie pobocznym
+                            g.textAlign = "left";
+                            g.fillStyle = col;
+                            g.globalAlpha = sel || hov ? 1 : 0.85;
+                            g.fillText(ch.note, xb + 6, (ya + yb) / 2 + 0.5);
+                            g.globalAlpha = 1;
+                        }
                     } else {
                         // krótki impuls: nazwa klienta obok, po stronie, gdzie jest miejsce
-                        const w = g.measureText(ch.short).width;
+                        const side = ch.note ? `${ch.short} · ${ch.note}` : ch.short;
+                        const w = g.measureText(side).width;
                         g.fillStyle = col;
                         g.globalAlpha = sel || hov ? 1 : 0.85;
-                        if (xb + 6 + w < W - 4) { g.textAlign = "left"; g.fillText(ch.short, xb + 6, (ya + yb) / 2 + 0.5); }
-                        else { g.textAlign = "right"; g.fillText(ch.short, xa - 6, (ya + yb) / 2 + 0.5); }
+                        if (xb + 6 + w < W - 4) { g.textAlign = "left"; g.fillText(side, xb + 6, (ya + yb) / 2 + 0.5); }
+                        else { g.textAlign = "right"; g.fillText(side, xa - 6, (ya + yb) / 2 + 0.5); }
                         g.globalAlpha = 1;
                     }
                 }
@@ -272,7 +289,7 @@ export function create(canvas, readout, dotnet, data) {
             const sw = document.createElement("span");
             sw.style.color = colorOf(i);
             sw.textContent = "■ ";
-            line.append(sw, `CH${i + 1} ${d.labels.high} · ${d.channels[i].client}`);
+            line.append(sw, `CH${i + 1} ${d.labels.high} · ${d.channels[i].client}${d.channels[i].note ? " · " + d.channels[i].note : ""}`);
             readout.append(line);
         }
         const ox = x + 14 + readout.offsetWidth > r.width ? x - readout.offsetWidth - 14 : x + 14;

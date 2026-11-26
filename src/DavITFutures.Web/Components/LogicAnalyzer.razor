@@ -166,6 +166,7 @@
             return new
             {
                 client = p.Client, name = p.Name, @short = Short(p.Client), color = Color(i),
+                note = Short(p.Client) == "FOCIS" ? (Pl ? "WEEKENDY · PRACA DLA STARTUPU" : "WEEKEND STARTUP WORK") : null,
                 start = spans.Min(s => s.Start), end = spans.Max(s => s.End),
                 spans = spans.Select(s => new[] { s.Start, s.End })
             };

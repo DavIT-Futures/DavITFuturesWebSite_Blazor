@@ -5,8 +5,8 @@
 :root, [data-theme="dark"] {
     --bg: #090b0a;
     --bg-alt: #0d100e;
-    --surface: #111513;
-    --surface-2: #161b18;
+    --surface: rgba(17, 21, 19, 0.66);
+    --surface-2: rgba(24, 29, 26, 0.74);
     --border: #2a302c;
     --border-subtle: #1c211e;
     --border-hover: #4a5249;
@@ -20,7 +20,7 @@
     --accent-ink: #16130b;
     --gold-dim: #86703f;
     --signal: #ffe2a6;
-    --sheet-bg: rgba(9, 11, 10, 0.88);
+    --sheet-bg: rgba(9, 11, 10, 0.72);
     --body-text: #cfd1ca;
     --header-bg: rgba(9, 11, 10, 0.82);
     --shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.55);
@@ -33,8 +33,8 @@
 [data-theme="light"] {
     --bg: #eef0eb;
     --bg-alt: #e5e8e2;
-    --surface: #f7f8f4;
-    --surface-2: #eceee8;
+    --surface: rgba(247, 248, 244, 0.7);
+    --surface-2: rgba(236, 238, 232, 0.78);
     --border: #c6cbc2;
     --border-subtle: #d9ddd5;
     --border-hover: #8f968c;
@@ -48,7 +48,7 @@
     --accent-ink: #16130b;
     --gold-dim: #a88b4f;
     --signal: #b06a00;
-    --sheet-bg: rgba(247, 248, 244, 0.9);
+    --sheet-bg: rgba(247, 248, 244, 0.74);
     --body-text: #2c322d;
     --header-bg: rgba(238, 240, 235, 0.86);
     --shadow: 0 12px 30px -6px rgba(20, 26, 20, 0.12);
@@ -206,7 +206,7 @@ a:focus-visible, button:focus-visible, canvas:focus-visible { outline: 2px solid
 
 .board-hint { position: fixed; z-index: 2; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); margin: 0; font: 11px/1.4 var(--font-mono); color: var(--text-muted); text-align: right; max-width: 220px; }
 .no-board-gl .board-hint { display: none; }
-.board-tip { position: fixed; z-index: 60; pointer-events: none; font: 500 11.5px/1.35 var(--font-mono); color: var(--text); background: var(--sheet-bg); border: 1px solid var(--gold-dim); padding: 7px 9px; transform: translate(14px, 14px); white-space: nowrap; }
+.board-tip { position: fixed; z-index: 60; pointer-events: none; font: 500 11.5px/1.35 var(--font-mono); color: var(--text); background: var(--bg); border: 1px solid var(--gold-dim); padding: 7px 9px; transform: translate(14px, 14px); white-space: nowrap; }
 .board-tip b { color: var(--accent-text); font-weight: 500; margin-right: 6px; }
 
 @media (max-width: 860px) {
@@ -293,7 +293,7 @@ body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 960
 .site-footer { background: transparent; }
 
 /* ===== Technologie: konsola w kolorach płyty zamiast granatowo-fioletowej ===== */
-.linux-terminal { background: var(--sheet-bg); border: 1px solid var(--border); border-radius: 2px; box-shadow: var(--shadow); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.linux-terminal { background: var(--sheet-bg); border: 1px solid var(--border); border-radius: 2px; box-shadow: var(--shadow); }
 .linux-terminal::before { display: none; }
 .terminal-titlebar { background: var(--surface); border-bottom: 1px dashed var(--border); }
 .control-dot { width: 8px; height: 8px; }
