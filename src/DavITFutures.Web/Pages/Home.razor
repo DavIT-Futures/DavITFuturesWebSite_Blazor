@@ -12,7 +12,7 @@
         <BoardSheet RefDes="U1 · DD-2007" Part="@(Pl ? "CPU · 18 LAT TAKTOWANIA" : "CPU · 18 YRS CLOCK")">
             <p class="sheet-eyebrow">@C.Hero.Eyebrow</p>
             <h1>@C.Hero.Title <em>@C.Hero.Highlight</em></h1>
-            <p class="sheet-lead">@C.Hero.Lead</p>
+            <p class="sheet-lead"><Rich Text="@C.Hero.Lead" /></p>
             <div class="sheet-btns">
                 <a class="btn btn-primary" href="@C.Hero.PrimaryCta.Url">@C.Hero.PrimaryCta.Label</a>
                 <a class="btn btn-ghost" href="@C.Hero.SecondaryCta.Url">@C.Hero.SecondaryCta.Label</a>
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-            <p>@C.About.Subtitle</p>
+            <p><Rich Text="@C.About.Subtitle" /></p>
             @if (C.Testimonials.Items.Count > 0)
             {
                 var t = C.Testimonials.Items[0];
@@ -63,12 +63,12 @@
     <section class="board-sec" id="board-services" data-board="services">
         <BoardSheet RefDes="J1–J4 · DIMM BANK" Part="@C.Services.Title.ToUpperInvariant()">
             <h2>@C.Services.Title</h2>
-            <p>@C.Services.Subtitle</p>
+            <p><Rich Text="@C.Services.Subtitle" /></p>
             <table class="sheet-tbl">
                 <tbody>
                     @foreach (var (s, i) in C.Services.Items.Select((s, i) => (s, i)))
                     {
-                        <tr><td>CH@(i)</td><td><b>@s.Title</b>@s.Text</td></tr>
+                        <tr><td>CH@(i)</td><td><b>@s.Title</b><Rich Text="@s.Text" /></td></tr>
                     }
                 </tbody>
             </table>
@@ -79,12 +79,12 @@
     <section class="board-sec" id="board-process" data-board="process">
         <BoardSheet RefDes="L1–L4 · VRM" Part="@(Pl ? "FAZY ZASILANIA" : "POWER STAGES")">
             <h2>@C.Process.Title</h2>
-            <p>@C.Process.Subtitle</p>
+            <p><Rich Text="@C.Process.Subtitle" /></p>
             <table class="sheet-tbl">
                 <tbody>
                     @foreach (var (s, i) in C.Process.Steps.Select((s, i) => (s, i)))
                     {
-                        <tr><td>@(Pl ? "FAZA" : "PHASE") @(i + 1)</td><td><b>@s.Title</b>@s.Text</td></tr>
+                        <tr><td>@(Pl ? "FAZA" : "PHASE") @(i + 1)</td><td><b>@s.Title</b><Rich Text="@s.Text" /></td></tr>
                     }
                 </tbody>
             </table>
@@ -95,7 +95,7 @@
     <section class="board-sec" id="board-tech" data-board="tech">
         <BoardSheet RefDes="U5–U9 · STACK" Part="@(Pl ? "WYKAZ CZĘŚCI" : "BILL OF MATERIALS")">
             <h2>@C.Tech.Title</h2>
-            <p>@C.Tech.Subtitle</p>
+            <p><Rich Text="@C.Tech.Subtitle" /></p>
             <table class="sheet-tbl">
                 <tbody>
                     @foreach (var (g, i) in C.Tech.Groups.Select((g, i) => (g, i)))
@@ -125,7 +125,7 @@
     <section class="board-sec" id="board-projects" data-board="projects">
         <BoardSheet RefDes="@($"U10–U{9 + C.Projects.Items.Count}")" Part="@C.Projects.Title.ToUpperInvariant()">
             <h2>@C.Projects.Title</h2>
-            <p>@C.Projects.Subtitle</p>
+            <p><Rich Text="@C.Projects.Subtitle" /></p>
             <div class="plist">
                 @foreach (var (p, i) in C.Projects.Items.Select((p, i) => (p, i)))
                 {
@@ -142,7 +142,7 @@
                             {
                                 <div class="pdetail-out">▸ @p.Outcome</div>
                             }
-                            <p>@p.Description</p>
+                            <p><Rich Text="@p.Description" /></p>
                             <span class="chips">
                                 @foreach (var tag in p.Tags)
                                 {
@@ -168,14 +168,14 @@
     <section class="board-sec" id="board-cv" data-board="cv">
         <BoardSheet RefDes="U20 · U21 · SPI FLASH" Part="CV">
             <h2>@C.Cv.Title</h2>
-            <p>@C.Cv.Subtitle</p>
+            <p><Rich Text="@C.Cv.Subtitle" /></p>
             <div class="flash">
                 @foreach (var (v, i) in C.Cv.Versions.Select((v, i) => (v, i)))
                 {
                     <div>
                         <span class="flash-r">U@(20 + i) · @v.Pages.ToUpperInvariant()</span>
                         <h3>@v.Title</h3>
-                        <p>@v.Text</p>
+                        <p><Rich Text="@v.Text" /></p>
                         <div class="sheet-btns">
                             @if (!string.IsNullOrEmpty(v.Url))
                             {
@@ -195,7 +195,7 @@
     <section class="board-sec" id="board-contact" data-board="contact">
         <BoardSheet RefDes="J9–J11 · I/O" Part="@C.Contact.Title.ToUpperInvariant()">
             <h2>@C.Contact.Title</h2>
-            <p>@C.Contact.Subtitle</p>
+            <p><Rich Text="@C.Contact.Subtitle" /></p>
             <div class="io">
                 <div><span class="io-r">J9</span><a href="@MailTo">@C.Contact.Email</a></div>
                 <div><span class="io-r">J10</span><a href="@C.Contact.LinkedIn" target="_blank" rel="noopener">LinkedIn ↗</a></div>

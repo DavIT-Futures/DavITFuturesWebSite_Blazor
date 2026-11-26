@@ -1,35 +1,37 @@
 @inherits SiteComponent
 
-<section class="section section-alt" id="services">
+@* Usługi jako układy na płycie: każdy układ ma oznaczenie, krótki opis i stos technologii jako piny. *@
+<section class="section" id="services">
     <div class="container">
         @if (ShowHeading)
         {
             <SectionHeading Title="@Content!.Services.Title" Subtitle="@Content.Services.Subtitle" />
         }
 
-        <div class="services-matrix">
+        <div class="svc-board">
+            <span class="svc-bus" aria-hidden="true"></span>
             @foreach (var (item, index) in Content!.Services.Items.Select((x, i) => (x, i)))
             {
-                <div class="service-strip">
-                    <div class="service-badge-col">
-                        <span class="service-idx mono">@($"0{index + 1}")</span>
-                        <div class="service-icon-wrap">
-                            <Icon Name="@item.Icon" Size="20" />
-                        </div>
+                <BoardSheet RefDes="@($"U{index + 1} · {Code(item.Icon)}")" Part="@($"SLOT {index + 1:00}")" Class="svc-chip">
+                    <div class="svc-head">
+                        <span class="svc-icon"><Icon Name="@item.Icon" Size="20" /></span>
+                        <h3>@item.Title</h3>
                     </div>
-                    <div class="service-info-col">
-                        <h3 class="service-title">@item.Title</h3>
-                        <p class="service-desc">@item.Text</p>
-                    </div>
+                    <p><Rich Text="@item.Text" /></p>
+                    @if (item.Tags is { Count: > 0 })
+                    {
+                        <ul class="svc-pins mono" aria-label="@(Pl ? "Technologie" : "Technologies")">
+                            @foreach (var tag in item.Tags)
+                            {
+                                <li>@tag</li>
+                            }
+                        </ul>
+                    }
                     @if (!string.IsNullOrEmpty(item.LinkUrl))
                     {
-                        <div class="service-action-col">
-                            <a class="service-ext-link" href="@item.LinkUrl" target="_blank" rel="noopener">
-                                @item.LinkLabel <Icon Name="arrow" Size="14" />
-                            </a>
-                        </div>
+                        <a class="sheet-more" href="@item.LinkUrl" target="_blank" rel="noopener">@item.LinkLabel →</a>
                     }
-                </div>
+                </BoardSheet>
             }
         </div>
     </div>
@@ -37,4 +39,19 @@
 
 @code {
     [Parameter] public bool ShowHeading { get; set; } = true;
+
+    private bool Pl => Site.Language == "pl";
+
+    // Krótki kod układu na sitodruku, z nazwy ikony usługi.
+    private static string Code(string icon) => icon switch
+    {
+        "web" => "WEB",
+        "server" => "API",
+        "mobile" => "MOB",
+        "desktop" => "DSK",
+        "layers" => "SAAS",
+        "pipeline" => "CI/CD",
+        "spark" => "AI",
+        _ => icon.ToUpperInvariant()
+    };
 }

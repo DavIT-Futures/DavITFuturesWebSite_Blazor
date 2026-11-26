@@ -7,7 +7,7 @@
     <div class="container">
         <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "PROFIL ZAWODOWY & DOŚWIADCZENIE" : "PROFESSIONAL PROFILE & EXPERIENCE")</span>
         <h1 class="subpage-title">@Content!.Cv.Title</h1>
-        <p class="subpage-lead">@Content.Cv.Subtitle</p>
+        <p class="subpage-lead"><Rich Text="@Content.Cv.Subtitle" /></p>
     </div>
 </div>
 

@@ -62,7 +62,7 @@
                 <span>FRAME @((_selected + 1).ToString("00"))/@Projects.Count.ToString("00")</span>
             </div>
             <h3>@p.Name</h3>
-            <p>@p.Description</p>
+            <p><Rich Text="@p.Description" /></p>
             <div class="chips">
                 @foreach (var tag in p.Tags)
                 {

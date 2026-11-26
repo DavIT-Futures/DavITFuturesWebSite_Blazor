@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="IBM Plex Sans, Arial, sans-serif">
+  <rect width="640" height="360" fill="#e9ecef"/>
+  <rect x="60" y="34" width="520" height="300" rx="6" fill="#fff" stroke="#c9ced4"/>
+  <path d="M60 40a6 6 0 0 1 6-6h508a6 6 0 0 1 6 6v22H60z" fill="#dee2e6"/>
+  <g fill="#adb5bd"><circle cx="78" cy="48" r="5"/><circle cx="94" cy="48" r="5"/><circle cx="110" cy="48" r="5"/></g>
+  <rect x="130" y="41" width="300" height="14" rx="7" fill="#f8f9fa"/>
+  <text x="142" y="52" font-size="9" fill="#6c757d" font-family="monospace">davit-futures.github.io/DavITFuturesWebSiteMVC</text>
+  <rect x="60" y="62" width="520" height="36" fill="#212529"/>
+  <text x="80" y="85" font-size="13" font-weight="700" fill="#fff">DavIT Futures</text>
+  <g font-size="10" fill="#ced4da"><text x="330" y="84">Home</text><text x="374" y="84">Services</text><text x="430" y="84">Projects</text><text x="486" y="84">Contact</text></g>
+  <rect x="60" y="98" width="520" height="104" fill="#0d6efd"/>
+  <text x="84" y="140" font-size="20" font-weight="700" fill="#fff">Software development</text>
+  <text x="84" y="162" font-size="11" fill="#dbe7ff">ASP.NET MVC 5 · Razor · .NET Framework 4.8</text>
+  <rect x="84" y="174" width="96" height="18" rx="3" fill="#fff"/><text x="98" y="187" font-size="9" fill="#0d6efd">Learn more</text>
+  <g fill="#f1f3f5" stroke="#dee2e6"><rect x="84" y="220" width="146" height="92"/><rect x="247" y="220" width="146" height="92"/><rect x="410" y="220" width="146" height="92"/></g>
+  <g fill="#ced4da"><rect x="98" y="236" width="70" height="8"/><rect x="98" y="252" width="110" height="5"/><rect x="98" y="262" width="96" height="5"/><rect x="261" y="236" width="70" height="8"/><rect x="261" y="252" width="110" height="5"/><rect x="261" y="262" width="96" height="5"/><rect x="424" y="236" width="70" height="8"/><rect x="424" y="252" width="110" height="5"/><rect x="424" y="262" width="96" height="5"/></g>
+  <text x="560" y="352" font-size="10" fill="#6c757d" text-anchor="end" font-family="monospace">ASP.NET MVC 5.3 · GitHub Pages</text>
+</svg>

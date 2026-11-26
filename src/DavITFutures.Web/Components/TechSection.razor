@@ -52,6 +52,25 @@
                                 <span class="module-count mono">@group.Items.Count @(Site.Language == "pl" ? "technologii" : "technologies")</span>
                             </div>
 
+                            @if (isAi && Content!.Tech.Ai is { } ai)
+                            {
+                                <div class="ai-telemetry">
+                                    <span class="ai-tag mono">TELEMETRY // IG GROUP · 2026</span>
+                                    <h3 class="ai-headline">@ai.Headline</h3>
+                                    <p class="ai-lead"><Rich Text="@ai.Lead" /></p>
+                                    <div class="ai-metrics">
+                                        @foreach (var m in ai.Metrics)
+                                        {
+                                            <div class="ai-metric">
+                                                <span class="ai-val mono">@m.Value</span>
+                                                <span class="ai-lbl mono">@m.Label</span>
+                                                <p><Rich Text="@m.Text" /></p>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+
                             <div class="module-packages-grid">
                                 @foreach (var item in group.Items)
                                 {
@@ -62,34 +81,6 @@
                                 }
                             </div>
 
-                            @if (!string.IsNullOrEmpty(group.Note))
-                            {
-                                <div class="terminal-hud-box">
-                                    <div class="hud-header mono">
-                                        <span class="hud-tag">TELEMETRY // IG GROUP</span>
-                                        <span class="hud-client">AUTONOMOUS SOFTWARE FACTORY</span>
-                                    </div>
-                                    <div class="hud-stats-grid mono">
-                                        <div class="hud-stat-cell">
-                                            <span class="hud-stat-val">4.0×</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Wydajność zespołu" : "Team velocity")</span>
-                                        </div>
-                                        <div class="hud-stat-cell">
-                                            <span class="hud-stat-val">0.9d</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Czas do merge'a (z 5.4d)" : "Cycle time (vs 5.4d)")</span>
-                                        </div>
-                                        <div class="hud-stat-cell">
-                                            <span class="hud-stat-val">16 PRs</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Zamykanych w nocy" : "Closed overnight")</span>
-                                        </div>
-                                        <div class="hud-stat-cell">
-                                            <span class="hud-stat-val">100%</span>
-                                            <span class="hud-stat-lbl">@(Site.Language == "pl" ? "Nadzór człowieka" : "Human reviewed")</span>
-                                        </div>
-                                    </div>
-                                    <p class="hud-note-text">@group.Note</p>
-                                </div>
-                            }
                         </div>
                     }
                 </div>

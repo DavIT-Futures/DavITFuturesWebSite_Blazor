@@ -14,7 +14,7 @@
                     <div class="card-icon"><Icon Name="file" /></div>
                     <div class="cv-meta">@cv.Pages</div>
                     <h3>@cv.Title</h3>
-                    <p>@cv.Text</p>
+                    <p><Rich Text="@cv.Text" /></p>
                     @if (string.IsNullOrEmpty(cv.Url))
                     {
                         <span class="btn btn-ghost disabled" aria-disabled="true">@(Site.Language == "pl" ? "Wkrótce" : "Coming soon")</span>

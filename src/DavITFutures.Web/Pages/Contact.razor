@@ -8,7 +8,7 @@
     <div class="container">
         <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "BEZPOŚREDNI KONTAKT" : "DIRECT CONTACT")</span>
         <h1 class="subpage-title">@Content!.Contact.Title</h1>
-        <p class="subpage-lead">@Content.Contact.Subtitle</p>
+        <p class="subpage-lead"><Rich Text="@Content.Contact.Subtitle" /></p>
     </div>
 </div>
 
