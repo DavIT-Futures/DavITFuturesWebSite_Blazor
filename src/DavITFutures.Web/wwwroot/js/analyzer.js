@@ -1,6 +1,8 @@
 // Analizator stanów logicznych: oś czasu projektów 2007–2026 rysowana na canvasie.
 // Każdy projekt to kanał, stan wysoki to lata pracy. Wybór projektu wraca do Blazora przez DotNetObjectReference.
 
+const SWEEP_S = 1.6, PAUSE_S = 2;
+
 const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTHS_PL = ["sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru"];
 
@@ -370,9 +372,10 @@ export function create(canvas, readout, dotnet, data) {
 
     function loop(now) {
         if (!reduce && visible) {
+            // skan biegnie od lewej do prawej przez SWEEP_S, potem PAUSE_S przerwy i od nowa, bez końca
             const cyc = (now - sweepStart) / 1000;
-            if (cyc > 7) sweepStart = now;
-            const s = cyc < 1.6 ? cyc / 1.6 : -1;
+            if (cyc > SWEEP_S + PAUSE_S) sweepStart = now;
+            const s = cyc < SWEEP_S ? cyc / SWEEP_S : -1;
             if (s !== sweep) { sweep = s; draw(); }
         }
         raf = requestAnimationFrame(loop);
