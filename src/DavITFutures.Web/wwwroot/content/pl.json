@@ -784,18 +784,8 @@
       "screenshots": [
         {
           "image": "img/games/australia/island-simulation.png",
-          "title": "Symulacja ekosystemu wyspy",
-          "caption": "Widok symulacji w Raylib: populacje królików, lisów i wegetacja trawy w dynamicznej równowadze Lotki-Volterry."
-        },
-        {
-          "image": "img/games/australia/island-bays.png",
-          "title": "Generator zatok i fiordów",
-          "caption": "Algorytm diamentowy rzeźbiący naturalne zatoki, fiordy i nieregularną linię brzegową wyspy."
-        },
-        {
-          "image": "img/games/australia/island-stats.png",
-          "title": "Statystyki populacji i dynamiki",
-          "caption": "Panel telemetryczny: liczebność drapieżników i ofiar, bilans energii w dżulach i wskaźniki zgonów."
+          "title": "Ekosystem wyspy, najnowsza wersja",
+          "caption": "Wersja 2.0 po około 800 tikach: króliki (jasne plamy) zjadają trawę, kilka lisów poluje, a po prawej liczniki śmierci z głodu, starości i polowań na żywo."
         }
       ],
       "infoCardTitle": "Model Ekologiczny & C++20",

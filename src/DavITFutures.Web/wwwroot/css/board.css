@@ -374,3 +374,6 @@ body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 960
 :root:not([data-theme="light"]) .project-client-logo-box { background: #ebe9e3; opacity: 0.78; transition: opacity 0.25s ease; }
 :root:not([data-theme="light"]) .project-card:hover .project-client-logo-box,
 :root:not([data-theme="light"]) .project-card:focus-within .project-client-logo-box { opacity: 1; }
+
+/* Australia 1859: jeden pełny zrzut okna symulatora, bez przycinania */
+.australia-screen-card .media-preview-wrap { aspect-ratio: 1280 / 748; }

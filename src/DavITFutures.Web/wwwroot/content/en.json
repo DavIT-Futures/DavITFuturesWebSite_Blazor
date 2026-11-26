@@ -784,18 +784,8 @@
       "screenshots": [
         {
           "image": "img/games/australia/island-simulation.png",
-          "title": "Island Ecosystem Simulation",
-          "caption": "Real-time Raylib simulation view: rabbit and fox populations with grass vegetation in Lotka-Volterra dynamic equilibrium."
-        },
-        {
-          "image": "img/games/australia/island-bays.png",
-          "title": "Bays & Fjords Generator",
-          "caption": "Diamond algorithm carving natural coves, fjords, and organic coastal shorelines."
-        },
-        {
-          "image": "img/games/australia/island-stats.png",
-          "title": "Population & Mortality Analytics",
-          "caption": "Live telemetry dashboard: predator/prey counts, metabolic energy balance in Joules, and mortality causes."
+          "title": "Island ecosystem, latest build",
+          "caption": "Version 2.0 after about 800 ticks: rabbits (pale patches) graze the grass while a few foxes hunt, with live counters for starvation, old age and hunting on the right."
         }
       ],
       "infoCardTitle": "Ecological Model & C++20",
