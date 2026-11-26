@@ -273,3 +273,47 @@ a:focus-visible, button:focus-visible, canvas:focus-visible { outline: 2px solid
 @media (max-width: 380px) {
     .logo-text b { display: none; }
 }
+
+/* ===== Tło: ledwo widoczne ścieżki płyty na wszystkich stronach ===== */
+body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 480px 480px; background-attachment: fixed; }
+[data-theme="light"] body { background-image: url("../img/pcb-traces-light.svg"); }
+.section-alt { background: rgba(255, 255, 255, 0.018); }
+[data-theme="light"] .section-alt { background: rgba(20, 30, 20, 0.025); }
+.site-footer { background: transparent; }
+
+/* ===== Technologie: konsola w kolorach płyty zamiast granatowo-fioletowej ===== */
+.linux-terminal { background: var(--sheet-bg); border: 1px solid var(--border); border-radius: 2px; box-shadow: var(--shadow); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.linux-terminal::before { display: none; }
+.terminal-titlebar { background: var(--surface); border-bottom: 1px dashed var(--border); }
+.control-dot { width: 8px; height: 8px; }
+.control-dot.close, .control-dot.minimize, .control-dot.maximize { background: var(--gold-dim); }
+.control-dot.close { background: var(--accent); }
+.terminal-title { color: var(--text-muted); font-family: var(--font-mono); }
+.prompt-user { color: var(--accent-text); }
+.prompt-path { color: var(--text); }
+.term-badge { background: transparent; color: var(--text-muted); border: 1px solid var(--border); border-radius: 0; font-family: var(--font-mono); }
+.badge-dot-live { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.terminal-tmux-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.tmux-tab { color: var(--text-muted); }
+.tmux-tab:hover { color: var(--text); background: var(--accent-subtle); }
+.tmux-tab.active { color: var(--accent-text); border-bottom-color: var(--accent); background: var(--accent-subtle); }
+.terminal-body { color: var(--body-text); }
+.terminal-module-block { background: transparent; border: 1px solid var(--border); border-radius: 0; position: relative; }
+.terminal-module-block::before { content: ""; position: absolute; left: 8px; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.7; }
+.terminal-module-block:hover { border-color: var(--accent-border); background: var(--accent-subtle); }
+.terminal-module-block.is-ai-module { background: var(--accent-subtle); border-color: var(--accent-border); box-shadow: none; }
+.module-header { border-bottom: 1px dashed var(--border); }
+.module-name { color: var(--text); font-family: var(--font-display); font-weight: 400; font-size: 15px; letter-spacing: 0.02em; }
+.package-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 0; }
+.package-pill:hover { border-color: var(--accent); background: var(--accent-subtle); transform: none; }
+.pkg-icon { color: var(--accent-text); }
+.pkg-title { color: var(--text); font-family: var(--font-mono); font-weight: 500; }
+.package-pill:hover .pkg-title { color: var(--text); }
+.terminal-hud-box { background: var(--surface); border: 1px solid var(--accent-border); border-radius: 0; box-shadow: none; }
+.hud-tag { color: var(--accent-text); }
+.hud-client { color: var(--text-muted); background: transparent; border: 1px solid var(--border); border-radius: 0; }
+.hud-stat-cell { background: transparent; border: 1px dashed var(--accent-border); border-radius: 0; }
+.hud-stat-val { color: var(--accent-text); font-family: var(--font-mono); }
+.hud-stat-lbl { color: var(--text-muted); }
+.hud-note-text { color: var(--body-text); border-top: 1px dashed var(--accent-border); }
+.board-ready .site-footer { background: var(--bg); }

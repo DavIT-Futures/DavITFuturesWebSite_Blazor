@@ -173,11 +173,11 @@ export async function create(canvas, dotnet, data) {
         text("J1  J2  J3  J4", 5.55, -4.55, 0.15);
         vrm.forEach((v, i) => { outline(v.x, v.z, 1.05, 1.05, false); text("L" + (i + 1), v.x, v.z - 0.72, 0.14); });
         text("VCORE 4-PHASE", 0.6, -4.55, 0.12);
-        outline(idm.x, idm.z, 2, 1.6); text("U2  ID SENSOR", idm.x + 1.15, idm.z + 0.95, 0.12, { align: "left" });
+        outline(idm.x, idm.z, 2, 1.6); text("U2  SKILL CORE", idm.x + 1.15, idm.z + 0.95, 0.12, { align: "left" });
         cvs.forEach((c, i) => { outline(c.x, c.z, 0.95, 0.75); text("U" + (20 + i), c.x, c.z + 0.62, 0.12); });
         text("CV FLASH", -2.17, 4.95, 0.1);
-        text("J9", io.x - 1.9, io.z + 0.95, 0.15); text("J10", io.x, io.z + 0.95, 0.15); text("J11", io.x + 1.6, io.z + 0.95, 0.15);
-        text("I/O  ·  CONTACT", io.x, io.z + 1.25, 0.1, { col: P.silkDim });
+        text("J9 " + data.io[0], io.x - 1.9, io.z + 1.05, 0.15); text("J10 " + data.io[1], io.x, io.z + 0.85, 0.13); text("J11 " + data.io[2], io.x + 1.6, io.z + 0.85, 0.13);
+        text("I/O  ·  " + data.labels.contact.toUpperCase(), io.x, io.z + 1.35, 0.11, { col: P.silkDim });
         g.globalAlpha = 0.85; text("DAVIT FUTURES", -6.3, 4.6, 0.32); text("MB-2026  REV 3.0  ·  WROCŁAW PL", -6.3, 5.08, 0.13); g.globalAlpha = 1;
         text("94V-0", 7.5, 5.55, 0.12); text("E487", 8.6, 5.55, 0.12); text("LEAD FREE", 9.6, 5.55, 0.1, { align: "right" });
         const RB = rnd(5);
@@ -211,8 +211,13 @@ export async function create(canvas, dotnet, data) {
         x.fillStyle = o.fg || "#7d8080"; x.textAlign = "center"; x.textBaseline = "middle";
         const lh = c.height / (lines.length + 1.4);
         lines.forEach((l, i) => {
-            const sz = Math.min((i === 0 ? o.big || 0.17 : o.small || 0.11) * c.width, lh * 0.8);
-            x.font = i === 0 && o.display ? `${sz}px Michroma, sans-serif` : `500 ${sz}px "IBM Plex Mono", monospace`;
+            const disp = o.display && i < (o.displayLines || 1);
+            const font = size => disp ? `${size}px Michroma, sans-serif` : `500 ${size}px "IBM Plex Mono", monospace`;
+            const base = Math.min((i < (o.bigLines || 1) ? o.big || 0.17 : o.small || 0.11) * c.width, lh * 0.8);
+            let sz = base;
+            x.font = font(sz);
+            // napis musi się zmieścić w całości: najpierw mniejsza czcionka, dopiero potem skrót
+            while (sz > base * 0.55 && x.measureText(l).width > c.width * 0.86) { sz *= 0.94; x.font = font(sz); }
             let s = l;
             while (s.length > 3 && x.measureText(s).width > c.width * 0.9) s = s.slice(0, -1);
             x.fillText(s, c.width / 2, lh * (i + 1.1));
@@ -238,14 +243,14 @@ export async function create(canvas, dotnet, data) {
     lever.rotation.x = Math.PI / 2; lever.position.set(2.25, 0.18, 0); cpuG.add(lever);
     const subs = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.08, 3.5), new THREE.MeshStandardMaterial({ color: 0x1f3a2c, roughness: 0.6 }));
     subs.position.y = 0.26; cpuG.add(subs);
-    const ihs = chip(3.0, 3.0, 0.32, labelTex(["DAVIT FUTURES", "DD-2007 · 18+ YRS", ".NET · WEB · DEVOPS", "WROCŁAW  PL  2026"], 3, 3, { bg: "#b9bbbc", fg: "#5d6063", big: 0.1, small: 0.06, display: true, noise: true }),
+    const ihs = chip(3.0, 3.0, 0.32, labelTex(["DAVIT", "FUTURES", "DD-2007 · 18+ YRS", ".NET · WEB · DEVOPS", "WROCŁAW  PL  2026"], 3, 3, { bg: "#b9bbbc", fg: "#5d6063", big: 0.1, small: 0.06, display: true, displayLines: 2, bigLines: 2, noise: true }),
         new THREE.MeshStandardMaterial({ color: 0xc4c6c8, metalness: 1, roughness: 0.32 }), 0.38);
     ihs.position.y = 0.46; cpuG.add(ihs); hit.push(ihs);
 
     // zasilanie: dławiki = kroki współpracy
     vrm.forEach((v, i) => {
         const gr = group(v.x, v.z, "process", "L" + (i + 1) + " · " + (data.process[i] || ""));
-        const ch = chip(0.95, 0.95, 0.62, labelTex(["R" + (22 + i * 10), "PHASE " + (i + 1)], 1, 1, { bg: "#3b3d40", fg: "#9a9c9e", big: 0.22, small: 0.13, dot: false }), new THREE.MeshStandardMaterial({ color: 0x3e4043, roughness: 0.45, metalness: 0.4 }));
+        const ch = chip(0.95, 0.95, 0.62, labelTex([(data.phases[i] || "PHASE " + (i + 1)).toUpperCase(), "PHASE " + (i + 1)], 1, 1, { bg: "#3b3d40", fg: "#b4b6b8", big: 0.2, small: 0.12, dot: false }), new THREE.MeshStandardMaterial({ color: 0x3e4043, roughness: 0.45, metalness: 0.4 }));
         gr.add(ch); hit.push(ch);
         const mf = chip(0.5, 0.4, 0.12, labelTex(["Q" + (i + 1)], 0.5, 0.4, { big: 0.3, dot: false })); mf.position.z = -0.75; gr.add(mf);
         [-0.36, 0.36].forEach(o => { const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.55, 20), new THREE.MeshStandardMaterial({ color: 0x1f2022, metalness: 0.6, roughness: 0.35 })); cap.position.set(o, 0.275, 0.82); cap.castShadow = true; gr.add(cap); });
@@ -285,19 +290,17 @@ export async function create(canvas, dotnet, data) {
         pins(gr, 1.35, 9, 0.2);
     }
 
-    // matryca ze zdjęciem = o mnie
+    // drugi procesor = o mnie: kompetencje zamiast zdjęcia
     {
         const gr = group(idm.x, idm.z, "about", "U2 · " + data.labels.about);
-        const base = chip(1.8, 1.4, 0.22, labelTex(["ID SENSOR"], 1.8, 1.4, { big: 0.06, dot: false }));
+        const base = chip(1.8, 1.4, 0.12, labelTex([""], 1.8, 1.4, { dot: false }));
         gr.add(base);
-        const img = new Image();
-        const tex = new THREE.Texture(img);
-        tex.encoding = THREE.sRGBEncoding;
-        img.onload = () => { tex.needsUpdate = true; };
-        img.src = data.photo;
-        const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.6, 0.22, 48), [new THREE.MeshStandardMaterial({ color: 0x0c0c0d, metalness: 0.6, roughness: 0.3 }), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.15, metalness: 0 }), plastic]);
-        lens.position.y = 0.33; lens.rotation.y = Math.PI / 2; lens.castShadow = true; gr.add(lens);
-        hit.push(lens, base);
+        const sub = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.06, 1.2), new THREE.MeshStandardMaterial({ color: 0x1f3a2c, roughness: 0.6 }));
+        sub.position.y = 0.15; gr.add(sub);
+        const lid = chip(1.24, 0.98, 0.16, labelTex(data.skills, 1.24, 0.98, { bg: "#b9bbbc", fg: "#4f5255", big: 0.13, small: 0.085, display: true, noise: true }),
+            new THREE.MeshStandardMaterial({ color: 0xc4c6c8, metalness: 1, roughness: 0.32 }), 0.38);
+        lid.position.y = 0.26; gr.add(lid);
+        hit.push(lid, base);
     }
 
     // pamięć flash = CV
@@ -308,15 +311,23 @@ export async function create(canvas, dotnet, data) {
         for (let k = 0; k < 4; k++) { const o = -0.3 + k * 0.2; [-1, 1].forEach(sd => pinList.push([gr, o, sd * 0.38, 0.07, 0.14])); }
     });
 
-    // złącza = kontakt
+    // złącza = kontakt: każde ma nadruk, do czego służy
     {
         const gr = group(io.x, io.z, "contact", "J9–J11 · " + data.labels.contact);
         const steel = new THREE.MeshStandardMaterial({ color: 0xbfc2c4, metalness: 1, roughness: 0.3 });
-        const rj = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, 1.5), steel); rj.position.set(-1.9, 0.55, -0.1); rj.castShadow = true; gr.add(rj); hit.push(rj);
-        const hole = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.55, 0.05), new THREE.MeshStandardMaterial({ color: 0x050505 })); hole.position.set(-1.9, 0.5, -0.86); gr.add(hole);
-        [[0, 0.9], [1.6, 0.9]].forEach(([x, w]) => {
-            const u = new THREE.Mesh(new THREE.BoxGeometry(w, 0.36, 1.2), steel); u.position.set(x, 0.18, 0); u.castShadow = true; gr.add(u); hit.push(u);
-            const ins = new THREE.Mesh(new THREE.BoxGeometry(w * 0.7, 0.12, 0.05), new THREE.MeshStandardMaterial({ color: 0x050505 })); ins.position.set(x, 0.18, -0.61); gr.add(ins);
+        const plate = { bg: "#c9ccce", fg: "#2a2d30", big: 0.2, small: 0.11, dot: false };
+        const ports = [
+            { x: -1.9, w: 1.4, d: 1.5, h: 1.1, lines: [data.io[0], "J9 · RJ45"] },
+            { x: 0, w: 0.95, d: 1.2, h: 0.42, lines: [data.io[1], "J10 · USB-C"] },
+            { x: 1.6, w: 0.95, d: 1.2, h: 0.42, lines: [data.io[2], "J11 · USB-C"] }
+        ];
+        ports.forEach(p => {
+            const m = chip(p.w, p.d, p.h, labelTex(p.lines, p.w, p.d, plate), steel, 0.35);
+            m.position.set(p.x, p.h / 2, p.x < -1 ? -0.1 : 0);
+            gr.add(m); hit.push(m);
+            const mouth = new THREE.Mesh(new THREE.BoxGeometry(p.w * 0.66, p.h * 0.45, 0.05), new THREE.MeshStandardMaterial({ color: 0x050505 }));
+            mouth.position.set(p.x, p.h * 0.48, (p.x < -1 ? -0.1 : 0) - p.d / 2 - 0.01);
+            gr.add(mouth);
         });
     }
 

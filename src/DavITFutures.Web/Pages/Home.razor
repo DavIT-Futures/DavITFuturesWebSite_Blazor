@@ -33,7 +33,7 @@
     </section>
 
     <section class="board-sec" id="board-about" data-board="about">
-        <BoardSheet RefDes="U2 · ID-SENSOR" Part="@C.About.Title.ToUpperInvariant()">
+        <BoardSheet RefDes="U2 · SKILL CORE" Part="@C.About.Title.ToUpperInvariant()">
             <h2>@C.About.Name</h2>
             <div class="sheet-person">
                 <img src="@C.About.Photo" alt="@C.About.PhotoAlt" width="116" height="138" loading="lazy" />
@@ -221,6 +221,7 @@
     private IJSObjectReference? _board;
     private DotNetObjectReference<Home>? _self;
     private string? _theme;
+    private string? _language;
     private int _project;
 
     private SiteContent C => Content!;
@@ -240,7 +241,9 @@
     private object BuildData() => new
     {
         theme = Site.Theme,
-        photo = C.About.Photo,
+        skills = new[] { "FULL-STACK", ".NET · WEB · SQL", "DEVOPS · CI/CD", Pl ? "AI · 18+ LAT" : "AI · 18+ YRS" },
+        phases = Pl ? new[] { "ROZMOWA", "OFERTA", "ITERACJE", "WDROŻENIE" } : new[] { "CHAT", "PROPOSAL", "ITERATIONS", "RELEASE" },
+        io = new[] { "E-MAIL", "LINKEDIN", "GITHUB" },
         labels = new { cpu = "DavIT Futures", about = C.About.Name, contact = C.Contact.Title },
         process = C.Process.Steps.Select(s => s.Title),
         services = C.Services.Items.Select(s => s.Title),
@@ -266,12 +269,22 @@
                 _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/board.js");
                 _board = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _self, BuildData());
                 _theme = Site.Theme;
+                _language = Site.Language;
             }
             catch (JSException ex)
             {
                 // Bez WebGL strona dalej działa: treść jest w HTML, tło zastępuje CSS.
                 Console.Error.WriteLine($"[Board] {ex.Message}");
             }
+        }
+        else if (_board is not null && _module is not null && _language != Site.Language)
+        {
+            // Napisy na układach są w teksturach, więc po zmianie języka płyta jest budowana od nowa.
+            _language = Site.Language;
+            _theme = Site.Theme;
+            await _board.InvokeVoidAsync("dispose");
+            await _board.DisposeAsync();
+            _board = await _module.InvokeAsync<IJSObjectReference>("create", _canvas, _self, BuildData());
         }
         else if (_board is not null && _theme != Site.Theme)
         {
