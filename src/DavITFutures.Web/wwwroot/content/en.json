@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "DavIT Futures – Senior Full-Stack Engineering, .NET, Web Frontends & DevOps",
-    "description": "DavIT Futures – senior full-stack software engineering for finance and SaaS: high-performance .NET, modern web frontends, databases, and automated DevOps CI/CD. From architecture to zero-downtime production. Wrocław, Poland."
+    "description": "DavIT Futures: Dawid Domagała, senior .NET and web engineer from Wrocław. Trading, banking and medtech systems since 2007, with CI/CD and AI agents in daily work."
   },
   "nav": {
     "about": "About",
@@ -20,7 +20,7 @@
     "eyebrow": "Software house · Wrocław, Poland",
     "title": "Trading-grade software",
     "highlight": "for your business",
-    "lead": "Senior full-stack engineering with an end-to-end delivery mindset: high-performance .NET backends, diverse modern web frontends, optimized databases and hardened DevOps CI/CD pipelines. From code and automated tests to seamless production releases and zero-downtime operations. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
+    "lead": "I build and ship software for **trading**, **banking** and **medtech**:\n**.NET** backends, **Angular**/**React**/**Blazor** frontends, **SQL** databases and the **CI/CD** that releases them. Since 2007, for clients in Poland, Ireland, the Czech Republic and the UK.",
     "primaryCta": {
       "label": "Let's talk about your project",
       "url": "contact"
@@ -32,7 +32,7 @@
     "stats": [
       {
         "value": "18+",
-        "label": "years building production software"
+        "label": "years of production software"
       },
       {
         "value": "4",
@@ -40,15 +40,15 @@
       },
       {
         "value": "4×",
-        "label": "the team-average output, with AI agents"
+        "label": "team-average output with AI agents (IG Group)"
       },
       {
         "value": "£15M",
-        "label": "first-month gain of a trading launch at IG Group"
+        "label": "first-month result of a launch I worked on at IG"
       },
       {
         "value": "70%",
-        "label": "of Polish fund trades ran on Goniec Online"
+        "label": "of Polish fund trades went through Goniec Online"
       }
     ],
     "clientsLabel": "Delivered for",
@@ -89,11 +89,11 @@
   },
   "about": {
     "title": "About",
-    "subtitle": "DavIT Futures is Dawid Domagała's engineering company. You work directly with a senior engineer of 18+ years experience who takes full ownership of the entire software delivery lifecycle: from concept, architecture, and database design, through backend and modern web frontend implementation, to robust CI/CD pipelines, automated testing, and zero-downtime production releases.",
+    "subtitle": "DavIT Futures is my one-person engineering company. You talk to the person who writes the code:\narchitecture, **backend**, **frontend**, **database**, **CI/CD** and the release itself.",
     "photo": "img/dawid-domagala.jpg",
     "photoAlt": "Dawid Domagała",
     "name": "Dawid Domagała",
-    "role": "Founder · Senior Full-Stack Architect & DevOps Lead (.NET, Modern Web, Databases)",
+    "role": "Founder · senior full-stack engineer, .NET, web and DevOps",
     "facts": [
       "18+ years in banking, trading, medtech and SaaS",
       "MSc in Electronics, Wrocław University of Technology",
@@ -104,94 +104,140 @@
       {
         "icon": "finance",
         "title": "Finance and trading",
-        "text": "We know trading from the inside: IG Group's L2 Dealer Level 2 desktop platform and WTP web trading platform, risk engines at Credit Suisse and mutual fund distribution. We speak the language of your market, not just code.",
+        "text": "Most of my career has been **trading** and **banking** systems: the **L2 Dealer** platform at IG Group, **risk engines** at Credit Suisse, fund distribution for Polish banks. I know what a trader or a risk team expects.",
         "linkLabel": "IG Group",
         "linkUrl": "https://www.ig.com"
       },
       {
         "icon": "shield",
         "title": "Quality and security",
-        "text": "Automated tests on every change, quality gates that block regressions and security held to banking standards. Corporate rigour without corporate slowness."
+        "text": "Every change runs through **automated tests** and **quality gates** before it merges. I keep the habits of a bank project without its pace."
       },
       {
         "icon": "pipeline",
-        "title": "DevOps, CI/CD and Release Management",
-        "text": "End-to-end automation of the software delivery lifecycle: enterprise CI/CD pipelines (GitLab with thousands of lines, GitHub Actions, Jenkins), Docker containerization, quality gates, automated testing, and multi-OS zero-downtime releases."
+        "title": "DevOps and releases",
+        "text": "I write the pipelines myself:\n**GitLab CI/CD** (17k+ lines at IG), **GitHub Actions**, **Jenkins**, **Docker**. Releases go out without downtime."
       },
       {
         "icon": "spark",
-        "title": "Speed through AI",
-        "text": "AI agents speed up delivery, and a human reviews and tests every change. Your code and data stay under your control: AI tools are used only within your security policies."
+        "title": "AI agents, human review",
+        "text": "**AI agents** write a lot of my code. I review and test every change before it merges. Agents run only inside your security rules, and your code stays in your repositories."
       }
     ]
   },
   "services": {
     "title": "Services",
-    "subtitle": "From idea and prototype to production release and maintenance.",
+    "subtitle": "Seven things I do, each with the stack I actually use.",
     "items": [
       {
         "icon": "web",
-        "title": "Web applications (Modern Frontends)",
-        "text": "Modern apps in Angular, React, Vue.js and Blazor: responsive, fast, and easy to extend. We pick the right frontend technology for your product requirements, with strong state architecture and long-term maintainability."
+        "title": "Web applications",
+        "text": "Single-page apps for trading desks, clinics and SaaS. I pick the framework for the product, not the other way round.",
+        "tags": [
+          "Angular",
+          "React",
+          "Vue.js",
+          "Blazor",
+          "TypeScript"
+        ]
       },
       {
         "icon": "server",
         "title": "Backend and APIs",
-        "text": "C# .NET and Java APIs (REST, GraphQL), microservices, MS SQL and PostgreSQL. Built for performance and stability under load."
+        "text": "APIs and services that stay fast under load:\nrisk calculations, fund orders, fleet telemetry.",
+        "tags": [
+          "C# .NET",
+          "Java",
+          "REST",
+          "GraphQL",
+          "MS SQL",
+          "PostgreSQL"
+        ]
       },
       {
         "icon": "mobile",
         "title": "Mobile applications",
-        "text": "Xamarin and Vue.js with Quasar and Cordova. One codebase for mobile, web and desktop, so there is less to maintain."
+        "text": "One codebase for phone, browser and desktop, so there is less to maintain.",
+        "tags": [
+          "Xamarin",
+          "Vue.js",
+          "Quasar",
+          "Cordova"
+        ]
       },
       {
         "icon": "desktop",
-        "title": "Desktop and legacy modernisation",
-        "text": "WPF, WinForms and DevExpress. We modernise legacy systems and move them to current technology without stopping the business."
+        "title": "Desktop and legacy rescue",
+        "text": "Old WinForms or Silverlight systems moved to current tech while the business keeps running.",
+        "tags": [
+          "WPF",
+          "WinForms",
+          "DevExpress",
+          "Silverlight → Angular"
+        ]
       },
       {
         "icon": "layers",
         "title": "Multi-tenant SaaS",
-        "text": "White-label products with tenant data isolation and per-customer configuration and branding."
+        "text": "White-label products: isolated data, configuration and branding per customer. Built for law firms and pharma partners.",
+        "tags": [
+          "Multi-tenant",
+          "Azure",
+          "EF Core",
+          "White-label"
+        ]
       },
       {
         "icon": "pipeline",
         "title": "DevOps and CI/CD",
-        "text": "GitLab CI/CD, Jenkins and GitHub Actions pipelines, automated releases, code signing, Docker and Azure."
+        "text": "Pipelines that build, test, sign and release on every merge.",
+        "tags": [
+          "GitLab CI/CD",
+          "GitHub Actions",
+          "Jenkins",
+          "Docker",
+          "Azure"
+        ]
       },
       {
         "icon": "spark",
-        "title": "AI adoption in teams",
-        "text": "We bring AI agents into your delivery process, with trainings and workshops for your developers."
+        "title": "AI agents in your team",
+        "text": "I set up agent workflows in your repos and train your developers to review what the agents write.",
+        "tags": [
+          "Claude Code",
+          "Cursor",
+          "Copilot",
+          "Agent skills"
+        ]
       }
     ]
   },
   "process": {
     "title": "How we work",
-    "subtitle": "A simple, transparent way to start and to deliver.",
+    "subtitle": "Four steps, no sales layer in between.",
     "steps": [
       {
         "title": "Direct intro chat",
-        "text": "Drop me a line or let's connect for a quick chat. Tell me about your idea, existing system, or technical challenge – you talk directly with the engineer, zero sales pitch."
+        "text": "Write or call. Tell me about the idea, the system or the problem. You talk to the engineer, not a salesperson."
       },
       {
         "title": "Proposal",
-        "text": "You get the scope, an estimate and a fixed-price or time-and-materials offer."
+        "text": "Scope, estimate and a fixed-price or time-and-materials offer."
       },
       {
         "title": "Short iterations",
-        "text": "A working demo every one or two weeks, so you see progress and can steer early."
+        "text": "A working demo every one or two weeks, so you can steer early."
       },
       {
         "title": "Release and support",
-        "text": "CI/CD, documentation and handover, plus maintenance when you need it."
+        "text": "CI/CD, docs and handover. Maintenance if you want it."
       }
     ],
     "footnote": "B2B contracts · remote or on site · CET time zone · Polish and English"
   },
   "tech": {
     "title": "Technology",
-    "subtitle": "The core technologies, frameworks, and engineering standards behind our software delivery.",
+    "subtitle": "What I use day to day, grouped the way projects use it.",
     "groups": [
       {
         "name": "Backend",
@@ -262,14 +308,39 @@
           "Agent skills",
           "Software factory",
           "AI-driven SDLC"
-        ],
-        "note": "At IG Group: 4× the team-average output, a 6× shorter cycle time (0.9 vs 5.4 days) and up to 16 tickets closed overnight by agents, each one reviewed and tested by a human."
+        ]
       }
-    ]
+    ],
+    "ai": {
+      "headline": "Agents write the code. I review every line.",
+      "lead": "Measured on my own work at **IG Group** in 2026, against the rest of the team. Sources: Jira, GitLab CI/CD and Git history.",
+      "metrics": [
+        {
+          "value": "4×",
+          "label": "output",
+          "text": "**52** merged pull requests against **13** for the average developer on the team."
+        },
+        {
+          "value": "0.9 d",
+          "label": "cycle time",
+          "text": "Median time from pull request to merge, against **5.4 days** for the team. Six times faster."
+        },
+        {
+          "value": "16",
+          "label": "tickets overnight",
+          "text": "Up to 16 tickets per night: **Claude Code** sub-agents return code, unit tests and a pull request for each."
+        },
+        {
+          "value": "100%",
+          "label": "human review",
+          "text": "Every morning I review, test and merge each one myself. The responsibility stays with a person."
+        }
+      ]
+    }
   },
   "projects": {
     "title": "Commercial Projects",
-    "subtitle": "Selected commercial and enterprise systems delivered over the last 18 years for institutional clients.",
+    "subtitle": "Nine systems from 18 years, from fund distribution in Polish banks to trading at IG Group.",
     "gitHubUser": "DavIT-Futures",
     "allReposLabel": "",
     "codeLabel": "Code on GitHub",
@@ -278,7 +349,7 @@
         "name": "L2 Dealer",
         "client": "IG Group",
         "years": "2023 – 2026",
-        "description": "Level 2 desktop trading platform. We rebuilt the delivery process end to end: a GitLab CI/CD pipeline (17k+ lines), GitFlow with release branches and merge requests, quality gates and large refactors of core modules, reaching a HIGH app maturity rating. We also delivered “Price In Size”, part of a company-wide initiative that earned £15M in its first month.",
+        "description": "**Level 2** desktop trading platform. I rebuilt the delivery process: a **GitLab CI/CD** pipeline of 17k+ lines, **GitFlow** with release branches, **quality gates** and refactors of core modules. The app reached a **HIGH** maturity rating. I also delivered **Price In Size**, part of an IG initiative that made **£15M** in its first month.",
         "url": "",
         "tags": [
           "C# .NET",
@@ -292,7 +363,7 @@
         "name": "Risk engine platforms: LTV, PRC and PRIIPs",
         "client": "Credit Suisse",
         "years": "2017 – 2022",
-        "description": "Silverlight to Angular 10 migration with a GraphQL backend, monolith split into .NET Core microservices, multithreaded risk calculations, MS SQL tuning and query speed-ups, regulatory KID documents (PRIIPs) with BDD tests across the whole API.",
+        "description": "Migration from **Silverlight** to **Angular 10** with a **GraphQL** backend. Monolith split into **.NET Core** microservices, multithreaded risk calculations, faster **MS SQL** queries and regulatory **KID** documents (PRIIPs) with **BDD** tests across the whole API.",
         "url": "",
         "tags": [
           "Angular",
@@ -306,7 +377,7 @@
         "name": "QiaCuity and QiaGuest",
         "client": "Qiagen",
         "years": "2019 – 2020",
-        "description": "UI for a digital PCR (dPCR) instrument that counts DNA copies for medical diagnostics, in React/Redux on Linux. Plus QiaGuest, a reception app built from scratch in Angular and .NET Core on Azure.",
+        "description": "UI for a **digital PCR** instrument that counts DNA copies for diagnostics, in **React/Redux** on Linux. Plus **QiaGuest**, a reception app I built from scratch in **Angular** and **.NET Core** on **Azure**.",
         "url": "",
         "tags": [
           "React",
@@ -320,7 +391,7 @@
         "name": "Focis",
         "client": "Focis.co.uk",
         "years": "2018 – 2019",
-        "description": "Multi-tenant SaaS for law firms, built end to end by one engineer and later joined by a second developer: document workflow, dynamic forms, tenant data isolation, push notifications and SMS login.",
+        "description": "**Multi-tenant SaaS** for law firms. I built it end to end, later with a second developer:\ndocument workflow, dynamic forms, tenant isolation, push notifications and SMS login.",
         "url": "",
         "tags": [
           "ASP.NET MVC",
@@ -334,7 +405,7 @@
         "name": "InCenter and InTire",
         "client": "Tyrecheck",
         "years": "2015 – 2017",
-        "description": "Fleet management with tyre-pressure monitoring. A Wi-Fi router on each truck collected TPMS sensor data, including the low-level sensor communication we wrote, and uploaded it to a central server, where a web app managed the whole fleet.",
+        "description": "Truck fleet management with **tyre-pressure** monitoring. A Wi-Fi router on each truck read the **TPMS** sensors (I wrote the low-level protocol) and sent the data to a server, where a **Vue.js** web app managed the fleet.",
         "url": "",
         "tags": [
           "Vue.js",
@@ -348,7 +419,7 @@
         "name": "White-label spirometry",
         "client": "Vitalograph",
         "years": "2014 – 2015",
-        "description": "Lung-function diagnostics for clinics and clinical trials, branded for each pharma partner under medical-device regulation.",
+        "description": "Lung-function diagnostics for clinics and clinical trials, branded for each **pharma partner** under medical-device regulation.",
         "url": "",
         "tags": [
           "C# .NET",
@@ -361,7 +432,7 @@
         "name": "Elemos",
         "client": "AMCS Group",
         "years": "2012 – 2014",
-        "description": "Software for the waste and recycling industry: a WPF office app and an in-truck app on Windows Mobile handhelds, later migrated to Xamarin, with RFID, route planning and live vehicle tracking.",
+        "description": "Software for waste collection: a **WPF** office app and an in-truck app on **Windows Mobile**, later moved to **Xamarin**, with **RFID**, route planning and live vehicle tracking.",
         "url": "",
         "tags": [
           "WPF",
@@ -376,7 +447,7 @@
         "name": "Goniec Online",
         "client": "Exorigo / ProService AT",
         "years": "2007 – 2012",
-        "description": "A large, complex mutual fund distribution system deployed in many Polish banks: buying and selling fund units and setting up distribution networks.",
+        "description": "Mutual fund distribution system used by many Polish banks: buying and selling fund units and managing distribution networks. Built in **C# .NET** and **MS SQL**.",
         "url": "",
         "tags": [
           "C# .NET",
@@ -390,24 +461,24 @@
         "name": "DavIT Futures website",
         "client": "DavIT Futures",
         "years": "2026",
-        "description": "This website: Blazor WebAssembly on .NET 10, two languages, light and dark themes, automatic deployment to GitHub Pages with GitHub Actions.",
+        "description": "This site: **Blazor WebAssembly** on **.NET 10**, a **three.js** motherboard, two languages, two themes and deploys to **GitHub Pages** on every merge.",
         "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
         "tags": [
           "Blazor",
           "C# .NET 10",
           "GitHub Actions"
         ],
-        "outcome": "Open source: see how we build"
+        "outcome": "Open source: read the code"
       }
     ]
   },
   "gitHub": {
-    "subtitle": "Personal experiments, continuous learning, knowledge exploration, and open-source software.",
+    "subtitle": "Things I build after hours: retro game remasters, simulators, tools and reference code.",
     "viewRepoLabel": "View code on GitHub",
     "viewProfileLabel": "All repositories on GitHub",
     "items": [
       {
-        "name": "Civ 1.5 Remastered (Civilization 1)",
+        "name": "Civ 1.5 Remastered",
         "tags": [
           "C# 14",
           ".NET 10",
@@ -417,13 +488,14 @@
           "Reverse Engineering",
           "Multi-OS"
         ],
-        "description": "Open-source C# and Avalonia UI (.NET 10) remaster of Civilization 1 (1991, DOS). Function-by-function translation of the original CIV.EXE keeping classic mechanics while modernizing gameplay: unit hit points & tactical combat rounds, healing, unit upgrades for gold, non-expiring wonders, 20-turn autosaves, and zero-DOSBox multi-OS execution.",
+        "description": "**Civilization 1** (1991, DOS) rewritten function by function from CIV.EXE into **C#** and **Avalonia UI**. Adds unit hit points, combat rounds, unit upgrades and autosaves. Runs natively on Windows, Linux and macOS without DOSBox.",
         "badge": "Remaster / .NET 10",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/Civ_1_5_Remastered"
+        "url": "https://github.com/DavIT-Futures/Civ_1_5_Remastered",
+        "image": "img/github/civ.jpg"
       },
       {
-        "name": "Multi-OS Desktop Fractal Generator",
+        "name": "Fractal generator",
         "tags": [
           "C# 14",
           ".NET 10",
@@ -431,13 +503,14 @@
           "Cross-Platform",
           "Fractals"
         ],
-        "description": "Cross-platform desktop application in C# (.NET 10 and Avalonia UI) for Windows, Linux, and macOS generating Mandelbrot, Julia, Burning Ship, Barnsley Fern, and Sierpiński fractals.",
+        "description": "Desktop app in **C#** and **Avalonia UI** for Windows, Linux and macOS. Draws Mandelbrot, Julia, Burning Ship, Barnsley fern and Sierpiński.",
         "badge": ".NET 10 / Multi-OS",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS"
+        "url": "https://github.com/DavIT-Futures/FractalsDesktopMultiOS",
+        "image": "img/github/fractals.jpg"
       },
       {
-        "name": "Enterprise N-Tier Reference Architecture",
+        "name": "N-tier reference architecture",
         "tags": [
           "C#",
           ".NET 8",
@@ -446,13 +519,14 @@
           "Custom ORM",
           "SQL Server"
         ],
-        "description": "Production-grade reference implementation in .NET 8 LTS featuring a WPF MVVM desktop client, CoreWCF backend services, a custom lightweight reflection ORM, and SQL Server.",
+        "description": "Reference app in **.NET 8**: a **WPF MVVM** client, **CoreWCF** services, a small reflection-based ORM and **SQL Server**.",
         "badge": "Architecture",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm"
+        "url": "https://github.com/DavIT-Futures/NTier-Mvvm-Backend-Api-Orm",
+        "image": "img/github/ntier.svg"
       },
       {
-        "name": "Bilingual Desktop PDF Invoice Generator",
+        "name": "PDF invoice generator",
         "tags": [
           "C#",
           ".NET 8",
@@ -461,13 +535,14 @@
           "iTextSharp",
           "B2B Invoicing"
         ],
-        "description": "Modern .NET 8 WPF desktop application for generating professional bilingual (PL/EN) PDF invoices with multi-currency support, flexible billing models, and automated VAT calculation.",
+        "description": "**WPF** desktop app that issues bilingual PL/EN **PDF** invoices, with multiple currencies, billing models and VAT.",
         "badge": "Desktop App",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/Pdf_Invoice_generator"
+        "url": "https://github.com/DavIT-Futures/Pdf_Invoice_generator",
+        "image": "img/github/invoice.svg"
       },
       {
-        "name": "Island Ecosystem Life Simulator",
+        "name": "Australia 1859 island simulator",
         "tags": [
           "C++",
           "Lotka-Volterra",
@@ -475,13 +550,14 @@
           "VCL",
           "Simulation"
         ],
-        "description": "Predator-prey island ecosystem life simulator (rabbits, foxes, vegetation) based on the Lotka-Volterra mathematical differential model with real-time visualization.",
+        "description": "Rabbits, foxes and grass on a generated island, driven by the **Lotka-Volterra** model. Started in 2005 in Borland C++Builder, now **C++20** and **Raylib**.",
         "badge": "Simulation",
         "language": "C++",
-        "url": "https://github.com/DavIT-Futures/Australia-1859-Sim"
+        "url": "https://github.com/DavIT-Futures/Australia-1859-Sim",
+        "image": "img/github/australia.jpg"
       },
       {
-        "name": "DavIT Futures Website (This Site)",
+        "name": "DavIT Futures website",
         "tags": [
           "Blazor WebAssembly",
           "C# 14",
@@ -489,13 +565,14 @@
           "GitHub Actions",
           "This site"
         ],
-        "description": "This website, which you are viewing right now: written in C# 14 with Blazor WebAssembly (.NET 10), featuring light/dark themes, bilingual support, and automated GitHub Pages deployment.",
+        "description": "The site you are on: **Blazor WebAssembly**, **.NET 10**, a **three.js** board, two languages and two themes, deployed by **GitHub Actions**.",
         "badge": "This site",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor"
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSite_Blazor",
+        "image": "img/github/website.jpg"
       },
       {
-        "name": "Classic ASP.NET MVC Website",
+        "name": "Previous site in ASP.NET MVC",
         "tags": [
           "ASP.NET MVC 5",
           ".NET 4.8",
@@ -503,13 +580,14 @@
           "Razor",
           "jQuery"
         ],
-        "description": "Classic corporate website built with ASP.NET MVC 5.3 (.NET Framework 4.8) and Razor views, deployed as static production assets to GitHub Pages via automated GitHub Actions.",
+        "description": "The older company site in **ASP.NET MVC 5** on .NET Framework 4.8, published as static files to **GitHub Pages**.",
         "badge": "ASP.NET MVC",
         "language": "C#",
-        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC"
+        "url": "https://github.com/DavIT-Futures/DavITFuturesWebSiteMVC",
+        "image": "img/github/mvc.svg"
       },
       {
-        "name": "Algorithmic Trading Analytics Platform",
+        "name": "TradeChameleon: trading analytics",
         "tags": [
           "Java",
           "Spring Boot",
@@ -519,10 +597,11 @@
           "Trading",
           "FinTech"
         ],
-        "description": "Quantitative trading and financial analytics platform designed as a white-label solution with full customization and configuration via configuration files. Modern Java backend with Spring Boot, Angular 22 frontend, and PostgreSQL database on Docker image. Source code is currently being prepared for repository release.",
+        "description": "White-label platform for quantitative trading analytics, configured through files. **Java** with **Spring Boot**, **Angular 22**, **PostgreSQL**, shipped as a **Docker** image. Code is being prepared for release.",
         "badge": "Java & Angular / FinTech",
         "language": "Java / TypeScript",
-        "url": "https://github.com/DavIT-Futures/TradeChameleon"
+        "url": "https://github.com/DavIT-Futures/TradeChameleon",
+        "image": "img/github/trading.svg"
       }
     ],
     "title": "GitHub Projects",
@@ -550,7 +629,7 @@
   },
   "cv": {
     "title": "CV",
-    "subtitle": "The short version for a quick look, the full one with projects, metrics and references.",
+    "subtitle": "Short version for a quick look, full version with projects, numbers and references.",
     "versions": [
       {
         "title": "Short CV",
@@ -570,7 +649,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a project in mind? Send a short description and we will reply within one business day.",
+    "subtitle": "Send a few lines about your project. I reply within one business day.",
     "email": "davit.futures@gmail.com",
     "linkedIn": "https://www.linkedin.com/in/dawid-domagala-futures/",
     "gitHub": "https://github.com/DavIT-Futures",

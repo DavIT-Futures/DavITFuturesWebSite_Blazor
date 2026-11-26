@@ -63,9 +63,15 @@ public record Step(string Title, string Text);
 public record SectionWithItems(string Title, string Subtitle, IReadOnlyList<Item> Items);
 
 // Link jest opcjonalny: karta może prowadzić do strony zewnętrznej.
-public record Item(string Icon, string Title, string Text, string? LinkLabel = null, string? LinkUrl = null);
+public record Item(string Icon, string Title, string Text, string? LinkLabel = null, string? LinkUrl = null,
+    IReadOnlyList<string>? Tags = null);
 
-public record TechSection(string Title, string Subtitle, IReadOnlyList<TechGroup> Groups);
+public record TechSection(string Title, string Subtitle, IReadOnlyList<TechGroup> Groups, AiTelemetry? Ai = null);
+
+// Liczby z pracy z agentami AI: nagłówek, źródło i cztery pomiary, każdy z własnym wyjaśnieniem.
+public record AiTelemetry(string Headline, string Lead, IReadOnlyList<AiMetric> Metrics);
+
+public record AiMetric(string Value, string Label, string Text);
 
 // Note to opcjonalny krótki tekst pod chipami, np. liczby z CV.
 public record TechGroup(string Name, IReadOnlyList<string> Items, string? Note = null);
@@ -93,7 +99,8 @@ public record GitHubRepo(
     string Url,
     IReadOnlyList<string> Tags,
     string? Language = null,
-    string? Badge = null);
+    string? Badge = null,
+    string? Image = null);
 
 // Sekcja dedykowana: Games Remastering / Retro Games Remaster
 public record GamesRemasterSection(

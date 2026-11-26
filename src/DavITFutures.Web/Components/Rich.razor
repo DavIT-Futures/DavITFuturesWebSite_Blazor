@@ -1,0 +1,23 @@
+@using System.Net
+@using System.Text.RegularExpressions
+@* Tekst z treści JSON z lekkim formatowaniem: **słowo** to wyróżnione słowo kluczowe, znak nowej linii łamie wiersz. *@
+@((MarkupString)ToHtml(Text))
+
+@code {
+    [Parameter] public string? Text { get; set; }
+
+    private static readonly Regex Bold = new(@"\*\*(.+?)\*\*", RegexOptions.Compiled);
+
+    /// <summary>Encodes the text, then turns **x** into a highlighted keyword and new lines into line breaks.</summary>
+    public static string ToHtml(string? text)
+    {
+        if (string.IsNullOrEmpty(text)) return "";
+        var html = WebUtility.HtmlEncode(text);
+        html = Bold.Replace(html, "<strong class=\"kw\">$1</strong>");
+        return html.Replace("\n", "<br />");
+    }
+
+    /// <summary>The same text without formatting marks, for attributes, titles and canvas labels.</summary>
+    public static string Plain(string? text) =>
+        string.IsNullOrEmpty(text) ? "" : Bold.Replace(text, "$1").Replace("\n", " ");
+}

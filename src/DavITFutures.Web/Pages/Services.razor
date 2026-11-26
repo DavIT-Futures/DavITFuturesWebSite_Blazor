@@ -7,7 +7,7 @@
     <div class="container">
         <span class="subpage-eyebrow mono">@(Site.Language == "pl" ? "OFERTA & ARCHITEKTURA" : "SERVICES & ARCHITECTURE")</span>
         <h1 class="subpage-title">@Content!.Services.Title</h1>
-        <p class="subpage-lead">@Content.Services.Subtitle</p>
+        <p class="subpage-lead"><Rich Text="@Content.Services.Subtitle" /></p>
     </div>
 </div>
 

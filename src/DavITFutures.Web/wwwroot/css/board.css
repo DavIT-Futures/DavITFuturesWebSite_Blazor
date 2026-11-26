@@ -328,3 +328,44 @@ body { background-image: url("../img/pcb-traces-dark.svg"); background-size: 960
 .hud-stat-lbl { color: var(--text-muted); }
 .hud-note-text { color: var(--body-text); border-top: 1px dashed var(--accent-border); }
 .board-ready .site-footer { background: var(--bg); }
+
+/* ===== Wyróżnione słowa kluczowe w tekstach (**słowo** w JSON) ===== */
+.kw { color: var(--text); font-weight: 600; background: linear-gradient(transparent 62%, var(--accent-subtle) 62%); }
+
+/* ===== Usługi: układy na płycie zamiast listy ===== */
+.svc-board { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 40px; padding: 8px 10px; }
+.svc-bus { position: absolute; top: 0; bottom: 0; left: 50%; width: 0; border-left: 1px dashed var(--gold-dim); opacity: 0.55; pointer-events: none; }
+.sheet.svc-chip { width: auto; margin: 0; padding: 24px 26px 22px; display: flex; flex-direction: column; }
+.sheet.svc-chip:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.svc-chip::before, .svc-chip::after { top: 22px; bottom: 22px; }
+.svc-chip .sheet-ref { margin-bottom: 16px; }
+.svc-head { display: flex; align-items: center; gap: 12px; }
+.svc-head h3 { margin: 0; font-size: 16px; line-height: 1.35; }
+.svc-icon { flex: none; width: 38px; height: 38px; display: grid; place-items: center; color: var(--accent-text); border: 1px solid var(--accent-border); background: var(--accent-subtle); }
+.svc-chip p { margin: 12px 0 0; }
+.svc-pins { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 0 0; margin: auto 0 0; border-top: 1px dashed var(--border); position: relative; top: 14px; font-size: 11.5px; }
+.svc-chip .svc-pins { margin-top: 18px; }
+.svc-pins li { padding: 4px 8px; border: 1px solid var(--accent-border); color: var(--text-muted); background: var(--surface); }
+@media (max-width: 860px) {
+    .svc-board { grid-template-columns: 1fr; gap: 26px; padding: 0 6px; }
+    .svc-bus { left: 18px; }
+}
+
+/* ===== Technologie: telemetria AI, najpierw teza, potem liczby z wyjaśnieniem ===== */
+.ai-telemetry { margin: 6px 0 22px; padding: 22px 22px 20px; border: 1px solid var(--accent-border); background: var(--surface); }
+.ai-tag { font-size: 11px; letter-spacing: 0.1em; color: var(--accent-text); }
+.ai-headline { font-family: var(--font-display); font-weight: 400; font-size: clamp(20px, 2.6vw, 30px); line-height: 1.25; margin: 10px 0 10px; color: var(--text); text-wrap: balance; }
+.ai-lead { color: var(--text-muted); margin: 0 0 20px; max-width: 70ch; }
+.ai-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.ai-metric { border: 1px dashed var(--accent-border); padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ai-val { font-size: 28px; font-weight: 600; line-height: 1.05; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.ai-lbl { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+.ai-metric p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--body-text); }
+@media (max-width: 960px) { .ai-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .ai-metrics { grid-template-columns: 1fr; } }
+
+/* ===== GitHub: miniaturki projektów ===== */
+.github-thumb { display: block; margin: -2px 0 14px; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--border); background: var(--bg); }
+.github-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.github-card:hover .github-thumb img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .github-card:hover .github-thumb img { transform: none; } }

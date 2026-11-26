@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="IBM Plex Sans, Arial, sans-serif">
+  <rect width="640" height="360" fill="#1a1f1c"/>
+  <rect x="96" y="40" width="250" height="340" fill="#000" opacity=".35" transform="translate(8 8)"/>
+  <rect x="96" y="40" width="250" height="340" fill="#f7f5ee"/>
+  <rect x="96" y="40" width="250" height="8" fill="#b8902f"/>
+  <text x="114" y="80" font-size="16" font-weight="700" fill="#1b1f1c">FAKTURA / INVOICE</text>
+  <text x="114" y="98" font-size="10" fill="#565d56">Nr FV/2026/11/014 · 26.11.2026</text>
+  <g fill="#c6cbc2"><rect x="114" y="114" width="90" height="6"/><rect x="114" y="126" width="70" height="6"/><rect x="230" y="114" width="96" height="6"/><rect x="230" y="126" width="80" height="6"/></g>
+  <rect x="114" y="150" width="212" height="18" fill="#1b1f1c"/>
+  <g font-size="9" fill="#f7f5ee"><text x="120" y="162">Opis / Description</text><text x="282" y="162">EUR</text></g>
+  <g font-size="9.5" fill="#2c322d">
+    <text x="120" y="186">Software development</text><text x="278" y="186">8 400.00</text>
+    <text x="120" y="206">CI/CD pipeline setup</text><text x="278" y="206">2 100.00</text>
+    <text x="120" y="226">Code review · AI agents</text><text x="278" y="226">1 250.00</text>
+  </g>
+  <path d="M114 236H326" stroke="#c6cbc2"/>
+  <g font-size="9.5" fill="#2c322d"><text x="200" y="254">VAT 23%</text><text x="278" y="254">2 702.50</text></g>
+  <g font-size="12" font-weight="700" fill="#1b1f1c"><text x="200" y="280">TOTAL</text><text x="268" y="280">14 452.50</text></g>
+  <g fill="#e5e8e2"><rect x="114" y="308" width="212" height="6"/><rect x="114" y="320" width="150" height="6"/></g>
+  <g font-family="IBM Plex Mono, monospace">
+    <rect x="388" y="110" width="170" height="42" fill="none" stroke="#d8b05a"/>
+    <text x="402" y="136" font-size="15" fill="#d8b05a">PL · EN</text>
+    <rect x="388" y="166" width="170" height="42" fill="none" stroke="#d8b05a"/>
+    <text x="402" y="192" font-size="15" fill="#d8b05a">PLN · EUR · GBP</text>
+    <rect x="388" y="222" width="170" height="42" fill="none" stroke="#d8b05a"/>
+    <text x="402" y="248" font-size="15" fill="#d8b05a">PDF · WPF</text>
+  </g>
+</svg>
