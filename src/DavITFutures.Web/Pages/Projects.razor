@@ -11,6 +11,10 @@
     </div>
 </div>
 
+<div class="container projects-scope">
+    <LogicAnalyzer ShowDecoder="false" ShowMeasurements="false" OnSelect="ScrollToProject" />
+</div>
+
 <ProjectsSection ShowHeading="false" />
 
 <div class="container section-cta-wrap" style="margin-bottom: 56px;">
@@ -18,3 +22,9 @@
         @(Site.Language == "pl" ? "Skonsultuj swój projekt" : "Discuss your project") <Icon Name="arrow" Size="16" />
     </a>
 </div>
+
+@code {
+    [Inject] private IJSRuntime JS { get; set; } = default!;
+
+    private async Task ScrollToProject(int index) => await JS.InvokeVoidAsync("davit.scrollToId", $"project-{index}");
+}

@@ -8,9 +8,10 @@
         }
 
         <div class="cards projects">
-            @foreach (var p in Content!.Projects.Items)
+            @foreach (var (p, i) in Content!.Projects.Items.Select((x, i) => (x, i)))
             {
-                <article class="card project-card">
+                <article class="card project-card" id="project-@i" style="--ch:@LogicAnalyzer.Color(i)">
+                    <span class="project-channel">CH@(i + 1) · @LogicAnalyzer.ColorNames[i % LogicAnalyzer.ColorNames.Length]</span>
                     <div class="project-top">
                         @if (GetClientLogo(p.Client) is { } logo)
                         {
