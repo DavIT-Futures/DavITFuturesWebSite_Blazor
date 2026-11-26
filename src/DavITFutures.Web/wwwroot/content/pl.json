@@ -587,21 +587,21 @@
         "image": "img/github/mvc.svg"
       },
       {
-        "name": "TradeChameleon: analityka tradingowa",
+        "name": "TradeChameleon: platforma tradingowa white-label",
         "tags": [
-          "Java",
-          "Spring Boot",
-          "Angular 22",
+          "Java 25",
+          "Spring Boot 4",
+          "Angular 21",
+          "React 19",
           "PostgreSQL",
           "Docker",
-          "Trading",
           "FinTech"
         ],
-        "description": "Platforma white-label do analityki tradingu ilościowego, konfigurowana plikami. **Java** ze **Spring Boot**, **Angular 22**, **PostgreSQL**, dostarczana jako obraz **Docker**. Kod jest przygotowywany do publikacji.",
-        "badge": "Java & Angular / FinTech",
+        "description": "Platforma tradingowa white-label do **nauki**: cztery fikcyjne brokery na jednym kodzie, każdy z własnym brandingiem, walutą i zasadami. **Java 25** i **Spring Boot 4**, klienty w **Angular 21** i **React 19**, **PostgreSQL** w **Dockerze**.",
+        "badge": "Java, Angular & React / FinTech",
         "language": "Java / TypeScript",
         "url": "https://github.com/DavIT-Futures/TradeChameleon",
-        "image": "img/github/trading.svg"
+        "image": "img/github/tradechameleon.jpg"
       }
     ],
     "title": "Projekty GitHub",
